@@ -1,4 +1,19 @@
-extends ../layout/header
-block variable
-	- var title = 'Pug'
-	
+extend ../layout/main
+
+block variables
+  - var title = 'Pug';
+
+block head
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+block content
+  section
+    .container
+      +item('article #1')
+      +item('article #2')
+
+block script
+  script(type="")
+    const foo = "";

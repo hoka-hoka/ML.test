@@ -1,0 +1,16 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html
+  block head
+  title #{title}
+body
+  include ../includes/modules/header
+
+  block content
+
+  include ../includes/modules/footer
+  include ../includes/svg-sprite
+
+  block script
