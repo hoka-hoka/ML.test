@@ -1,3 +1,11 @@
 mixin item(title)
   .item
     h2.item-title= title
+
+mixin icon(name, w, h, VB, parentBlock)
+  if parentBlock
+    - var parentBlock = parentBlock + "__"
+  else
+    -var parentBlock = ""
+  svg(class = parentBlock + name viewBox=VB width=w height=h)
+    use(xlink:href = "#" + name)

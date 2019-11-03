@@ -1,30 +1,25 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.conf');
+const devserver = require('../webpack/devserver');
 
-const devdWebpackConfig = merge(baseWebpackConfig, {
-	mode: 'development',
-	devtool: 'inline-source-map',
-	devServer: {
-		contentBase: baseWebpackConfig.externals.paths.dist,
-  		port: 8081,
-  		overlay: { // вывод ошибок на экране браузера
-      		warnings: false,
-      		errors: true  
-  		}
-  	},
-	plugins: [
-		new webpack.SourceMapDevToolPlugin({
-			filename: '[file].map'
-		})
-		
-	]
-})
+const devdWebpackConfig = merge([
+  baseWebpackConfig,
+  {
+    mode: 'development',
+    devtool: 'inline-source-map',
+    plugins: [
+      new webpack.SourceMapDevToolPlugin({
+        filename: '[file].map'
+      })
+    ]
+  },
+  devserver()
+])
 
 module.exports = new Promise((resolve, reject) => {
 	resolve(devdWebpackConfig)
 });
 
 
-  
- 
+

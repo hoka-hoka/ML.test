@@ -27,8 +27,25 @@ section {
 	position: relative;
 	padding: 0 0; // 1
 }
-.wrapper {
 
+@for $i from 1 through 6 {
+	h#{$i} {
+		color: $mainTitleBlock;
+	}
+}
+h1, h2 {
+	font-family: $headerFont;
+}
+h1 {
+	font-size: 	em(24);
+	line-height: em(30);
+}
+h2 {
+	font-size: 	em(19);
+	line-height: em(24);
+}
+h3 {
+	font-family: $subHeaderFont;
 }
 
-@import "modules/wrapper";
+//@import "modules/wrapper";
