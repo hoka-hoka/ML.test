@@ -1,9 +1,10 @@
 // Font
-$headerFont: 'Quicksand Bold';
-$subHeaderFont: 'Montserrat Bold';
-$mainFont: 'Montserrat Regular';
+
+$subHeaderFont: 'MontserratBold';
+$mainFont: 'MontserratRegular';
+$headerFont: 'OpenSansBold';
 // Size
-$mainFontSize: 14px;
+$mainFontSize: 16px;
 
 // Local color
 $x-dark: #1F2041;
@@ -11,15 +12,31 @@ $x-dark-100: $x-dark;
 $x-dark-75: rgba($x-dark, .75);
 $x-dark-50: rgba($x-dark, .50);
 $x-dark-25: rgba($x-dark, .25);
-$x-dark-5: rgba($x-dark, .5);
+$x-dark-5: rgba($x-dark, .05);
 
 $x-purple: #bc9cff;
 $x-green: #6fcf97;
 
 // Global color
 $mainTitleBlock: $x-dark-100;
+$rectangle--text: $x-dark-100;
+$body-text: $x-dark-75;
+$navText: $x-dark-50;
 
+$button__theme_bg--txt: #fff;
+$button__theme_br--sh: $x-purple;
+$button__theme_br--txt: $x-purple;
+$button_color-prev--txt: $x-dark-50;
+$button_color-next--txt: $x-purple;
 
+$input-dropdown--tit: $x-dark-100;
+$input-dropdown__list--txt: $x-dark-75;
+$input-dropdown__list--br: $x-dark-25;
+
+$calendar--br: $x-dark-25;
+$calendar__month-title--txt: $x-dark-100;
+$calendar__box--txt: $x-purple;
+$calendar__day-num--txt: $x-dark-50;
 
 $desktopWidth: 1280px;
 $smDesktopWidth: 980px;

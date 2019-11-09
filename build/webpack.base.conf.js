@@ -19,8 +19,7 @@ const wepackbase = require('./webpack.conf');
 const merge = require('webpack-merge');
 const pug = require('../webpack/pug');
 const babel = require('../webpack/babel-loader');
-const fileloader = require('../webpack/file-loader');
-const sass = require('../webpack/sass-loader');
+const fileloader = require('../webpack/fileloader');
 const css = require('../webpack/css-loader');
 
 module.exports = merge(
@@ -28,6 +27,5 @@ module.exports = merge(
   pug(),
   babel(),
   fileloader(),
-  sass(),
   css()
 )

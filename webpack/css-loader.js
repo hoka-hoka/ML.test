@@ -6,13 +6,17 @@ module.exports = function() {
     module: { // погрузщики преобразований
       rules: [
         {
-          test: /\.css$/,
+          test: /\.s?css$/,
           use: [
             { loader: 'style-loader' },
-            MiniCssExtractPlugin.loader,
-            { loader: 'css-loader', options: { importLoaders : 1, sourceMap: true } },
+            { loader: MiniCssExtractPlugin.loader },
             {
+              loader: 'css-loader', options: { importLoaders : 1, sourceMap: true }
+            }, {
               loader: 'postcss-loader',
+              options: { sourceMap: true }
+            }, {
+              loader: 'sass-loader', // компилирует scss в css
               options: { sourceMap: true }
             }
           ]

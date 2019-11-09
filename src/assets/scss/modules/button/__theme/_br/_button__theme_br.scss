@@ -1,0 +1,18 @@
+.button__theme_br {
+  color: $button__theme_br--txt;
+
+  padding: 8px 18px;
+  background: #fff;
+}
+.button__theme_br:after {
+  background: linear-gradient(to left, #BC9CFF 0%, #8BA4F9 100%);
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 22px;
+  padding: 2px;
+}

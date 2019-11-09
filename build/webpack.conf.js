@@ -35,7 +35,8 @@ module.exports = function(){
       ...PAGES.map(page => new HtmlWebpackPlugin(
         {
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/,'.html')}` // исходный index с заменой
+          filename: `./${page.replace(/\.pug/,'.html')}`, // исходный index с заменой
+          hash: true // md5
         }
       ))
     ]

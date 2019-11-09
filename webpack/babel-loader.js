@@ -4,7 +4,7 @@ module.exports = function() {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/, // исключаем
+          exclude: /node_modules\/(?!(swiper)\/).*/, // исключаем
           use: ['babel-loader']
         }
       ]

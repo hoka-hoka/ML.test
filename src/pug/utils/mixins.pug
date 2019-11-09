@@ -2,10 +2,10 @@ mixin item(title)
   .item
     h2.item-title= title
 
-mixin icon(name, w, h, VB, parentBlock)
+mixin icon(name, w, h, VB, parentBlock, descr)
   if parentBlock
     - var parentBlock = parentBlock + "__"
   else
     -var parentBlock = ""
-  svg(class = parentBlock + name viewBox=VB width=w height=h)
+  svg(class = parentBlock + name viewBox=VB width=w height=h role="image" aria-label=descr)
     use(xlink:href = "#" + name)

@@ -1,0 +1,9 @@
+.button__theme {
+  display: block;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  padding: 10px 20px;
+  border-radius: 22px;
+}
+@import '_bg/button__theme_bg';
+@import '_br/button__theme_br';
+@import '_hov/button__theme_hov';

@@ -1,24 +1,33 @@
+
 @import "utils/libs";
 @import "utils/vars";
-@import "utils/mixins";
 @import "utils/fonts";
+@import "utils/mixins";
+
+
+
 
 @media screen and (max-width: $desktopWidth) {
-	font-size: 16px;
+	// font-size: 16px;
 }
 @media screen and (max-width: $tableWidth) {
-	font-size: 15px;
+	// font-size: 15px;
 }
 @media screen and (max-width: $phoneWidth) {
-	font-size: 14px;
+	// font-size: 14px;
 }
 @for $i from 1 through 6 {
 	h#{$i} {
 		margin: 0;
 	}
 }
+
 body {
 	font-family: $mainFont;
+	font-size: $mainFontSize;
+	margin: 0;
+  box-sizing: border-box;
+  color: $body-text;
 }
 a {
 	text-decoration: none;
@@ -38,7 +47,7 @@ h1, h2 {
 }
 h1 {
 	font-size: 	em(24);
-	line-height: em(30);
+	line-height: em(30,24);
 }
 h2 {
 	font-size: 	em(19);
@@ -47,5 +56,36 @@ h2 {
 h3 {
 	font-family: $subHeaderFont;
 }
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	width: 100%;
+	max-width: 100%;
+	display: flex;
+}
+button {
+	background: none;
+	border: none;
+	display: flex;
+}
+input[type="date"] {
+	font-family: $mainFont;
+	font-size: em(14);
+	line-height: em(15,14);
+}
+.container {
+	margin: 0 140px;
+}
 
-//@import "modules/wrapper";
+@import "modules/header/header";
+@import "modules/nav/nav";
+@import "modules/button/button";
+@import "modules/logo/logo";
+@import "modules/arrow/arrow";
+@import "modules/rectangle/rectangle";
+@import "modules/input-dropdown/input-dropdown";
+@import "modules/banner/banner";
+@import "modules/calendar/calendar";

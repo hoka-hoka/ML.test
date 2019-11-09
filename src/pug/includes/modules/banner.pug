@@ -1,0 +1,24 @@
+block variable
+
+.banner
+  img.banner__img(src="./assets/img/banner.png", alt="Лучшие номера")
+  .container.banner__container
+    .banner__text Лучшие номера для вашей работы отдыха и просто вдохновения
+
+    main.rectangle.banner__rectangle
+      h1.rectangle__title Найдём номера под ваши предложения
+      .rectangle__date
+        .rectangle__input-dropdown.input-dropdown
+          form(action="" id="search" name="")
+            label.input-dropdown__lb(for="arrive") Прибытие
+            .input-dropdown__box
+              input.input-dropdown__list(name="arrive" type="date" required)
+              span.arrow.input-dropdown__arrow
+
+        .rectangle__input-dropdown.input-dropdown
+          form(action="" id="search" name="")
+            label.input-dropdown__lb(for="arrive") Выезд
+            .input-dropdown__box
+              input.input-dropdown__list(name="arrive" type="date" required)
+              span.arrow.input-dropdown__arrow
+      include ./calendar
