@@ -1,0 +1,19 @@
+block variables
+
+.input-dropdown.rectangle__input-dropdown
+  label.input-dropdown__lb(for=params.name) #{typeof(i) != 'undefined' ? rectangleList[i] : rectangleList}
+  .input-dropdown__box
+    input.input-dropdown__list(name=params.name type=params.type required class=params.js placeholder=params.place ? params.place : '')
+    span.arrow.input-dropdown__arrow(class=params.js)
+    if params.item == 2
+      .input-dropdown__options.hidden
+        -for(var i=0; i<3; i++)
+          .input-dropdown__opt
+            span.offensive=guesList[i]
+            .input-dropdown__marks
+              button(type="button").input-dropdown__mark-sign.input-dropdown__mark-sign_minus.input-dropdown__mark-sign_active
+              span.input-dropdown__offensive.offensive 0
+              button(type="button").input-dropdown__mark-sign.input-dropdown__mark-sign_plus
+        .input-dropdown__btns
+          button(type="button").button.button_color-prev.button_js-prev Очистить
+          button(type="button").button.button_color-next.button_js-next Применить

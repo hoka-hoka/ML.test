@@ -4,21 +4,19 @@ block variable
   img.banner__img(src="./assets/img/banner.png", alt="Лучшие номера")
   .container.banner__container
     .banner__text Лучшие номера для вашей работы отдыха и просто вдохновения
-
     main.rectangle.banner__rectangle
       h1.rectangle__title Найдём номера под ваши предложения
-      .rectangle__date
-        .rectangle__input-dropdown.input-dropdown
-          form(action="" id="search" name="")
-            label.input-dropdown__lb(for="arrive") Прибытие
-            .input-dropdown__box
-              input.input-dropdown__list(name="arrive" type="date" required)
-              span.arrow.input-dropdown__arrow
-
-        .rectangle__input-dropdown.input-dropdown
-          form(action="" id="search" name="")
-            label.input-dropdown__lb(for="arrive") Выезд
-            .input-dropdown__box
-              input.input-dropdown__list(name="arrive" type="date" required)
-              span.arrow.input-dropdown__arrow
-      include ./calendar
+      form(action="" id="search" name="")
+        block append index
+          - var params = {item: 1, name: 'arrive', type: 'date', js: 'rectangle__date_js_click'};
+          - var rectangleList = ['Прибытие', 'Выезд'];
+        .rectangle__date
+          -for(var i=0; i<rectangleList.length; i++)
+            include ../../components/input-dropdown
+          - var i = undefined;
+        include ../../components/calendar
+        block append index
+          - var params = {item: 2, name: 'gues', type: 'text', js: 'rectangle__gues_js_click', place: 'Сколько гостей'};
+          - var rectangleList = 'Гости';
+        .rectangle__gues
+          include ../../components/input-dropdown

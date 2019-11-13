@@ -18,6 +18,8 @@ $x-purple: #bc9cff;
 $x-green: #6fcf97;
 
 // Global color
+$offensive: $x-dark-100;
+
 $mainTitleBlock: $x-dark-100;
 $rectangle--text: $x-dark-100;
 $body-text: $x-dark-75;
@@ -32,8 +34,13 @@ $button_color-next--txt: $x-purple;
 $input-dropdown--tit: $x-dark-100;
 $input-dropdown__list--txt: $x-dark-75;
 $input-dropdown__list--br: $x-dark-25;
+$input-dropdown__options--bg: #fff;
+$input-dropdown__options--bd: $x-dark-25;
+$input-dropdown__mark-minus--txt: $x-dark-50;
+$input-dropdown__marks--bd: $x-dark-25;
 
-$calendar--br: $x-dark-25;
+$calendar__container--bg: #fff;
+$calendar__container--br: $x-dark-25;
 $calendar__month-title--txt: $x-dark-100;
 $calendar__box--txt: $x-purple;
 $calendar__day-num--txt: $x-dark-50;

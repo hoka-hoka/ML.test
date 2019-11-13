@@ -1,0 +1,10 @@
+.input-dropdown__options {
+  position: absolute;
+  background-color: $input-dropdown__options--bg;
+  border: 1px solid $input-dropdown__options--bd;
+  border-top: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  padding: 5px 5px 13px 15px;
+}

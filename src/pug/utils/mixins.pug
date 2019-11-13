@@ -9,3 +9,10 @@ mixin icon(name, w, h, VB, parentBlock, descr)
     -var parentBlock = ""
   svg(class = parentBlock + name viewBox=VB width=w height=h role="image" aria-label=descr)
     use(xlink:href = "#" + name)
+
+mixin input-dropdown(name, type, js, place)
+  .input-dropdown.rectangle__input-dropdown
+    label.input-dropdown__lb(for="arrive")=rectangleList[i]
+    .input-dropdown__box
+      input.input-dropdown__list(name=name type=type placeholder=place required class=js)
+      span.arrow.input-dropdown__arrow(class=js)

@@ -1,17 +1,18 @@
 .input-dropdown__list {
   border:  1px solid $input-dropdown__list--br;
   padding: 11px 20px 10px 15px;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   display: block;
-  background: transparent;
-  &::placeholder {
-    color: red;
-  }
+  color: $input-dropdown__list--txt;
+  font-family: $mainFont;
+  font-size: em(14);
+  line-height: em(18,14);
+  width: 100%;
+  box-sizing: border-box;
 }
-
-
 .input-dropdown__list::-webkit-datetime-edit {
   color: $input-dropdown__list--txt;
+  text-transform: uppercase;
 }
 .input-dropdown__list::-webkit-datetime-edit-fields-wrapper {
   // wrapper
@@ -24,4 +25,7 @@
 }
 .input-dropdown__list::-webkit-calendar-picker-indicator {
   display: none;
+}
+.input-dropdown__list {
+  appearance: none;
 }

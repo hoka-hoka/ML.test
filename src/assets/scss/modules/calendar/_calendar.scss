@@ -1,8 +1,5 @@
 .calendar {
-  border: 1px solid $calendar--br;
-  border-radius: 4px;
-  height: 369px;
-  padding: 20px 20px;
+  position: relative;
   box-sizing: border-box;
   background: #fff;
 }
@@ -61,3 +58,4 @@
 .hidden {
   display: none;
 }
+@import '__container/calendar__container';

@@ -1,14 +1,14 @@
 .input-dropdown {
-  text-transform: uppercase;
-  font-family: $subHeaderFont;
-  line-height: em(15,12);
-  display: inline-block;
-  background-origin: border-box;
-  color: $input-dropdown--tit;
-  position: relative;
+
 }
 
 @import './__arrow/input-dropdown__arrow';
 @import './__box/input-dropdown__box';
 @import './__lb/input-dropdown__lb';
 @import './__list/input-dropdown__list';
+@import './__options/input-dropdown__options';
+@import './__opt/input-dropdown__opt';
+@import './__btns/input-dropdown__btns';
+@import './__marks/input-dropdown__marks';
+@import './__mark-sign/input-dropdown__mark-sign';
+@import './__offensive/input-dropdown__offensive';
