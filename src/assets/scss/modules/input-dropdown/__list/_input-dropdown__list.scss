@@ -1,17 +1,21 @@
-.input-dropdown__list {
-  border:  1px solid $input-dropdown__list--br;
-  padding: 11px 20px 10px 15px;
-  border-radius: 4px 4px 0 0;
-  display: block;
+%font {
   color: $input-dropdown__list--txt;
   font-family: $mainFont;
   font-size: em(14);
   line-height: em(18,14);
+}
+
+.input-dropdown__list {
+  @extend %font;
+  border:  1px solid $input-dropdown__list--br;
+  padding: 12px 20px 12px 15px;
+  border-radius: 4px;
+  display: block;
   width: 100%;
   box-sizing: border-box;
 }
 .input-dropdown__list::-webkit-datetime-edit {
-  color: $input-dropdown__list--txt;
+  @extend %font;
   text-transform: uppercase;
 }
 .input-dropdown__list::-webkit-datetime-edit-fields-wrapper {

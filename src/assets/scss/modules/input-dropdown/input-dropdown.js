@@ -9,7 +9,7 @@ let dropDownGues = rectangle.querySelectorAll('.rectangle__gues_js_click');
 
 
 let calendar = rectangle.querySelector('.calendar');
-let calendarSwiperWrapper = document.querySelector('.swiper-wrapper');
+let calendarSwiperWrapper = document.querySelector('.calendar__swiper-container .swiper-wrapper');
 
 let dropDownClick = "";
 
@@ -40,7 +40,7 @@ function dropDownCalendar(obj) {
       } else if ( typeof dropDownCalendar.prototype.inutDrop != "undefined" ) { // add hidden
         if ( inputDropDown == dropDownCalendar.prototype.inutDrop) {
           calendarWay.classList.add("hidden");
-          let calendarNav = document.querySelectorAll('.swiper-slide');
+          let calendarNav = document.querySelectorAll('.calendar__swiper-container .swiper-slide');
           calendarNav.forEach(function(item) {
             item.remove();
           });

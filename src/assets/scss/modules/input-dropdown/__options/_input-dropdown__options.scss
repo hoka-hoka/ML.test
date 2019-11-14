@@ -1,4 +1,5 @@
 .input-dropdown__options {
+  z-index: 1;
   position: absolute;
   background-color: $input-dropdown__options--bg;
   border: 1px solid $input-dropdown__options--bd;

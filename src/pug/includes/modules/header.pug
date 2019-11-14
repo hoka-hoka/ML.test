@@ -16,5 +16,5 @@ header.header
             li.nav__item
               a.nav__link(href="#")=navList[i]
         - var i = undefined;
-    button.button.button__theme.header__button.button__theme_br.button__theme_hov_br Войти
-    button.button.button__theme.header__button.button__theme_bg.button__theme_hov_bg Зарегистрироваться
+    +buttons( 1, 'Войти', 'header__button')
+    +buttons(2, 'Зарегистрироваться', 'header__button')

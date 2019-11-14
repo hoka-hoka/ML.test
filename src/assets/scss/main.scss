@@ -87,6 +87,9 @@ input[type="date"] {
 	color: $offensive;
 	text-transform: uppercase;
 }
+.hidden {
+  display: none;
+}
 
 @import "modules/header/header";
 @import "modules/nav/nav";
@@ -97,3 +100,4 @@ input[type="date"] {
 @import "modules/input-dropdown/input-dropdown";
 @import "modules/banner/banner";
 @import "modules/calendar/calendar";
+@import "modules/footer/footer";

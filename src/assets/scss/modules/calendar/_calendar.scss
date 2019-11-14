@@ -3,59 +3,14 @@
   box-sizing: border-box;
   background: #fff;
 }
-.calendar__nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.calendar__arrow-next {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 1px;
-  z-index: 1;
-}
-.calendar__arrow-prev {
-  transform: rotate(180deg);
-  cursor: pointer;
-  position: absolute;
-  top: 1px;
-  z-index: 1;
-}
-.calendar__month {
-  color: $calendar__month-title--txt;
-  font-family: $headerFont;
-  font-size: em(19);
-  line-height: em(24, 19);
-  margin-right: auto;
-  margin-left: auto;
-}
-.calendar__table {
-  font-size: em(12);
-  line-height: em(15,12);
-  text-align: center;
-  width: 100%;
-  margin-top: 30px;
-}
-.calendar__box {
-
-}
-.calendar__day {
-  font-family: $subHeaderFont;
-  color: $calendar__box--txt;
-  padding: 10px 0;
-}
-.calendar__day-num {
-  font-family: $mainFont;
-  color: $calendar__day-num--txt;
-  padding: 10px 0;
-}
-.calendar__response {
-  display: flex;
-}
-.hidden {
-  display: none;
-}
 @import '__container/calendar__container';
+@import '__arrow-next/calendar__arrow-next';
+@import '__arrow-prev/calendar__arrow-prev';
+@import '__arrow-icn/calendar__arrow-icn';
+@import '__day/calendar__day';
+@import '__day-num/calendar__day-num';
+@import '__month/calendar__month';
+@import '__nav/calendar__nav';
+@import '__response/calendar__response';
+@import '__table/calendar__table';

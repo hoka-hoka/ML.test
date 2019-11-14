@@ -10,9 +10,13 @@ mixin icon(name, w, h, VB, parentBlock, descr)
   svg(class = parentBlock + name viewBox=VB width=w height=h role="image" aria-label=descr)
     use(xlink:href = "#" + name)
 
-mixin input-dropdown(name, type, js, place)
-  .input-dropdown.rectangle__input-dropdown
-    label.input-dropdown__lb(for="arrive")=rectangleList[i]
-    .input-dropdown__box
-      input.input-dropdown__list(name=name type=type placeholder=place required class=js)
-      span.arrow.input-dropdown__arrow(class=js)
+mixin buttons(index, name, mix)
+  case index
+    when 1
+      button.button.button__theme.button__theme_br.button__theme_hov_br(type="button" class=mix)=name
+    when 2
+      button.button.button__theme.button__theme_bg.button__theme_hov_bg(type="button" class=mix)=name
+    when 3
+      button.button(type="button" class=mix)=name
+    when 4
+      button.input-dropdown__mark-sign(type="button" class=mix)

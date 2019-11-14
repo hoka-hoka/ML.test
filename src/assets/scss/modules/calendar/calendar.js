@@ -13,7 +13,7 @@ let swiperParam = {
     },
 }
 
-let mainSwiper = new Swiper(".swiper-container", swiperParam);
+let mainSwiper = new Swiper(".calendar__swiper-container", swiperParam);
 
 
 let calendar = document.querySelector('.calendar')

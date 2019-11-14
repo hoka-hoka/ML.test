@@ -11,12 +11,3 @@ block head
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
 block index
-  //- var item = 0;
-
-
-block button-regular
-  - var a = ["Очистить", "Применить"];
-  - var cl = ["button_color-prev", "button_color-next"];
-  -for(var i=0; i<2; ++i)
-    button.button(type="button" class=cl[i])=a[i]
-  - var i = undefined;
