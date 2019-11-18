@@ -27,5 +27,5 @@ module.exports = merge(
   pug(),
   babel(),
   fileloader(),
-  css()
+  css(),
 )

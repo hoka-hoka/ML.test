@@ -1,33 +1,33 @@
 block variable
 
 .banner
-  .swiper-container.banner__swiper-container
-    .swiper-wrapper
-      .swiper-slide
-        img.banner__img(src="./assets/img/banner1.webp", alt="Лучшие номера")
-      .swiper-slide
-        img.banner__img(src="./assets/img/banner2.webp", alt="Лучшие номера")
-      .swiper-slide
-        img.banner__img(src="./assets/img/banner3.webp", alt="Лучшие номера")
-
-  .container.banner__container
-    .banner__text Лучшие номера для вашей работы отдыха и просто вдохновения
-    main.rectangle.banner__rectangle
-      h1.rectangle__title Найдём номера под ваши предложения
-      form(action="" id="search" name="")
-        block append index
-          - var params = {item: 1, name: 'arrive', type: 'date', js: 'rectangle__date_js_click', place: ""};
-          - var rectangleList = ['Прибытие', 'Выезд'];
-        .rectangle__date
-          -for(var i=0; i<rectangleList.length; i++)
-            include ../../components/input-dropdown
-          - var i = undefined;
-        include ../../components/calendar
-        block append index
-          - var params = {item: 2, name: 'gues', type: 'text', js: 'rectangle__gues_js_click', place: 'Сколько гостей'};
-          - var rectangleList = 'Гости';
-        .rectangle__gues
-          include ../../components/input-dropdown
-        .rectangle__submit
-          +buttons(2, 'Подобрать номер', 'rectangle__button rectangle__button_size')
-          +icon("arrow-icn", 16, 16, "0 0 17 18", "rectangle", "Подобрать номер")
+	.swiper-container.banner__swiper-container
+		.swiper-wrapper
+			-for(var i=1; i<4; ++i)
+				.swiper-slide
+					picture
+						source(tyoe="image/webp" srcset="./assets/img/banner"+i+".webp")
+						source(tyoe="image/jpeg" srcset="./assets/img/banner"+i+".jpg")
+						img.banner__img(src="./assets/img/banner"+i+".jpg", alt="Лучшие номера") 
+			- var i = undefined;      
+	.container.banner__container
+		.banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+		main.rectangle.banner__rectangle
+			h1.rectangle__title Найдём номера под ваши предложения
+			form(action="" id="search" name="")
+				block append index
+					- var params = {item: 1, name: 'arrive', type: 'date', js: 'rectangle__date_js_click', place: ""};
+					- var rectangleList = ['Прибытие', 'Выезд'];
+				.rectangle__date
+					-for(var i=0; i<rectangleList.length; i++)
+						include ../../components/input
+					- var i = undefined;
+				include ../../components/calendar
+				block append index
+					- var params = {item: 2, name: 'gues', type: 'text', js: 'rectangle__gues_js_click', place: 'Сколько гостей'};
+					- var rectangleList = 'Гости';
+				.rectangle__gues
+					include ../../components/input
+				.rectangle__submit
+					+buttons(2, 'Подобрать номер', 'rectangle__button rectangle__button_size')
+					+icon("arrow-icn", 16, 16, "0 0 17 18", "rectangle", "Подобрать номер")

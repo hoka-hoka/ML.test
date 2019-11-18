@@ -1,0 +1,25 @@
+block variables
+
+.input
+  if params.item == 1 || 2
+    label.input__lb(for=params.name) #{typeof(i) != 'undefined' ? rectangleList[i] : rectangleList}
+
+  .input__box
+    input.input__list(name=params.name type=params.type required class=params.js placeholder=params.place ? params.place : '')
+  
+    if params.js
+      span.arrow.input__arrow(class=params.js)
+
+    if params.item == 2
+      .input__options.hidden
+        -for(var i=0; i<3; i++)
+          .input__opt
+            span.offensive=guesList[i]
+            .input__marks
+              +buttons(4, '', 'input__mark-sign_minus input__mark-sign_active')
+              span.input__offensive.offensive 0
+              +buttons(4, '', 'input__mark-sign_plus')
+        - var i = undefined;
+        .input__btns
+          +buttons(3, 'Очистить', 'button_color-prev button_js-prev')
+          +buttons(3, 'Применить', 'button_color-next button_js-next')

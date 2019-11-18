@@ -1,0 +1,11 @@
+.input__options {
+  z-index: 1;
+  position: absolute;
+  background-color: $input__options--bg;
+  border: 1px solid $input__options--bd;
+  border-top: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  padding: 5px 5px 13px 15px;
+}

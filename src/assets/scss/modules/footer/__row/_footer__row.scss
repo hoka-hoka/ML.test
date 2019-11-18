@@ -1,0 +1,8 @@
+.footer__row {
+  display: flex;
+}
+@media(max-width: $desktopWidth) {
+  .footer__row {
+    margin-left: 30px;
+  }
+}

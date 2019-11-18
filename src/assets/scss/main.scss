@@ -8,6 +8,9 @@
 
 
 @media screen and (max-width: $desktopWidth) {
+	.container {
+		margin: 0 70px;
+	}
 	// font-size: 16px;
 }
 @media screen and (max-width: $tableWidth) {
@@ -77,6 +80,9 @@ input[type="date"] {
 	font-size: em(14);
 	line-height: em(18,14);
 }
+p {
+	margin: 0;
+}
 .container {
 	margin: 0 140px;
 }
@@ -97,7 +103,7 @@ input[type="date"] {
 @import "modules/logo/logo";
 @import "modules/arrow/arrow";
 @import "modules/rectangle/rectangle";
-@import "modules/input-dropdown/input-dropdown";
+@import "modules/input/input";
 @import "modules/banner/banner";
 @import "modules/calendar/calendar";
 @import "modules/footer/footer";
