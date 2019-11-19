@@ -10,25 +10,22 @@ footer.footer(role="contentinfo")
 			a.logo__link(href="#")
 				+icon('pick', 106, 40, "0 0 106 40", "logo", "TOXIN, бронирование номеров")
 			p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-		
-			
-	
-
-			
 
 		ul.footer__row
 			
 			-for(var k=0; k<footerList.length; k++)
 
-				li.footer__col.offensive=footerList[k]
+				li.footer__col
+					span.offensive=footerList[k]
 					ul.footer__list
 						
 						if k == footerItem.length - 1
 							li.footer__item
 								p.footer__text=footerItem[k]
 								block append index
-									- var params = {item: 3, name: 'email', type: 'email', js: '', place: 'Email'};
+									- var params = {item: 3, name: 'email', type: 'email', place: 'Email', js: '', mod: 'input__list_pale_col'};
 								include ../../components/input
+
 						else
 							each val in footerItem[k]
 								li.footer__item

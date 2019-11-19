@@ -2,27 +2,19 @@
   color: $input__list--txt;
   font-family: $mainFont;
   font-size: em(14);
-  line-height: em(18,14);
 }
-
 .input__list {
   @extend %font;
-  border:  1px solid $input__list--br;
-  padding: 12px 20px 12px 15px;
   border-radius: 4px;
+  border: 1px solid $rectangle__input-list--br;
+  height: 44px;
+  padding: 0 32px 0 15px;
   display: block;
   width: 100%;
   box-sizing: border-box;
 }
 .input__list::-webkit-datetime-edit {
   @extend %font;
-  text-transform: uppercase;
-}
-.input__list::-webkit-datetime-edit-fields-wrapper {
-  // wrapper
-}
-.input__list::-webkit-datetime-edit-text {
-  // points
 }
 .input__list::-webkit-inner-spin-button {
   display: none;
@@ -33,3 +25,7 @@
 .input__list {
   appearance: none;
 }
+
+@import '_date/input__list_date';
+@import '_drop/input__list_drop';
+@import '_pale_col/input__list_pale_col';

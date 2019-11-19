@@ -1,14 +1,21 @@
 block variables
 
 .input
-  if params.item == 1 || 2
+  if params.item == 1 || params.item == 2
     label.input__lb(for=params.name) #{typeof(i) != 'undefined' ? rectangleList[i] : rectangleList}
 
   .input__box
-    input.input__list(name=params.name type=params.type required class=params.js placeholder=params.place ? params.place : '')
+    input.input__list(name=params.name type=params.type required class=params.mod+" "+params.js placeholder=params.place ? params.place : '')
   
-    if params.js
-      span.arrow.input__arrow(class=params.js)
+
+    case params.item
+      when 1
+      when 2
+        span.arrow.input__arrow(class=params.js)
+      when 3
+        +icon("arrow-icn", 16, 16, "0 0 17 18", "rectangle", "Подобрать номер")
+  
+
 
     if params.item == 2
       .input__options.hidden

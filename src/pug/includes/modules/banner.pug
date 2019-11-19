@@ -16,7 +16,7 @@ block variable
 			h1.rectangle__title Найдём номера под ваши предложения
 			form(action="" id="search" name="")
 				block append index
-					- var params = {item: 1, name: 'arrive', type: 'date', js: 'rectangle__date_js_click', place: ""};
+					- var params = {item: 1, name: 'arrive', type: 'date', place: '', js: 'rectangle__date_js_click', mod: 'input__list_date'};
 					- var rectangleList = ['Прибытие', 'Выезд'];
 				.rectangle__date
 					-for(var i=0; i<rectangleList.length; i++)
@@ -24,7 +24,7 @@ block variable
 					- var i = undefined;
 				include ../../components/calendar
 				block append index
-					- var params = {item: 2, name: 'gues', type: 'text', js: 'rectangle__gues_js_click', place: 'Сколько гостей'};
+					- var params = {item: 2, name: 'gues', type: 'text', place: 'Сколько гостей', js: 'rectangle__gues_js_click', mod: 'input__list_drop'};
 					- var rectangleList = 'Гости';
 				.rectangle__gues
 					include ../../components/input
