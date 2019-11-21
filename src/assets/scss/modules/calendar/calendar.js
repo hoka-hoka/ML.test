@@ -21,13 +21,6 @@ let month = new Date().getMonth() - 1;
 
 
 
-
-
-
-
-
-
-// let b = new Date;
 function createCalendar(elem, year, month) {
   let mon = month; // 0-11
   let d = new Date(year, mon); // Fri Nov 01 2019 00:00:00 GMT+0700 (GMT+07:00)
@@ -67,32 +60,6 @@ function getDay(date) {
   if (day == 0) day = 7; // сделать воскресенье (0) последним днем
   return day - 1;
 }
-
-function deleteCalendar() {
-
-}
-
-
-
-
-
-
-let calendarBtnPrev = document.querySelector('.calendar__arrow-prev');
-calendarBtnPrev.addEventListener('click', function() {
-
-  /*mainSwiper.appendSlide([
-     '<div class="swiper-slide"><div class="calendar__nav"><div class="calendar__month"></div></div></div>'
-  ]);*/
-
-   //mainSwiper.slideNext (100, true);
-
-/*
-mySwiper.prependSlide([
-   '<div class="swiper-slide">Slide 1"</div>',
-   '<div class="swiper-slide">Slide 2"</div>'
-]);
-*/
-});
 
 
 export { mainSwiper, month, createCalendar, getDay };

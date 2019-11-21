@@ -8,26 +8,38 @@ block variable
 					picture
 						source(tyoe="image/webp" srcset="./assets/img/banner"+i+".webp")
 						source(tyoe="image/jpeg" srcset="./assets/img/banner"+i+".jpg")
-						img.banner__img(src="./assets/img/banner"+i+".jpg", alt="Лучшие номера") 
-			- var i = undefined;      
+						img.banner__img(src="./assets/img/banner"+i+".jpg", alt="Лучшие номера")
+			- var i = null;
 	.container.banner__container
 		.banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+
 		main.rectangle.banner__rectangle
 			h1.rectangle__title Найдём номера под ваши предложения
-			form(action="" id="search" name="")
+			form(action="" id="" name="")
+
 				block append index
-					- var params = {item: 1, name: 'arrive', type: 'date', place: '', js: 'rectangle__date_js_click', mod: 'input__list_date'};
 					- var rectangleList = ['Прибытие', 'Выезд'];
+
 				.rectangle__date
-					-for(var i=0; i<rectangleList.length; i++)
-						include ../../components/input
-					- var i = undefined;
+					-for(var i=0; i<2; ++i)
+						.input
+							label.input__lb(for='arrive')=rectangleList[i]
+							.input__box
+								input.input__list.rectangle__date_js_click.input__list_date(name='arrive' type='date' required)
+								span.arrow.input__arrow.rectangle__date_js_click
+					- var i = null;
 				include ../../components/calendar
+
 				block append index
-					- var params = {item: 2, name: 'gues', type: 'text', place: 'Сколько гостей', js: 'rectangle__gues_js_click', mod: 'input__list_drop'};
 					- var rectangleList = 'Гости';
 				.rectangle__gues
-					include ../../components/input
+					.input
+						label.input__lb(for='arrive')=rectangleList
+						.input__box
+							input.input__list.rectangle__gues_js_click.input__list_drop(name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
+							span.arrow.input__arrow.rectangle__gues_js_click
+							+input-options()
+
 				.rectangle__submit
 					+buttons(2, 'Подобрать номер', 'rectangle__button rectangle__button_size')
-					+icon("arrow-icn", 16, 16, "0 0 17 18", "rectangle", "Подобрать номер")
+					+icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big rectangle__arrow-big", "Подобрать номер")

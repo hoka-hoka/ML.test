@@ -1,36 +1,36 @@
 block variable
 
-
-
-
-
 footer.footer(role="contentinfo")
-	.container.footer__container
-		.footer__col
-			a.logo__link(href="#")
-				+icon('pick', 106, 40, "0 0 106 40", "logo", "TOXIN, бронирование номеров")
-			p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+  .container.footer__container
+    .footer__widget
+      .footer__box
+        .logo.footer__logo
+          a.logo__link(href="#")
+            +icon('pick', 106, 40, "0 0 106 40", "logo", "TOXIN, бронирование номеров")
+        p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      ul.footer__row
+        -for(var k=0; k<footerList.length; k++)
+          li.footer__col
+            span.offensive=footerList[k]
+            ul.footer__list
+              if k == footerItem.length - 1
+                li.footer__item
+                  p.footer__text.footer__text_margin=footerItem[k]
+                  .footer__email
+                    .input
+                      .input__box
+                        input.input__list(name='email' type='email' required placeholder='Email')
+                        +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big footer__arrow-big", "Подписка")
+              else
+                each val in footerItem[k]
+                  li.footer__item
+                    a.footer__links(href="#")=val
+        - var k = null;
+  hr.footer__line
+  .container.footer__date
+    p.footer__cop Copyright ©
+      time(datetime='2018') 2018 &nbsp
+      | Toxin отель. Все права защищены.
 
-		ul.footer__row
-			
-			-for(var k=0; k<footerList.length; k++)
-
-				li.footer__col
-					span.offensive=footerList[k]
-					ul.footer__list
-						
-						if k == footerItem.length - 1
-							li.footer__item
-								p.footer__text=footerItem[k]
-								block append index
-									- var params = {item: 3, name: 'email', type: 'email', place: 'Email', js: '', mod: 'input__list_pale_col'};
-								include ../../components/input
-
-						else
-							each val in footerItem[k]
-								li.footer__item
-									a.footer__links(href="#")=val
-			- var k = undefined;
-						
 
 

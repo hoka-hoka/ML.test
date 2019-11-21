@@ -2,12 +2,9 @@ mixin item(title)
   .item
     h2.item-title= title
 
-mixin icon(name, w, h, VB, parentBlock, descr)
-  if parentBlock
-    - var parentBlock = parentBlock + "__"
-  else
-    -var parentBlock = ""
-  svg(class = parentBlock + name viewBox=VB width=w height=h role="image" aria-label=descr)
+mixin icon(name, w, h, VB, cl, descr)
+
+  svg(class=cl viewBox=VB width=w height=h role="image" aria-label=descr)
     use(xlink:href = "#" + name)
 
 mixin buttons(index, name, mix)
@@ -19,4 +16,18 @@ mixin buttons(index, name, mix)
     when 3
       button.button(type="button" class=mix)=name
     when 4
-      button.input__mark-sign(type="button" class=mix)
+      button.button__mark(type="button" class=mix)
+
+mixin input-options(index)
+  .input-options.hidden
+    -for(var i=0; i<3; i++)
+      .input-options__opt
+        span.offensive=guesList[i]
+        .input-options__marks
+          +buttons(4, '', 'button__mark_minus button__mark_default')
+          span.input-options__offensive.offensive 0
+          +buttons(4, '', 'button__mark_plus')
+    - var i = undefined;
+    .input__btns
+      +buttons(3, 'Очистить', 'button_color-prev button_js-prev')
+      +buttons(3, 'Применить', 'button_color-next button_js-next')

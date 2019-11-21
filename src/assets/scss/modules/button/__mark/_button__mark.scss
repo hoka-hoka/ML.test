@@ -1,4 +1,4 @@
-.input__mark-sign {
+.button__mark {
   font-family: $mainFont;
   font-size: em(18);
   line-height: em(22,18 );
@@ -11,6 +11,6 @@
   position: relative;
   cursor: pointer;
 }
-@import '_minus/input__mark-sign_minus';
-@import '_plus/input__mark-sign_plus';
-@import '_active/input__mark-sign_active';
+@import '_minus/button__mark_minus';
+@import '_plus/button__mark_plus';
+@import '_default/button__mark_default';

@@ -1,7 +1,7 @@
 .footer {
 
 }
-
+@import '__widget/footer__widget';
 @import '__container/footer__container';
 @import '__input/footer__input';
 @import '__text/footer__text';
@@ -10,3 +10,10 @@
 @import '__list/footer__list';
 @import '__item/footer__item';
 @import '__links/footer__links';
+@import '__arrow-big/footer__arrow-big';
+@import '__box/footer__box';
+@import '__cop/footer__cop';
+@import '__date/footer__date';
+@import '__line/footer__line';
+@import '__logo/footer__logo';
+

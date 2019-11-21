@@ -78,6 +78,9 @@ button {
 p {
 	margin: 0;
 }
+hr {
+	margin: 0;
+}
 .container {
 	margin: 0 140px;
 }
@@ -92,6 +95,7 @@ p {
   display: none;
 }
 
+@import "modules/arrow-big/arrow-big";
 @import "modules/header/header";
 @import "modules/nav/nav";
 @import "modules/button/button";
@@ -102,3 +106,4 @@ p {
 @import "modules/banner/banner";
 @import "modules/calendar/calendar";
 @import "modules/footer/footer";
+@import "modules/input-options/input-options";

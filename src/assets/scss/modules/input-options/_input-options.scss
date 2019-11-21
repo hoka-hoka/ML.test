@@ -1,4 +1,4 @@
-.input__options {
+.input-options {
   z-index: 1;
   position: absolute;
   background-color: $input__options--bg;
@@ -9,3 +9,7 @@
   border-radius: 0 0 4px 4px;
   padding: 5px 5px 13px 15px;
 }
+
+@import '__marks/input-options__marks';
+@import '__opt/input-options__opt';
+@import '__offensive/input-options__offensive';

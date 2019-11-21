@@ -54,7 +54,7 @@ function dropDownCalendar(obj) {
 function dropDownGueses(obj) {
   obj.forEach(function(item) {
     item.addEventListener('click', function() {
-      let drop = item.closest('.input__box').querySelector('.input__options');
+      let drop = item.closest('.input__box').querySelector('.input-options');
       if ( drop.classList.contains('hidden') ) {
         drop.classList.remove('hidden')
       } else {
@@ -66,45 +66,13 @@ function dropDownGueses(obj) {
 let drop1 = new dropDownCalendar(dropDownDate);
 let drop2 = new dropDownGueses(dropDownGues);
 
-let dropDownMinus = document.querySelectorAll('.input__mark-sign');
 
-// .input__mark-sign_active
 
-function guesStatus(obj) {
-  obj.forEach(function(item) {
-    item.addEventListener('click', function() {
 
-      if ( item.classList.contains('input__mark-sign_minus') ) {
-        let guesValue = item.closest('.input__marks').querySelector('.input__offensive');
-        if ( guesValue.innerHTML == "1" ) {
-          if ( !item.classList.contains('input__mark-sign_active') ) {
-            guesValue.innerHTML = (+guesValue.innerHTML - 1) + "";
-            item.classList.add('input__mark-sign_active')
-          }
-        } else if ( guesValue.innerHTML > "0" ){
-          guesValue.innerHTML = (+guesValue.innerHTML - 1) + "";
-        }
-      } else {
-        let guesValue = item.closest('.input__marks').querySelector('.input__offensive');
-        let guesMinus = item.closest('.input__marks').querySelector('.input__mark-sign_minus');
-        if ( guesValue.innerHTML == "0" ) {
-          if ( guesMinus.classList.contains('input__mark-sign_active') ) {
-            guesMinus.classList.remove('input__mark-sign_active');
-            guesValue.innerHTML = (+guesValue.innerHTML + 1) + "";
-          }
-        } else {
-          guesValue.innerHTML = (+guesValue.innerHTML + 1) + "";
-        }
-      }
-    });
-  });
-}
-
-let drop3 = new guesStatus(dropDownMinus);
 
 let guesBtnPrev = document.querySelector('.button_js-prev');
 let guesBtnNext = document.querySelector('.button_js-next');
-let guesValue = document.querySelectorAll('.input__offensive');
+let guesValue = document.querySelectorAll('.input-options__offensive');
 let guesInput = document.querySelector('.rectangle__gues .input__list');
 let sum = 0;
 
@@ -125,7 +93,7 @@ guesBtnNext.addEventListener('click', function() {
 guesBtnPrev.addEventListener('click', function() {
   guesValue.forEach(function(item) {
     item.innerHTML = 0;
-    item.previousSibling.classList.add('input__mark-sign_active')
+    item.previousSibling.classList.add('button__mark_default')
   });
   guesInput.setAttribute('placeholder', "Сколько гостей");
 });

@@ -3,6 +3,7 @@
   font-size: rem(14px);
   line-height: rem(24px, 14px);
   color: $footer__text--txt;
-  margin-top: 20px;
   text-transform: none;
 }
+
+@import '_margin/footer__text_margin';
