@@ -5,7 +5,7 @@ import { mainSwiper, month, createCalendar, getDay } from '../calendar/calendar'
 let rectangle = document.querySelector('.rectangle');
 
 let dropDownDate = rectangle.querySelectorAll('.rectangle__date_js_click');
-let dropDownGues = rectangle.querySelectorAll('.rectangle__gues_js_click');
+
 
 
 let calendar = rectangle.querySelector('.calendar');
@@ -51,20 +51,9 @@ function dropDownCalendar(obj) {
   });
 }
 
-function dropDownGueses(obj) {
-  obj.forEach(function(item) {
-    item.addEventListener('click', function() {
-      let drop = item.closest('.input__box').querySelector('.input-options');
-      if ( drop.classList.contains('hidden') ) {
-        drop.classList.remove('hidden')
-      } else {
-        drop.classList.add('hidden');
-      }
-    });
-  });
-}
 let drop1 = new dropDownCalendar(dropDownDate);
-let drop2 = new dropDownGueses(dropDownGues);
+
+
 
 
 

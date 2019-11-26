@@ -81,6 +81,15 @@ p {
 hr {
 	margin: 0;
 }
+fieldset {
+  border: unset;
+  margin: 0;
+  padding: 0;
+}
+input:focus, input:hover {
+	outline: 0;
+	border: 1px solid $input_foc_hov;
+}
 .container {
 	margin: 0 140px;
 }
@@ -94,16 +103,42 @@ hr {
 .hidden {
   display: none;
 }
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+@import "modules/arrow/arrow";
+@import "modules/button/button";
+@import "modules/search/search";
+@import "modules/input/input";
+@import "modules/input-mark/input-mark";
+@import "modules/input-list/input-list";
+@import "modules/input-email/input-email";
+@import "modules/input-radio/input-radio";
+@import "modules/input-toggle/input-toggle";
+@import "modules/popup/popup";
+@import "modules/swiper-container/swiper-container";
+
 
 @import "modules/arrow-big/arrow-big";
 @import "modules/header/header";
 @import "modules/nav/nav";
-@import "modules/button/button";
+@import "modules/authorization/authorization";
 @import "modules/logo/logo";
-@import "modules/arrow/arrow";
 @import "modules/rectangle/rectangle";
-@import "modules/input/input";
 @import "modules/banner/banner";
 @import "modules/calendar/calendar";
 @import "modules/footer/footer";
 @import "modules/input-options/input-options";
+
+@import "modules/registration/registration";
+
+

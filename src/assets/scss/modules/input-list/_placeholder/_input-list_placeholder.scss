@@ -1,0 +1,6 @@
+.input-list_placeholder::placeholder {
+  font-family: $mainFont;
+  font-size: rem(14px);
+  line-height: rem(14px, 18px);
+  color: $imput-list_placeholder--txt;
+}

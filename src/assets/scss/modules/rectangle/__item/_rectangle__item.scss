@@ -1,0 +1,6 @@
+.rectangle__item {
+  margin-bottom: 20px;
+}
+.rectangle__item:last-child {
+  margin-bottom: unset;
+}

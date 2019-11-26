@@ -15,32 +15,54 @@ $x-dark-25: rgba($x-dark, .25);
 $x-dark-5: rgba($x-dark, .05);
 
 $x-purple: #bc9cff;
+$x-purpure-stop: #8BA4F9;
 $x-green: #6fcf97;
+$x-white: #fff;
 
 // Global color
 $offensive: $x-dark-100;
 
 $mainTitleBlock: $x-dark-100;
 $rectangle--text: $x-dark-100;
-$rectangle__input-list--br: $x-dark-25;
+$rectangle__lb-bold--txt: $x-dark-100;
+$rectangle__lb-regular--txt: $x-dark-75;
+$rectangle__lb-regular_active--txt: $x-dark-75;
+$rectangle__close--fill: $x-dark-25;
+
 $body-text: $x-dark-75;
 $navText: $x-dark-50;
 
-$button__theme_bg--txt: #fff;
+$authorization--txt: $x-white;
+
+$button__theme_bg--txt: $x-white;
 $button__theme_br--sh: $x-purple;
 $button__theme_br--txt: $x-purple;
 $button_color-prev--txt: $x-dark-50;
 $button_color-next--txt: $x-purple;
 
-$input--txt: $x-dark-100;
-$input__list--txt: $x-dark-75;
-$input__list_pale_col--txt: $x-dark-25;
-$input__options--bg: #fff;
+$input_foc_hov: $x-dark-50;
+$input--txt: $x-dark-75;
+$input--br: $x-dark-25;
+$input_placeholder--txt: $x-dark-25;
+$imput-list_placeholder--txt: $x-dark-75;
+$input__options--bg: $x-white;
 $input__options--bd: $x-dark-25;
 $input__mark-minus--txt: $x-dark-50;
 $input__marks--bd: $x-dark-25;
 
-$calendar__container--bg: #fff;
+$input-radio--bd: $x-purple;
+$input-radio--bg: $x-purple;
+$input-radio--bg-stop: $x-purpure-stop;
+$input-radio_check_lb--txt: $x-dark-50;
+
+$input-toggle__slider--bd: $x-dark-25;
+$input-toggle__slider--bg: $x-dark-25;
+$input-toggle__tab_check_lb--bd: $x-purple;
+$input-toggle__tab_check_lb--bg: $x-purple;
+$input-toggle__tab_check_lb--shadow: $x-purpure-stop;
+
+
+$calendar__container--bg: $x-white;
 $calendar__container--br: $x-dark-25;
 $calendar__month-title--txt: $x-dark-100;
 $calendar__box--txt: $x-purple;

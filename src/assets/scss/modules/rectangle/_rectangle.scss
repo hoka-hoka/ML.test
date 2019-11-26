@@ -1,16 +1,24 @@
 .rectangle{
   box-shadow: 0 0 25px rgba(0, 0, 0, .12);
   width: 380px;
-  height: 374px;
   border-radius: 4px;
   padding: 40px 30px 30px;
   box-sizing: border-box;
   color: $rectangle--text;
-  background: #fff;
+  position: relative;
 }
 
-@import './__date/rectangle__date';
-@import './__title/rectangle__title';
-@import './__button/rectangle__button';
-@import './__arrow-big/rectangle__arrow-big';
-@import './__submit/rectangle__submit';
+@import '__date/rectangle__date';
+@import '__title/rectangle__title';
+@import '__arrow-big/rectangle__arrow-big';
+@import '__submit/rectangle__submit';
+@import '__create/rectangle__create';
+@import '__create-text/rectangle__create-text';
+@import '__lb--bold/rectangle__lb--bold';
+@import '__lb--regular/rectangle__lb--regular';
+@import '__date-col/rectangle__date-col';
+@import '__content/rectangle__content';
+@import '__content-radio/rectangle__content-radio';
+@import '__item/rectangle__item';
+@import '__close/rectangle__close';
+

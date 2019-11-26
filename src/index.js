@@ -19,7 +19,7 @@ body({
 
 
 
-
+import css from 'swiper/css/swiper.css';
 import './assets/css/main.css'
 import './assets/scss/main.scss'
 
@@ -27,6 +27,6 @@ import './assets/scss/main.scss'
 // import Bootstrap from
 // window.Vue = require('vue');
 
-import css from 'swiper/css/swiper.css';
+
 
 

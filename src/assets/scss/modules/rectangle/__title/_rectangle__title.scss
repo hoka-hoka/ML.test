@@ -1,3 +1,6 @@
 .rectangle__title {
   margin-bottom: 20px;
+  font-family: $headerFont;
+  font-size:  em(24);
+  line-height: em(30,24);
 }

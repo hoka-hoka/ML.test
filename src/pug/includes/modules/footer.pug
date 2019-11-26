@@ -17,10 +17,11 @@ footer.footer(role="contentinfo")
                 li.footer__item
                   p.footer__text.footer__text_margin=footerItem[k]
                   .footer__email
-                    .input
-                      .input__box
-                        input.input__list(name='email' type='email' required placeholder='Email')
-                        +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big footer__arrow-big", "Подписка")
+
+                    .input-email
+                      input.input(name='email' type='email' required placeholder='Email')
+                      +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big footer__arrow-big", "Подписка")
+
               else
                 each val in footerItem[k]
                   li.footer__item
@@ -38,6 +39,9 @@ footer.footer(role="contentinfo")
         +icon('face', 22, 22, "0 0 22 22", "footer__social-icn", "Мы в facebook")
       a.footer__social-link(href="#")
        +icon('insta', 22, 22, "0 0 22 22", "footer__social-icn", "Мы в instagram")
+.popup
+  include ../../components/authorization
+  include ../../components/registration
 
 
 
