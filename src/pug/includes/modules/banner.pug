@@ -1,48 +1,15 @@
 block variable
 
 .banner
-	.swiper-container.banner__swiper-container
-		.swiper-wrapper
-			-for(var i=1; i<4; ++i)
-				.swiper-slide
-					picture
-						source(tyoe="image/webp" srcset="./assets/img/banner"+i+".webp")
-						source(tyoe="image/jpeg" srcset="./assets/img/banner"+i+".jpg")
-						img.banner__img(src="./assets/img/banner"+i+".jpg", alt="Лучшие номера")
-			- var i = null;
-	.container.banner__container
-		.banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-		main.rectangle.search.search_bg
-			form(action="" name="")
-				fieldset.rectangle__container
-					legend.rectangle__title Найдём номера под ваши предложения
-
-					block append index
-						- var rectangleList = ['Прибытие', 'Выезд'];
-					.rectangle__date
-						-for(var i=0; i<2; ++i)
-
-							.rectangle__date-col
-								label.rectangle__lb-bold(for='arrive')=rectangleList[i]
-
-								.input-mark
-									input.input.input-mark__list.rectangle__date_js_click(name='arrive' type='date' required)
-									span.arrow.input__arrow.rectangle__date_js_click
-						- var i = null;
-
-					include ../../components/calendar
-
-					block append index
-						- var rectangleList = 'Гости';
-
-					.rectangle__gues
-						label.rectangle__lb-bold(for='arrive')=rectangleList
-
-						.input-list
-							input.input.input-list_placeholder.rectangle__gues_js_click(name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
-							span.arrow.input__arrow.rectangle__gues_js_click
-							+input-options()
-
-					.rectangle__submit
-						+buttons(2, 'Подобрать номер', 'search__button search__button_size')
-						+icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big rectangle__arrow-big", "Подобрать номер")
+  .swiper-container.banner__swiper-container
+    .swiper-wrapper
+      -for(var i=1; i<4; ++i)
+        .swiper-slide
+          picture
+            source(tyoe="image/webp" srcset="./assets/img/banner"+i+".webp")
+            source(tyoe="image/jpeg" srcset="./assets/img/banner"+i+".jpg")
+            img.banner__img(src="./assets/img/banner"+i+".jpg", alt="Лучшие номера")
+      - var i = null;
+  .container.banner__container
+    .banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+    include ../../components/search

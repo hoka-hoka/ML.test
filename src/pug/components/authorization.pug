@@ -1,21 +1,21 @@
-.rectangle.authorization.popup__content
-  .rectangle__close
-    +icon("rec-close", 16, 16, "0 0 47.971 47.971", "", "Закрыть")
-  form(action="" name="")
+.rectangle.authorization.popup__content.hidden
+  form(id="" action="" name="aut")
+    button(type='button').rectangle__close
+      +icon("rec-close", 16, 16, "0 0 47.971 47.971", "", "Закрыть")
     fieldset.rectangle__container
       legend.rectangle__title Войти
       ul.rectangle__list(role='none')
         li.rectangle__item
           .rectangle__content
-            input.input.authorization__input(name='' id='aut-email' type='text' placeholder='Email' required autocorrect='off' autocomplete='email' inputmode='email')
+            input.input.authorization__input(name='' id='aut-email' type='text' placeholder='Email' required autocorrect='off' autocapitalize='off' autocomplete='email' inputmode='email')
             label.visuallyhidden(for='aut-email') Email
           .rectangle__content
             input.input(name='' id='aut-pass' type='password' placeholder='Пароль' required autocorrect='off')
             label.visuallyhidden(for='aut-pass') Пароль
         li.rectangle__item
           .rectangle__submit
-            +buttons(2, 'Войти', 'authorization__button authorization__button_size authorization__button_width')
+            +buttons(2, 'Войти', 'button_width')
             +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big rectangle__arrow-big", "Войти")
           .rectangle__create
             p.rectangle__create-text Нет акаунта на Toxin?
-            +buttons( 1, 'Создать', 'authorization__button_size')
+            +buttons( 1, 'Создать', 'button_end-focus')

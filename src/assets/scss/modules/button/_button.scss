@@ -4,16 +4,21 @@
   font-family: "MontserratBold";
   line-height: em(15,12);
   background-origin: border-box;
+  border-radius: 20px;
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
+  padding: 2px;
 }
 
 @import "__theme/button__theme";
 @import "__mark/button__mark";
 @import "_color-next/button_color-next";
 @import "_color-prev/button_color-prev";
-
+@import "_br--hov/button_br--hov";
+@import "_bg--hov/button_bg--hov";
+@import "_gradient/button_gradient";
+@import "_width/button_width";
 
 
 

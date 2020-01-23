@@ -1,16 +1,11 @@
-
-
 import { mainSwiper, month, createCalendar, getDay } from '../calendar/calendar';
 
 let rectangle = document.querySelector('.rectangle');
-
 let dropDownDate = rectangle.querySelectorAll('.rectangle__date_js_click');
-
 
 
 let calendar = rectangle.querySelector('.calendar');
 let calendarSwiperWrapper = document.querySelector('.calendar__swiper-container .swiper-wrapper');
-
 let dropDownClick = "";
 
 function dropDownCalendar(obj) {

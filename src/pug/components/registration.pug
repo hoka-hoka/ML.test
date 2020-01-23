@@ -1,18 +1,16 @@
-.rectangle.registration.pupup__content
-
-  span
-    +icon("rec-close", 16, 16, "0 0 47.971 47.971", "", "Закрыть")
-
-  form(action="" name="")
+.rectangle.registration.popup__content.hidden
+  form(id="" action="" name="reg")
+    button(type='button').rectangle__close
+      +icon("rec-close", 16, 16, "0 0 47.971 47.971", "", "Закрыть")
     fieldset.rectangle__container
       legend.rectangle__title Регистрация акаунта
       ul.rectangle__list(role='none')
         li.rectangle__item
           .rectangle__content
-            input.input(name='' id='reg-name' type='text' placeholder='Имя' required autocorrect='off' autocomplete='name' pattern='[а-яёА-ЯЁ]')
+            input.input(name='' id='reg-name' type='text' placeholder='Имя' required autocorrect='off' autocapitalize='off' autocomplete='name' pattern='[а-яёА-ЯЁ]')
             label.visuallyhidden(for='reg-name') Имя
           .rectangle__content
-            input.input(name='' id='reg-lname' type='text' placeholder='Фамилия' required autocorrect='off' autocomplete='lname' pattern='[а-яёА-ЯЁ]')
+            input.input(name='' id='reg-lname' type='text' placeholder='Фамилия' required autocorrect='off' autocapitalize='off' autocomplete='lname' pattern='[а-яёА-ЯЁ]')
             label.visuallyhidden(for='reg-lname') Фамилия
           .rectangle__content
             span.rectangle__content-radio
@@ -39,7 +37,7 @@
               span.input-toggle__text Получать спецпредложения
         li.rectangle__item
           .rectangle__submit
-            +buttons(2, 'Войти', 'authorization__button authorization__button_size authorization__button_width')
+            +buttons(2, 'Войти', 'button_width')
             +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big rectangle__arrow-big", "Войти")
           .rectangle__create
             p.rectangle__create-text Уже есть акаунт на Toxin?

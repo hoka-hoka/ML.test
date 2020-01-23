@@ -7,12 +7,14 @@ mixin icon(name, w, h, VB, cl, descr)
   svg(class=cl viewBox=VB width=w height=h role="image" aria-label=descr)
     use(xlink:href = "#" + name)
 
-mixin buttons(index, name, mix)
+mixin buttons(index, name, mix, date)
   case index
     when 1
-      button.button.button__theme.button__theme_br.button__theme_hov_br(type="button" class=mix)=name
+      button.button.button_gradient.button_br--hov(type="button" class=mix date=date)
+        .button__theme.button__theme_br=name
     when 2
-      button.button.button__theme.button__theme_bg.button__theme_hov_bg(type="button" class=mix)=name
+      button.button.button_gradient.button_bg--hov(type="button" class=mix date=date)
+        .button__theme.button__theme_bg=name
     when 3
       button.button(type="button" class=mix)=name
     when 4
