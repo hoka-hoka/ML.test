@@ -1,0 +1,16 @@
+.button_arrow {
+  content: '';
+  display: block;
+  position: absolute;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: unset;
+  border:{
+    right: 2px solid $navText;
+    bottom: 2px solid $navText;;
+  }
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%) rotate(45deg);
+}

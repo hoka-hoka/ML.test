@@ -1,7 +1,3 @@
-.input-radio + label {
-    position: relative;
-    display: inline-block;
-}
 .input-radio:not(:checked) + label {
     color: $input-radio_check_lb--txt;
 }
@@ -17,7 +13,6 @@
     transition: all .15s;
     box-sizing: border-box;
 }
-
 
 .input-radio + label::after {
     content: "";

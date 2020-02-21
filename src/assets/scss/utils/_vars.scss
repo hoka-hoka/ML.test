@@ -23,11 +23,22 @@ $x-white: #fff;
 $offensive: $x-dark-100;
 
 $mainTitleBlock: $x-dark-100;
-$rectangle--text: $x-dark-100;
-$rectangle__lb-bold--txt: $x-dark-100;
-$rectangle__lb-regular--txt: $x-dark-75;
+
+$label_color--100: $x-dark-100;
+$label_color--75: $x-dark-75;
+$label_color--50: $x-dark-50;
+
+$registration__label_text--color: $x-dark-75;
+
+
+$rectangle__title--txt: $x-dark-100;
+$rectangle__text-small--txt: $x-dark-50;
+
+
 $rectangle__lb-regular_active--txt: $x-dark-75;
 $rectangle__close--fill: $x-dark-25;
+$rectangle__price--txt: $x-dark-50;
+
 
 $body-text: $x-dark-75;
 $navText: $x-dark-50;
@@ -43,8 +54,7 @@ $button_color-next--txt: $x-purple;
 $input_foc_hov: $x-dark-50;
 $input--txt: $x-dark-75;
 $input--br: $x-dark-25;
-$input_placeholder--txt: $x-dark-25;
-$imput-list_placeholder--txt: $x-dark-75;
+$input__placeholder_color--75: $x-dark-75;
 $input__options--bg: $x-white;
 $input__options--bd: $x-dark-25;
 $input__mark-minus--txt: $x-dark-50;
@@ -54,6 +64,10 @@ $input-radio--bd: $x-purple;
 $input-radio--bg: $x-purple;
 $input-radio--bg-stop: $x-purpure-stop;
 $input-radio_check_lb--txt: $x-dark-50;
+
+$input-checkbox--bd-stop: $x-purpure-stop;
+$input-checkbox--bd: $x-dark-25;
+$input-checkbox--bd-active: $x-purple;
 
 $input-toggle__slider--bd: $x-dark-25;
 $input-toggle__slider--bg: $x-dark-25;

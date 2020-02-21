@@ -15,7 +15,6 @@
 }
 .input::placeholder {
   @extend %font;
-  color: $input_placeholder--txt;
   line-height: rem(24px, 14px);
 }
 .input::-webkit-datetime-edit {
@@ -34,3 +33,4 @@
 
 @import '__arrow/input__arrow';
 @import '__btns/input__btns';
+@import '__placeholder/input__placeholder';

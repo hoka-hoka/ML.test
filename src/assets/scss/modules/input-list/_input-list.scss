@@ -1,4 +1,6 @@
 .input-list {
   position: relative;
 }
-@import '/_placeholder/input-list_placeholder';
+.input-list > input {
+  cursor: pointer;
+}

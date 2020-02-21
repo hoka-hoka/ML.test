@@ -1,4 +1,4 @@
-const paths = require('../build/webpack.paths.conf');
+const paths = require('../build/webpack.paths.config');
 
 module.exports = function() {
   return {

@@ -2,15 +2,12 @@
   "name": "webpack-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
-    "build": "webpack --config ./build/webpack.build.conf.js"
+    "dev": "webpack-dev-server --open --config ./build/webpack.dev.config.js",
+    "build": "webpack --config ./build/webpack.build.config.js",
+    "build:stats": "webpack --env production --json > stats.json"
   },
-  "browserslist": [
-    "> 1%",
-    "last 3 version"
-  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -28,6 +25,7 @@
     "html-webpack-plugin": "^3.2.0",
     "imports-loader": "^0.8.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "multirange": "^2.0.0",
     "node-sass": "^4.13.0",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
@@ -40,8 +38,8 @@
     "swiper": "^5.2.0",
     "ttf-loader": "^1.0.2",
     "url-loader": "^2.2.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
   },

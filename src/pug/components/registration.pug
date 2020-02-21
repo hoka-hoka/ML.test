@@ -1,5 +1,5 @@
-.rectangle.registration.popup__content.hidden
-  form(id="" action="" name="reg")
+.rectangle.rectangle_modal.registration.popup__content.hidden
+  form(action="" name="reg")
     button(type='button').rectangle__close
       +icon("rec-close", 16, 16, "0 0 47.971 47.971", "", "Закрыть")
     fieldset.rectangle__container
@@ -7,31 +7,31 @@
       ul.rectangle__list(role='none')
         li.rectangle__item
           .rectangle__content
-            input.input(name='' id='reg-name' type='text' placeholder='Имя' required autocorrect='off' autocapitalize='off' autocomplete='name' pattern='[а-яёА-ЯЁ]')
+            input.input(id='reg-name' type='text' placeholder='Имя' required autocorrect='off' autocapitalize='off' autocomplete='name' pattern='[а-яёА-ЯЁ]')
             label.visuallyhidden(for='reg-name') Имя
           .rectangle__content
-            input.input(name='' id='reg-lname' type='text' placeholder='Фамилия' required autocorrect='off' autocapitalize='off' autocomplete='lname' pattern='[а-яёА-ЯЁ]')
+            input.input(id='reg-lname' type='text' placeholder='Фамилия' required autocorrect='off' autocapitalize='off' autocomplete='lname' pattern='[а-яёА-ЯЁ]')
             label.visuallyhidden(for='reg-lname') Фамилия
           .rectangle__content
-            span.rectangle__content-radio
+            .rectangle__content-radio
               input.input-radio.visuallyhidden(type='radio' id='reg-man' name='gender' checked)
-              label.rectangle__lb--regular(for='reg-man') Мужчина
-            span.rectangle__content-radio
+              label.label.label_font--regular.registration__label_color--50(for='reg-man') Мужчина
+            .rectangle__content-radio
               input.input-radio.visuallyhidden(type='radio' id='reg-wom' name='gender')
-              label.rectangle__lb--regular(for='reg-wom') Женщина
+              label.label.label_font--regular.registration__label_color--50(for='reg-wom') Женщина
         li.rectangle__item
-          label.rectangle__lb--bold(for='reg-birth') Дата рождения
+          label.label.label_font--bold.label_color--100(for='reg-birth') Дата рождения
           input.input.input-mark__list(name='' id='reg-birth' type='date' required autocorrect='off' inputmode='numeric' autocomplete='cc-exp')
         li.rectangle__item
-          .rectangle__lb--bold Данные для входа в сервис
+          .label.label_font--bold.label_color--100 Данные для входа в сервис
           .rectangle__content
             label.visuallyhidden(for='reg-email')
             input.input(name='' id='reg-email' type='email' required autocorrect='off' inputmode='email' autocomplete='email' placeholder='Email')
           .rectangle__content
             label.visuallyhidden(for='reg-password')
-            input.input(name='' id='reg-password' type='password' required autocorrect='off' placeholder='Пароль')
+            input.input(name='' id='reg-password' type='password' required autocorrect='off' autocomplete placeholder='Пароль')
           .rectangle__content
-            label.input-toggle.rectangle__lb--regular
+            label.input-toggle.label.label_font--regular
               input.input-toggle__tab(name='' type='checkbox' id='reg-toggle')
               span.input-toggle__slider
               span.input-toggle__text Получать спецпредложения

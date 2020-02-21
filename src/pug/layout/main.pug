@@ -1,13 +1,26 @@
 include ../utils/mixins
 block variables
 
+
 doctype html
 html
   block head
   title #{title}
 body
-  include ../includes/modules/header
-  include ../includes/modules/banner
+  each temp in templates
+    case temp
+      when "header"
+        include ../includes/modules/header
+      when "banner"
+        include ../includes/modules/banner
+      when "product"
+        include ../includes/modules/product
+      when "footer"
+        include ../includes/modules/footer
+      when "sprite"
+        include ../../assets/img/svg/sprite.svg
 
-  include ../includes/modules/footer
-  include ../../assets/img/svg/sprite.svg
+
+
+
+

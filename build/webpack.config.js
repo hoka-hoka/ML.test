@@ -1,11 +1,13 @@
 const fs = require('fs'); // утилиты для работы с файлами
-const paths = require('./webpack.paths.conf');
+const paths = require('./webpack.paths.config');
+var webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // для копирования файлов при build
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // создаёт автоматически index.html, может
 
+
 const PAGES_DIR = `${paths.PATHS.src}/pug/pages/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
-
+const NODE_ENV = process.env.NODE_ENV || 'development';
 /* При создании webpakc формирует граф зависимостей, где стартовая точка это точка входя entry */
 
 module.exports = function(){
@@ -14,17 +16,31 @@ module.exports = function(){
       paths: paths.PATHS
     },
     entry: { // точка входа указывает на начало приложения
-      app: paths.PATHS.src // сам найдёт index.js
+      home: paths.PATHS.src_home,
+      //find: paths.PATHS.src_find,
     },
     output: {
       filename: `${paths.PATHS.assets}js/[name].js`, // для каждой точки входа свой выход (EC6 - ${})
       path: paths.PATHS.dist, // __dirname + 'dist' (конкатенация путей)
-      publicPath: '/' // путь выходного каталога
+      publicPath: '/' // /js/[name].js, в конце всегда слэш
+    },
+    devtool: NODE_ENV == 'development' ? 'cheap-inline-module-source-map' : null,
+    optimization: {
+      splitChunks: {
+      //chunks: 'all',
+        chunks (chunk) {
+          return chunk.name !== '';
+        }
+      }
     },
     performance: {
       hints: process.env.NODE_ENV === 'production' ? "warning" : false
     },
+
     plugins: [
+      new webpack.DefinePlugin({
+        NODE_ENV: JSON.stringify(NODE_ENV)
+      }),
       new CopyWebpackPlugin(
         [
           { from: `${paths.PATHS.src}/${paths.PATHS.assets}img`, to: `${paths.PATHS.assets}img`},

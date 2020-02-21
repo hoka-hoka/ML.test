@@ -1,6 +1,6 @@
-const paths = require('../build/webpack.paths.conf');
+const paths = require('../build/webpack.paths.config');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // позволяет разделить js от css в dist
-const baseWebpackConfig = require('../build/webpack.conf');
+const baseWebpackConfig = require('../build/webpack.config');
 module.exports = function() {
   return {
     module: { // погрузщики преобразований

@@ -1,0 +1,52 @@
+block input
+
+.product
+  .container.product__container
+    .rectangle.product__find
+      form(action="" name="")
+        fieldset.rectangle__container
+          legend.rectangle__title.visuallyhidden Найдём номера под ваши предложения
+        ul.rectangle__list(role='none')
+          li.rectangle__item
+            label.label.label_font--bold.label_color--100(for='pr-date') Даты пребывания в отеле
+            .rectangle__content
+              input.input(type='date' id='pr-date' required inputmode='numeric' autocomplete='cc-exp')
+              span.arrow.input__arrow
+          li.rectangle__item.rectangle__item-mb--30
+            label.label.label_font--bold.label_color--100(for='pr-gues') Гости
+            .rectangle__content
+              input.input(type='date' id='pr-gues' required inputmode='numeric' autocomplete='cc-exp')
+              span.arrow.input__arrow
+          li.rectangle__item.rectangle__item-mb--30
+            label.label.label_font--bold.label_color--100.product__label(for='pr-price') Диапазон цены
+            span.rectangle__price
+            .rectangle__content
+              input.input-range(type='range' multiple value='10,80')
+              span.rectangle__text-small Стоимость за сутки пребывания в номере
+
+          li.rectangle__item.rectangle__item-mb--30
+            label.label.product__label.label_font--bold.label_color--100(for='') Checkbox buttons
+            .recntangle__content
+              each item, index in pr_gues
+                +input-checkbox(index, item, "gues", 1)
+
+          li.rectangle__item.rectangle__item-mb--30
+            label.label.product__label.label_font--bold.label_color--100(for='') Доступность
+            each item, index in pr_availabel
+              +input-checkbox(index, item, "available", 2)
+
+          li.rectangle__item.rectangle__item-mb--30
+            label.label.label_font--bold.label_color--100(for='') Удобство номера
+            .input-list.rectangle__input-list
+              input.input.input__placeholder.js--click.input__placeholder_color--75(readonly name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
+              button.button.button_arrow.js--click(type="button")
+            +input-options()
+
+          li.rectangle__item.rectangle__item-mb--30
+            label.label.label_font--bold.product__label.label_color--100(for='') Дополнительные удобства
+            .recntangle__content
+              button.button.button_arrow.js--click(type="button")
+
+            .recntangle__content.hidden
+              each item, index in pr_additional
+                +input-checkbox(index, item, "additional", 1)

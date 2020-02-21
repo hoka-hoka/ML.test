@@ -1,7 +1,7 @@
 const merge = require('webpack-merge') // объединяет базу и режимы
-const baseWebpackConfig = require('./webpack.base.conf')
+const baseWebpackConfig = require('./webpack.base.config')
 const buildWebpackConfig = merge(baseWebpackConfig, {
-	mode: 'production',
+  mode: 'production',
 	plugins: [
 
 	],
