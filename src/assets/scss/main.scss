@@ -120,13 +120,14 @@ input:focus, input:hover {
 @import "modules/search/search";
 @import "modules/input/input";
 @import "modules/input-mark/input-mark";
-@import "modules/input-list/input-list";
 @import "modules/input-email/input-email";
 @import "modules/input-radio/input-radio";
 @import "modules/input-toggle/input-toggle";
 @import "modules/input-range/input-range";
 @import "modules/label/label";
 @import "modules/input-checkbox/input-checkbox";
+@import "modules/canvas/canvas";
+@import "modules/js--click/js--click";
 
 @import "modules/popup/popup";
 @import "modules/product/product";

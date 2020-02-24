@@ -37,16 +37,15 @@ block input
 
           li.rectangle__item.rectangle__item-mb--30
             label.label.label_font--bold.label_color--100(for='') Удобство номера
-            .input-list.rectangle__input-list
+            .rectangle__content
               input.input.input__placeholder.js--click.input__placeholder_color--75(readonly name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
               button.button.button_arrow.js--click(type="button")
             +input-options()
 
-          li.rectangle__item.rectangle__item-mb--30
-            label.label.label_font--bold.product__label.label_color--100(for='') Дополнительные удобства
+          li.rectangle__item.rectangle__item-mb--30 
             .recntangle__content
-              button.button.button_arrow.js--click(type="button")
-
-            .recntangle__content.hidden
+              label.label.label_font--bold.product__label.js--click.label_color--100(for='') Дополнительные удобства
+              button.button.button_arrow.js--click.js--rotate(type="button")
+            .canvas.js--show.hidden
               each item, index in pr_additional
                 +input-checkbox(index, item, "additional", 1)

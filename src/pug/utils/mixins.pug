@@ -20,7 +20,7 @@ mixin buttons(index, name, mix, date)
       button.button__mark(type="button" class=mix)
 
 mixin input-options(index)
-  .input-options.hidden
+  .input-options.canvas.js--show.hidden
     -for(var i=0; i<3; i++)
       .input-options__opt
         span.offensive=dropList[i]
@@ -35,7 +35,7 @@ mixin input-options(index)
         +buttons(3, 'Применить', 'button_color-next button_js-next')
 
 mixin input-checkbox(index, item, name, number)
-  .rectangle__input-checkbox
+  .rectangle__input.rectangle__input-checkbox
     input.input.visuallyhidden(type='checkbox' name=name + index id=name + '-' + index value=index)
     label.label.label_color--75(class=number==1 ? 'label_font--regular' :  'label_font--bold' for=name + '-' + index) #{ number==1 ? item : item.header }
     span.rectangle__text-small=item.title
