@@ -1,12 +1,13 @@
 include ../utils/mixins
 block variables
 
-
 doctype html
 html
-  block head
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
   title #{title}
-body
+body(id=title)
   each temp in templates
     case temp
       when "header"
@@ -15,6 +16,8 @@ body
         include ../includes/modules/banner
       when "product"
         include ../includes/modules/product
+      when "details"
+        include ../includes/modules/details
       when "footer"
         include ../includes/modules/footer
       when "sprite"

@@ -37,3 +37,5 @@ element {
   border-image: linear-gradient(180deg, $input-radio--bg 0%, $input-checkbox--bd-stop 100%);
   border-image-slice: 1;
 }
+
+@import '__label/input-checkbox__label';

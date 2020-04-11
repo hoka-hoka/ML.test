@@ -17,7 +17,7 @@ module.exports = function(){
     },
     entry: { // точка входа указывает на начало приложения
       home: paths.PATHS.src_home,
-      //find: paths.PATHS.src_find,
+      find: paths.PATHS.src_find,
     },
     output: {
       filename: `${paths.PATHS.assets}js/[name].js`, // для каждой точки входа свой выход (EC6 - ${})
@@ -25,12 +25,16 @@ module.exports = function(){
       publicPath: '/' // /js/[name].js, в конце всегда слэш
     },
     devtool: NODE_ENV == 'development' ? 'cheap-inline-module-source-map' : null,
+
     optimization: {
       splitChunks: {
-      //chunks: 'all',
+        chunks: 'all',
+        automaticNameDelimiter: '-',
+        automaticNameMaxLength: 20,
         chunks (chunk) {
-          return chunk.name !== '';
+          return chunk.name !== 'chunk';
         }
+
       }
     },
     performance: {

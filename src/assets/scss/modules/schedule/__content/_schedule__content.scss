@@ -1,0 +1,9 @@
+.schedule__content {
+  font-weight: bold;
+  text-align: center;
+  color: $schedule__content--txt;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

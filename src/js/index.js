@@ -3,12 +3,16 @@
 import '../assets/scss/modules/input/input'
 import '../assets/scss/modules/input-mark/input-mark'
 import '../assets/scss/modules/input-range/input-range'
+
+import '../assets/scss/modules/input-date/input-date'
+
 import '../assets/scss/modules/js--click/js--click'
-
-
 import '../assets/scss/modules/button/button'
 import '../assets/scss/modules/calendar/calendar'
-import '../assets/scss/modules/banner/banner'
+
+import './listSwiper'
+
+
 
 //--- require ---
 /* подключаем какой-нибудь модуль. Для того, чтобы webpack вынес его отдельно используется require.ensure(). В

@@ -1,0 +1,17 @@
+.rating {
+  display: inline-flex;
+}
+.rating {
+  transform: scale(-1,1);
+}
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  background-position: 50% 0;
+}
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {}
+
+@import '__label/rating__label'

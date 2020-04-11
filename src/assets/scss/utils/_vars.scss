@@ -1,8 +1,11 @@
 // Font
 
-$subHeaderFont: 'MontserratBold';
-$mainFont: 'MontserratRegular';
-$headerFont: 'OpenSansBold';
+$mainFont: 'Montserrat';
+$headerFont: 'OpenSans';
+$subHeaderFont: 'OpenSans';
+
+
+$secondFont: 'Open Sans';
 // Size
 $mainFontSize: 16px;
 
@@ -17,6 +20,7 @@ $x-dark-5: rgba($x-dark, .05);
 $x-purple: #bc9cff;
 $x-purpure-stop: #8BA4F9;
 $x-green: #6fcf97;
+$x-green-stop: #66D2EA;
 $x-white: #fff;
 
 // Global color
@@ -86,10 +90,25 @@ $calendar__day-num--txt: $x-dark-50;
 $calendar__arrow-next--fill: $x-purple;
 $calendar__arrow-prev--fill: $x-purple;
 
+$room__number--txt: $x-dark-100;
+$room__luxury--txt: $x-purple;
+$room__price--txt: $x-dark-50;
+$room__about--txt: $x-dark-50;
+
+$pagination__link--txt: $x-dark-50;
+$pagination__link_active--bg: $x-purple;
+$pagination__link_active--bg-stop: $x-purpure-stop;
+$pagination__link_next--bg: $x-green;
+$pagination__link_next--bg-stop: $x-green-stop;
+
+$schedule__content--txt: $x-purple;
+
 $footer__list--txt: $x-dark-50;
 $footer__text--txt: $x-dark-75;
 $footer__input--txt: $x-dark-25;
 $footer__line--col: $x-dark-25;
+
+$line--txt: rgba(31, 32, 65, 0.1);
 
 $desktopWidth: 1280px;
 $smDesktopWidth: 980px;

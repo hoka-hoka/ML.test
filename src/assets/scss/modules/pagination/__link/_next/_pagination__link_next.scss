@@ -1,0 +1,13 @@
+.pagination__link_next {
+  border-radius: 50%;
+  background: linear-gradient(180deg, $pagination__link_next--bg 0%, $pagination__link_next--bg-stop 100%);
+}
+.pagination__link_next svg {
+  fill: #fff;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

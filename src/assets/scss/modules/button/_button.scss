@@ -1,8 +1,6 @@
 .button {
   display: inline-block;
-  font-size: em(12);
-  font-family: "MontserratBold";
-  line-height: em(15,12);
+  font: bold rem(12) "Montserrat" ;
   background-origin: border-box;
   border-radius: 20px;
   text-transform: uppercase;
@@ -20,6 +18,7 @@
 @import "_gradient/button_gradient";
 @import "_width/button_width";
 @import "_arrow/button_arrow";
+@import "_z--3/button_z--3";
 
 
 

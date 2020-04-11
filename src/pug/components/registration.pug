@@ -5,6 +5,7 @@
     fieldset.rectangle__container
       legend.rectangle__title Регистрация акаунта
       ul.rectangle__list(role='none')
+
         li.rectangle__item
           .rectangle__content
             input.input(id='reg-name' type='text' placeholder='Имя' required autocorrect='off' autocapitalize='off' autocomplete='name' pattern='[а-яёА-ЯЁ]')
@@ -19,11 +20,13 @@
             .rectangle__content-radio
               input.input-radio.visuallyhidden(type='radio' id='reg-wom' name='gender')
               label.label.label_font--regular.registration__label_color--50(for='reg-wom') Женщина
+
         li.rectangle__item
-          label.label.label_font--bold.label_color--100(for='reg-birth') Дата рождения
+          label.label.label_font--bold.rectangle__label.label_color--100(for='reg-birth') Дата рождения
           input.input.input-mark__list(name='' id='reg-birth' type='date' required autocorrect='off' inputmode='numeric' autocomplete='cc-exp')
+
         li.rectangle__item
-          .label.label_font--bold.label_color--100 Данные для входа в сервис
+          .label.label_font--bold.rectangle__label.label_color--100 Данные для входа в сервис
           .rectangle__content
             label.visuallyhidden(for='reg-email')
             input.input(name='' id='reg-email' type='email' required autocorrect='off' inputmode='email' autocomplete='email' placeholder='Email')

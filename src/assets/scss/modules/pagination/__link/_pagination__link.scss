@@ -1,0 +1,11 @@
+.pagination__link {
+  font-size: rem(12);
+  color: $pagination__link--txt;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  display: block;
+}
+@import '_active/pagination__link_active';
+@import '_next/pagination__link_next';

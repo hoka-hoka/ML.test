@@ -1,8 +1,8 @@
 .calendar__month {
   color: $calendar__month-title--txt;
-  font-family: $headerFont;
+  font-family: $secondFont;
+  font-weight: bold;
   font-size: em(19);
-  line-height: em(24, 19);
   margin-right: auto;
   margin-left: auto;
 }

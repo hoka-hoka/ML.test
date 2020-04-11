@@ -1,6 +1,7 @@
 .label {
   display: flex;
   align-items: center;
+  position: relative;
 }
 @import '_font--bold/label_font--bold';
 @import '_font--regular/label_font--regular';

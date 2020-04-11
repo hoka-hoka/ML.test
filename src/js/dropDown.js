@@ -1,60 +1,45 @@
 'use strict';
-let elemActive = 0;
+import { setSiblingIteration, getSibling } from './getSibling';
+
+let activeElem = 0;
 export function dropDown(elem) {
   elem.forEach(function(item) {
     item.addEventListener('click', function() {
+      let elem = new createElem(item, 'js--show');
+      elem.list.classList.toggle('hidden');
 
-
-      let abr = new createElem(item);
-
-      let elemShow = item;
-      while( !getSibling(elemShow) ) {
-        elemShow = elemShow.parentNode;
+      if ( elem.item.classList.contains('js--rotate')  || ( elem.item.nextElementSibling ? elem.item.nextElementSibling.classList.contains('js--rotate') : false ) ) {
+        elem.rotate = true;
       }
-      elemShow = getSibling(elemShow);
-      elemShow.classList.toggle('hidden');
-
-      if ( elemActive && !elemActive.classList.contains('hidden') && elemActive != elemShow ) {
-        elemActive.classList.toggle('hidden');
-        /*let elemRotate = new getRotate(elemActive);
-        btnRotate(elemRotate, elemActive);*/  
+      if ( activeElem && !activeElem.list.classList.contains('hidden') && activeElem.item != elem.item && activeElem.item.nextElementSibling != elem.item && activeElem.item.previousElementSibling != elem.item) {
+        activeElem.list.classList.toggle('hidden');
+        activeElem.btnRotate();
       }
-      elemActive = elemShow;
-
-      let elemRotate = getRotate(item);
-      btnRotate(elemRotate, elemShow);
-      
+      elem.btnRotate();
+      activeElem = elem;
     });
   });
 }
 
-function createElem(item) {
-  this.item = item;
-  this.getSibling = function() {
-    console.log(this.item);
-  }
+function createElem(item, listName) {
+  this.item = item; // element
+  this.listName = listName; // js--show
+  this.list = this.setSiblingIteration(10, this.item, this.listName); // iterations 10*
 }
+createElem.prototype.setSiblingIteration = setSiblingIteration;
+createElem.prototype.getSibling = getSibling;
 
-function getSibling(elem) {
-  let sibling = elem.parentNode.firstElementChild;
-  while( sibling ) {
-    if ( sibling !== elem && sibling.classList.contains('js--show') ) {
-      return sibling;
-    }
-    sibling = sibling.nextElementSibling;
-  }
-}
-
-function btnRotate(elem, show) {
-  if ( elem ) {
-    if ( show.classList.contains('hidden') ) {
-      elem.style.setProperty('--btnRotate', '');
+createElem.prototype.btnRotate = function() {
+  if ( this.rotate ) {
+    let elemRotate = this.getSibling(this.item, 'js--rotate');
+    if ( this.list.classList.contains('hidden') ) {
+      elemRotate.style.setProperty('--btnRotate', '');
     } else {
-      elem.style.setProperty('--btnRotate', -135);
+      elemRotate.style.setProperty('--btnRotate', -135);
     }
   }
 }
 
-function getRotate(elem) {
-  return elem.closest('.js--rotate') ? elem.closest('.js--rotate') : elem.nextElementSibling ? elem.nextElementSibling.closest('.js--rotate') : null;
-}
+
+
+

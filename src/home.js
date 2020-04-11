@@ -20,7 +20,6 @@ body({
 
 
 import css from 'swiper/css/swiper.css';
-import 'multirange/multirange.css'
 
 import './assets/css/main.css'
 import './assets/scss/main.scss'

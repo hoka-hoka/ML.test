@@ -1,0 +1,10 @@
+.room {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@import '__number/room__number';
+@import '__luxury/room__luxury';
+@import '__price/room__price';
+@import '__container/room__container';

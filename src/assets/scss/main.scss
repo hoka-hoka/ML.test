@@ -24,13 +24,14 @@
 		margin: 0;
 	}
 }
-
+html {
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  color: $body-text;
+}
 body {
-	font-family: $mainFont;
-	font-size: $mainFontSize;
 	margin: 0;
   box-sizing: border-box;
-  color: $body-text;
 }
 a {
 	text-decoration: none;
@@ -46,7 +47,7 @@ section {
 	}
 }
 h1, h2 {
-	font-family: $headerFont;
+	font-family: $secondFont;
 }
 h1 {
 	font-size: 	em(24);
@@ -90,31 +91,27 @@ input:focus, input:hover {
 	outline: 0;
 	border: 1px solid $input_foc_hov;
 }
+input[type='date'] {
+  font-size: rem(14);
+  text-transform: uppercase;
+}
+hr {
+  border: none;
+}
 .container {
 	margin: 0 140px;
 }
 .offensive {
-	font-family: $subHeaderFont;
-	font-size: em(12);
-	line-height: em(12,15);
+	font-family: $mainFont;
+  font-weight: bold;
+	font-size: rem(12);
 	color: $offensive;
 	text-transform: uppercase;
 }
 .hidden {
   display: none;
 }
-.visuallyhidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+
 @import "modules/arrow/arrow";
 @import "modules/button/button";
 @import "modules/search/search";
@@ -124,10 +121,19 @@ input:focus, input:hover {
 @import "modules/input-radio/input-radio";
 @import "modules/input-toggle/input-toggle";
 @import "modules/input-range/input-range";
+@import "modules/input-date/input-date";
+@import "modules/rating/rating";
 @import "modules/label/label";
 @import "modules/input-checkbox/input-checkbox";
 @import "modules/canvas/canvas";
+@import "modules/card/card";
+@import "modules/room/room";
 @import "modules/js--click/js--click";
+@import "modules/line/line";
+@import "modules/pagination/pagination";
+@import "modules/intelligence/intelligence";
+@import "modules/details/details";
+@import "modules/schedule/schedule";
 
 @import "modules/popup/popup";
 @import "modules/product/product";
@@ -149,3 +155,15 @@ input:focus, input:hover {
 @import "modules/registration/registration";
 
 
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

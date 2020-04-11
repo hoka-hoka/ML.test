@@ -3,7 +3,7 @@ mixin item(title)
     h2.item-title= title
 
 mixin icon(name, w, h, VB, cl, descr)
-  svg(class=cl viewBox=VB width=w height=h role="image" aria-label=descr)
+  svg(class=cl viewBox=VB weight=w height=h role="image" aria-label=descr)
     use(xlink:href = "#" + name)
 
 mixin buttons(index, name, mix, date)
@@ -35,7 +35,26 @@ mixin input-options(index)
         +buttons(3, 'Применить', 'button_color-next button_js-next')
 
 mixin input-checkbox(index, item, name, number)
-  .rectangle__input.rectangle__input-checkbox
+  .input-checkbox.rectangle__input-checkbox
     input.input.visuallyhidden(type='checkbox' name=name + index id=name + '-' + index value=index)
-    label.label.label_color--75(class=number==1 ? 'label_font--regular' :  'label_font--bold' for=name + '-' + index) #{ number==1 ? item : item.header }
+    label.label.input-checkbox__label.label_color--75(class=number==1 ? 'label_font--regular' :  'label_font--bold' for=name + '-' + index) #{ number==1 ? item : item.header }
     span.rectangle__text-small=item.title
+
+
+mixin rating(k)
+  .rating
+    input.visuallyhidden(id="rating_5" disabled value="5" name="rating-"+k type="radio")
+    label.rating__label(for="rating_5")
+    input.visuallyhidden(id="rating_4" disabled value="4" name="rating-"+k type="radio")
+    label.rating__label(for="rating_4")
+    input.visuallyhidden(id="rating_3" checked value="3" name="rating-"+k type="radio")
+    label.rating__label(for="rating_3")
+    input.visuallyhidden(id="rating_2" disabled value="2" name="rating-"+k type="radio")
+    label.rating__label(for="rating_2")
+    input.visuallyhidden(id="rating_1" disabled value="1" name="rating-"+k type="radio")
+    label.rating__label(for="rating_1")
+
+
+
+
+

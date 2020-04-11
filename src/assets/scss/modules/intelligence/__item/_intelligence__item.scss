@@ -1,0 +1,10 @@
+.intelligence__item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(31, 32, 65, .1);
+}
+.intelligence__item:first-child {
+  padding-top: unset;
+}
+.intelligence__item:last-child {
+  border: none;
+}

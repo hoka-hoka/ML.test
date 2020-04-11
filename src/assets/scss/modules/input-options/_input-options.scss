@@ -2,7 +2,8 @@
   border: 1px solid $input__options--bd;
   border-top: none;
   border-radius: 0 0 4px 4px;
-  padding: 5px 5px 13px 15px;
+  padding: 8px 5px 13px 15px;
+  margin-top: -3px;
 }
 
 @import '__marks/input-options__marks';

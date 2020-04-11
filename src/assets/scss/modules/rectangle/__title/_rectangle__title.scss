@@ -1,7 +1,7 @@
 .rectangle__title {
   margin-bottom: 20px;
-  font-family: $headerFont;
-  font-size:  em(24);
+  font: bold em(24) $secondFont;
   line-height: em(30,24);
   color: $rectangle__title--txt;
+  margin: 0 auto 20px auto;
 }

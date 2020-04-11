@@ -1,0 +1,31 @@
+.product__card.card
+  h1.card__title Номера, которые мы для вас подобрали
+  ul.card__list
+    -for(var k=0; k<12; k++)
+      li.card__item
+        .swiper-container.card__swiper-container
+          .swiper-wrapper
+            -for(var i=1; i<=4; ++i)
+              .swiper-slide
+                picture.card__pic
+                  source.card__img(type="image/webp" srcset="./assets/img/card_0"+i+".webp")
+                  source.card__img(type="image/webp" srcset="./assets/img/card_0"+i+".png")
+                  img.card__img(src="./assets/img/card_0"+i+".jpg", alt="Номер в гостинице")
+          .card__pagination
+          .card__button-prev
+          .card__button-next
+        .card__descr
+          .card__content
+            .room
+              .room__container
+                span.room__number № 888
+                strong.room__luxury люкс
+              .room__container
+                span.room__price 9 990₽
+                | в сутки
+          hr.line.card__line
+          .card__content
+            +rating(k)
+            span.card__about 145&nbsp
+            | Отзывов
+    - var k = null;
