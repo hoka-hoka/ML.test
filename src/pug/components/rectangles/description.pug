@@ -1,0 +1,37 @@
+block input
+
+.rectangle.rectangle_modal.description
+  form(action="" name="descr")
+    fieldset.rectangle__container
+      ul.rectangle__list(role='none')
+        li.rectangle__item
+          .room
+            .room__container
+              span.room__number № 888
+              strong.room__luxury люкс
+            .room__container
+              span.room__price 9 990₽
+              | в сутки
+
+        li.rectangle__item
+          .rectangle__date
+            -for(var i=0; i<2; ++i)
+              .rectangle__date-col
+                label.label.rectangle__label.label_font--bold.label_color--100(for=dt_timetable_id[i])=dt_timetable[i]
+                .rectangle__content
+                  input.input.input-date(type='text' required inputmode='numeric' autocomplete='cc-exp' value='ДД.ММ.ГГГГ' maxlength='10')
+                  button.button.button_arrow.js--click(type="button")
+            - var i = null;
+          include ../calendar
+
+        li.rectangle__item
+          label.label.rectangle__label.label_font--bold.label_color--100(for='arrive')=dt_gues
+          .rectangle__content
+            input.input_position.input.js--click(name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
+            button.button.button_arrow.button_z--3.js--click(type="button")
+            +input-options(1)
+
+        li.rectangle__item
+          rectangle__content
+            span 9 990₽ x 4 суток
+

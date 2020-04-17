@@ -6,6 +6,7 @@ $subHeaderFont: 'OpenSans';
 
 
 $secondFont: 'Open Sans';
+
 // Size
 $mainFontSize: 16px;
 
@@ -86,7 +87,7 @@ $calendar__container--bg: $x-white;
 $calendar__container--br: $x-dark-25;
 $calendar__month-title--txt: $x-dark-100;
 $calendar__box--txt: $x-purple;
-$calendar__day-num--txt: $x-dark-50;
+$calendar__day-other--txt: $x-dark-50;
 $calendar__arrow-next--fill: $x-purple;
 $calendar__arrow-prev--fill: $x-purple;
 
@@ -107,6 +108,7 @@ $footer__list--txt: $x-dark-50;
 $footer__text--txt: $x-dark-75;
 $footer__input--txt: $x-dark-25;
 $footer__line--col: $x-dark-25;
+$footer__links--txt: $x-dark-50;
 
 $line--txt: rgba(31, 32, 65, 0.1);
 

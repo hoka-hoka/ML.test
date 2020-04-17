@@ -10,8 +10,8 @@ import '../assets/scss/modules/js--click/js--click'
 import '../assets/scss/modules/button/button'
 import '../assets/scss/modules/calendar/calendar'
 
-import './listSwiper'
 
+import './listSwiper'
 
 
 //--- require ---

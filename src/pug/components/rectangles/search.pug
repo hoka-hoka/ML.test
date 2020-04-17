@@ -1,4 +1,4 @@
-block label
+block input
 
 main.rectangle.rectangle_modal.search.search_bg
   form(action="")
@@ -14,7 +14,7 @@ main.rectangle.rectangle_modal.search.search_bg
                   input.input.input-date(type='text' required inputmode='numeric' autocomplete='cc-exp' value='ДД.ММ.ГГГГ' maxlength='10')
                   button.button.button_arrow.js--click(type="button")
             - var i = null;
-          include ./calendar
+          include ../calendar
 
         li.rectangle__item.rectangle__item-mb--30
           label.label.rectangle__label.label_font--bold.label_color--100(for='arrive')=sr_gues

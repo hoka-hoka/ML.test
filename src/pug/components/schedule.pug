@@ -9,11 +9,11 @@ block schedule
     ul.schedule__list
       each val in color
         li.schedule__item(class=val)
-  .schedule__raiting.mark
+  .schedule__mark.mark
     ul.mark__list
-      each val in rating
+      each val, index in rating
         li.mark__item
-          .mark__circle
+          .mark__circle(class=color[index])
           span.mark__text=val
 
 

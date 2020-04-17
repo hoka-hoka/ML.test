@@ -1,7 +1,8 @@
+block cards
 .product__card.card
   h1.card__title Номера, которые мы для вас подобрали
   ul.card__list
-    -for(var k=0; k<12; k++)
+    each card, index in cards
       li.card__item
         .swiper-container.card__swiper-container
           .swiper-wrapper
@@ -18,14 +19,13 @@
           .card__content
             .room
               .room__container
-                span.room__number № 888
-                strong.room__luxury люкс
+                span.room__number №&nbsp#{card["number"]}
+                strong.room__luxury #{card["status"]}
               .room__container
-                span.room__price 9 990₽
+                span.room__price #{card["price"]}
                 | в сутки
           hr.line.card__line
           .card__content
-            +rating(k)
-            span.card__about 145&nbsp
+            +rating(index, card["checked"])
+            span.card__about #{card["reviews"]}&nbsp
             | Отзывов
-    - var k = null;
