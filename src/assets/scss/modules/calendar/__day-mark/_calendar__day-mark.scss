@@ -1,0 +1,10 @@
+.calendar__day-mark {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  display: block;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: -1;
+}

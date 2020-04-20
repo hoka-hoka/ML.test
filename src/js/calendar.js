@@ -92,18 +92,14 @@ function Mark() {
 
   for (let val of table) {
     val.onmousedown = function() {
-      if ( event.target.childNodes[1] == mark1 || markFirst.i == 1 ) {
-        markFirst.markFullStack(event.target);
+      if ( event.target.childNodes[1] == mark1 ) {
         markFirst.i = 1;
         markLast.i = 0;
-        console.log('1');
-
-      }  else if ( event.target.childNodes[1] == mark2 || markLast.i == 1 ) {
-        markLast.markFullStack(event.target);
-        markLast.i = 1;
+      } else if ( event.target.childNodes[1] == mark2 ) {
         markFirst.i = 0;
-        console.log('2');
+        markLast.i = 1;
       }
+      markFirst.i ? markFirst.markFullStack(event.target) : markLast.markFullStack(event.target);
     }
   }
 }

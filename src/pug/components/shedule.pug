@@ -1,0 +1,23 @@
+block schedule
+
+.schedule
+  h2.details__title Впечатления от номера
+  .schedule__graph
+    .schedule__content
+      b.schedule__number 260
+      div.schedule__text голосов
+    ul.schedule__list
+      each val in color
+        li.schedule__item(class=val)
+  .schedule__raiting.mark
+    ul.mark__list
+      each val in rating
+        li.mark__item
+          .mark__circle
+          span.mark__text=val
+
+
+
+
+
+
