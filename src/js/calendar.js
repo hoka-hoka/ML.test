@@ -66,18 +66,89 @@ class listEvents {
     this[method]();
   }
   onClick() {
-
     createCalendar(this.add);
-    this.table = document.querySelectorAll('.calendar__box');
-    this.table.forEach(element => {
-      element.addEventListener('mousedown', new listEvents());
-    });
+    Mark();
   }
-  onMousedown() {
-    let td = event.target.closest('td');
-    if (!td) return;
+}
 
 
+function Mark() {
+  let table = document.querySelectorAll('.calendar__box');
+  var mark1 = document.createElement('span');
+  var mark2 = mark1.cloneNode(false);
+  mark1.className = 'calendar__day-mark calendar__day-mark_1';
+  mark2.className = 'calendar__day-mark calendar__day-mark_2';
+
+  let last = 0;
+
+  var markFirst = new createMark(last, 1, mark1);
+  var markLast = new createMark(last, 0, mark2);
+
+  let dayToday = document.querySelector('.calendar__day-today');
+
+  markFirst.moveAt(dayToday.nextElementSibling, mark1);
+  markLast.moveAt(dayToday.nextElementSibling.nextElementSibling, mark2);
+
+
+  for (let val of table) {
+    val.onmousedown = function() {
+      if ( event.target.childNodes[1] == mark1 || markFirst.i == 1 ) {
+        markFirst.markFullStack(event.target);
+        markFirst.i = 1;
+        markLast.i = 0;
+        console.log('1');
+
+      }  else if ( event.target.childNodes[1] == mark2 || markLast.i == 1 ) {
+        markLast.markFullStack(event.target);
+        markLast.i = 1;
+        markFirst.i = 0;
+        console.log('2');
+      }
+    }
+  }
+}
+
+class createMark {
+  constructor(last, i, m) {
+    this.last = last;
+    this.mark = m;
+    this.i = i;
+  }
+  markFullStack(tr) {
+    this.pullOf();
+    this.moveAt(tr);
+    this.reload();
+  }
+}
+createMark.prototype.moveAt = function(td) {
+  if (td.closest('TD') && !td.childNodes[1]) {
+    td.appendChild(this.mark);
+    this.mark.style.top = td.offsetTop + 'px';
+    this.mark.style.left = td.offsetLeft + 'px';
+
+    if ( !td.closest('calendar__day_active') ) {
+      td.classList.add('calendar__day_active');
+      if ( this.last != 0 && this.last != td ) {
+        this.last.classList.remove('calendar__day_active');
+      }
+      this.last = td;
+    }
+  }
+}
+createMark.prototype.pullOf = function() {
+  let self = this;
+  document.onmousemove = function() {
+    self.moveAt(event.target, this.mark);
+  }
+}
+createMark.prototype.reload = function() {
+  let self = this;
+  document.onmouseup = function() {
+    document.onmousemove = null;
+    self.mark.onmouseup = null;
+  }
+  document.ondragstart = function() {
+    return false;
   }
 }
 
@@ -87,7 +158,6 @@ function dropDownCalendar(elem, add) {
     item.addEventListener('click', new listEvents(add));
   });
 }
-
 function createCalendar(add) {
   let calendar = setSiblingIteration(10, event.toElement, 'calendar');
   let calendarStart = calendar.querySelector(add);
@@ -104,7 +174,6 @@ function createCalendar(add) {
     mainSwiper.update();
   }
 }
-
 function createMonth(d, i) {
   let dateCenter = new markCalendar(d);
   dateCenter.findDateBefore(getDay(d));
