@@ -96,6 +96,7 @@ function Mark() {
         markFirst.i = 0;
         markLast.i = 1;
       }
+      markTrack('calendar__day_active', 0);
       markFirst.i ? markFirst.markFullStack(event.target) : markLast.markFullStack(event.target);
 
     }
@@ -144,25 +145,32 @@ createMark.prototype.reload = function() {
   document.onmouseup = function() {
     document.onmousemove = null;
     self.mark.onmouseup = null;
-    markTrack();
+    markTrack('calendar__day_active', 1);
   }
   document.ondragstart = function() {
     return false;
   }
 }
-function markTrack() {
+function markTrack(find, check) {
   let cell = document.querySelectorAll('.calendar__day-num');
   let cellArr = Array.prototype.slice.call(cell,0);
   let cellFind = []
   cellArr.findIndex((e,i)=>{
-    if (e.classList.contains('calendar__day_active')) {
+    if (e.classList.contains(find)) {
       cellFind.push(i);
     }
   });
-  let trackElements = cellArr.slice(cellFind[0], cellFind[1]+1);
-  for ( let val of trackElements ) {
-    val.classList.add('calendar__day_track');
+  let trackElements = cellArr.slice(cellFind[0], cellFind[cellFind.length-1]+1);
+  if ( check ) {
+    for ( let val of trackElements ) {
+      val.classList.add('calendar__day_track');
+    }
+  } else {
+    for ( let val of trackElements ) {
+      val.classList.remove('calendar__day_track');
+    }
   }
+
 }
 
 

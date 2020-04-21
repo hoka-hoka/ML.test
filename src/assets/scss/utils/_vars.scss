@@ -24,6 +24,8 @@ $x-green: #6fcf97;
 $x-green-stop: #66D2EA;
 $x-white: #fff;
 
+$x-purple-10: rgba(31,32,65,.1);
+
 // Global color
 $offensive: $x-dark-100;
 
@@ -35,20 +37,17 @@ $label_color--100: $x-dark-100;
 $label_color--75: $x-dark-75;
 $label_color--50: $x-dark-50;
 
-
 $registration__label_text--color: $x-dark-75;
-
 
 $rectangle__title--txt: $x-dark-100;
 $rectangle__text-small--txt: $x-dark-50;
-
 
 $rectangle__lb-regular_active--txt: $x-dark-75;
 $rectangle__close--fill: $x-dark-25;
 $rectangle__price--txt: $x-dark-50;
 
-
 $body-text: $x-dark-75;
+
 $navText: $x-dark-50;
 
 $authorization--txt: $x-white;
@@ -90,6 +89,8 @@ $calendar__box--txt: $x-purple;
 $calendar__day-other--txt: $x-dark-50;
 $calendar__arrow-next--fill: $x-purple;
 $calendar__arrow-prev--fill: $x-purple;
+$calendar__day_track--bg: $x-purple-10;
+
 
 $room__number--txt: $x-dark-100;
 $room__luxury--txt: $x-purple;
