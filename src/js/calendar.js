@@ -37,7 +37,7 @@ markCalendar.prototype.findDateAfter = function() {
   while (i < 5) {
     if ( month == this.date.getMonth() ) {
       if ( String(this.date) == String(new Date()) ) {
-        this.table += '<td class="calendar__day-num calendar__day-today">' + this.date.getDate() + '</td>';
+        this.table += '<td class="calendar__day-num calendar__today">' + this.date.getDate() + '</td>';
       } else {
         this.table += '<td class="calendar__day-num">' + this.date.getDate() + '</td>';
       }
@@ -71,18 +71,25 @@ class listEvents {
   }
 }
 
+
 function Mark() {
   let table = document.querySelectorAll('.calendar__box');
   var mark1 = document.createElement('span');
   var mark2 = mark1.cloneNode(false);
+
+  var mark3 = document.createElement('span');
+
   mark1.className = 'calendar__day-mark calendar__day-mark_1';
   mark2.className = 'calendar__day-mark calendar__day-mark_2';
-
+  mark3.className = 'calendar__today-mark';
 
   var markFirst = new createMark('', 1, mark1);
   var markLast = new createMark('', 0, mark2);
 
-  let dayToday = document.querySelector('.calendar__day-today');
+  let dayToday = document.querySelector('.calendar__today');
+  dayToday.appendChild(mark3);
+  mark3.style.top = dayToday.offsetTop + 'px';
+  mark3.style.left = dayToday.offsetLeft + 'px';
 
   markFirst.moveAt(dayToday.nextElementSibling, mark1);
   markLast.moveAt(dayToday.nextElementSibling.nextElementSibling, mark2);
@@ -96,12 +103,12 @@ function Mark() {
         markFirst.i = 0;
         markLast.i = 1;
       }
-      markTrack('calendar__day_active', 0);
-      markFirst.i ? markFirst.markFullStack(event.target) : markLast.markFullStack(event.target);
 
+      markFirst.i ? markFirst.markFullStack(event.target) : markLast.markFullStack(event.target);
     }
   }
 }
+
 
 class createMark {
   constructor(p, i, m) {
@@ -116,9 +123,16 @@ class createMark {
   }
 }
 createMark.prototype.moveAt = function(td) {
-  if (td.closest('TD') && !td.childNodes[1]) {
-    this.active = td;
 
+
+
+  if ( td.classList.contains('calendar__day-num') ) {
+
+    if ( td.firstElementChild ) {
+      for ( let val of td.children ) {
+        if ( val.closest('.calendar__day-mark') ) return;
+      }
+    }
 
     td.appendChild(this.mark);
     this.mark.style.top = td.offsetTop + 'px';
@@ -132,12 +146,15 @@ createMark.prototype.moveAt = function(td) {
       this.prev = td;
     }
   }
+  createTrack('calendar__day_active');
+
+
 }
 
 createMark.prototype.pullOf = function() {
   let self = this;
   document.onmousemove = function() {
-    self.moveAt(event.target, this.mark);
+    self.moveAt(event.target);
   }
 }
 createMark.prototype.reload = function() {
@@ -145,33 +162,43 @@ createMark.prototype.reload = function() {
   document.onmouseup = function() {
     document.onmousemove = null;
     self.mark.onmouseup = null;
-    markTrack('calendar__day_active', 1);
   }
   document.ondragstart = function() {
     return false;
   }
 }
-function markTrack(find, check) {
+
+
+function createTrack(find) {
   let cell = document.querySelectorAll('.calendar__day-num');
   let cellArr = Array.prototype.slice.call(cell,0);
-  let cellFind = []
-  cellArr.findIndex((e,i)=>{
-    if (e.classList.contains(find)) {
-      cellFind.push(i);
-    }
-  });
-  let trackElements = cellArr.slice(cellFind[0], cellFind[cellFind.length-1]+1);
-  if ( check ) {
-    for ( let val of trackElements ) {
-      val.classList.add('calendar__day_track');
-    }
-  } else {
-    for ( let val of trackElements ) {
+  let cellFind = [];
+  let cellActive = document.querySelectorAll('.calendar__day_track');
+  let trackElementsOld = document.querySelectorAll(find);
+  let borderRs = document.querySelectorAll('.calendar__day_bd--left, .calendar__day_bd--right');
+  if ( borderRs.length ) {
+    borderRs[0].classList.remove('calendar__day_bd--left');
+    borderRs[1].classList.remove('calendar__day_bd--right');
+  }
+  if ( cellActive.length ) {
+    for ( let val of cellActive ) {
       val.classList.remove('calendar__day_track');
     }
   }
-
-}
+  cellArr.findIndex((element,index)=>{
+    if (element.classList.contains(find)) {
+      cellFind.push(index);
+    }
+  });
+  var trackElements = cellArr.slice(cellFind[0], cellFind[cellFind.length-1]+1);
+  if ( trackElements.length >= 2 ) {
+    trackElements[0].classList.add('calendar__day_bd--left');
+    trackElements[trackElements.length-1].classList.add('calendar__day_bd--right');
+  }
+  for ( let val of trackElements ) {
+    val.classList.add('calendar__day_track');
+  }
+};
 
 
 function dropDownCalendar(elem, add) {
