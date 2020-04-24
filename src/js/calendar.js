@@ -96,10 +96,10 @@ function Mark() {
 
   for (let val of table) {
     val.onmousedown = function() {
-      if ( event.target.childNodes[1] == mark1 ) {
+      if ( event.target.contains(mark1) ) {
         markFirst.i = 1;
         markLast.i = 0;
-      } else if ( event.target.childNodes[1] == mark2 ) {
+      } else if ( event.target.contains(mark2) ) {
         markFirst.i = 0;
         markLast.i = 1;
       }
