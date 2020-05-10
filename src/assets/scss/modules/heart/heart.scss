@@ -1,0 +1,30 @@
+$position: 3px;
+$nav: top left;
+$col: $heart--bg;
+@mixin petal($v) {
+  @if $v == after {
+    left: $position;
+    top: 0;
+  } @else {
+    left: 0;
+    top: -$position;
+  }
+}
+.heart {
+  width: 5px;
+  height: 5px;
+  transform: translateY(.5px) rotate(-45deg);
+  background-color: $col;
+  left: $position;
+  @each $val in after, before {
+    &::#{$val} {
+      content: '';
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: $col;
+      @include petal($val)
+    }
+  }
+}

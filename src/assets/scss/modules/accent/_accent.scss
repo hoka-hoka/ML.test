@@ -1,0 +1,11 @@
+.accent:after {
+  content: 'i';
+  position: absolute;
+  text-align: center;
+  border: 1px solid $accetes--bd;
+  color: $accetes--txt;
+  border-radius: 50%;
+  line-height: rem(18, 14);
+  width: 20px;
+  height: 20px;
+}

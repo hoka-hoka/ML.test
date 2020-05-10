@@ -19,7 +19,7 @@ block input
               .rectangle__date-col
                 label.label.rectangle__label.label_font--bold.label_color--100(for=dt_timetable_id[i])=dt_timetable[i]
                 .rectangle__content
-                  input.input.input-date(type='text' required inputmode='numeric' autocomplete='cc-exp' value='ДД.ММ.ГГГГ' maxlength='10')
+                  input.input.input-date(type='date' required inputmode='numeric' autocomplete='cc-exp' value='ДД.ММ.ГГГГ' maxlength='10')
                   button.button.button_arrow.js--click(type="button")
             - var i = null;
           include ../calendar
@@ -31,7 +31,23 @@ block input
             button.button.button_arrow.button_z--3.js--click(type="button")
             +input-options(1)
 
-        li.rectangle__item
-          rectangle__content
-            span 9 990₽ x 4 суток
+        li.rectangle__item.rectangle__item-mb--30
+          ul.description__list
+            li.description__item
+              span.description__text 9 990₽ x 4 суток
+              span.description__text 39 960₽
+            li.description__item
+              span.description__text.description__accent.accent Сбор за услуги: скидка 2 179₽
+              span.description__text 0₽
+            li.description__item
+              span.description__text.description__accent.accent Сбор за дополнительные услуги
+              span.description__text 300₽
 
+        li.rectangle__item
+          .description__result
+            span.description__total Итого
+            span.description__line
+            span.description__total 38 081
+
+        li.rectangle__item
+          +buttons(2, 'Забронировать', 'button_width')
