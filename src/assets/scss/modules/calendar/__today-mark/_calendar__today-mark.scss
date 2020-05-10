@@ -1,0 +1,9 @@
+.calendar__today-mark {
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  display: block;
+  background: linear-gradient(180deg,#6fcf97,#66d2ea);
+  border-radius: 50%;
+  z-index: -1;
+}
