@@ -1,5 +1,22 @@
 .details
-  include ../../components/intelligence
-  include ../../components/schedule
-  include ../../components/rectangles/description
-  include ../../components/reviews
+  .details__grid
+    -for(var k=0; k<3; k++)
+      picture.details__pic(class = "details__pick--" + k)
+        source.details__img(type="image/webp" srcset="./assets/img/details_"+k+".webp")
+        source.details__img(type="image/png" srcset="./assets/img/details_"+k+".png")
+        img.details__img(src="./assets/img/details_"+k+".png", alt="Номер в гостинице")
+    -var k = 0
+
+  .container.details__container
+    .details__cell--1
+      include ../../components/intelligence
+    .details__cell--2
+      include ../../components/schedule
+    .details__cell--3
+      include ../../components/rectangles/description
+    .details__cell--4
+      include ../../components/reviews
+    .details__cell--5
+      include ../../components/root
+    .details__cell--6
+      include ../../components/cancel

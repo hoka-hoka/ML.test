@@ -16,15 +16,24 @@ $x-dark-100: $x-dark;
 $x-dark-75: rgba($x-dark, .75);
 $x-dark-50: rgba($x-dark, .50);
 $x-dark-25: rgba($x-dark, .25);
+$x-dark-10: rgba($x-dark, .1);
 $x-dark-5: rgba($x-dark, .05);
 
+$x-gray-50: rgba(31,32,65,.50);
+$x-gray-25: rgba(31,32,65,.25);
+$x-gray-10: rgba(31,32,65,.1);
+
 $x-purple: #bc9cff;
+$x-purple-10: rgba(31,32,65,.1);
 $x-purpure-stop: #8BA4F9;
+
 $x-green: #6fcf97;
 $x-green-stop: #66D2EA;
+
 $x-white: #fff;
 
-$x-purple-10: rgba(31,32,65,.1);
+
+
 
 // Global color
 $offensive: $x-dark-100;
@@ -95,13 +104,21 @@ $calendar__arrow-next--fill: $x-purple;
 $calendar__arrow-prev--fill: $x-purple;
 $calendar__day_track--bg: $x-purple-10;
 
-$heart--bg: $x-purple;
+$heart--bg: $x-gray-25;
+
+$customer__box--bg: $x-purple;
+$customer__box--bg-stop: $x-purpure-stop;
+$customer__like-amount--txt: $x-gray-25;
+$customer__like-amount--txt_hov: $x-purple;
+
+$reviews__amount--txt: $x-gray-50;
 
 $room__number--txt: $x-dark-100;
 $room__luxury--txt: $x-purple;
 $room__price--txt: $x-dark-50;
 $room__about--txt: $x-dark-50;
-$reviews__like-amount--txt: $x-purple;
+
+$root__item--bg: $x-gray-25;
 
 $pagination__link--txt: $x-dark-50;
 $pagination__link_active--bg: $x-purple;
@@ -114,10 +131,10 @@ $schedule__content--txt: $x-purple;
 $footer__list--txt: $x-dark-50;
 $footer__text--txt: $x-dark-75;
 $footer__input--txt: $x-dark-25;
-$footer__line--col: $x-dark-25;
+$footer__line--col: $x-dark-10;
 $footer__links--txt: $x-dark-50;
 
-$line--txt: rgba(31, 32, 65, 0.1);
+$line--txt: $x-gray-10;
 
 $desktopWidth: 1280px;
 $smDesktopWidth: 980px;

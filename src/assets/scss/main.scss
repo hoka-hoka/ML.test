@@ -75,6 +75,7 @@ button {
 	border: none;
 	display: flex;
 	padding: 0;
+  cursor: pointer;
 }
 p {
 	margin: 0;
@@ -138,7 +139,10 @@ hr {
 @import "modules/description/description";
 @import "modules/accent/accent";
 @import "modules/reviews/reviews";
+@import "modules/customer/customer";
 @import "modules/heart/heart";
+@import "modules/root/root";
+@import "modules/cancel/cancel";
 
 @import "modules/popup/popup";
 @import "modules/product/product";

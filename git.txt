@@ -20,8 +20,8 @@ cd .. // move one folder up
 cd \ // move in root
 
 vi text.txt // edditor text
-- i // edit code -> ESC
-- : // +commands: wi - save and exit, q! - without saving and exit
+i // edit code -> ESC
+: // :wq - save and exit, :q! - without saving and exit
 
 ---------------------------------------------------------------------------------------------------СОЗДАНИЕ РЕПОЗИТОРИЯ
 
@@ -47,7 +47,7 @@ git commit -a // commit all monitored files
 
 Неотслеживаемые (Untracked files) это те, которые не подготовлены к коммиту.
 
-Если мы изменим уже отслеживаемый файл, то новая его версия попадёт в непроиндексированные (Changes not staged for commit)
+Если мы изменим уже отслеживаемый файл, то новая его версия попадёт в непроиндексированные отслеживаемые (Changes not staged for commit)
 
 HEAD - это указатель на текущую ветку, которая является указателем на последний коммит, сделанный в этой ветке.
 
@@ -234,7 +234,7 @@ git checkout master
 * 00bbcc0 2019-10-03 | Merge branch 'dev' [semyon] // the merge commit
 |\
 | * cfd8598 2019-10-03 | Semyon (dev) [semyon] // belong to a branch dev
-* | 36c2eb8 2019-10-03 | Alex [semyon] // last commit in the master branch
+* | 36c2eb8 2019-10-03 | Alex [semyon] // last commit in the master and branch
 |/
 * 59cad88 2019-10-03 | Alex [semyon]
 

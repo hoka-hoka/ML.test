@@ -1,11 +1,22 @@
+block reviews
+
 .reviews
-  h2.details__title Сведения о номере
+  .reviews__container
+    h2.reviews__title Отзывы посетителей номера
+    span.reviews__amount=name.length + ' отзыва'
   ul.reviews__list
-    li.reviews__item
-      .reviews__content
-        .reviews__person
-          img.reviews__pick(src='./assets/img/svg/person1.svg')
-          .reviews__box
-            .reviews__like
-              .reviews__heart.heart
-              span.reviews__like-amount 12
+    -for(var k=0; k<name.length; k++)
+      li.customer.reviews__customer
+        .customer__descr
+          img.customer__pick(src='./assets/img/svg/person'+k+'.svg')
+        .customer__descr
+          b.customer__text=name[k]
+          .customer__text=time[k]
+        .customer__descr
+          button.customer__box(type='button')
+            .customer__like
+              .customer__heart.heart
+              span.customer__like-amount=like[k]
+        .customer__descr
+          .customer__text=review[k]
+    - var k = null;
