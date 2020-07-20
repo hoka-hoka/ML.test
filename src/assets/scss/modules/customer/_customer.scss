@@ -1,0 +1,15 @@
+.customer {
+  display: grid;
+  grid-template-columns: 47px 1fr;
+  grid-template-rows: max-content 1fr;
+  justify-items: center;
+  grid-column-gap: 10px;
+  grid-row-gap: 12px;
+}
+
+@import '__descr/customer__descr';
+@import '__pick/customer__pick';
+@import '__text/customer__text';
+@import '__box/customer__box';
+@import '__like/customer__like';
+@import '__like-amount/customer__like-amount';

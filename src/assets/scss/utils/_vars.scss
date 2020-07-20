@@ -1,10 +1,6 @@
 // Font
 
 $mainFont: 'Montserrat';
-$headerFont: 'OpenSans';
-$subHeaderFont: 'OpenSans';
-
-
 $secondFont: 'Open Sans';
 
 // Size
@@ -58,6 +54,7 @@ $rectangle__price--txt: $x-dark-50;
 $body-text: $x-dark-75;
 
 $navText: $x-dark-50;
+$nav__modal-bd: $x-dark-10;
 
 $authorization--txt: $x-white;
 $accetes--bd: $x-dark-25;
@@ -75,6 +72,7 @@ $input_foc_hov: $x-dark-50;
 $input--txt: $x-dark-75;
 $input--br: $x-dark-25;
 $input__placeholder_color--75: $x-dark-75;
+$input__placeholder_color--25: $x-dark-25;
 $input__options--bd: $x-dark-25;
 $input__mark-minus--txt: $x-dark-50;
 $input__marks--bd: $x-dark-25;
@@ -129,15 +127,9 @@ $pagination__link_next--bg-stop: $x-green-stop;
 $schedule__content--txt: $x-purple;
 
 $footer__list--txt: $x-dark-50;
+$footer__list--bd: $x-dark-10;
 $footer__text--txt: $x-dark-75;
-$footer__input--txt: $x-dark-25;
 $footer__line--col: $x-dark-10;
 $footer__links--txt: $x-dark-50;
 
 $line--txt: $x-gray-10;
-
-$desktopWidth: 1280px;
-$smDesktopWidth: 980px;
-$tableWidth: 768px;
-$phoneWidth: 480px;
-$smPhoneWidth: 320px;

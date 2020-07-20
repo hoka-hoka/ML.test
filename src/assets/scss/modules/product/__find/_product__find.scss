@@ -1,0 +1,9 @@
+.product__find {
+  min-width: 260px;
+}
+@media(max-width: 425px) {
+  .product__find {
+    visibility: hidden;
+    position: absolute;
+  }
+}

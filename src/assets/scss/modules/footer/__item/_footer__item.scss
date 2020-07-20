@@ -1,3 +1,9 @@
 .footer__item {
   padding-top: 17px;
 }
+@media(max-width: 768px) {
+  .footer__item {
+    padding: unset;
+    text-align: center;
+  }
+}

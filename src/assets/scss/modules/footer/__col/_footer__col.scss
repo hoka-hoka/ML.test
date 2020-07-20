@@ -1,9 +1,14 @@
 .footer__col {
-  width: 25%;
-
+  display: contents;
 }
-@media(max-width: 1280px) {
-  .footer__col {
-    width: 30%;
+@media(max-width: 768px) {
+  .footer__col:last-child > .footer__list {
+    grid-column: 1/5;
+  }
+  .footer__col:last-child > .footer__list > .footer__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

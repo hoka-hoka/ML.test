@@ -38,7 +38,7 @@ mixin input-checkbox(index, item, name, number)
   .input-checkbox.rectangle__input-checkbox
     input.input.visuallyhidden(type='checkbox' name=name + index id=name + '-' + index value=index)
     label.label.input-checkbox__label.label_color--75(class=number==1 ? 'label_font--regular' :  'label_font--bold' for=name + '-' + index) #{ number==1 ? item : item.header }
-    span.rectangle__text-small=item.title
+    .rectangle__text-small.input-checkbox__pd=item.title
 
 
 mixin rating(index, check)

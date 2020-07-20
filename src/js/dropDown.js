@@ -7,12 +7,9 @@ export function dropDown(elem) {
     item.addEventListener('click', function() {
       let elem = new createElem(item, 'js--show');
       elem.list.classList.toggle('hidden');
-
-
       if ( elem.item.classList.contains('js--rotate')  || ( elem.item.nextElementSibling ? elem.item.nextElementSibling.classList.contains('js--rotate') : false ) ) {
         elem.rotate = true;
       }
-
       if ( activeElem && !activeElem.list.classList.contains('hidden') && activeElem.item != elem.item && activeElem.item.nextElementSibling != elem.item && activeElem.item.previousElementSibling != elem.item && activeElem.list != elem.list) {
         activeElem.list.classList.toggle('hidden');
         activeElem.btnRotate();

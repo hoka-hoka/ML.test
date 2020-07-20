@@ -1,9 +1,19 @@
+:root {
+  --size: 39px;
+  --size-m: 36px;
+}
 .calendar__today-mark {
   position: absolute;
-  width: 39px;
-  height: 39px;
+  width: var(--size);
+  height: var(--size);
   display: block;
   background: linear-gradient(180deg,#6fcf97,#66d2ea);
   border-radius: 50%;
   z-index: -1;
+}
+@media(max-width: 320px) {
+  .calendar__today-mark {
+    width: var(--size-m);
+    height: var(--size-m);
+  }
 }

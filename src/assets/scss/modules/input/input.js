@@ -1,31 +1,51 @@
-let guesBtnPrev = document.querySelector('.button_js-prev');
-let guesBtnNext = document.querySelector('.button_js-next');
-let guesValue = document.querySelectorAll('.input-options__offensive');
-let guesInput = document.querySelector('.rectangle__gues .input__list');
-let sum = 0;
+'use strict';
+import { amountList } from '../../../../js/amountList';
+import { setSiblingIteration } from '../../../../js/getSibling';
 
-if ( guesBtnNext ) {
-  guesBtnNext.addEventListener('click', function() {
-    guesValue.forEach(function(item) {
-      sum += +item.innerHTML;
-    });
-    if ( (sum > 1) && (sum < 5) ) {
-      guesInput.setAttribute('placeholder', sum + " гостя");
-    } else if ( sum == 1 ) {
-      guesInput.setAttribute('placeholder', sum + " гость");
-    } else {
-      guesInput.setAttribute('placeholder', sum + " гостей");
+let guesName = [
+    ['взрослый', 'взрослых', 'взрослых'],
+    ['ребёнок', 'ребёнка', 'детей'],
+    ['младенец', 'младенца', 'младенцев']
+  ];
+let roomName = [
+    ['спальня', 'спальни', 'спален'],
+    ['кровать', 'кровати', 'кроватей'],
+    ['вання комната', 'ванные комнаты', 'ванных комнат']
+  ];
+
+amountList.createGuesList = function(list, name, btn) {
+  let gues = new amountList(list.querySelectorAll('.input-options__opt'), name);
+  gues.amountPerson();
+  btn.addEventListener('click', event => {
+    if ( event.target.classList.contains('button_js-prev') ) {
+      gues.clearDef();
     }
-    sum = 0;
-  })
-}
-
-if ( guesBtnPrev ) {
-  guesBtnPrev.addEventListener('click', function() {
-    guesValue.forEach(function(item) {
-      item.innerHTML = 0;
-      item.previousSibling.classList.add('button__mark_default')
-    });
-    guesInput.setAttribute('placeholder', "Сколько гостей");
+    else {
+      gues.btnNext();
+      const eventArrow = new Event('click');
+      const eventTarget = setSiblingIteration(4, event.target, 'js--click');
+      eventTarget.dispatchEvent(eventArrow);
+    }
   });
 }
+amountList.createRoomList = function(list, name) {
+  let room = new amountList(list.querySelectorAll('.input-options__opt'), name);
+  room.amountPerson()
+}
+
+if ( document.body.id === 'index' ) {
+  let list = document.querySelector('.input-options');
+  let guesBtn = list.lastElementChild;
+  new amountList.createGuesList(list, guesName, guesBtn);
+}
+else if ( document.body.id === 'product' ) {
+  let list  = document.querySelectorAll('.input-options');
+  let guesBtn = list[0].lastElementChild;
+
+  new amountList.createGuesList(list[0], guesName, guesBtn);
+  new amountList.createRoomList(list[1], roomName);
+}
+
+
+
+

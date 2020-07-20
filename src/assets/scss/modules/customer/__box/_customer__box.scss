@@ -1,0 +1,10 @@
+.customer__box {
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(-180deg, $heart--bg, $heart--bg);
+  padding: 1px;
+  display: inline-block;
+}
+.customer__box:hover {
+  background: linear-gradient(-180deg, $customer__box--bg, $customer__box--bg-stop);
+}

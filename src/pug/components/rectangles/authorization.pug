@@ -1,4 +1,4 @@
-.rectangle.rectangle_modal.authorization.popup__content.hidden
+.rectangle.authorization.popup__content.hidden
   form(action="" name="aut")
     button(type='button').rectangle__close
       +icon("rec-close", 16, 16, "0 0 47.971 47.971", "", "Закрыть")
@@ -7,10 +7,10 @@
       ul.rectangle__list(role='none')
         li.rectangle__item
           .rectangle__content
-            input.input.authorization__input(id='aut-email' type='text' placeholder='Email' required autocorrect='off' autocapitalize='off' autocomplete='email' inputmode='email')
+            input.input.authorization__input.input__placeholder_color--25(id='aut-email' type='text' placeholder='Email' required autocorrect='off' autocapitalize='off' autocomplete='email' inputmode='email')
             label.visuallyhidden(for='aut-email') Email
           .rectangle__content
-            input.input(id='aut-pass' type='password' placeholder='Пароль' required autocorrect='off' autocomplete)
+            input.input.input__placeholder_color--25(id='aut-pass' type='password' placeholder='Пароль' required autocorrect='off' autocomplete)
             label.visuallyhidden(for='aut-pass') Пароль
         li.rectangle__item
           .rectangle__submit

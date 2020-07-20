@@ -5,3 +5,9 @@
 .nav__item:first-child {
   margin-left: initial;
 }
+@media(max-width: 1023px) {
+  .nav__item {
+    transition-duration: .25s;
+    margin: 14px 0;
+  }
+}

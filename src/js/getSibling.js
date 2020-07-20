@@ -1,4 +1,4 @@
-function getSibling(start, list) { // find element with class of js--show
+function getSibling(start, list) { // ищет элемент list внутри родителя элемента start
   let sibling = start.parentNode.firstElementChild;
   while ( sibling ) {
     if ( sibling.classList.contains(list) ) {
@@ -8,7 +8,7 @@ function getSibling(start, list) { // find element with class of js--show
   }
 }
 
-function setSiblingIteration(iter, elem, find) {
+function setSiblingIteration(iter, elem, find) { // ищет элемент find, начиная с родителя elem
   while ( iter-- ) {
     if ( getSibling(elem, find ) ) {
       return getSibling(elem, find);
@@ -17,4 +17,5 @@ function setSiblingIteration(iter, elem, find) {
     }
   }
 }
+
 export { setSiblingIteration, getSibling }

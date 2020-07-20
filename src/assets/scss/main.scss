@@ -7,18 +7,24 @@
 
 
 
-@media screen and (max-width: $desktopWidth) {
-	.container {
-		margin: 0 70px;
+@media screen and (max-width: 1240px) {
+	html {
+    font-size: 14px;
+  }
+  .container {
+		margin: 0 5vw;
 	}
-	// font-size: 16px;
 }
-@media screen and (max-width: $tableWidth) {
-	// font-size: 15px;
-}
-@media screen and (max-width: $phoneWidth) {
-	// font-size: 14px;
-}
+// @media screen and (max-width: 768px) {
+//   .container {
+//     margin: 0 30px;
+//   }
+// }
+// @media screen and (max-width: 425px) {
+// 	.container {
+//     margin: 0 20px;
+//   }
+// }
 @for $i from 1 through 6 {
 	h#{$i} {
 		margin: 0;
@@ -28,10 +34,13 @@ html {
   font-family: $mainFont;
   font-size: $mainFontSize;
   color: $body-text;
+  box-sizing: border-box;
+}
+html * {
+  box-sizing: border-box;
 }
 body {
 	margin: 0;
-  box-sizing: border-box;
 }
 a {
 	text-decoration: none;
@@ -58,7 +67,7 @@ h2 {
 	line-height: em(24);
 }
 h3 {
-	font-family: $subHeaderFont;
+	font-family: $secondFont;
 }
 ul {
 	margin: 0;
@@ -96,6 +105,14 @@ input[type='date'] {
   font-size: rem(14);
   text-transform: uppercase;
 }
+@-moz-document url-prefix() {
+  @media(max-width: 320px) {
+    input[type='date'] {
+      font-size: rem(10);
+      line-height: rem(20);
+    }
+  }
+}
 hr {
   border: none;
 }
@@ -119,7 +136,9 @@ hr {
 @import "modules/input/input";
 @import "modules/input-mark/input-mark";
 @import "modules/input-email/input-email";
+
 @import "modules/input-radio/input-radio";
+
 @import "modules/input-toggle/input-toggle";
 @import "modules/input-range/input-range";
 @import "modules/input-date/input-date";
@@ -143,6 +162,12 @@ hr {
 @import "modules/heart/heart";
 @import "modules/root/root";
 @import "modules/cancel/cancel";
+@import "modules/overlay/overlay";
+@import "modules/modal/modal";
+@import "modules/sticky/sticky";
+@import "modules/filter/filter";
+@import "modules/swiper-next/swiper-next";
+@import "modules/swiper-prev/swiper-prev";
 
 @import "modules/popup/popup";
 @import "modules/product/product";

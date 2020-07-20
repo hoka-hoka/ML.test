@@ -1,0 +1,6 @@
+.customer__descr {
+  position: relative;
+}
+.customer__descr:nth-child(even) {
+  justify-self: start;
+}

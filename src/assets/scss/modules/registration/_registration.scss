@@ -1,6 +1,6 @@
 .registration {
   background-color: $x-white;
-  //height: 358px;
+  max-width: 380px;
 }
 @import '__item/registration__item';
 @import '__label_color--50/registration__label_color--50';

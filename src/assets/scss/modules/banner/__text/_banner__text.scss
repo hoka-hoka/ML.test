@@ -5,3 +5,8 @@
   width: 297px;
   line-height: em(24);
 }
+@media(max-width: 768px) {
+  .banner__text {
+    display: none;
+  }
+}

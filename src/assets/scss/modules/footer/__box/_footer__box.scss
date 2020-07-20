@@ -2,3 +2,8 @@
   margin-right: auto;
   width: 20%;
 }
+@media(max-width: 768px) {
+  .footer__box {
+    display: none;
+  }
+}

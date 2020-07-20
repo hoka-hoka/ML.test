@@ -1,6 +1,11 @@
 .banner {
   position: relative;
 }
+@media(max-width: 425px) {
+  .banner > .container {
+    margin: unset;
+  }
+}
 @import '__img/banner__img';
 @import '__text/banner__text';
 @import '__container/banner__container';

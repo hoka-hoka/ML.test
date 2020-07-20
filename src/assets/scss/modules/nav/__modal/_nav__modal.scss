@@ -1,0 +1,15 @@
+.nav__modal {
+
+}
+@media(max-width: 1023px) {
+  .nav__modal {
+    left: -200px;
+    transition-duration: .25s;
+    position: absolute;
+    width: max-content;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid $nav__modal-bd;
+    border-radius: 0 0 5px;
+  }
+}

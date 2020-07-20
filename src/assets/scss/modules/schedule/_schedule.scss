@@ -1,4 +1,7 @@
-
+.schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
 @import '__number/schedule__number';
 @import '__content/schedule__content';
 @import '__text/schedule__text';

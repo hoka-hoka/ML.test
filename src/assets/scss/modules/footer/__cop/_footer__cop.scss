@@ -2,4 +2,6 @@
   font-family: $mainFont;
   font-size: rem(14px);
   line-height: rem(17px,14px);
+  width: 50%;
+  flex-grow: 1px;
 }

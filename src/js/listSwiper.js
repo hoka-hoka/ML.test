@@ -7,14 +7,27 @@ let mainSwiper = new Swiper(".banner__swiper-container", {
   initialSlide: 2,
 });
 
+let detailsSwiper = new Swiper('.details__swiper', {
+  speed: 400,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-next',
+    prevEl: '.swiper-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+  }
+});
+
 let cardSwiper = new Swiper(".card__swiper-container", {
   speed: 400,
   spaceBetween: 10,
   //loop: true, don't work width the cssMode
   cssMode: true,
   navigation: {
-    nextEl: '.card__button-next',
-    prevEl: '.card__button-prev',
+    nextEl: '.swiper-next',
+    prevEl: '.swiper-prev',
   },
   pagination: {
     el: '.card__pagination',

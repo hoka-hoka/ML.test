@@ -1,8 +1,13 @@
 .footer__row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4,25%);
   margin-left: 30px;
   width: 75%;
-  justify-content: space-between;
 }
-@media(max-width: $desktopWidth) {
+@media(max-width: 768px) {
+  .footer__row {
+    margin: unset;
+    width: 100%;
+    grid-gap: 12px 0;
+  }
 }

@@ -1,0 +1,10 @@
+.nav__overlay {
+  top: 70px;
+}
+
+@media(min-width: 1024px) {
+  .nav__overlay {
+    position: static;
+    background: #fff;
+  }
+}

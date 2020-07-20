@@ -1,10 +1,20 @@
+:root {
+  --size: 39px;
+  --size-m: 36px;
+}
 .calendar__day-mark {
   position: absolute;
-  width: 39px;
-  height: 39px;
+  width: var(--size);
+  height: var(--size);
   display: block;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 50%;
   cursor: pointer;
   z-index: -1;
+}
+@media(max-width: 320px) {
+  .calendar__day-mark {
+    width: var(--size-m);
+    height: var(--size-m);
+  }
 }

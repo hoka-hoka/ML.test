@@ -1,0 +1,8 @@
+.footer__check {
+  grid-row: 1/2;
+}
+@media(max-width: 768px) {
+  .footer__check {
+    text-align: center;
+  }
+}

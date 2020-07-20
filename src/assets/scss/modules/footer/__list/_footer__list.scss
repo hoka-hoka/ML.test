@@ -1,3 +1,18 @@
-.footer__list {
-	
+
+@media(max-width: 768px) {
+  .footer__list:target {
+    visibility: visible;
+  }
+  .footer__list:target ~ a {
+    border-bottom: 1px solid $footer__list--bd;
+    border-radius: 4px;
+  }
+  .footer__list {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(100%,max-content));
+    grid-template-rows: max-content;
+  }
 }

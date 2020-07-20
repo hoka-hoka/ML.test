@@ -1,0 +1,21 @@
+.filter {
+  max-width: 380px;
+  min-width: 320px;
+}
+@media(max-width: 425px) {
+  .filter {
+    min-width: inherit;
+  }
+}
+#filter:checked ~ .rectangle__filter {
+  left: 0;
+}
+#filter:checked ~ .filter__check {
+  left: 100%;
+}
+
+@import '__check/filter__check';
+@import '__container/filter__container';
+@import '__input/filter__input';
+@import '__btn/filter__btn';
+@import '__close/filter__close';

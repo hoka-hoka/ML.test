@@ -1,29 +1,32 @@
 block input
+.modal
+  input.visuallyhidden(type="checkbox" id="button")
+  label.modal__label(for="button" data-click="Click me")
+  main.rectangle.search.search_bg
+    label.modal__close(for="button")
+    form(action="")
+      fieldset.rectangle__container.modal__content
+        legend.rectangle__title Найдём номера под ваши предложения
+        ul.rectangle__list(role='none')
+          li.rectangle__item
+            .rectangle__date
+              -for(var i=0; i<2; ++i)
+                .rectangle__date-col
+                  label.label.label_font--bold.label_color--100(for=sr_timetable_id[i])=sr_timetable[i]
+                  .rectangle__content.rectangle__content_margin--unset
+                    input.input.input-date(type='date' required inputmode='numeric' autocomplete='cc-exp' maxlength='10')
+                    button.button.button_arrow.js--click(type="button")
+              - var i = null;
+            include ../calendar
 
-main.rectangle.rectangle_modal.search.search_bg
-  form(action="")
-    fieldset.rectangle__container
-      legend.rectangle__title Найдём номера под ваши предложения
-      ul.rectangle__list(role='none')
-        li.rectangle__item
-          .rectangle__date
-            -for(var i=0; i<2; ++i)
-              .rectangle__date-col
-                label.label.rectangle__label.label_font--bold.label_color--100(for=sr_timetable_id[i])=sr_timetable[i]
-                .rectangle__content
-                  input.input.input-date(type='date' required inputmode='numeric' autocomplete='cc-exp' value='ДД.ММ.ГГГГ' maxlength='10')
-                  button.button.button_arrow.js--click(type="button")
-            - var i = null;
-          include ../calendar
+          li.rectangle__item.rectangle__item-mb--30
+            label.label.label_font--bold.label_color--100(for='s-gues')=sr_gues
+            .rectangle__content
+              input.input_position.input.js--click(type='text' id='s-gues' required readonly placeholder='Сколько гостей'  autocomplete="off")
+              button.button.button_arrow.button_z--3.js--click(type="button")
+              +input-options(1)
 
-        li.rectangle__item.rectangle__item-mb--30
-          label.label.rectangle__label.label_font--bold.label_color--100(for='arrive')=sr_gues
-          .rectangle__content
-            input.input_position.input.js--click(name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
-            button.button.button_arrow.button_z--3.js--click(type="button")
-            +input-options(1)
-
-        li.rectangle__item
-          .rectangle__submit
-            +buttons(2, 'Подобрать номер', 'button_width')
-            +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big rectangle__arrow-big", "Подобрать номер")
+          li.rectangle__item
+            .rectangle__submit
+              +buttons(2, 'Подобрать номер', 'button_width')
+              +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big rectangle__arrow-big", "Подобрать номер")

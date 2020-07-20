@@ -1,0 +1,17 @@
+.nav__input:checked ~ .nav__check > span {
+  transform: rotate(45deg);
+}
+.nav__input:checked ~ .nav__check > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+.nav__input:checked ~ .nav__check > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.nav__input:checked ~ .nav__container {
+  visibility: visible;
+}
+.nav__input:checked ~ .nav__container > .nav__modal {
+  left: 0;
+}

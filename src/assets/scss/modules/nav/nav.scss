@@ -1,6 +1,20 @@
 .nav {
-
+  margin-left: auto;
 }
+@media(max-width: 1023px) {
+  .nav {
+    order: -1;
+    margin: unset;
+  }
+}
+
+@import '__check/nav__check';
+@import '__container/nav__container';
 @import '__list/nav__list';
 @import '__item/nav__item';
+@import '__modal/nav__modal';
+@import '__overlay/nav__overlay';
+
+@import '__input/nav__input';
+
 @import '__link/nav__link';
