@@ -10,20 +10,23 @@ class amountList {
   amountPerson() {
     this.container.forEach( (value, index) => {
       value.addEventListener( 'click', (event) => {
-        let btnPrev = getSibling(event.target, 'button__mark_minus');
-        let amount = getSibling(event.target, 'input-options__offensive');
-        let btnNext = getSibling(event.target, 'button__mark_plus');
-        if ( event.target === btnNext ) {
-          amount.innerText = +amount.innerText + 1;
+        if ( event.target.className !== 'input-options__marks' &&  event.target !== value) {
+          let btnPrev = getSibling(event.target, 'button__mark_minus');
+          let amount = getSibling(event.target, 'input-options__offensive');
+          let btnNext = getSibling(event.target, 'button__mark_plus');
+          if ( event.target === btnNext ) {
+            amount.innerText = +amount.innerText + 1;
+          }
+          else if ( event.target === btnPrev && amount.innerHTML > 0 ) {
+            amount.innerText = +amount.innerText - 1;
+          }
+          +amount.innerText ? btnPrev.classList.remove('button__mark_default') : btnPrev.classList.add('button__mark_default');
+          this.rezult[index] = +amount.innerText;
+          this.amountInp = setSiblingIteration(5,event.target,'input');
+          this.amountInp.value = this.vocabularyDef()[0].join(', ');
+          this.amountInp.title = this.vocabularyDef()[1].join(', ');
         }
-        else if ( event.target === btnPrev && amount.innerHTML > 0 ) {
-          amount.innerText = +amount.innerText - 1;
-        }
-        +amount.innerText ? btnPrev.classList.remove('button__mark_default') : btnPrev.classList.add('button__mark_default');
-        this.rezult[index] = +amount.innerText;
-        this.amountInp = setSiblingIteration(5,event.target,'input');
-        this.amountInp.value = this.vocabularyDef()[0].join(', ');
-        this.amountInp.title = this.vocabularyDef()[1].join(', ');
+        
       });
     });
   }

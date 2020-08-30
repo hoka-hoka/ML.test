@@ -1,7 +1,7 @@
 const fs = require('fs'); // утилиты для работы с файлами
 const paths = require('./webpack.paths.config');
 var webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin'); // для копирования файлов при build
+const CopyPlugin = require('copy-webpack-plugin'); // для копирования файлов при build
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // создаёт автоматически index.html, может
 
 
@@ -17,7 +17,6 @@ module.exports = function(){
     },
     entry: { // точка входа указывает на начало приложения
       home: paths.PATHS.src_home,
-      find: paths.PATHS.src_find,
     },
     output: {
       filename: `${paths.PATHS.assets}js/[name].js`, // для каждой точки входа свой выход (EC6 - ${})
@@ -45,13 +44,16 @@ module.exports = function(){
       new webpack.DefinePlugin({
         NODE_ENV: JSON.stringify(NODE_ENV)
       }),
-      new CopyWebpackPlugin(
-        [
+
+      new CopyPlugin({
+        patterns: [
           { from: `${paths.PATHS.src}/${paths.PATHS.assets}img`, to: `${paths.PATHS.assets}img`},
           { from: `${paths.PATHS.src}/${paths.PATHS.assets}fonts`, to: `${paths.PATHS.assets}fonts`},
-          { from: `${paths.PATHS.src}/static`, to: ''}
-        ]
-      ),
+          { from: `${paths.PATHS.src}/static`, to: ''},
+        ],
+        options: { concurrency: 50 },
+      }),
+
       ...PAGES.map(page => new HtmlWebpackPlugin(
         {
           template: `${PAGES_DIR}/${page}`,

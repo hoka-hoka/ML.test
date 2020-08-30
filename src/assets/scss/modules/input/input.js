@@ -33,7 +33,7 @@ amountList.createRoomList = function(list, name) {
   room.amountPerson()
 }
 
-if ( document.body.id === 'index' ) {
+if ( document.body.id === 'index' || document.body.id === 'details') {
   let list = document.querySelector('.input-options');
   let guesBtn = list.lastElementChild;
   new amountList.createGuesList(list, guesName, guesBtn);

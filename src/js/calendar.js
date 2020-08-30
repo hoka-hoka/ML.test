@@ -1,5 +1,5 @@
 'use strict';
-import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper/js/swiper.esm.js';
+import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper';
 import { setSiblingIteration, getSibling } from './getSibling';
 Swiper.use([Navigation]);
 
