@@ -1,13 +1,52 @@
 [//]: # (# = h1)
 [//]: # (``` = code)
-# Webpack
-project builder
+# FSD-task
+Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
+[Демо](https://hoka-hoka.github.io/multirange/ "Необязательная подсказка")
 ### Установка
-Установка модуля
 
-```npm install --save-dev webpack```
+Установка зависимостей  
+`npm i`
 
-Установка зависимостей
+Разработка  
+`npm run dev`
 
-```npm i```
+Сборка  
+`npm run build`
+
+### Структура проекта
+
+```
+├── dist
+├── node_modules
+├── modules
+├── src
+|   ├── assets
+|   |   ├── css
+|   |   ├── img
+|   |   └── scss
+|   |
+|   ├── js
+|   |
+|   ├── pug
+|   |   ├── components
+|   |   |   ├── rectangles
+|   |   ├── includes
+|   |   |   ├── modules
+|   |   ├── layout
+|   |   ├── pages
+|   |   └── utils
+|   ├── static 
+|   |
+|   ├── home.js
+|   └── index.html
+├── webpack
+├── .babelrc
+├── .gitignore  
+├── git.txt
+├── package.json
+├── package-lock.json
+├── package-lock.json
+└── README.md
+```
