@@ -3,7 +3,7 @@
 # FSD-task
 Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-[Демо](https://hoka-hoka.github.io/multirange/ "Необязательная подсказка")
+[Демо](https://hoka-hoka.github.io/task_1-view/#modal-1 "Необязательная подсказка")
 ### Установка
 
 Установка зависимостей  
@@ -44,9 +44,16 @@
 ├── webpack
 ├── .babelrc
 ├── .gitignore  
-├── git.txt
 ├── package.json
 ├── package-lock.json
 ├── package-lock.json
 └── README.md
 ```
+
+### Дорожная карта
+См. [открытые проблемы](https://github.com/hoka-hoka/task_1/issues) для получения списка предлагаемых функций (и известных проблем).
+
+### Лицензия
+Распространяется по лицензии MIT. См. `LICENSE`.
+
+
