@@ -6,6 +6,7 @@ html
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    base(href="../")
   title #{title}
 body(id=title)
   each temp in templates
@@ -20,9 +21,11 @@ body(id=title)
         include ../includes/modules/details
       when "footer"
         include ../includes/modules/footer
+      when "home"
+        include ../includes/modules/home
       when "sprite"
         include ../../assets/img/svg/sprite.svg
-
+      
 
 
 

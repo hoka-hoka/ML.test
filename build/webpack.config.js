@@ -4,7 +4,6 @@ var webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin'); // для копирования файлов при build
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // создаёт автоматически index.html, может
 
-
 const PAGES_DIR = `${paths.PATHS.src}/pug/pages/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -21,7 +20,8 @@ module.exports = function(){
     output: {
       filename: `${paths.PATHS.assets}js/[name].js`, // для каждой точки входа свой выход (EC6 - ${})
       path: paths.PATHS.dist, // __dirname + 'dist' (конкатенация путей)
-      publicPath: '/' // /js/[name].js, в конце всегда слэш
+      publicPath: './' // его использует HtmlWebpackPlugin, как относительный путь для файлов стилей и скриптов
+      // для формирования относительного пути для всех остальных ресурсов используется тег base
     },
     devtool: NODE_ENV == 'development' ? 'cheap-inline-module-source-map' : null,
 
@@ -57,8 +57,9 @@ module.exports = function(){
       ...PAGES.map(page => new HtmlWebpackPlugin(
         {
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/,'.html')}`, // исходный index с заменой
-          hash: true // md5
+          filename: `./${page.replace(/\.pug/,'')}/${page.replace(/\.pug/,'.html')}`, // исходный index с заменой
+          hash: true, // md5
+          minify: false
         }
       ))
     ]
