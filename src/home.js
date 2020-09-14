@@ -3,6 +3,7 @@
 import 'swiper/swiper-bundle.css';
 import './assets/css/main.css'
 import './assets/scss/main.scss'
+import './assets/scss/ulkit.scss'
 import './js/'
 
 
