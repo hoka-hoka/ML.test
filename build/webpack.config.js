@@ -4,8 +4,26 @@ var webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin'); // для копирования файлов при build
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // создаёт автоматически index.html, может
 
-const PAGES_DIR = `${paths.PATHS.src}/pug/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
+const PAGES_DIR = `${paths.PATHS.src}/pug/pages`;
+
+
+let getFiles = function(dir, relative, files) {
+  let filesMap = files || [];
+  var files = fs.readdirSync(dir);
+  for ( let i in  files ) {
+    let fullName = dir + '/' + files[i];
+    relativeName = relative + '/' + files[i];
+    if (fs.statSync(fullName).isDirectory()){
+      getFiles(fullName, relativeName, filesMap);
+    } else {
+      filesMap.push(relativeName.substring(1));
+    }
+  }
+  return filesMap;
+}
+const regexp = /(\w+.?)+\//g;
+const PAGES = getFiles(PAGES_DIR, '');
+
 const NODE_ENV = process.env.NODE_ENV || 'development';
 /* При создании webpakc формирует граф зависимостей, где стартовая точка это точка входя entry */
 
@@ -54,14 +72,14 @@ module.exports = function(){
         options: { concurrency: 50 },
       }),
 
-      ...PAGES.map(page => new HtmlWebpackPlugin(
-        {
+      ...PAGES.map(page =>
+        new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/,'')}/${page.replace(/\.pug/,'.html')}`, // исходный index с заменой
+          filename: `./${regexp.test(page) ? page.match(regexp)[0] : ''}${page.match(/\w+\.pug/g)[0].replace(/.pug/, '.html')}`, // исходный index с заменой
           hash: true, // md5
           minify: false
-        }
-      ))
+        })
+      )
     ]
   }
 };
