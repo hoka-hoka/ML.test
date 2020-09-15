@@ -1,0 +1,30 @@
+.font {
+
+}
+.font-bold {
+  font-weight: bold;
+}
+.font-h1 {
+  font-size: 24px;
+  line-height: 30px;
+  color: $x-dark;
+}
+.font-h2 {
+  font-size: 19px;
+  line-height: 24px;
+  color: $x-dark;
+}
+.font-h3 {
+  font-size: 12px;
+  line-height: 15px;
+  color: $x-dark;
+}
+.font-body {
+  font-size: 14px;
+  line-height: 24px;
+  color: $x-gray-75;
+}
+@import '__example/font__example';
+@import '__item/font__item';
+@import '__menu/font__menu';
+@import '__tag/font__tag';
