@@ -1,0 +1,13 @@
+.uikit__item:nth-child(3n+1) { order: 1; }
+.uikit__item:nth-child(3n+2) { order: 2; }
+.uikit__item:nth-child(3n)   { order: 3; }
+
+.uikit__item {
+  width: 32%;
+  margin-bottom: 40px; /* Опционально */
+}
+
+.uikit__item > .calendar > .calendar__container {
+  position: relative;
+  width: 320px;
+}

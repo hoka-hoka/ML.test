@@ -1,5 +1,15 @@
 include ../utils/mixins
+include ../components/input-toggle
+include ../components/input-text
+include ../components/input-radio
+include ../components/input-date
+include ../components/input-email
+include ../components/input-password
+include ../components/input-dropdown
+include ../components/input-options
+
 block variables
+block input
 
 doctype html
 html
@@ -16,19 +26,27 @@ body(id=title)
   each temp in templates
     case temp
       when "header"
-        include ../includes/modules/header
+        include ../includes/header
       when "banner"
-        include ../includes/modules/banner
+        include ../includes/banner
       when "product"
-        include ../includes/modules/product
+        include ../includes/product
       when "details"
-        include ../includes/modules/details
+        include ../includes/details
       when "footer"
-        include ../includes/modules/footer
+        include ../includes/footer
       when "home"
-        include ../includes/modules/home
+        include ../includes/home
+      when "authorization"
+        include ../includes/authorization
+      when "registration"
+        include ../includes/registration
       when "cards"
-        include ../includes/modules/ul-kit/cards
+        include ../includes/ui-kit/cards
+      when "form"
+        include ../includes/ui-kit/form
+      when "elements"
+        include ../includes/ui-kit/elements
       when "sprite"
         include ../../assets/img/svg/sprite.svg
 

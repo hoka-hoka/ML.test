@@ -11,10 +11,10 @@ module.exports = function() {
             { loader: 'style-loader' },
             { loader: MiniCssExtractPlugin.loader },
             {
-              loader: 'css-loader', options: { importLoaders : 1, sourceMap: true }
+              loader: 'css-loader', options: { importLoaders : 1, url: false, sourceMap: true }
             }, {
               loader: 'postcss-loader',
-              options: { sourceMap: true }
+              options: { }
             }, {
               loader: 'sass-loader', // компилирует scss в css
               options: { sourceMap: true }

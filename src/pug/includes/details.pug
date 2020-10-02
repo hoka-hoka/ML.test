@@ -1,0 +1,36 @@
+.details
+  .details__grid
+    -for(var k=0; k<3; k++)
+      picture.details__pic(class = "details__pick--" + k)
+        source(
+          media="(min-width: 426px)"
+          srcset="assets/img/details_"+k+".png 981w",
+          alt="Номер в гостинице")
+        img.details__img(src="#")
+    -var k = 0
+  .swiper-container.details__swiper(hidden)
+    .swiper-wrapper
+      -for(var k=0; k<3; k++)
+        .swiper-slide
+          picture.details__pic
+            source(
+            media="(max-width: 425px)"
+            srcset="assets/img/details_"+k+".png 981w",
+            alt="Номер в гостинице")
+            img.details__img(src="#")
+    .swiper-prev
+    .swiper-next
+    .swiper-scrollbar
+  .details__container.container
+    .details__cell--1
+      include ../components/intelligence
+    .details__cell--2
+      include ../components/schedule
+    .details__cell--3
+      include description
+    .details__cell--4
+      include ../components/reviews
+    .details__cell--5
+      include ../components/root
+    .details__cell--6
+      include ../components/cancel

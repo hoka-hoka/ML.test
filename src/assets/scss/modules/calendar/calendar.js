@@ -6,14 +6,24 @@ const calendarBtn = document.querySelectorAll('.input-date+.button');
 const calendarDay = document.querySelectorAll('.input-date');
 const btn = document.querySelectorAll('.calendar .button');
 
-if ( document.body.id === 'index' || document.body.id === 'details' || document.body.id === 'product') {
+
+
+
+if ( document.body.id === 'index' || document.body.id === 'details' || document.body.id === 'product' ) {
   dateFormat();
+}
+if ( document.body.id === 'form' ) {
+  let calendar = document.querySelector('.ulkit__item>.calendar');
+  calendar.classList.remove('hidden');
+  console.log(calendar)
+  createCalendar(calendar);
 }
 
 function dateFormat() {
   for ( let i of calendarBtn ) {
     i.addEventListener('click', () => {
-      createCalendar();
+      let calendar = setSiblingIteration(10, event.target, 'calendar'); // calendar
+      createCalendar(calendar);
     });
   }
 }

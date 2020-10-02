@@ -1,0 +1,32 @@
+extends ../../layout/main
+block variables
+  - var title = 'form';
+  - var templates = ["form", "sprite"];
+  - var navList = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
+  - var dropList = ["Взрослые", "Дети", "Младенцы"];
+  - var footerList = ["Навигация", "О нас", "Служба поддержки", "Подписка"];
+  - var footerItem = [["О нас", "Новости", "Служба поддрежки", "Услуги"], ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"], ["Соглашения", "Сообщества", "Связь с нами"], "Получите специальное предложение и новости сервиса"];
+
+block input
+  - var sr_timetable = ['Прибытие', 'Выезд'];
+  - var sr_timetable_id = ['sh-date--arrive', 'sh-date--departure'];
+  - var dt_timetable = ['Прибытие', 'Выезд'];
+  - var dt_timetable_id = ['dt-date--arrive', 'dt-date--departure'];
+  - var sr_gues = 'Гости';
+  - var dt_gues = 'Гости';
+
+block cards
+  -
+    var cards = [{
+      number: 666,
+      price: 9900,
+      status: "Люкс",
+      reviews: 143,
+      checked: 3
+    },{
+      number: 667,
+      price: 9900,
+      status: "",
+      checked: 4
+    }
+    ];

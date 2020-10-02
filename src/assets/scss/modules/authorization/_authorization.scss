@@ -1,7 +1,9 @@
 .authorization {
   background-color: $x-white;
-  height: 358px;
-  max-width: 380px;
+  width: 380px;
+  height: min-content;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0,0,0,.12);
 }
 
 @import '__input/authorization__input';

@@ -1,0 +1,20 @@
+include ../components/card
+block input
+block cards
+
+.product
+  .container.product__container
+    include filter
+    .product__list
+      .product__card.card
+        h1.card__title Номера, которые мы для вас подобрали
+        ul.card__list
+          each card, index in cards
+            +card(card["number"], card["status"], card["price"], card["checked"], card["reviews"], index)
+      include ../components/pagination
+
+
+
+
+
+

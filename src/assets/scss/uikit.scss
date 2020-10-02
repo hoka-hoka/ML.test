@@ -1,0 +1,20 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/fonts";
+@import "utils/mixins";
+
+$colors: $x-dark,
+        transparentize($x-dark, .25),
+        transparentize($x-dark, .5),
+        transparentize($x-dark, .75),
+        transparentize($x-dark, .05),
+        $x-purple,
+        $x-green;
+
+
+@import "templates/uikit/uikit";
+@import "templates/color/color";
+@import "templates/font/font";
+@import "templates/uikit/uikit";
+@import "templates/uikit-title/uikit-title";
+@import "templates/uikit-elements/uikit-elements";

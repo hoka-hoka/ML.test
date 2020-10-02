@@ -4,6 +4,7 @@ var webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin'); // для копирования файлов при build
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // создаёт автоматически index.html, может
 
+
 const PAGES_DIR = `${paths.PATHS.src}/pug/pages`;
 
 
@@ -29,6 +30,11 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = function(){
   return {
+    // resolve: {
+    //   alias: {
+    //     'assets': resolve('./assets')
+    //   }
+    // },
     externals: { // для обращения к path из build и dev
       paths: paths.PATHS
     },

@@ -61,8 +61,11 @@ function getDay(date) {
   return day - 1;
 }
 
-function createCalendar() {
-  let calendar = setSiblingIteration(10, event.target, 'calendar'); // calendar
+function createCalendar(calendar) {
+
+  let activeSwiper = calendar.querySelector('.swiper-container').swiper;
+  console.log(activeSwiper);
+
   let date = new Date();
   date.setDate(1);
   let dateArr = [
@@ -70,24 +73,25 @@ function createCalendar() {
     new Date(date.setMonth(date.getMonth()+1)),
     new Date(date.setMonth(date.getMonth()+1))
   ];
+
   if ( !calendar.classList.contains('hidden') ) {
     dateArr.forEach((element) => {
-      createMonth(element);
+      createMonth(element, activeSwiper);
     });
-    mainSwiper.activeIndex = 1;
+    activeSwiper.activeIndex = 1;
     Mark();
   }
   else {
-    mainSwiper.removeAllSlides();
+    activeSwiper.removeAllSlides();
   }
-  mainSwiper.update();
+  activeSwiper.update();
 }
 
-function createMonth(date) {
+function createMonth(date, swiper) {
   let dateCenter = new Calendar(date);
   dateCenter.findDateBefore(getDay(date));
   dateCenter.findDateAfter();
-  mainSwiper.appendSlide(dateCenter.table);
+  swiper.appendSlide(dateCenter.table);
 }
 
 function Mark() {

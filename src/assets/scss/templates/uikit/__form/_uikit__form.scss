@@ -1,0 +1,24 @@
+.uikit__form {
+  margin: 72px 140px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 1600px;
+}
+
+.uikit__form::before,
+.uikit__form::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+
+.uikit__form .search {
+  margin-top: 0;
+}
+.uikit__form .aothorization, .uikit__form .registration {
+  position: relative;
+}
+
