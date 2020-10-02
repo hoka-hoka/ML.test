@@ -13,9 +13,7 @@ let roomName = [
     ['вання комната', 'ванные комнаты', 'ванных комнат']
   ];
 
-amountList.createGuesList = function(list, name, btn) {
-  let gues = new amountList(list.querySelectorAll('.input-options__opt'), name);
-  gues.amountPerson();
+function addButtonsPanel( btn ) {
   if ( btn ) {
      btn.addEventListener('click', event => {
       if ( event.target.classList.contains('button_js-prev') ) {
@@ -29,39 +27,47 @@ amountList.createGuesList = function(list, name, btn) {
       }
     });
   }
-
 }
-amountList.createRoomList = function(list, name) {
+
+amountList.createGuesList = function(list, name, btn) {
+  let gues = new amountList(list.querySelectorAll('.input-options__opt'), name);
+  gues.amountPerson();
+  addButtonsPanel( btn );
+}
+
+amountList.createRoomList = function(list, name, btn) {
   let room = new amountList(list.querySelectorAll('.input-options__opt'), name);
-  room.amountPerson()
+  room.amountPerson();
+  addButtonsPanel( btn );
 }
 
-
-let list = document.querySelectorAll('.input_dropdown--js');
+let list = document.querySelectorAll('.input-dropdown_event--js');
 if ( list ) {
   list.forEach( (v) => {
+
+    const options = v.parentNode.querySelector('.input-options');
+    const btn = v.parentNode.querySelector('.input__btns');
+
     if ( v.getAttribute('data-role') === 'gues' ) {
-      let options = v.parentNode.querySelector('.input-options');
-      if ( v.parentNode.contains( options ) )
-        new amountList.createGuesList(options, guesName);
+      if ( options ) {
+        new amountList.createGuesList(options, guesName, btn);
+      }
+      else {
+        throw new Error('Отсутствует класс input-options');
+      }
     }
     else if ( v.getAttribute('data-role') === 'room' ) {
-      if ( v.parentNode.contains( options ) )
-        // new amountList.createGuesList(list[0], guesName, guesBtn);
-        // new amountList.createRoomList(list[1], roomName);
+      if ( options ) {
+        // new amountList.createGuesList(options, roomName, btn);
+        new amountList.createRoomList(options, roomName, btn);
+      }
+      else {
+        throw new Error('Отсутствует класс input-options');
+      }
     }
-    else {
-
-    }
+    else return;
   });
 }
-
-
-
-
-
-  // let list  = document.querySelectorAll('.input-options');
-  // let guesBtn = list[0].lastElementChild;
 
 
 

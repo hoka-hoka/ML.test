@@ -1,12 +1,20 @@
 'use strict';
+import '../assets/scss/modules/js--click/js--click'
 
+// main
 import '../assets/scss/modules/input/input'
 import '../assets/scss/modules/input-range/input-range'
 import '../assets/scss/modules/input-date/input-date'
-import '../assets/scss/modules/js--click/js--click'
 import '../assets/scss/modules/overlay/overlay'
 import '../assets/scss/modules/header/header'
+
+// ui-kit
+import '../assets/scss/templates/rectangle/rectangle'
+
+// error
 import '../assets/scss/modules/calendar/calendar'
+
+
 
 
 import './listSwiper'

@@ -53,21 +53,19 @@
           label.uikit-title__label(for="ui-subscription") subscription text field
         +input-email("ui-subscription", "input__placeholder_color--25", "Email", "")
 
-
-
-
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark default
           label.uikit-title__label(for="ui-dropdown") dropdown
         .rectangle__content
-          +input-dropdown("ui-dropdown", "Сколько гостей", "2 спальни, 2 кровати...")
+          +input-dropdown("ui-dropdown", "Сколько комнат", "2 спальни, 2 кровати...", "room")
           +input-options()
 
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark expanded
           label.uikit-title__label(for="ui-dropdown") dropdown
-        .rectangle__content
-          +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
-          +input-options()
+        .rectangle.rectangle_active--js
+          .rectangle__content
+            +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
+            +input-options()

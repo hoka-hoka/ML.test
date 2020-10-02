@@ -3,8 +3,8 @@ import { getSibling, setSiblingIteration } from './getSibling';
 
 class amountList {
   constructor(box, name) {
-    this.container = box;
-    this.name = name;
+    this.container = box; // inp-opts
+    this.name = name; // map
     this.rezult = new Array();
   }
   amountPerson() {
@@ -26,7 +26,6 @@ class amountList {
           this.amountInp.value = this.vocabularyDef()[0].join(', ');
           this.amountInp.title = this.vocabularyDef()[1].join(', ');
         }
-        
       });
     });
   }
