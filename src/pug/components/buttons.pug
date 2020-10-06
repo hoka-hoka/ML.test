@@ -1,0 +1,17 @@
+mixin buttons(index, name, mix, date)
+  case index
+    when 1
+      button.button.button_gradient.button_br--hov(type="button" class=mix date=date)
+        .button__theme.button__theme_br=name
+    when 2
+      button.button.button_gradient.button_bg--hov(type="button" class=mix date=date)
+        .button__theme.button__theme_bg=name
+    when 3
+      button.button(type="button" class=mix)=name
+    when 4
+      button.button__mark(type="button" class=mix)
+    when 5
+      button.button.button_arrow(type="button" class=mix)
+        span &#xf004
+    when 6
+      button.button.button__theme_br.button_ds--hov(type="button" class=mix date=date)=name

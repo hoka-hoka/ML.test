@@ -19,14 +19,19 @@ var supportsMultiple = self.HTMLInputElement && "valueLow" in HTMLInputElement.p
     input.value = values[0] || min + (max - min) / 2;
     ghost.value = values[1] || min + (max - min) / 2;
     input.after(divRange, ghost);
+
     Object.defineProperty(input, "originalValue", descriptor.get ? descriptor : {
-      // Fuck you Safari >:(
-      get: function() { return this.value; },
+      get: function() {
+        return this.value;
+      },
       set: function(v) { this.value = v; }
     });
+
     Object.defineProperties(input, { // сразу для нескольких свойств
       valueLow: {
-        get: function() { return Math.min(this.originalValue, ghost.value); },
+        get: function() {
+          return Math.min(this.originalValue, ghost.value);
+       },
         set: function(v) { this.originalValue = v; },
         enumerable: true
       },
@@ -36,29 +41,20 @@ var supportsMultiple = self.HTMLInputElement && "valueLow" in HTMLInputElement.p
         enumerable: true
       }
     });
-    if (descriptor.get) {
-      // Again, fuck you Safari
-      Object.defineProperty(input, "value", {
-        get: function() { return this.valueLow + "," + this.valueHigh; },
-        set: function(v) {
-          var values = v.split(",");
-          this.valueLow = values[0];
-          this.valueHigh = values[1];
-          update();
-        },
-        enumerable: true
-      });
-    }
+
     if (typeof input.oninput === "function") {
       ghost.oninput = input.oninput.bind(input);
     }
     function update() {
       let minProc = 100 * ((input.valueLow - min) / (max - min)) + "%";
-      let maxProc = 100 * ((input.valueHigh - min) / (max - min)) + "%"
+
+      let maxProc = 100 * ((input.valueHigh - min) / (max - min)) + "%";
       divRange.style.setProperty("--start", 100 * ((input.valueLow - min) / (max - min)) + "%");
       divRange.style.setProperty("--stop", 100 * ((input.valueHigh - min) / (max - min)) + "%");
       if ( price ) {
-        price.innerText = Math.round(minProc.slice(0, -1) * num / 100) + "₽ - " + Math.round(maxProc.slice(0, -1) * num / 100) + "₽"
+
+        price.innerText = Math.round(minProc.slice(0, -1) * num / 100 / 100) * 100 + "₽ - " + Math.round(maxProc.slice(0, -1) * num / 100 / 100) * 100 + "₽"
+        console.log(price.innerText);
       }
     }
     input.addEventListener("input", update);

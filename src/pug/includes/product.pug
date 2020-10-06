@@ -11,7 +11,7 @@ block cards
         ul.card__list
           each card, index in cards
             +card(card["number"], card["status"], card["price"], card["checked"], card["reviews"], index)
-      include ../components/pagination
+      +pagination()
 
 
 
