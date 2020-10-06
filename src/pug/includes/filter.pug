@@ -20,7 +20,7 @@
             .rectangle__content
               input.input_position.input.js--click(type='text' id='pr-gues' required readonly placeholder='Сколько гостей' autocomplete='off')
               button.button.button_arrow.button_z--3.js--click(type="button")
-              +input-options(1)
+              //- +input-options(1, "room")
 
           li.rectangle__item.rectangle__item-mb--30
             label.label.ractangle__label-mb--16.label_font--bold.label_color--100(for='pr-price') Диапазон цены
@@ -32,26 +32,22 @@
           li.rectangle__item.rectangle__item-mb--30
             .rectangle__content
               span.label.ractangle__label-mb--16.label_font--bold.label_color--100 Checkbox buttons
-              each item, index in pr_gues
+              each item, index in allowed
                 +input-checkbox(index, item, "gues", 1)
 
           li.rectangle__item.rectangle__item-mb--30
             label.label.ractangle__label-mb--16.label_font--bold.label_color--100(for='') Доступность
             .rectangle__content
-              each item, index in pr_availabel
-                +input-checkbox(index, item, "available", 2)
+              each item, index in availabel
+                +input-checkbox(index, item, "available", 0)
 
           li.rectangle__item.rectangle__item-mb--30
             label.label.label_font--bold.label_color--100(for='') Удобство номера
             .rectangle__content
               input.input.input_position.js--click.input__placeholder_color--75(readonly name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
               button.button.button_arrow.button_z--3.js--click(type="button")
-              +input-options()
+              //- +input-options("", "gues")
 
           li.rectangle__item.rectangle__item-mb--30
             .rectangle__content
-              label.label.label_font--bold.js--click.label_color--100(for='') Дополнительные удобства
-              button.button.button_arrow.js--click.js--rotate(type="button")
-            .canvas.js--show.hidden
-              each item, index in pr_additional
-                +input-checkbox(index, item, "additional", 1)
+              +input-lsit("Дополнительные удобства", "label_font--bold label_color--100", 1, "additional")

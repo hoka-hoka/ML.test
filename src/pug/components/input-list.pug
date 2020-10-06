@@ -1,0 +1,6 @@
+mixin input-lsit (name, labelClass, variant, id, role)
+  label.label.js--click(for='' class=labelClass, data-role=role)=name
+  +buttons(5, "", "js--click js--rotate")
+  .canvas.js--show.hidden
+    each item, index in additional
+      +input-checkbox(index, item, id, variant)

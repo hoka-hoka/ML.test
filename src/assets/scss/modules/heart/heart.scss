@@ -1,6 +1,6 @@
-$position: 3px;
+  $position: 2px;
 $nav: top left;
-$col: $heart--bg;
+$col: $heart_bg--bg;
 @mixin petal($v) {
   @if $v == after {
     left: $position;
@@ -11,20 +11,45 @@ $col: $heart--bg;
   }
 }
 .heart {
-  width: 5px;
-  height: 5px;
+  position: absolute;
+  width: 3px;
+  height: 3px;
   transform: translateY(.5px) rotate(-45deg);
-  background-color: $col;
-  left: $position;
+  left: 7px;
+
+
+
+
   @each $val in after, before {
     &::#{$val} {
       content: '';
-      width: 5px;
-      height: 5px;
+      width: 3px;
+      height: 3px;
       position: absolute;
       border-radius: 50%;
       background-color: $col;
-      @include petal($val)
+      @include petal($val);
     }
+  }
+  &:after {
+  }
+  &:before {
+
+  }
+}
+.heart_bg {
+  background-color: $col;
+  z-index: 1;
+}
+
+.heart_border {
+  background-color: $heart_border--bg;
+  left: 6px;
+  width: 5px;
+  height: 5px;
+  &:after, &:before {
+    width: 5px;
+    height: 5px;
+    background-color: $heart_border--bg;
   }
 }

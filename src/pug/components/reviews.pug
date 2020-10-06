@@ -1,22 +1,23 @@
-block reviews
-
-.reviews
-  .reviews__container
-    h2.reviews__title Отзывы посетителей номера
-    span.reviews__amount=name.length + ' отзыва'
-  ul.reviews__list
-    -for(var k=0; k<name.length; k++)
-      li.customer.reviews__customer
-        .customer__descr
-          img.customer__pick(src='assets/img/svg/person'+k+'.svg')
-        .customer__descr
-          b.customer__text=name[k]
-          .customer__text=time[k]
-        .customer__descr
-          button.customer__box(type='button')
-            .customer__like
-              .customer__heart.heart
-              span.customer__like-amount=like[k]
-        .customer__descr
-          .customer__text=review[k]
-    - var k = null;
+mixin reviews(index, title)
+  .reviews
+    .reviews__container
+      if index == 1
+        h2.reviews__title=title
+        span.reviews__amount=name.length + ' отзыва'
+      ul.reviews__list
+        each val, i in review
+          li.customer.reviews__customer
+            .customer__descr
+              img.customer__pick(src='assets/img/svg/person'+i+'.svg')
+            .customer__descr
+              b.customer__text=val.name
+              .customer__text=val.time
+            .customer__descr
+              button.customer__box(type='button')
+                .customer__like
+                  +heart("heart_bg", "heart_border", val.like)
+                  //- .customer__heart.heart.heart_bg
+                  //- .customer__heart.heart.heart_border
+                  //- span.customer__like-amount=val.like
+            .customer__descr
+              .customer__text=val.review

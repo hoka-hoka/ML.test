@@ -1,14 +1,14 @@
-mixin input-options(index)
-  .input-options.canvas.js--show.hidden
-    -for(var i=0; i<3; i++)
-      .input-options__opt
-        span.offensive=dropList[i]
-        .input-options__marks
-          +buttons(4, '', 'button__mark_minus button__mark_default')
-          span.input-options__offensive.offensive 0
-          +buttons(4, '', 'button__mark_plus')
-    - var i = null;
-     if index == 1
+mixin input-options(index, role)
+  -var list = role=="gues" ? guesList : roomList
+    .input-options.canvas.js--show.hidden
+      each v, i in list
+        .input-options__opt
+          span.offensive=v
+          .input-options__marks
+            +buttons(4, '', 'button__mark_minus button__mark_default')
+            span.input-options__offensive.offensive 0
+            +buttons(4, '', 'button__mark_plus')
+      if index == 1
        .input__btns
-         +buttons(3, 'Очистить', 'button_color-prev button_js-prev')
-         +buttons(3, 'Применить', 'button_color-next button_js-next')
+         +buttons(3, 'Очистить', 'button_color-prev button_js-prev visuallyhidden')
+         +buttons(3, 'Применить', 'button_color-next button_margin-left button_js-next')

@@ -3,8 +3,7 @@ import { amountList } from '../../../../js/amountList';
 import { setSiblingIteration } from '../../../../js/getSibling';
 
 let guesName = [
-    ['взрослый', 'взрослых', 'взрослых'],
-    ['ребёнок', 'ребёнка', 'детей'],
+    ['гость', 'гостя', 'гостей'],
     ['младенец', 'младенца', 'младенцев']
   ];
 let roomName = [
@@ -13,14 +12,14 @@ let roomName = [
     ['вання комната', 'ванные комнаты', 'ванных комнат']
   ];
 
-function addButtonsPanel( btn ) {
+function addButtonsPanel( elem, btn ) {
   if ( btn ) {
      btn.addEventListener('click', event => {
       if ( event.target.classList.contains('button_js-prev') ) {
-        gues.clearDef();
+        elem.clearDef();
       }
       else {
-        gues.btnNext();
+        elem.btnNext();
         const eventArrow = new Event('click');
         const eventTarget = setSiblingIteration(4, event.target, 'js--click');
         eventTarget.dispatchEvent(eventArrow);
@@ -32,16 +31,16 @@ function addButtonsPanel( btn ) {
 amountList.createGuesList = function(list, name, btn) {
   let gues = new amountList(list.querySelectorAll('.input-options__opt'), name);
   gues.amountPerson();
-  addButtonsPanel( btn );
+  addButtonsPanel( gues, btn );
 }
 
 amountList.createRoomList = function(list, name, btn) {
   let room = new amountList(list.querySelectorAll('.input-options__opt'), name);
   room.amountPerson();
-  addButtonsPanel( btn );
+  addButtonsPanel( room, btn );
 }
 
-let list = document.querySelectorAll('.input-dropdown_event--js');
+let list = document.querySelectorAll('.js--click');
 if ( list ) {
   list.forEach( (v) => {
 
@@ -58,7 +57,6 @@ if ( list ) {
     }
     else if ( v.getAttribute('data-role') === 'room' ) {
       if ( options ) {
-        // new amountList.createGuesList(options, roomName, btn);
         new amountList.createRoomList(options, roomName, btn);
       }
       else {

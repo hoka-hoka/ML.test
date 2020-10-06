@@ -53,19 +53,126 @@
           label.uikit-title__label(for="ui-subscription") subscription text field
         +input-email("ui-subscription", "input__placeholder_color--25", "Email", "")
 
+    .uikit-elements__list
+      .uikit-elements__item
+        .rectangle
+          .uikit-title
+            span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") checkbox buttons
+          each item, index in allowed
+            +input-checkbox(index, item, "gues", 1)
+
+      .uikit-elements__item
+        .uikit-title
+          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") radio buttons
+        +input-radio("reg-man", "rectangle__input-radio", "input-radio__label label_font--regular registration__label_color--50", "Мужчина")
+        +input-radio("reg-wom", "rectangle__input-radio", "input-radio__label label_font--regular registration__label_color--50", "Женщина")
+
+      .uikit-elements__item
+        .uikit-title
+          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") toggle
+        +input-toggle("", "Получать спецпредложения", true)
+        +input-toggle("", "Получать спецпредложения")
+
+      .uikit-elements__item
+        .uikit-title
+          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") like button
+        .customer
+          .customer__descr
+            button.customer__box(type='button')
+              .customer__like
+                +heart("heart_bg", "heart_border", 2)
+          .customer__descr
+            button.customer__box-active(type='button')
+              .customer__like
+                +heart("heart_bg", "heart_border", 12)
+
+      .uikit-elements__item
+        .uikit-title
+          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") rate button
+        +rating(1, 2)
+        +rating(2, 1)
+
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-title
+          span.uikit-title__mark.rectangle__price
+          label.uikit-title__label(for="pr-price") subscription text field
+
+        .rectangle__content
+          input.input-range(type='range' id='pr-price' multiple value='10,60')
+
+
+
+
+
+
+
+  .uikit-elements.uikit__container
+    .uikit-elements__list
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark default
           label.uikit-title__label(for="ui-dropdown") dropdown
         .rectangle__content
           +input-dropdown("ui-dropdown", "Сколько комнат", "2 спальни, 2 кровати...", "room")
-          +input-options()
+          +input-options("", "room")
 
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark expanded
           label.uikit-title__label(for="ui-dropdown") dropdown
+        .rectangle.rectangle_active--js.rectangle_example--js
+          .rectangle__content
+            +input-dropdown("ui-dropdown", "Сколько комнат", "", "room")
+            +input-options("", "room")
+
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-title
+          label.uikit-title__label(for="ui-dropdown") dropdown
         .rectangle.rectangle_active--js
           .rectangle__content
             +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
-            +input-options()
+            +input-options(1, "gues")
+
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-title
+          label.uikit-title__label(for="ui-dropdown") dropdown
+        .rectangle.rectangle_active--js.rectangle_example--js
+          .rectangle__content
+            +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
+            +input-options(1, "gues")
+
+  .uikit-elements.uikit-dropdown.uikit__container
+    .uikit-elements__list
+      .uikit-elements__item
+        .rectangle
+          +input-lsit("expandable checkbox list", "label_font--bold label_color--100", 1, "example")
+
+      .uikit-elements__item
+        .rectangle.rectangle_active--js.rectangle_example--js
+          +input-lsit("expandable checkbox list", "label_font--bold label_color--100", 1, "additional", "check")
+
+    .uikit-elements__list
+      .uikit-title
+        span.uikit-title__label(for="") rich checkbox buttons
+      .uikit-elements__item
+        each item, index in input-checkbox
+          +input-checkbox(index, item, "available", 0)
+
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-title
+          span.uikit-title__label(for="") bullet list
+        .uikit-elements__item
+          +rule()
+
+  .uikit-elements.uikit-dropdown.uikit__container
+    .uikit-elements__list
+      .uikit-elements__item
+        +intelligence()
+
+    .uikit-elements__list
+      .uikit-elements__item
+        +reviews()

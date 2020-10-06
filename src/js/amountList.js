@@ -5,7 +5,7 @@ class amountList {
   constructor(box, name) {
     this.container = box; // inp-opts
     this.name = name; // map
-    this.rezult = new Array();
+    this.rezult = [0, 0, 0];
   }
   amountPerson() {
     this.container.forEach( (value, index) => {
@@ -30,9 +30,19 @@ class amountList {
     });
   }
   vocabularyDef() {
+
     let rezultAnswer = [];
     let row = 0;
-    this.rezult.forEach( (value, index) => {
+    let rezult = [];
+
+    if ( this.name.length === 2 ) {
+       rezult = [this.rezult[0] + this.rezult[1], this.rezult[2]]
+    }
+    else {
+      rezult = this.rezult;
+    }
+
+    rezult.forEach( (value, index) => {
       switch(value) {
         case 0: break;
         case 1: rezultAnswer[index] = value + ' ' + this.name[index][0]; break;
@@ -43,12 +53,25 @@ class amountList {
       }
     });
     rezultAnswer = rezultAnswer.filter(word => word !== undefined);
+
+
+    const btnPannel = this.container[0].parentNode.lastElementChild;
+    if ( btnPannel.classList.contains('input__btns') ) {
+      if ( rezultAnswer.length !== 0 ) {
+        btnPannel.querySelector('.button_js-prev').classList.remove('visuallyhidden');
+      }
+      else {
+        btnPannel.querySelector('.button_js-prev').classList.add('visuallyhidden');
+      }
+    }
+
     let rezultTitle = rezultAnswer.slice();
     if ( rezultAnswer.length == 3 ) {
       rezultAnswer[2] = '...';
     }
     return [rezultAnswer, rezultTitle];
   }
+
   btnNext() {
     this.amountInp.value = this.vocabularyDef()[0].join(', ');
     this.amountInp.title = this.vocabularyDef()[1].join(', ');

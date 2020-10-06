@@ -1,18 +1,16 @@
-.customer__box {
+.customer__box-active {
   width: 40px;
   border-radius: 10px;
   overflow: hidden;
-  background: linear-gradient(-180deg, $customer__box--bg, $customer__box--bg);
   padding: 1px;
   display: inline-block;
-}
-.customer__box:hover {
   background: linear-gradient(-180deg, $customer__box--bg_hov, $customer__box--bg-stop_hov);
 }
-.customer__box:hover .heart_bg {
+
+.customer__box-active .heart_bg {
   display: none;
 }
-.customer__box:hover .heart_border {
+.customer__box-active .heart_border {
   background: $customer__box--bg_hov;
   &:after, &:before {
     background: $customer__box--bg_hov;

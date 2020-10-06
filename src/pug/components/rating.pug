@@ -1,0 +1,7 @@
+mixin rating(index, check)
+  .rating
+    -for(var i=1; i<=5; i++)
+      - var ch = check==i ? true : false
+      input.visuallyhidden(id="rating_"+i value=i checked=ch disabled name="rating-"+index type="radio")
+      label.rating__label(for="rating_"+i)
+    -var i=null

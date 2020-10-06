@@ -1,8 +1,8 @@
 mixin input-email(id, className, holder, classLabel)
   .input-email
     input.input(name='email' class=className type='email' autocorrect='off' inputmode='email' autocomplete='email' required placeholder=holder)
-  p=classLabel
-  -var l = classLabel
-  -if (l !== undefined)
-    label.visuallyhidden(class=classLabel for=id)=holder
-    +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big footer__arrow-big", "Подписка")
+
+    -var l = classLabel
+    -if (l !== undefined)
+      +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big footer__arrow-big", "Подписка")
+  label.visuallyhidden(class=classLabel for=id)=holder

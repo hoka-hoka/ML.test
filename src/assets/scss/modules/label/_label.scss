@@ -1,6 +1,7 @@
 .label {
   position: relative;
   display: flex;
+  font-family: $mainFont;
 }
 @import '_font--bold/label_font--bold';
 @import '_font--regular/label_font--regular';

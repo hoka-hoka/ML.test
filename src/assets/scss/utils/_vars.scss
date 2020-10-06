@@ -2,6 +2,7 @@
 
 $mainFont: 'Montserrat';
 $secondFont: 'Open Sans';
+$iconFont: 'fontello';
 
 // Size
 $mainFontSize: 16px;
@@ -15,6 +16,7 @@ $x-dark-25: rgba($x-dark, .25);
 $x-dark-10: rgba($x-dark, .1);
 $x-dark-5: rgba($x-dark, .05);
 
+$x-gray: rgb(31,32,65);
 $x-gray-75: rgba(31,32,65,.75);
 $x-gray-50: rgba(31,32,65,.50);
 $x-gray-25: rgba(31,32,65,.25);
@@ -65,6 +67,7 @@ $button__theme_br--sh: $x-purple;
 $button__theme_br--txt: $x-purple;
 $button_color-prev--txt: $x-dark-50;
 $button_color-next--txt: $x-purple;
+$button_arrow--txt: $x-dark-75;;
 
 $description__line--bd: $x-dark-25;
 
@@ -102,10 +105,12 @@ $calendar__arrow-next--fill: $x-purple;
 $calendar__arrow-prev--fill: $x-purple;
 $calendar__day_track--bg: $x-purple-10;
 
-$heart--bg: $x-gray-25;
+$heart_bg--bg: $x-white;
+$heart_border--bg: rgb(193,193,193);
+$customer__box--bg: $x-gray-25;
+$customer__box--bg_hov: $x-purple;
+$customer__box--bg-stop_hov: $x-purpure-stop;
 
-$customer__box--bg: $x-purple;
-$customer__box--bg-stop: $x-purpure-stop;
 $customer__like-amount--txt: $x-gray-25;
 $customer__like-amount--txt_hov: $x-purple;
 
