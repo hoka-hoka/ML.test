@@ -7,76 +7,74 @@
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark default
-          label.uikit-title__label(for="ui-email") text filed
+          label.uikit-label.uikit-title__text(for="ui-email") text filed
         +input-email("ui-email", "input__placeholder_color--25", "Email")
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark hover/focus
-          label.uikit-title__label(for="ui-text") text filed
+          label.uikit-label.uikit-title__text(for="ui-text") text filed
         +input-text("ui-text", "This is pretty awesome", "lname", "[а-яёА-ЯЁ]", "input__placeholder_color--75 input__border_color--50")
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark default
-          label.uikit-title__label(for="ui-text") dropdown
+          label.uikit-label.uikit-title__text(for="ui-text") dropdown
         .rectangle__content
           +input-dropdown("ui-gues", "Сколько гостей", "")
           +input-options()
-
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark default
-          label.uikit-title__label(for="ui-masded-text") masked text filed
+          label.uikit-label.uikit-title__text(for="ui-masded-text") masked text filed
         +input-date("ui-masded-text", "ДД.ММ.ГГГГ", "input__placeholder_color--25")
-
       .uikit-elements__item
         .rectangle__date
           .rectangle__date-col
-            label.label.label_font--bold.label_color--100(for="ui-date-drop") date dropdown
+            .uikit-title
+              label.uikit-label.uikit-title__text(for="ui-date-start") date dropdown
             .rectangle__content.rectangle__content_margin--unset
-              +input-date("ui-date-drop","ДД.ММ.ГГГГ", "")
+              +input-date("ui-date-start","ДД.ММ.ГГГГ", "")
               button.button.button_arrow.js--click(type="button")
           .rectangle__date-col
-            label.label.label_font--bold.label_color--100(for="ui-date-drop") date dropdown
+            .uikit-title
+              label.uikit-label.uikit-title__text(for="ui-date-end") date dropdown
             .rectangle__content.rectangle__content_margin--unset
-              +input-date("ui-date-drop","19.08.2019", "")
+              +input-date("ui-date-end","19.08.2019", "")
               button.button.button_arrow.js--click(type="button")
-
       .uikit-elements__item
         .uikit-title
-          label.uikit-title__label(for="ui-date-filter") filter date dropdown
+          label.uikit-label.uikit-title__text(for="ui-date-filter") filter date dropdown
         .rectangle__content.rectangle__content_margin--unset
           +input-date("ui-date-filter","19 авг - 23 авг", "")
           button.button.button_arrow.js--click(type="button")
-
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark default
-          label.uikit-title__label(for="ui-subscription") subscription text field
+          label.uikit-label.uikit-title__text(for="ui-subscription") subscription text field
         +input-email("ui-subscription", "input__placeholder_color--25", "Email", "")
 
     .uikit-elements__list
       .uikit-elements__item
         .rectangle
           .uikit-title
-            span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") checkbox buttons
+            span.uikit-label.ractangle__label-mb--16(for="ui-masded-text") checkbox buttons
           each item, index in allowed
             +input-checkbox(index, item, "gues", 1)
 
       .uikit-elements__item
         .uikit-title
-          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") radio buttons
+          span.uikit-label.ractangle__label-mb--16(for="ui-masded-text") radio buttons
         +input-radio("reg-man", "rectangle__input-radio", "input-radio__label label_font--regular registration__label_color--50", "Мужчина")
         +input-radio("reg-wom", "rectangle__input-radio", "input-radio__label label_font--regular registration__label_color--50", "Женщина")
 
       .uikit-elements__item
         .uikit-title
-          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") toggle
+          span.uikit-label.ractangle__label-mb--16(for="ui-masded-text") toggle
         +input-toggle("", "Получать спецпредложения", true)
         +input-toggle("", "Получать спецпредложения")
 
       .uikit-elements__item
         .uikit-title
-          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") like button
+          span.uikit-label.ractangle__label-mb--16(for="ui-masded-text") like button
         .customer
           .customer__descr
             button.customer__box(type='button')
@@ -89,7 +87,7 @@
 
       .uikit-elements__item
         .uikit-title
-          span.uikit-title__label.ractangle__label-mb--16(for="ui-masded-text") rate button
+          span.uikit-label.ractangle__label-mb--16(for="ui-masded-text") rate button
         +rating(1, 2)
         +rating(2, 1)
 
@@ -97,13 +95,13 @@
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark.rectangle__price
-          label.uikit-title__label(for="pr-price") subscription text field
+          label.uikit-label(for="pr-price") subscription text field
         .rectangle__content
           input.input-range(type='range' id='pr-price' multiple value='33,66.9' step="0.1")
 
       .uikit-elements__item
         .uikit-title
-          span.uikit-title__label buttons
+          span.uikit-label buttons
         .uikit-button
           +buttons(2, "Click me", "", "")
           +buttons(2, "Click me", "uikit-button__active", "")
@@ -122,7 +120,7 @@
 
       .uikit-elements__item
         .uikit-title
-          span.uikit-title__label pagination
+          span.uikit-label pagination
         +pagination()
 
 
@@ -134,7 +132,7 @@
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark default
-          label.uikit-title__label(for="ui-dropdown") dropdown
+          label.uikit-label(for="ui-dropdown") dropdown
         .rectangle__content
           +input-dropdown("ui-dropdown", "Сколько комнат", "2 спальни, 2 кровати...", "room")
           +input-options("", "room")
@@ -142,7 +140,7 @@
       .uikit-elements__item
         .uikit-title
           span.uikit-title__mark expanded
-          label.uikit-title__label(for="ui-dropdown") dropdown
+          label.uikit-label(for="ui-dropdown") dropdown
         .rectangle.rectangle_active--js.rectangle_example--js
           .rectangle__content
             +input-dropdown("ui-dropdown", "Сколько комнат", "", "room")
@@ -151,7 +149,7 @@
     .uikit-elements__list
       .uikit-elements__item
         .uikit-title
-          label.uikit-title__label(for="ui-dropdown") dropdown
+          label.uikit-label(for="ui-dropdown") dropdown
         .rectangle.rectangle_active--js
           .rectangle__content
             +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
@@ -160,7 +158,7 @@
     .uikit-elements__list
       .uikit-elements__item
         .uikit-title
-          label.uikit-title__label(for="ui-dropdown") dropdown
+          label.uikit-label(for="ui-dropdown") dropdown
         .rectangle.rectangle_active--js.rectangle_example--js
           .rectangle__content
             +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
@@ -178,7 +176,7 @@
 
     .uikit-elements__list
       .uikit-title
-        span.uikit-title__label(for="") rich checkbox buttons
+        span.uikit-label(for="") rich checkbox buttons
       .uikit-elements__item
         each item, index in input-checkbox
           +input-checkbox(index, item, "available", 0)
@@ -186,7 +184,7 @@
     .uikit-elements__list
       .uikit-elements__item
         .uikit-title
-          span.uikit-title__label(for="") bullet list
+          span.uikit-label(for="") bullet list
         .uikit-elements__item
           +rule()
 
