@@ -1,0 +1,28 @@
+.uikit-buttons {
+  margin-top: 30px;
+}
+
+.uikit-buttons__item:nth-child(2) {
+  margin-bottom: 31px;
+}
+.uikit-buttons__item:nth-child(3) {
+  margin-bottom: 29px;
+}
+.uikit-buttons__item:nth-child(4) {
+  margin-bottom: 29px;
+}
+
+.button_bg--hov.uikit-buttons__active  {
+  opacity: .5;
+  margin-left: 16px;
+}
+
+.button_br--hov.uikit-buttons__active {
+  background: linear-gradient(to left, rgba(#BC9CFF, .5) 0%, rgba(#8BA4F9, .5) 100%);
+  margin-left: 16px;
+}
+
+.button_ds--hov.uikit-buttons__active {
+  color: rgba(31,32,65,.5);
+  margin-left: 11px;
+}

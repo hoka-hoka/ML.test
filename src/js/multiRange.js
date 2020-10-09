@@ -52,9 +52,7 @@ var supportsMultiple = self.HTMLInputElement && "valueLow" in HTMLInputElement.p
       divRange.style.setProperty("--start", 100 * ((input.valueLow - min) / (max - min)) + "%");
       divRange.style.setProperty("--stop", 100 * ((input.valueHigh - min) / (max - min)) + "%");
       if ( price ) {
-
-        price.innerText = Math.round(minProc.slice(0, -1) * num / 100 / 100) * 100 + "₽ - " + Math.round(maxProc.slice(0, -1) * num / 100 / 100) * 100 + "₽"
-        console.log(price.innerText);
+        price.innerText = Math.round(minProc.slice(0, -1) * num / 100 / 1000) * 1000 + "₽ - " + Math.round(maxProc.slice(0, -1) * num / 100 / 1000) * 1000 + "₽"
       }
     }
     input.addEventListener("input", update);

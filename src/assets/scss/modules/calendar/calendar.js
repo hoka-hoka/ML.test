@@ -9,7 +9,7 @@ const btn = document.querySelectorAll('.calendar .button');
 
 
 
-if ( document.body.id === 'index' || document.body.id === 'details' || document.body.id === 'product' ) {
+if ( document.body.id === 'index' || document.body.id === 'details' || document.body.id === 'product' || document.body.id === 'elements' ) {
   dateFormat();
 }
 if ( document.body.id === 'form' ) {

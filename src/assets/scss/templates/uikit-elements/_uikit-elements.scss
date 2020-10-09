@@ -1,7 +1,8 @@
 .uikit-elements {
   display: grid;
-  grid-template-columns: repeat(3, 320px);
+  grid-template-columns: 320px 266px 320px;
   grid-auto-flow: column;
   grid-gap: 0 126px;
 }
 @import "__item/uikit-elements__item";
+@import "__short/uikit-elements__short";
