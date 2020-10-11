@@ -13,11 +13,8 @@ mixin reviews(index, title)
               b.customer__text=val.name
               .customer__text=val.time
             .customer__descr
-              button.customer__box(type='button')
+              button.customer__box.customer__box_active--js.customer__box_btn--js(type='button')
                 .customer__like
                   +heart("heart_bg", "heart_border", val.like)
-                  //- .customer__heart.heart.heart_bg
-                  //- .customer__heart.heart.heart_border
-                  //- span.customer__like-amount=val.like
             .customer__descr
               .customer__text=val.review

@@ -1,21 +1,23 @@
-include ../../components/card
-block cards
-.ulkit
-  //- include ../../components/ul-kit/logo
-  //- .ulkit__form
-  //-   .ulkit__item
-  //-     include ../search
-  //-   .ulkit__item
-  //-     include ../description
-  //-   .ulkit__item
-  //-     include ../../components/calendar
-  //-   .ulkit__item
-  //-     include ../registration
-  //-   .ulkit__item
-  //-     include ../../components/rectangles/authorization
-  //-   .ulkit__item
-  //-     ul.ulkit__cards
-  //-       each card, index in cards
-  //-         +card(card["number"], card["status"], card["price"], card["checked"], card["reviews"], index)
+.uikit
+  .uikit__logo
+    include ../../components/ui-kit/logo
+  .uikit-form
+    .uikit-form__item.uikit-form__search
+      include ../search
+    .ulkit-form__item.uikit-form__descr
+      include ../description
+    .ulkit-form__item.uikit-form__calendar
+      include ../../components/calendar
+    .ulkit-form__item.uikit-form__reg
+      include ../modules/reg
+    .ulkit-form__item.uikit-form__aut
+      include ../modules/aut
+
+    .ulkit-form__item
+      ul.ulkit__cards
+        li=age
+        li=elem
+        //- each card, index in cards
+        //-   +card(card["number"], card["status"], card["price"], card["checked"], card["reviews"], index)
 
 

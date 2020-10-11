@@ -9,14 +9,20 @@ const btn = document.querySelectorAll('.calendar .button');
 
 
 
-if ( document.body.id === 'index' || document.body.id === 'details' || document.body.id === 'product' || document.body.id === 'elements' ) {
+if ( document.body.id === 'index' ||
+  document.body.id === 'details' ||
+  document.body.id === 'product' ||
+  document.body.id === 'elements' ||
+  document.body.id === 'form' ) {
   dateFormat();
 }
+
 if ( document.body.id === 'form' ) {
-  let calendar = document.querySelector('.ulkit__item>.calendar');
-  calendar.classList.remove('hidden');
-  console.log(calendar)
-  createCalendar(calendar);
+  let calendar = document.querySelector('.uikit-form__calendar_create--js>.calendar');
+  if ( calendar ) {
+    calendar.classList.remove('hidden');
+    createCalendar(calendar);
+  }
 }
 
 function dateFormat() {
@@ -40,26 +46,29 @@ function clearDate(num) {
   }
 }
 
-btn[0].addEventListener('click', event => {
-  clearDate(calendarDay);
-});
-
-btn[1].addEventListener('click', event => {
-  clearDate(calendarDay);
-  let tdActive = document.querySelectorAll('.calendar__day-num.calendar__day_active');
-  tdActive.forEach((v,i,arr) => {
-    let checkDate = setSiblingIteration(4, v, 'calendar__month').innerHTML.split(' ');
-    let day = new Date(checkDate[1], month.indexOf(checkDate[0]), v.innerText);
-
-    if ( calendarDay.length !== 1 ) {
-      if ( arr.length === 1) {
-        [...calendarDay].map(num => { return num.value = day.toLocaleString("ru").slice(0,10).split('.').reverse().join('-') });
-      } else {
-        calendarDay[i].value = day.toLocaleString("ru").slice(0,10).split('.').reverse().join('-');
-      }
-    } else {
-      calendarDay[0].value += `${v.innerText} ${checkDate[0].slice(0,3)}. ${i==0 && arr.length !== 1 ? '- ':''}` ;
-    }
+if ( btn.length ) {
+  btn[0].addEventListener('click', event => {
+    clearDate(calendarDay);
   });
-  closeCalendar();
-});
+
+  btn[1].addEventListener('click', event => {
+    clearDate(calendarDay);
+    let tdActive = document.querySelectorAll('.calendar__day-num.calendar__day_active');
+    tdActive.forEach((v,i,arr) => {
+      let checkDate = setSiblingIteration(4, v, 'calendar__month').innerHTML.split(' ');
+      let day = new Date(checkDate[1], month.indexOf(checkDate[0]), v.innerText);
+
+      if ( calendarDay.length !== 1 ) {
+        if ( arr.length === 1) {
+          [...calendarDay].map(num => { return num.value = day.toLocaleString("ru").slice(0,10).split('.').reverse().join('-') });
+        } else {
+          calendarDay[i].value = day.toLocaleString("ru").slice(0,10).split('.').reverse().join('-');
+        }
+      } else {
+        calendarDay[0].value += `${v.innerText} ${checkDate[0].slice(0,3)}. ${i==0 && arr.length !== 1 ? '- ':''}` ;
+      }
+    });
+    closeCalendar();
+  });
+}
+

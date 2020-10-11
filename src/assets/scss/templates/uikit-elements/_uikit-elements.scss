@@ -1,8 +1,11 @@
-.uikit-elements {
-  display: grid;
-  grid-template-columns: 320px 266px 320px;
-  grid-auto-flow: column;
-  grid-gap: 0 126px;
+.uikit-elements .rectangle {
+  all: initial;
+  display: block;
+  position: relative;
+}
+.uikit-elements .rectangle__content {
+  margin-bottom: unset;
+  width: 100%;
 }
 @import "__item/uikit-elements__item";
 @import "__short/uikit-elements__short";

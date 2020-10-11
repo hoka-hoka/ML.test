@@ -6,22 +6,8 @@ mixin intelligence(index, title)
       each val in convenience
         li.intelligence__item
           .intelligence__pick
-            svg.intelligence__icn(viewBox=val.vievBox height="100%" aria-label=val.header)
+            svg.intelligence__icn(viewBox=val.vievBox width=val.w height=val.h aria-label=val.header)
               use(xlink:href=val.id)
           .intelligence__container
             b.intelligence__text.details__intelligence=val.header
             div.intelligence__text=val.title
-        //- li.intelligence__item
-        //-   .intelligence__pick
-        //-     svg.intelligence__icn(viewBox="0 0 36 38" height="100%" aria-label="Удобство")
-        //-       use(xlink:href="#city")
-        //-   .intelligence__container
-        //-     b.intelligence__text.details__intelligence Удобство
-        //-     div.intelligence__text Окно в каждой из спален
-        //- li.intelligence__item
-        //-   .intelligence__pick
-        //-     svg.intelligence__icn(viewBox="0 0 34 43" height="100%" aria-label="Уют")
-        //-       use(xlink:href="#whatsot")
-        //-   .intelligence__container
-        //-     b.intelligence__text.details__intelligence Уют
-        //-     div.intelligence__text Номер оснащён камином

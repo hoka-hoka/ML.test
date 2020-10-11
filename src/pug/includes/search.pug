@@ -6,7 +6,7 @@ block input
     label.modal__close(for="button")
     form(action="")
       fieldset.rectangle__container.modal__content
-        legend.rectangle__title Найдём номера под ваши предложения
+        legend.rectangle__title Найдём номера под ваши пожелания
         ul.rectangle__list(role='none')
           li.rectangle__item
             .rectangle__date
@@ -15,7 +15,7 @@ block input
                   label.label.label_font--bold.label_color--100(for=sr_timetable_id[i])=sr_timetable[i]
                   .rectangle__content.rectangle__content_margin--unset
                     +input-date("","ДД.ММ.ГГГГ", "")
-                    button.button.button_arrow.js--click(type="button")
+                    +buttons(5, "", "button_arrow js--click")
               - var i = null;
             +calendar()
 

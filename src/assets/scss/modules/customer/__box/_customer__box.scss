@@ -6,15 +6,18 @@
   padding: 1px;
   display: inline-block;
 }
-.customer__box:hover {
+.customer__box_action {
   background: linear-gradient(-180deg, $customer__box--bg_hov, $customer__box--bg-stop_hov);
 }
-.customer__box:hover .heart_bg {
+.customer__box_action .heart_bg {
   display: none;
 }
-.customer__box:hover .heart_border {
+.customer__box_action .heart_border {
   background: $customer__box--bg_hov;
   &:after, &:before {
     background: $customer__box--bg_hov;
   }
+}
+.customer__box_action .customer__like-amount {
+  color: $customer__like-amount--txt_hov;
 }

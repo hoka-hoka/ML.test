@@ -2,8 +2,9 @@
   position: relative;
   display: flex;
   align-items: baseline;
-  margin-bottom: 10px;
-  line-height: rem(24,14);
+  margin-bottom: 11px;
+  line-height: rem(23,16);
+  font-size: rem(14);
 }
 .root__item:before {
   content: '';

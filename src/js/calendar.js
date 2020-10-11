@@ -64,7 +64,6 @@ function getDay(date) {
 function createCalendar(calendar) {
 
   let activeSwiper = calendar.querySelector('.swiper-container').swiper;
-  console.log(activeSwiper);
 
   let date = new Date();
   date.setDate(1);

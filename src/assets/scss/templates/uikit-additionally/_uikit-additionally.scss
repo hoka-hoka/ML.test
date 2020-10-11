@@ -1,5 +1,9 @@
 .uikit-additionally {
-  margin-top: 234px;
+  margin-top: 213px;
+  display: grid;
+  grid-template-columns: 320px 266px 320px;
+  grid-auto-flow: column;
+  grid-gap: 0 126px;
 }
 .uikit-additionally .uikit-elements__list:last-child {
   grid-column: 2/-1;

@@ -1,7 +1,9 @@
 .uikit-buttons {
   margin-top: 30px;
 }
-
+.uikit-buttons__item {
+  position: relative;
+}
 .uikit-buttons__item:nth-child(2) {
   margin-bottom: 31px;
 }
@@ -24,5 +26,5 @@
 
 .button_ds--hov.uikit-buttons__active {
   color: rgba(31,32,65,.5);
-  margin-left: 11px;
+  margin-left: 16px;
 }
