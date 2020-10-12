@@ -4,7 +4,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: space-between;
-  height: 1400px;
+  height: 1200px;
 }
 
 .uikit-form::before,
@@ -18,8 +18,8 @@
 .uikit-form .search {
   margin-top: 0;
 }
-.uikit-form .aothorization, .uikit__form .registration {
+.uikit-form__aut, .uikit-form__reg {
   position: relative;
 }
 @import "__item/uikit-form__item";
-
+@import "__cards/uikit-form__cards";
