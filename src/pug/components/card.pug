@@ -16,11 +16,11 @@ mixin card(number, status, price, checked, reviews, index)
       .card__content
         .room
           .room__container
-            span.room__number №&nbsp #{number}
+            span.room__number #{number}
             strong.room__luxury=status
           .room__container
             span.room__price #{price} &#8381
-            | в сутки
+            span.room__text в сутки
       hr.line.card__line
       .card__content
         // +rating(index, checked)

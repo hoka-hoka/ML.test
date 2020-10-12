@@ -4,5 +4,8 @@
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0,0,0,.12);
 }
+.registration .rectangle__item:last-child {
+  padding-top: 7px;
+}
 @import '__item/registration__item';
 @import '__label_color--50/registration__label_color--50';

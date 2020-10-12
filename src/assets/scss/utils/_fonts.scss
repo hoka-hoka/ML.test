@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-
 @font-face {
   font-family: 'fontello';
   src: url('../fonts/fontello-icons/fontello.eot');
@@ -13,4 +12,26 @@
        url('../fonts/fontello-icons/fontello.svg#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'quicksand';
+  src: url('../fonts/quicksand-regular/quicksand-regular.eot');
+  src: url('../fonts/quicksand-regular/quicksand-regular.eot#iefix') format('embedded-opentype'),
+       url('../fonts/quicksand-regular/quicksand-regular.woff') format('woff'),
+       url('../fonts/quicksand-regular/quicksand-regular.woff2') format('woff2'),
+       url('../fonts/quicksand-regular/quicksand-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/quicksand-bold/quicksand-bold.eot');
+  src: url('../fonts/quicksand-bold/quicksand-bold.eot#iefix') format('embedded-opentype'),
+       url('../fonts/quicksand-bold/quicksand-bold.woff') format('woff'),
+       url('../fonts/quicksand-bold/quicksand-bold.woff2') format('woff2'),
+       url('../fonts/quicksand-bold/quicksand-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
 }

@@ -1,6 +1,7 @@
 .room {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
 }
 
@@ -8,3 +9,4 @@
 @import '__luxury/room__luxury';
 @import '__price/room__price';
 @import '__container/room__container';
+@import '__text/room__text';

@@ -5,5 +5,7 @@
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0,0,0,.12);
 }
-
+.authorization__button_size {
+  width: 97px;
+}
 @import '__input/authorization__input';

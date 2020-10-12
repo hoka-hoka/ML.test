@@ -3,6 +3,13 @@
   max-width: 380px;
   width: 380px;
 }
+.description .room__number {
+  font-size: 24px;
+}
+.description .room__text {
+  line-height: 20px;
+}
+
 @media(max-width: 375px) {
   .description {
     box-shadow: unset;
