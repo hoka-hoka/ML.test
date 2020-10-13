@@ -15,7 +15,6 @@ block input
           li.rectangle__item
             .rectangle__date
 
-
               -for(var i=0; i<2; ++i)
                 .rectangle__date-col
                   label.label.rectangle__label.label_font--bold.label_color--100(for=dt_timetable_id[i])=dt_timetable[i]
@@ -31,12 +30,9 @@ block input
 
           li.rectangle__item
             label.label.rectangle__label.label_font--bold.label_color--100(for='arrive')=dt_gues
-            .rectangle__content
-              input.input_position.input.js--click(name='gues' type='text' placeholder='Сколько гостей' required autocomplete="off")
-              +buttons(5, "", "js--click")
-
-              button.button.button_arrow.button_z--3.js--click(type="button")
-              // +input-options(1, "gues")
+            .rectangle__content.rectangle_example--js
+              +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
+              +input-options(1, "gues")
 
           li.rectangle__item.rectangle__item-mb--30
             ul.description__list
@@ -54,7 +50,8 @@ block input
             .description__result
               span.description__total Итого
               span.description__line
-              span.description__total 38 081
+              span.description__total 38 081₽
 
           li.rectangle__item
             +buttons(2, 'Забронировать', 'button_width')
+            +icon("arrow-big", 16, 16, "0 0 17 18", "arrow-big rectangle__arrow-big", "Забронировать")
