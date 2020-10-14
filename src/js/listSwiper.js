@@ -23,8 +23,7 @@ let detailsSwiper = new Swiper('.details__swiper', {
 let cardSwiper = new Swiper(".card__swiper-container", {
   speed: 400,
   spaceBetween: 10,
-  //loop: true, don't work width the cssMode
-  cssMode: true,
+  loop: true,
   navigation: {
     nextEl: '.swiper-next',
     prevEl: '.swiper-prev',

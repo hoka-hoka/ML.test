@@ -7,14 +7,14 @@
   position: absolute;
   z-index: 1;
   display: flex;
-  bottom: 15px;
-  right: 15px;
+  bottom: 12px;
+  right: 12px;
 }
 .card__bullet {
   width: 8px;
   height: 8px;
   border: 1px solid #fff;
-  margin: 2px 2px;
+  margin: 0 3px 2px 0;
   cursor: pointer;
   background: transparent;
   border-radius: 50%;

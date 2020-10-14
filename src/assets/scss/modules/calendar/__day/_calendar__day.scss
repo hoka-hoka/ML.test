@@ -3,3 +3,7 @@
   color: $calendar__box--txt;
   padding: 10px 0;
 }
+th.calendar__day {
+  font-family: $mainFont;
+  text-transform: capitalize;
+}

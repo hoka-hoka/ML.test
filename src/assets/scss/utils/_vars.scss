@@ -1,8 +1,8 @@
   // Font
 
-$mainFont: 'Montserrat';
+$mainFont: 'montserrat';
 $secondFont: 'Open Sans';
-$iconFont: 'Fontello';
+$iconFont: 'fontello';
 
 
 // Size
@@ -106,6 +106,9 @@ $calendar__arrow-next--fill: $x-purple;
 $calendar__arrow-prev--fill: $x-purple;
 $calendar__day_track--bg: $x-purple-10;
 $calendar__day-num--col: $x-dark-50;
+
+$card__value--col: $x-dark-50;
+$card__about--col: $x-dark-50;
 
 $heart_bg--bg: $x-white;
 $heart_border--bg: rgb(193,193,193);

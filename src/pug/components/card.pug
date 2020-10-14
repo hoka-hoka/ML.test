@@ -19,10 +19,10 @@ mixin card(number, status, price, checked, reviews, index)
             span.room__number #{number}
             strong.room__luxury=status
           .room__container
-            span.room__price #{price} &#8381
+            span.room__price #{price}&#8381
             span.room__text в сутки
       hr.line.card__line
       .card__content
-        // +rating(index, checked)
-        span.card__about #{reviews} &nbsp
-        | Отзывов
+        +rating(index, checked)
+        span.card__value #{reviews}
+        span.card__about Отзывов

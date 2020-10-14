@@ -1,6 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('../fonts/montserrat-regular/montserrat-regular.eot');
+  src: url('../fonts/montserrat-regular/montserrat-regular.eot#iefix') format('embedded-opentype'),
+       url('../fonts/montserrat-regular/montserrat-regular.woff') format('woff'),
+       url('../fonts/montserrat-regular/montserrat-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('../fonts/montserrat-bold/montserrat-bold.eot');
+  src: url('../fonts/montserrat-bold/montserrat-bold.eot#iefix') format('embedded-opentype'),
+       url('../fonts/montserrat-bold/montserrat-bold.woff') format('woff'),
+       url('../fonts/montserrat-bold/montserrat-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
+
 
 @font-face {
   font-family: 'fontello';

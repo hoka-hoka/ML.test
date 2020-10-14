@@ -1,3 +1,8 @@
+.uikit {
+  display: flex;
+  flex-direction: column;
+  background: rgb(244,244,246);
+}
 @import "__card/uikit__card";
 @import "__logo/uikit__logo";
 @import "__container/uikit__container";
