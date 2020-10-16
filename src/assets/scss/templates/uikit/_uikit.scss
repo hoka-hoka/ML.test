@@ -3,7 +3,8 @@
   flex-direction: column;
   background: rgb(244,244,246);
 }
-@import "__card/uikit__card";
+.uikit_bg {
+  background: initial;
+}
 @import "__logo/uikit__logo";
 @import "__container/uikit__container";
-@import "__cards/uikit__cards";

@@ -1,4 +1,4 @@
-.uikit
+.uikit.uikit_bg
   .uikit__logo
     include ../../components/ui-kit/logo
   .uikit-elements.uikit__container.uikit-light
@@ -165,17 +165,17 @@
           +input-lsit("expandable checkbox list", "label_font--bold label_color--100", 1, "example")
       .uikit-elements__item.uikit-expandable-checkbox
         .rectangle.uikit-elements__short.rectangle_active--js.rectangle_example--js
-          +input-lsit("expandable checkbox list", "label_font--bold label_color--100 uikit-label_mb--14", 1, "additional", "check")
+          +input-lsit("expandable checkbox list", "label_font--bold label_color--100 uikit-label_mb--18", 1, "additional", "check")
     .uikit-elements__list
       .uikit-elements__item.uikit-rich-checkbox
         .uikit-title
-          span.uikit-label.label_font--bold.uikit-label_mb--11(for="") rich checkbox buttons
+          span.uikit-label.label_font--bold.uikit-label_mb--17(for="") rich checkbox buttons
         each item, index in availabel
           +input-checkbox(index, item, "available", 0)
     .uikit-elements__list
       .uikit-elements__item.uikit-bullet-list
         .uikit-title
-          span.uikit-label.label_font--bold.uikit-label_mb--10(for="") bullet list
+          span.uikit-label.label_font--bold.uikit-label_mb--14(for="") bullet list
         +rule()
 
   .uikit-elements.uikit__container.uikit-additionally

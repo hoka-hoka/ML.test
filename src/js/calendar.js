@@ -62,9 +62,7 @@ function getDay(date) {
 }
 
 function createCalendar(calendar) {
-
   let activeSwiper = calendar.querySelector('.swiper-container').swiper;
-
   let date = new Date();
   date.setDate(1);
   let dateArr = [
@@ -78,7 +76,7 @@ function createCalendar(calendar) {
       createMonth(element, activeSwiper);
     });
     activeSwiper.activeIndex = 1;
-    Mark();
+    Mark(activeSwiper);
   }
   else {
     activeSwiper.removeAllSlides();
@@ -86,29 +84,30 @@ function createCalendar(calendar) {
   activeSwiper.update();
 }
 
-function createMonth(date, swiper) {
+function createMonth( date, swiper ) {
   let dateCenter = new Calendar(date);
   dateCenter.findDateBefore(getDay(date));
   dateCenter.findDateAfter();
   swiper.appendSlide(dateCenter.table);
 }
 
-function Mark() {
-  let table = document.querySelectorAll('.calendar__box'); // boxes cell
-  let cell = document.querySelectorAll('.calendar__day-num'); // cells
-
-  let marks = new Map([
-    ['markFirst', new createMark('calendar__day-mark calendar__day-mark_1')],
-    ['markLast', new createMark('calendar__day-mark calendar__day-mark_2')],
-    ['markToday', new createMark('calendar__today-mark')]
-  ])
+function Mark( parent ) {
+  const activeSwiper = parent.el;
+  let table = activeSwiper.querySelectorAll('.calendar__box'); // boxes cell
+  let cell = activeSwiper.querySelectorAll('.calendar__day-num'); // cells
 
   // markToday
-  let tdToday = document.querySelector('.calendar__today');
+  let tdToday = activeSwiper.querySelector('.calendar__today');
+
+  let marks = new Map([
+    ['markFirst', new createMark('calendar__day-mark calendar__day-mark_1', activeSwiper)],
+    ['markLast', new createMark('calendar__day-mark calendar__day-mark_2', activeSwiper)],
+    ['markToday', new createMark('calendar__today-mark', activeSwiper)]
+  ])
   let markFirst = marks.get('markFirst');
   let markLast = marks.get('markLast');
-
   marks.get('markToday').moveAt(tdToday);
+
 
   for (let i in cell) {
     if ( cell[i] === tdToday ) {
@@ -130,11 +129,12 @@ function Mark() {
   }
 }
 class createMark {
-  constructor(name) {
-    this.today = document.querySelector('.calendar__today');
+  constructor(name, parent) {
+    this.today = parent.querySelector('.calendar__today')
     this.mark = document.createElement('span');
     this.mark.className = name;
     this.prev = 0;
+    this.parent = parent;
   }
   moveAt(td) {
     if ( td.nodeName === 'TD' ) {
@@ -152,7 +152,7 @@ class createMark {
       td.appendChild(this.mark);
       this.mark.style.top = td.offsetTop + 'px';
       this.mark.style.left = td.offsetLeft + 'px';
-      createTrack('calendar__day_active');
+      createTrack('calendar__day_active', this.parent);
     }
   }
   pullOf() {
@@ -176,15 +176,15 @@ class createMark {
   }
 }
 
-function createTrack(find) {
-  let cells = document.querySelectorAll('.calendar__day-num');
+function createTrack(find, parent) {
+  let cells = parent.querySelectorAll('.calendar__day-num');
   let cellFind = [];
-  let borderRs = document.querySelectorAll('.calendar__day_bd--left, .calendar__day_bd--right');
+  let borderRs = parent.querySelectorAll('.calendar__day_bd--left, .calendar__day_bd--right');
   if ( borderRs.length ) {
     borderRs[0].classList.remove('calendar__day_bd--left');
     borderRs[1].classList.remove('calendar__day_bd--right');
   }
-  let cellActive = document.querySelectorAll('.calendar__day_track');
+  let cellActive = parent.querySelectorAll('.calendar__day_track');
   if ( cellActive.length ) {
     for ( let val of cellActive ) {
       val.classList.remove('calendar__day_track');
