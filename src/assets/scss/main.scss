@@ -125,9 +125,7 @@ hr {
 	color: $offensive;
 	text-transform: uppercase;
 }
-.hidden {
-  display: none;
-}
+
 
 @import "modules/arrow/arrow";
 @import "modules/button/button";
@@ -179,8 +177,11 @@ hr {
 @import "modules/footer/footer";
 @import "modules/input-options/input-options";
 @import "modules/input-dropdown/input-dropdown";
+@import "modules/user/user";
 
-
+.hidden {
+  display: none;
+}
 
 
 .visuallyhidden {

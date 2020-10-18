@@ -1,6 +1,11 @@
-.header__button {
-  margin-left: 20px;
+.header__button .button__theme {
+  padding: 7px 18px 8px 18px;
 }
+.header__button .button:first-child {
+  margin-right: 20px;
+}
+
+
 @media(max-width: 1023px) {
   .header__button {
     margin: unset;

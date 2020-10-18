@@ -1,11 +1,15 @@
 block variables
 block inputList
-block convenience
-block review
+block intelligenceList
+block reviewList
 block input-checkbox
 block optionsList
 block cardsList
 block dateList
+block navigationList
+block scheduleList
+block ruleList
+block canselList
 
 include ../utils/mixins
 include ../components/card
@@ -27,12 +31,9 @@ include ../components/reviews
 include ../components/heart
 include ../components/rating
 include ../components/pagination
-
-
-
-
-
-
+include ../components/navigation
+include ../components/schedule
+include ../components/cancel
 
 doctype html
 html
@@ -70,6 +71,8 @@ body(id=title)
         include ../includes/ui-kit/form
       when "elements"
         include ../includes/ui-kit/elements
+      when "header-footer"
+        include ../includes/ui-kit/header-footer
       when "sprite"
         include ../../assets/img/svg/sprite.svg
 

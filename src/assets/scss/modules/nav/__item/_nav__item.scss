@@ -1,10 +1,17 @@
 .nav__item {
-  margin-left: 20px;
+  margin-right: 20px;
   position: relative;
 }
-.nav__item:first-child {
-  margin-left: initial;
+
+.nav__item .button {
+  all: initial;
+  padding: 0px 7px;
+  cursor: pointer;
+  & span {
+    color: rgba(#1F2041,.5);
+  }
 }
+
 @media(max-width: 1023px) {
   .nav__item {
     transition-duration: .25s;

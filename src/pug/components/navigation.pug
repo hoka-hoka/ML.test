@@ -1,0 +1,19 @@
+mixin navigation()
+  .nav
+    input.nav__input.visuallyhidden(type="checkbox" id="hamburger")
+    label.nav__check(for="hamburger")
+      span
+    .nav__container.overlay.nav__overlay
+      .nav__modal
+        ul.nav__list
+          each v, i in navList
+            if i == 0
+              li.nav__item
+                a.nav__link.nav__link_active(disabled)=v
+            else if i == 1 || i == 4
+              li.nav__item
+                a.nav__link(disabled)=v
+                  +buttons(5)
+            else
+              li.nav__item
+                a.nav__link(disabled)=v

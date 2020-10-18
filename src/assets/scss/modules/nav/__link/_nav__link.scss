@@ -3,6 +3,11 @@
   color: $navText;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+.nav__link_active {
+  font-weight: bold;
+  color: $nav__link_active--txt;
 }
 @media(max-width: 1023px) {
   .nav__link {

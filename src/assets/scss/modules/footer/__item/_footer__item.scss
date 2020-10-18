@@ -1,6 +1,8 @@
 .footer__item {
-  padding-top: 17px;
+  padding-top: 18px;
+  width: 200px;
 }
+
 @media(max-width: 768px) {
   .footer__item {
     padding: unset;

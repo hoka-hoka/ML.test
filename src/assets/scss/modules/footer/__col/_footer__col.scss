@@ -1,6 +1,9 @@
 .footer__col {
   display: contents;
 }
+.footer__col:last-child .footer__item {
+  width: 260px;
+}
 @media(max-width: 768px) {
   .footer__col:last-child > .footer__list {
     grid-column: 1/5;

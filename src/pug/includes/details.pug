@@ -22,15 +22,15 @@
     .swiper-next
     .swiper-scrollbar
   .details__container.container
-    //- .details__cell--1
-    //-   include ../components/intelligence
+    .details__cell--1
+      +intelligence(1, "Сведения о номере")
     .details__cell--2
-      include ../components/schedule
+      +schedule()
     .details__cell--3
       include description
-    //- .details__cell--4
-    //-   include ../components/reviews
-    //- .details__cell--5
-    //-   include ../components/root
+    .details__cell--4
+      +reviews(1, "Отзывы поситителей номера", 2)
+    .details__cell--5
+      +rule(1, "Правила")
     .details__cell--6
-      include ../components/cancel
+      +cansel()

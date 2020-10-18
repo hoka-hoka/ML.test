@@ -25,6 +25,12 @@ let getFiles = function(dir, relative, files) {
 const regexp = /(\w+.?)+\//g;
 const PAGES = getFiles(PAGES_DIR, '');
 
+// Test the patch
+// PAGES.forEach( ( page   ) => {
+//   console.log(`./${regexp.test(page) ? page.match(regexp)[0] : ''}${page.match(/(\w+(?!\/).)+\.pug/g)[0].replace(/.pug/, '.html')}`);
+// });
+
+
 const NODE_ENV = process.env.NODE_ENV || 'development';
 /* При создании webpakc формирует граф зависимостей, где стартовая точка это точка входя entry */
 
@@ -78,10 +84,10 @@ module.exports = function(){
         options: { concurrency: 50 },
       }),
 
-      ...PAGES.map(page =>
+      ...PAGES.map( page =>
         new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${regexp.test(page) ? page.match(regexp)[0] : ''}${page.match(/\w+\.pug/g)[0].replace(/.pug/, '.html')}`, // исходный index с заменой
+          filename: `./${regexp.test(page) ? page.match(regexp)[0] : ''}${page.match(/(\w+(?!\/).)+\.pug/g)[0].replace(/.pug/, '.html')}`, // исходный index с заменой
           hash: true, // md5
           minify: false
         })

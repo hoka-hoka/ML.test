@@ -8,6 +8,7 @@ import '../assets/scss/modules/input-date/input-date'
 import '../assets/scss/modules/overlay/overlay'
 import '../assets/scss/modules/header/header'
 import '../assets/scss/modules/customer/customer'
+import '../assets/scss/modules/nav/nav'
 
 // ui-kit
 import '../assets/scss/templates/rectangle/rectangle'

@@ -18,12 +18,13 @@ block input
               -for(var i=0; i<2; ++i)
                 .rectangle__date-col
                   label.label.rectangle__label.label_font--bold.label_color--100(for=dt_timetable_id[i])=dt_timetable[i]
+
                   .rectangle__content.rectangle__content_margin--unset
                     if date != undefined
                       +input-date("", date[i])
                       +buttons(5, "", "js--click")
                     else
-                      +input-date()
+                      +input-date(dt_timetable_id[i], "ДД.ММ.ГГГГ")
                       +buttons(5, "", "js--click")
               - var i = null;
             +calendar()

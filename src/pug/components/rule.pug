@@ -3,6 +3,5 @@ mixin rule(index, title)
     if index == 1
       h2.root__title=title
     ul.root__list
-      -for(var k=0; k<rules.length; k++)
-        li.root__item=rules[k]
-      -var k = null;
+      each value in rules
+        li.root__item=value

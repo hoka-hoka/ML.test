@@ -1,5 +1,6 @@
 .banner__img {
   object-fit: cover;
+  max-height: 702px;
 }
 @media (min-width: 426px) and (max-width: 768px) {
   .banner__img {

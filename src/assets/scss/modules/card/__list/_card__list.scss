@@ -1,12 +1,12 @@
 :root {
-  --min-width: 200px;
+  --min-width: 250px;
 }
 .card__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--min-width), 1fr));
   grid-gap: 9px 20px;
 }
-@media (min-width: 1600px ) {
+@media (min-width: 1601px ) {
   :root {
     --min-width: 400px;
   }

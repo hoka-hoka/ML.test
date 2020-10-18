@@ -1,5 +1,3 @@
-block variable
-
 header.header
   .container.header__container
     .logo
@@ -7,24 +5,14 @@ header.header
         picture
           source( media="(max-width: 460px)" srcset="assets/img/svg/sm-logo.svg 60w" sizes="15vw")
           img(srcset="assets/img/svg/logo.svg 106w", sizes="105px" alt="TOXIN главная страница")
-    .nav
-      input.nav__input.visuallyhidden(type="checkbox" id="hamburger")
-      label.nav__check(for="hamburger")
-        span
-      .nav__container.overlay.nav__overlay
-        .nav__modal
-          ul.nav__list
-            -for(var i=0; i<navList.length; ++i)
-              if i == 1 || i == 4
-                li.nav__item
-                  a.nav__link(href="#")=navList[i]
-                    span.nav__arrow.arrow
-              else
-                li.nav__item
-                  a.nav__link(href="#")=navList[i]
-            - var i = undefined;
+    +navigation()
+
     .header__button
       a.button.button_gradient.button_br--hov(href="website/registration.html" target="_blank" rel="nofollow noopener")
         .button__theme.button__theme_br Войти
       a.button.button_gradient.button_bg--hov(href="website/authorization.html" target="_blank" rel="nofollow noopener")
         .button__theme.button__theme_bg Зарегистрироваться
+
+    .user.header__user.hidden
+      span.user__name Юлий Цезарь
+
