@@ -1,29 +1,32 @@
 footer.footer(role="contentinfo")
   hr.footer__line
   .container.footer__container
-    .footer__widget
-      .footer__box
-        .logo.footer__logo
+
+
+    ul.footer__row
+      li.footer__col.footer__logo
+        .logo
           a.logo__link(href="#")
             +icon('pick', 106, 40, "0 0 106 40", "logo", "TOXIN, бронирование номеров")
         p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-      ul.footer__row
 
-        each value, i in footerList
-          li.footer__col
-            ul.footer__list(id="modal-"+i)
-              if i == footerItem.length - 1
+      each value, i in footerList
+        li.footer__col
+          div.footer__check
+            span.offensive=footerList[i]
+          ul.footer__list
+            if i == footerItem.length - 1
+              li.footer__item
+                p.footer__text.footer__text_margin=footerItem[i]
+                .footer__email
+                  form(action="")
+                    +input-email("", "input__placeholder_color--25", "Email", true)
+            else
+              each v in footerItem[i]
                 li.footer__item
-                  p.footer__text.footer__text_margin=footerItem[i]
-                  .footer__email
-                    form(action="")
-                      +input-email("", "input__placeholder_color--25", "Email", true)
-              else
-                each v in footerItem[i]
-                  li.footer__item
-                    a.footer__links(href="#")=v
-            a.footer__check(href="#modal-"+i)
-              span.offensive=footerList[i]
+                  a.footer__links(href="#")=v
+
+
 
   hr.footer__line
   .container.footer__date

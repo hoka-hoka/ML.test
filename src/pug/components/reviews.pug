@@ -2,8 +2,9 @@ mixin reviews(index, title, len)
   .reviews
     .reviews__container
       if index == 1
-        h2.reviews__title=title
-        span.reviews__amount=len + ' отзыва'
+        .reviews__top
+          h2.reviews__title=title
+          span.reviews__amount=len + ' отзыва'
       ul.reviews__list
         each val, i in review
           li.customer.reviews__customer

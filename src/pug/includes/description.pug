@@ -31,8 +31,8 @@ block input
 
           li.rectangle__item
             label.label.rectangle__label.label_font--bold.label_color--100(for='arrive')=dt_gues
-            .rectangle__content.rectangle_example--js
-              +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
+            .rectangle__content
+              +input-dropdown("arrive", "Сколько гостей", "", "gues")
               +input-options(1, "gues")
 
           li.rectangle__item.rectangle__item-mb--30
