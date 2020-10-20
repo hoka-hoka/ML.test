@@ -1,4 +1,15 @@
 .footer__logo {
+  display: flex;
+  flex-direction: column;
   flex: 1 0 240px;
   padding-right: 20px;
+}
+@media(max-width: 1023px) {
+  .footer__logo {
+    flex-basis: 100%;
+    align-items: center;
+    padding-right: unset;
+    margin-bottom: 50px;
+    flex-direction: row;
+  }
 }

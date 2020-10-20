@@ -8,7 +8,8 @@ footer.footer(role="contentinfo")
         .logo
           a.logo__link(href="#")
             +icon('pick', 106, 40, "0 0 106 40", "logo", "TOXIN, бронирование номеров")
-        p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        .footer__description
+          p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
       each value, i in footerList
         li.footer__col
