@@ -5,3 +5,11 @@
   letter-spacing: -0.2px;
   width: 50%;
 }
+
+@media(max-width: 768px) {
+  .footer__cop {
+    margin-top: 22px;
+    margin-bottom: 25px;
+    width: initial;
+  }
+}

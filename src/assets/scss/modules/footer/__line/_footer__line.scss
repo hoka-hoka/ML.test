@@ -3,3 +3,9 @@
   height: 1px;
   border: none;
 }
+
+@media(max-width: 768px) {
+  .footer__line {
+    display: none;
+  }
+}

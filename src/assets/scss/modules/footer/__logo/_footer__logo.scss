@@ -4,12 +4,26 @@
   flex: 1 0 240px;
   padding-right: 20px;
 }
-@media(max-width: 1023px) {
+
+@media(min-width: 769px) and (max-width: 1023px) {
   .footer__logo {
     flex-basis: 100%;
     align-items: center;
     padding-right: unset;
     margin-bottom: 50px;
     flex-direction: row;
+  }
+}
+
+.footer__logo_show {
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .footer__logo_show {
+    display: block;
+    flex-shrink: initial;
+    flex-grow: initial;
+    flex-basis: initial;
   }
 }
