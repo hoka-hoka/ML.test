@@ -1,9 +1,9 @@
 .footer__container {
-  padding-top: 100px;
+  padding: 100px 0;
 }
 
 @media(max-width: 1023px) {
   .footer__container {
-    padding-top: 50px;
+    padding: 50px 0 0 0;
   }
 }

@@ -1,0 +1,11 @@
+.sign-up {
+  display: none;
+}
+@media(max-width: 425px) {
+  .sign-up {
+    display: flex;
+  }
+}
+.sign-up__icon {
+  fill: rgb(53,53,64);;
+}

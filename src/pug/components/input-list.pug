@@ -1,5 +1,5 @@
-mixin input-lsit (name, labelClass, variant, id, role)
-  label.label.js--click(for='' class=labelClass, data-role=role)=name
+mixin input-list(name, labelClass, variant, id, role)
+  div.label.js--click(class=labelClass, data-role=role)=name
   +buttons(5, "", "js--click js--rotate")
   .canvas.js--show.hidden
     each item, index in additional

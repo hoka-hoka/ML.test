@@ -3,15 +3,22 @@ header.header
     .logo
       a.logo__link(href="index.html")
         picture
-          source( media="(max-width: 460px)" srcset="assets/img/svg/sm-logo.svg 60w" sizes="15vw")
+          source( media="(max-width: 460px)" srcset="assets/img/svg/sm-logo.svg 60w" sizes="60px")
           img(srcset="assets/img/svg/logo.svg 106w", sizes="105px" alt="TOXIN главная страница")
     +navigation()
 
     .header__button
-      a.button.button_gradient.button_br--hov(href="website/registration.html" target="_blank" rel="nofollow noopener")
-        .button__theme.button__theme_br Войти
-      a.button.button_gradient.button_bg--hov(href="website/authorization.html" target="_blank" rel="nofollow noopener")
-        .button__theme.button__theme_bg Зарегистрироваться
+      .header__btn-login
+        a.button.button_gradient.button_br--hov(href="website/registration.html" target="_blank" rel="nofollow noopener")
+          .button__theme.button__theme_br Войти
+        a.sign-in(href="website/registration.html" target="_blank" rel="nofollow noopener")
+          +icon("sign-in", 25, 25, "0 0 512 512", "sign-in__icon", "Войти")
+
+      .header__btn-auth
+        a.button.button_gradient.button_bg--hov(href="website/authorization.html" target="_blank" rel="nofollow noopener")
+          .button__theme.button__theme_bg Зарегистрироваться
+        a.sign-up(href="website/authorization.html" target="_blank" rel="nofollow noopener")
+          +icon("sign-up", 25, 25, "0 0 512 512", "sign-up__icon", "Зарегистрироваться")
 
     .user.header__user.hidden
       span.user__name Юлий Цезарь

@@ -20,12 +20,10 @@ block input
             +calendar()
 
           li.rectangle__item.rectangle__item-mb--30
-
             label.label.label_font--bold.label_color--100(for='s-gues')=sr_gues
-
             .rectangle__content
-              +input-dropdown("s-gues", "Сколько гостей")
-              // +input-options(1, "gues")
+              +input-dropdown("s-gues", "Сколько гостей", "", "gues")
+              +input-options(1, "gues")
           li.rectangle__item
             .rectangle__submit
               +buttons(2, 'Подобрать номер', 'button_width')
