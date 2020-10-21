@@ -59,11 +59,12 @@
         .rectangle
           .uikit-title
             span.uikit-label.ractangle__label-mb--16(for="ui-masded-text") checkbox buttons
-          each item, index in allowed
-            if index == 0
-              +input-checkbox(index, item, "gues", 1, false)
-            else
-              +input-checkbox(index, item, "gues", 1, true)
+          .rectangle__checkbox
+            each item, index in allowed
+              if index == 0
+                +input-checkbox(index, item, "gues", 1, false)
+              else
+                +input-checkbox(index, item, "gues", 1, true)
       .uikit-elements__item.uikit-radio-buttons
         .uikit-title
           span.uikit-label.ractangle__label-mb--16(for="ui-masded-text") radio buttons
@@ -169,7 +170,7 @@
     .uikit-elements__list
       .uikit-elements__item.uikit-rich-checkbox
         .uikit-title
-          span.uikit-label.label_font--bold.uikit-label_mb--17(for="") rich checkbox buttons
+          span.uikit-label.label_font--bold.ractangle__label-mb--16(for="") rich checkbox buttons
         each item, index in availabel
           +input-checkbox(index, item, "available", 0)
     .uikit-elements__list
