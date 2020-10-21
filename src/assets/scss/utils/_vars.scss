@@ -43,8 +43,8 @@ $mainTitleBlock: $x-dark-100;
 
 $canvas--bg: $x-white;
 
-$label_color--100: $x-dark-100;
-$label_color--75: $x-dark-75;
+$label-large--txt: $x-dark-100;
+
 $label_color--50: $x-dark-50;
 
 $registration__label_text--color: $x-dark-75;
@@ -67,7 +67,7 @@ $accetes--txt: $x-dark-25;
 $button__theme_bg--txt: $x-white;
 $button__theme_br--sh: $x-purple;
 $button__theme_br--txt: $x-purple;
-$button_color-prev--txt: $x-dark-50;
+$button_color-prev--txt: $x-purple;
 $button_color-next--txt: $x-purple;
 $button_arrow--txt: $x-dark-75;;
 
@@ -81,6 +81,8 @@ $input__placeholder_color--25: $x-dark-25;
 $input__options--bd: $x-dark-25;
 $input__mark-minus--txt: $x-dark-50;
 $input__marks--bd: $x-dark-25;
+$input-checkbox__title--txt: $x-dark-75;
+$input-checkbox__text--txt: $x-dark-50;
 
 $input-radio--bd: $x-purple;
 $input-radio--bg: $x-purple;

@@ -4,6 +4,9 @@
   flex: 1 0 240px;
   padding-right: 20px;
 }
+.footer__logo .logo {
+  margin-bottom: 9px;
+}
 
 @media(min-width: 769px) and (max-width: 1023px) {
   .footer__logo {

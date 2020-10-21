@@ -8,24 +8,30 @@
   font-size: 24px;
   line-height: 30px;
   color: $x-dark;
+  font-family: $additionalFont, Arial, sans-serif;
 }
 .font-h2 {
   font-size: 19px;
   line-height: 24px;
   color: $x-dark;
-  width: 300px;
+  font-family: $additionalFont, Arial, sans-serif;
 }
 .font-h3 {
   font-size: 12px;
   line-height: 15px;
   color: $x-dark;
+  text-transform: uppercase;
+  font-family: $mainFont;
+
 }
 .font-body {
   font-size: 14px;
   line-height: 24px;
   color: $x-gray-75;
+  font-family: $mainFont;
+  width: 301px;
 }
-@import '__example/font__example';
+
 @import '__item/font__item';
 @import '__menu/font__menu';
 @import '__tag/font__tag';

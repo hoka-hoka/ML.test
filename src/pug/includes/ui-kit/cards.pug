@@ -14,9 +14,9 @@ block variable
         - var i = undefined;
     .font
       ul.font__menu
-        -for(var i = 0; i <= font[0].length; i++)
+        -for(var i = 0; i < font[0].length; i++)
           li.font__item
             div.font__tag(class="font-"+font[0][i])=font[0][i]
-            span.font__example(class="font-"+font[0][i] + " " + (i < 3 ? "font-bold": ""))=font[1][i]
+            span(class="font-"+font[0][i] + " " + (i < 3 ? "font-bold": ""))=font[1][i]
         -var i = undefined;
 
