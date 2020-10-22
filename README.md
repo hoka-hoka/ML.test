@@ -6,6 +6,9 @@
 [Демо](https://hoka-hoka.github.io/task_1-view/#modal-1 "Необязательная подсказка")
 ### Установка
 
+Клонирование проекта  
+`git clone https://github.com/hoka-hoka/task_1.git`  
+
 Установка зависимостей  
 `npm i`
 
