@@ -169,7 +169,6 @@ hr {
 @import "modules/header/header";
 @import "modules/nav/nav";
 @import "modules/logo/logo";
-@import "modules/rectangle/rectangle";
 @import "modules/authorization/authorization";
 @import "modules/registration/registration";
 @import "modules/banner/banner";
@@ -181,6 +180,7 @@ hr {
 @import "modules/sign-in/sign-in";
 @import "modules/sign-up/sign-up";
 @import "modules/label-large/label-large";
+@import "modules/rectangle/rectangle";
 
 .hidden {
   display: none;

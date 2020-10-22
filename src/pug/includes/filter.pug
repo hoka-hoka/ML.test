@@ -10,20 +10,20 @@
         ul.rectangle__list(role='none')
           li.rectangle__item
 
-            label.label.label_font--bold.label_color--100(for='pr-date') Даты пребывания в отеле
+            label.label.label-large(for='pr-date') Даты пребывания в отеле
             .rectangle__content
               +input-date("pr-date", "ДД.ММ.ГГГГ", "")
               +buttons(5, "", "js--click")
           +calendar()
 
           li.rectangle__item.rectangle__item-mb--30
-            label.label.label_font--bold.label_color--100(for='pr-gues') Гости
+            label.label.label-large(for='pr-gues') Гости
             .rectangle__content
               +input-dropdown("pr-gues", "Сколько гостей", "", "gues")
               +input-options(1, "gues")
 
           li.rectangle__item.rectangle__item-mb--30
-            label.label.ractangle__label-mb--16.label_font--bold.label_color--100(for='pr-price') Диапазон цены
+            label.label.label-large.ractangle__label-mb--16(for='pr-price') Диапазон цены
             span.rectangle__price
             .rectangle__content
               input.input-range(type='range' id='pr-price' multiple value='10,80')
@@ -31,22 +31,22 @@
 
           li.rectangle__item.rectangle__item-mb--30
             .rectangle__content
-              span.label.ractangle__label-mb--16.label_font--bold.label_color--100 Правила дома
+              span.label.label-large.ractangle__label-mb--16 Правила дома
               each item, index in allowed
                 +input-checkbox(index, item, "gues", 1)
 
           li.rectangle__item.rectangle__item-mb--30
-            label.label.ractangle__label-mb--16.label_font--bold.label_color--100 Доступность
+            label.label.label-large.ractangle__label-mb--16 Доступность
             .rectangle__content
               each item, index in availabel
                 +input-checkbox(index, item, "available", 0)
 
           li.rectangle__item.rectangle__item-mb--30
-            label.label.label_font--bold.label_color--100(for='pr-room') Удобство номера
+            label.label.label-large(for='pr-room') Удобство номера
             .rectangle__content
               +input-dropdown("pr-room", "Сколько комнат", "", "room")
               +input-options(1, "room")
 
           li.rectangle__item.rectangle__item-mb--30
             .rectangle__content
-              +input-list("Дополнительные удобства", "ractangle__label-mb--16 label_font--bold label_color--100", 1, "additional")
+              +input-list("Дополнительные удобства", "label-large ractangle__label-mb--16", 1, "additional")
