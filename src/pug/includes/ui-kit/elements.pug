@@ -130,33 +130,33 @@
         .rectangle.uikit-elements__short
           .uikit-title
             span.uikit-title__mark default
-            label.label-large(for="ui-dropdown") dropdown
+            label.label-large(for="ui-dropdown-one") dropdown
           .rectangle__content
-            +input-dropdown("ui-dropdown", "Сколько комнат", "2 спальни, 2 кровати...", "room")
+            +input-dropdown("ui-dropdown-one", "Сколько комнат", "2 спальни, 2 кровати...", "room")
             +input-options("", "room")
       .uikit-elements__item.uikit-dropdown
         .rectangle.uikit-elements__short.rectangle_active--js.rectangle_example--js
           .uikit-title
             span.uikit-title__mark expanded
-            label.label-large(for="ui-dropdown") dropdown
+            label.label-large(for="ui-dropdown-two") dropdown
           .rectangle__content
-            +input-dropdown("ui-dropdown", "Сколько комнат", "", "room")
+            +input-dropdown("ui-dropdown-two", "Сколько комнат", "", "room")
             +input-options("", "room")
     .uikit-elements__list
       .uikit-elements__item.uikit-dropdown.uikit-gues
         .uikit-title
-          label.label-large(for="ui-dropdown") dropdown
+          label.label-large(for="ui-dropdown-three") dropdown
         .rectangle.rectangle_active--js
           .rectangle__content
-            +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
+            +input-dropdown("ui-dropdown-three", "Сколько гостей", "", "gues")
             +input-options(1, "gues")
     .uikit-elements__list
       .uikit-elements__item.uikit-dropdown
         .uikit-title
-          label.label-large(for="ui-dropdown") dropdown
+          label.label-large(for="ui-dropdown-four") dropdown
         .rectangle.rectangle_active--js.rectangle_example--js
           .rectangle__content
-            +input-dropdown("ui-dropdown", "Сколько гостей", "", "gues")
+            +input-dropdown("ui-dropdown-four", "Сколько гостей", "", "gues")
             +input-options(1, "gues")
 
   .uikit-elements.uikit__container.uikit-checkboxs

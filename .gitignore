@@ -33,5 +33,5 @@
 # !install/package.html
 
 /dist/
-
+/modules/
 /node_modules/

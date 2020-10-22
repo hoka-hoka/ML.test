@@ -14,7 +14,7 @@ block input
                 .rectangle__date-col
                   label.label.label-large(for=sr_timetable_id[i])=sr_timetable[i]
                   .rectangle__content.rectangle__content_margin--unset
-                    +input-date("","ДД.ММ.ГГГГ", "")
+                    +input-date(sr_timetable_id[i],"ДД.ММ.ГГГГ", "")
                     +buttons(5, "", "js--click")
               - var i = null;
             +calendar()

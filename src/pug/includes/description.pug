@@ -21,7 +21,7 @@ block input
 
                   .rectangle__content.rectangle__content_margin--unset
                     if date != undefined
-                      +input-date("", date[i])
+                      +input-date(dt_timetable_id[i], date[i])
                       +buttons(5, "", "js--click")
                     else
                       +input-date(dt_timetable_id[i], "ДД.ММ.ГГГГ")
