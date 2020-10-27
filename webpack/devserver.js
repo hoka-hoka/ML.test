@@ -6,7 +6,6 @@ module.exports = function() {
     devServer: {
       contentBase: path.join(__dirname, "dist/assets/js"),
       publicPath: '/',
-      watchContentBase: true,
       port: 8081,
       overlay: { // вывод ошибок на экране браузера
         warnings: false,

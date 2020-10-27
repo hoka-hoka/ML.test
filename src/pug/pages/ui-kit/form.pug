@@ -1,39 +1,41 @@
 extends ../../layout/main
 block variables
-  - var title = 'form';
-  - var templates = ["form", "sprite"];
-  - var navList = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
-  - var dropList = ["Взрослые", "Дети", "Младенцы"];
-  - var footerList = ["Навигация", "О нас", "Служба поддержки", "Подписка"];
-  - var footerItem = [["О нас", "Новости", "Служба поддрежки", "Услуги"], ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"], ["Соглашения", "Сообщества", "Связь с нами"], "Получите специальное предложение и новости сервиса"];
+	- var title = 'form';
+	- var templates = ["form", "sprite"];
+	- var dropList = ["Взрослые", "Дети", "Младенцы"];
+	- var footerList = ["Навигация", "О нас", "Служба поддержки", "Подписка"];
+	- var footerItem = [["О нас", "Новости", "Служба поддрежки", "Услуги"], ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"], ["Соглашения", "Сообщества", "Связь с нами"], "Получите специальное предложение и новости сервиса"];
+
+block navList
+	- var navList = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
 
 block input
-  - var sr_timetable = ['Прибытие', 'Выезд'];
-  - var sr_timetable_id = ['sh-date--arrive', 'sh-date--departure'];
-  - var dt_timetable = ['Прибытие', 'Выезд'];
-  - var dt_timetable_id = ['dt-date--arrive', 'dt-date--departure'];
-  - var sr_gues = 'Гости';
-  - var dt_gues = 'Гости';
+	- var sr_timetable = ['Прибытие', 'Выезд'];
+	- var sr_timetable_id = ['sh-date--arrive', 'sh-date--departure'];
+	- var dt_timetable = ['Прибытие', 'Выезд'];
+	- var dt_timetable_id = ['dt-date--arrive', 'dt-date--departure'];
+	- var sr_gues = 'Гости';
+	- var dt_gues = 'Гости';
 
 block cardsList
-  -
-    var elem = [{
-      number: "888",
-      price: "9 990",
-      status: "Люкс",
-      reviews: "145",
-      checked: "1"
-    }, {
-      number: "840",
-      price: "9 900",
-      status: "",
-      reviews: "65",
-      checked: "2"
-    }];
+	-
+		var elem = [{
+			number: "888",
+			price: "9 990",
+			status: "Люкс",
+			reviews: "145",
+			checked: "1"
+		}, {
+			number: "840",
+			price: "9 900",
+			status: "",
+			reviews: "65",
+			checked: "2"
+		}];
 
 block dateList
-  - var date = ["19.08.2019", "23.08.2019"];
+	- var date = ["19.08.2019", "23.08.2019"];
 
 block optionsList
-  - var guesList = ["Взрослые", "Дети", "Младенцы"];
-  - var roomList = ["Спальни", "Кровати", "Ванные комнаты"];
+	- var guesList = ["Взрослые", "Дети", "Младенцы"];
+	- var roomList = ["Спальни", "Кровати", "Ванные комнаты"];

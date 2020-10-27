@@ -155,7 +155,7 @@ hr {
 @import "modules/reviews/reviews";
 @import "modules/customer/customer";
 @import "modules/heart/heart";
-@import "modules/root/root";
+@import "modules/rule/rule";
 @import "modules/cancel/cancel";
 @import "modules/overlay/overlay";
 @import "modules/modal/modal";
@@ -181,6 +181,9 @@ hr {
 @import "modules/sign-up/sign-up";
 @import "modules/label-large/label-large";
 @import "modules/rectangle/rectangle";
+@import "modules/input-list/input-list";
+@import "modules/input-password/input-password";
+@import "modules/input-text/input-text";
 
 .hidden {
   display: none;

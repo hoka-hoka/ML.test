@@ -1,0 +1,7 @@
+mixin input-list(name, labelClass, variant, id, role)
+	.input-list
+		div.label.js--click(class=labelClass, data-role=role)=name
+		+buttons(5, "", "js--click js--rotate")
+		.canvas.js--show.hidden
+			each item, index in additional
+				+input-checkbox(index, item, id, variant)
