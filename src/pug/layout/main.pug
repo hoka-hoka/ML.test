@@ -27,7 +27,7 @@ include ../../assets/scss/modules/input-list/input-list
 include ../../assets/scss/modules/input-checkbox/input-checkbox
 include ../../assets/scss/modules/rule/rule
 include ../../assets/scss/modules/intelligence/intelligence
-include ../../assets/scss/modules/components/reviews/reviews
+include ../../assets/scss/modules/reviews/reviews
 include ../../assets/scss/modules/heart/heart
 include ../../assets/scss/modules/rating/rating
 include ../../assets/scss/modules/pagination/pagination
@@ -50,21 +50,21 @@ body(id=title)
   each temp in templates
     case temp
       when "header"
-        include ../includes/header
+        include ../../assets/scss/modules/header/header
       when "banner"
         include ../includes/banner
       when "product"
         include ../includes/product
-      when "details"
-        include ../includes/details
-      when "footer"
-        include ../includes/footer
+      //- when "details"
+      //-   include ../includes/details
       when "home"
         include ../includes/home
+      when "footer"
+        include ../../assets/scss/modules/footer/footer
       when "authorization"
-        include ../includes/authorization
+        include ../../assets/scss/modules/authorization/authorization
       when "registration"
-        include ../includes/registration
+        include ../../assets/scss/modules/registration/registration
       when "cards"
         include ../includes/ui-kit/cards
       when "form"
