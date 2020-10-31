@@ -1,4 +1,3 @@
-//- block cards
 mixin card(number, status, price, checked, reviews, index)
   li.card__item
     .swiper-container.card__swiper-container
@@ -6,9 +5,9 @@ mixin card(number, status, price, checked, reviews, index)
         -for(var i=1; i<=4; ++i)
           .swiper-slide
             picture.card__pic
-              source.card__img(type="image/webp" srcset="assets/img/card_0"+i+".webp")
-              source.card__img(type="image/png" srcset="assets/img/card_0"+i+".png")
-              img.card__img(src="assets/img/card_0"+i+".jpg", alt="Номер в гостинице")
+              source.card__img(type="image/webp" srcset="assets/img/card-"+i+".webp")
+              source.card__img(type="image/png" srcset="assets/img/card-"+i+".png")
+              img.card__img(src="assets/img/card-"+i+".jpg", alt="Номер в гостинице")
       .card__pagination
       .swiper-prev
       .swiper-next
