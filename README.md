@@ -28,17 +28,21 @@
 |   ├── assets
 |   |   ├── css
 |   |   ├── img
+|   |       └── svg
 |   |   └── scss
+|   |       ├── modules
+|   |       ├── templates
+|   |       └── utils
 |   |
 |   ├── js
 |   |
 |   ├── pug
-|   |   ├── components
-|   |   |   ├── rectangles
 |   |   ├── includes
-|   |   |   ├── modules
+|   |   |   └── uikit
 |   |   ├── layout
 |   |   ├── pages
+|   |   |   ├── uikit
+|   |   |   └── website
 |   |   └── utils
 |   ├── static 
 |   |
