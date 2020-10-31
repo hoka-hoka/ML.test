@@ -1,0 +1,33 @@
+@media(max-width: 425px) {
+    .search__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        cursor: pointer;
+        opacity: 0;
+    }
+    .search__close:before, 
+    .search__close:after {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 17px;
+      background: rgb(139, 164, 249);
+    }
+    .search__close:before {
+      transform: rotate(45deg);
+    }
+    .search__close:after {
+      transform: rotate(-45deg);
+    }
+    .search__checkbox_open:checked ~ .rectangle > .search__close {
+      opacity: 1;
+      transition: 2s;
+    }
+  }
+  

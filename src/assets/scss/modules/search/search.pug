@@ -1,11 +1,11 @@
 block input
-.modal.search.search_bg
-  input.visuallyhidden(type="checkbox" id="button")
-  label.modal__label(for="button" data-click="Click me")
-  main.rectangle
-    label.modal__close(for="button")
+.search.search_bg
+  input.visuallyhidden.search__checkbox.search__checkbox_open(type="checkbox" id="sr-form")
+  label.search__label(for="sr-form" data-click="Click me")
+  main.rectangle.search__rectangle
+    label.search__close(for="sr-form")
     form(action="")
-      fieldset.rectangle__container.modal__content
+      fieldset.rectangle__container
         legend.rectangle__title Найдём номера под ваши пожелания
         ul.rectangle__list(role='none')
           li.rectangle__item

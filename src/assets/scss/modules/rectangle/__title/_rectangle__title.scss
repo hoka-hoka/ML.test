@@ -5,3 +5,8 @@
   color: $rectangle__title--txt;
   margin-bottom: 20px;
 }
+@media(max-width: 320px) {
+    .rectangle__title {
+        padding-right: 30px;
+    }
+}
