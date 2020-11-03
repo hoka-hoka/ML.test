@@ -1,13 +1,12 @@
-.uikit-range-slider .uikit-label {
-  margin-bottom: 24px;
-}
-
-.uikit-range-slider .uikit-title__mark {
-  line-height: 16px;
-  letter-spacing: 0.4px;
-}
-
 .uikit-range-slider {
   width: 266px;
-}
 
+  & .uikit-label {
+    margin-bottom: 24px;
+  }
+
+  & .uikit-title__mark {
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+}

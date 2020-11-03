@@ -1,9 +1,9 @@
 .label-large {
-	color: $label-large--txt;
-  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+  color: $label-large--txt;
+  font-weight: bold;
   font-size: rem(12);
   font-family: $mainFont;
-  margin-bottom: 5px;
-  font-weight: bold;
-  display: block;
+  text-transform: uppercase;
 }

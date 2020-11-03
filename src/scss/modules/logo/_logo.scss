@@ -1,6 +1,5 @@
 .logo {
-
+  &__link {
+    display: flex;
+  }
 }
-
-
-@import '__link/logo__link';

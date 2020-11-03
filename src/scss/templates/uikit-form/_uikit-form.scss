@@ -1,26 +1,59 @@
 .uikit-form {
-  margin: 73px auto 0 140px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 1240px;
   height: 1200px;
-}
+  margin: 73px auto 0 140px;
 
-.uikit-form::before,
-.uikit-form::after {
-  content: "";
-  flex-basis: 100%;
-  width: 0;
-  order: 2;
-}
+  &:before,
+  &:after {
+    content: '';
+    flex-basis: 100%;
+    order: 2;
+    width: 0;
+  }
 
-.uikit-form .search {
-  margin-top: 0;
+  & .search {
+    margin-top: 0;
+  }
+
+  &__aut,
+  &__reg {
+    position: relative;
+  }
+
+  &__item {
+    width: 380px;
+    margin-bottom: 40px;
+
+    &:nth-child(3n + 1) {
+      order: 1;
+    }
+
+    &:nth-child(3n + 2) {
+      order: 2;
+    }
+
+    &:nth-child(3n) {
+      order: 3;
+    }
+
+    & > .calendar > .calendar__container {
+      position: relative;
+      width: 320px;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 42px;
+  }
+
+  &__cards {
+    width: 270px;
+
+    & .card__item:first-child {
+      margin-bottom: 39px;
+    }
+  }
 }
-.uikit-form__aut, .uikit-form__reg {
-  position: relative;
-}
-@import "__item/uikit-form__item";
-@import "__cards/uikit-form__cards";
-@import "__descr/uikit-form__descr";

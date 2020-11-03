@@ -1,7 +1,26 @@
 .input-checkbox {
+  &__title {
+    color: $input-checkbox__title--txt;
+    font-weight: bold;
+    font-size: rem(14);
+    cursor: pointer;
+    user-select: none;
+  }
 
+  &__text {
+    color: $input-checkbox__text--txt;
+    font-weight: normal;
+    font-size: rem(14);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__pd {
+    padding-left: 30px;
+  }
+
+  &__label {
+    padding-left: 30px;
+    line-height: rem(20);
+  }
 }
-@import '__label/input-checkbox__label';
-@import '__pd/input-checkbox__pd';
-@import '__title/input-checkbox__title';
-@import '__text/input-checkbox__text';

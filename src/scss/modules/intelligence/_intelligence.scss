@@ -1,10 +1,45 @@
 .intelligence {
+  &__text {
+    font-size: rem(14);
+    line-height: rem(21, 14);
+  }
 
+  &__pick {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    text-align: center;
+  }
+
+  &__list {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+
+    &:first-child {
+      padding-top: unset;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__container {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 5px;
+  }
+
+  &__accent {
+    display: block;
+    margin-bottom: 6px;
+  }
 }
-@import '__list/intelligence__list';
-@import '__item/intelligence__item';
-@import '__container/intelligence__container';
-@import '__accent/intelligence__accent';
-@import '__icn/intelligence__icn';
-@import '__text/intelligence__text';
-@import '__pick/intelligence__pick';

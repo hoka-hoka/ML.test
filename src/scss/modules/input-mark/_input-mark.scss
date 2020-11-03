@@ -1,4 +1,9 @@
 .input-mark {
   position: relative;
+  &__list {
+    line-height: em(18, 14);
+    &_pale_col::placeholder {
+      color: $input__list_pale_col--txt;
+    }
+  }
 }
-@import '__list/input-mark__list';

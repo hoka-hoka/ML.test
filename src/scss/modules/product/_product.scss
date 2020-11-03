@@ -1,7 +1,29 @@
 .product {
+  &__list {
+    padding-left: 50px;
+  }
 
+  &__find {
+    min-width: 260px;
+
+    @media (max-width: 425px) {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+
+  &__container {
+    display: flex;
+    padding-top: 30px;
+  }
+
+  &__card {
+    margin-bottom: 40px;
+  }
 }
-@import '__container/product__container';
-@import '__card/product__card';
-@import '__list/product__list';
-@import '__find/product__find';
+// TODO: media
+@media (max-width: 425px) {
+  .product__container.container {
+    margin-left: 0;
+  }
+}

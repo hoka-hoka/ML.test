@@ -1,13 +1,49 @@
 .banner {
   position: relative;
+
+  &__text {
+    position: absolute;
+    right: 0;
+    bottom: 19px;
+    width: 297px;
+    line-height: em(24);
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    max-height: 702px;
+
+    @media (min-width: 426px) and (max-width: 768px) {
+      min-height: 550px;
+      object-position: 16%;
+    }
+
+    @media (max-width: 425px) {
+      min-height: 360px;
+    }
+  }
+
+  &__dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+  }
 }
-@media(max-width: 425px) {
+@media (max-width: 425px) {
   .banner > .container {
     margin: unset;
   }
 }
-@import '__img/banner__img';
-@import '__text/banner__text';
-@import '__container/banner__container';
-@import '__dialog/banner__dialog';
-@import '__pick/banner__pick';

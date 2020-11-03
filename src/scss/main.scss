@@ -1,15 +1,15 @@
-@import "utils/fonts";
-@import "utils/libs";
-@import "utils/vars";
-@import "utils/mixins";
+@import 'utils/fonts';
+@import 'utils/libs';
+@import 'utils/vars';
+@import 'utils/mixins';
 
 @media screen and (max-width: 1240px) {
-	html {
+  html {
     font-size: 14px;
   }
   .container {
-		margin: 0 5vw;
-	}
+    margin: 0 5vw;
+  }
 }
 // @media screen and (max-width: 768px) {
 //   .container {
@@ -22,182 +22,204 @@
 //   }
 // }
 @for $i from 1 through 6 {
-	h#{$i} {
-		margin: 0;
-	}
+  h#{$i} {
+    margin: 0;
+  }
 }
+
 html {
-  font-family: $mainFont;
-  font-size: $mainFontSize;
-  color: $body-text;
   box-sizing: border-box;
+  color: $body-text;
+  font-size: $mainFontSize;
+  font-family: $mainFont;
 }
+
 html * {
   box-sizing: border-box;
 }
+
 body {
-	margin: 0;
+  margin: 0;
 }
+
 legend {
   padding: 0;
 }
+
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
+
 section {
-	position: relative;
-	padding: 0 0; // 1
+  position: relative;
+  padding: 0 0; // 1
 }
 
 @for $i from 1 through 6 {
-	h#{$i} {
-		color: $mainTitleBlock;
-	}
+  h#{$i} {
+    color: $mainTitleBlock;
+  }
 }
-h1, h2 {
-	font-family: $secondFont;
-}
-h1 {
-	font-size: 	em(24);
-	line-height: em(30,24);
-}
+
+h1,
 h2 {
-	font-size: 	em(19);
-	line-height: em(24);
+  font-family: $secondFont;
 }
+
+h1 {
+  font-size: em(24);
+  line-height: em(30, 24);
+}
+
+h2 {
+  font-size: em(19);
+  line-height: em(24);
+}
+
 h3 {
-	font-family: $secondFont;
+  font-family: $secondFont;
 }
+
 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-img {
-	width: 100%;
-	max-width: 100%;
-	display: flex;
-}
-button {
-	background: none;
-	border: none;
-	display: flex;
-	padding: 0;
-  cursor: pointer;
-}
-p {
-	margin: 0;
-}
-hr {
-	margin: 0;
-}
-fieldset {
-  border: unset;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
-input:focus, input:hover {
-	outline: 0;
-	border: 1px solid $input_foc_hov;
+
+img {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
 }
+
+button {
+  display: flex;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: unset;
+}
+
+input:focus,
+input:hover {
+  border: 1px solid $input_foc_hov;
+  outline: 0;
+}
+
 input[type='date'] {
   font-size: rem(14);
   text-transform: uppercase;
 }
+
 @-moz-document url-prefix() {
-  @media(max-width: 320px) {
+  @media (max-width: 320px) {
     input[type='date'] {
       font-size: rem(10);
       line-height: rem(20);
     }
   }
 }
+
 hr {
   border: none;
 }
+
 .container {
-	margin: 0 140px;
+  margin: 0 140px;
 }
+
 .offensive {
-	font-family: $mainFont;
+  color: $offensive;
   font-weight: bold;
-	font-size: rem(12);
-	color: $offensive;
-	text-transform: uppercase;
+  font-size: rem(12);
+  font-family: $mainFont;
+  text-transform: uppercase;
 }
 
-
-@import "modules/arrow/arrow";
-@import "modules/button/button";
-@import "modules/search/search";
-@import "modules/input/input";
-@import "modules/input-mark/input-mark";
-@import "modules/input-email/input-email";
-@import "modules/input-radio/input-radio";
-@import "modules/input-toggle/input-toggle";
-@import "modules/input-range/input-range";
-@import "modules/input-date/input-date";
-@import "modules/rating/rating";
-@import "modules/label/label";
-@import "modules/input-checkbox/input-checkbox";
-@import "modules/canvas/canvas";
-@import "modules/card/card";
-@import "modules/room/room";
-@import "modules/js--click/js--click";
-@import "modules/line/line";
-@import "modules/pagination/pagination";
-@import "modules/intelligence/intelligence";
-@import "modules/details/details";
-@import "modules/schedule/schedule";
-@import "modules/mark/mark";
-@import "modules/description/description";
-@import "modules/accent/accent";
-@import "modules/reviews/reviews";
-@import "modules/customer/customer";
-@import "modules/heart/heart";
-@import "modules/rule/rule";
-@import "modules/cancel/cancel";
-@import "modules/overlay/overlay";
-@import "modules/sticky/sticky";
-@import "modules/filter/filter";
-@import "modules/swiper-next/swiper-next";
-@import "modules/swiper-prev/swiper-prev";
-@import "modules/product/product";
-@import "modules/swiper-container/swiper-container";
-@import "modules/arrow-big/arrow-big";
-@import "modules/header/header";
-@import "modules/nav/nav";
-@import "modules/logo/logo";
-@import "modules/authorization/authorization";
-@import "modules/registration/registration";
-@import "modules/banner/banner";
-@import "modules/calendar/calendar";
-@import "modules/footer/footer";
-@import "modules/input-options/input-options";
-@import "modules/input-dropdown/input-dropdown";
-@import "modules/user/user";
-@import "modules/sign-in/sign-in";
-@import "modules/sign-up/sign-up";
-@import "modules/label-large/label-large";
-@import "modules/rectangle/rectangle";
-@import "modules/input-list/input-list";
-@import "modules/input-password/input-password";
-@import "modules/input-text/input-text";
+@import 'modules/arrow/arrow';
+@import 'modules/button/button';
+@import 'modules/search/search';
+@import 'modules/input/input';
+@import 'modules/input-mark/input-mark';
+@import 'modules/input-email/input-email';
+@import 'modules/input-radio/input-radio';
+@import 'modules/input-toggle/input-toggle';
+@import 'modules/input-range/input-range';
+@import 'modules/input-date/input-date';
+@import 'modules/rating/rating';
+@import 'modules/label/label';
+@import 'modules/input-checkbox/input-checkbox';
+@import 'modules/canvas/canvas';
+@import 'modules/card/card';
+@import 'modules/room/room';
+@import 'modules/js--click/js--click';
+@import 'modules/line/line';
+@import 'modules/pagination/pagination';
+@import 'modules/intelligence/intelligence';
+@import 'modules/details/details';
+@import 'modules/schedule/schedule';
+@import 'modules/mark/mark';
+@import 'modules/description/description';
+@import 'modules/accent/accent';
+@import 'modules/reviews/reviews';
+@import 'modules/customer/customer';
+@import 'modules/heart/heart';
+@import 'modules/rule/rule';
+@import 'modules/cancel/cancel';
+@import 'modules/overlay/overlay';
+@import 'modules/sticky/sticky';
+@import 'modules/filter/filter';
+@import 'modules/swiper-next/swiper-next';
+@import 'modules/swiper-prev/swiper-prev';
+@import 'modules/product/product';
+@import 'modules/swiper-container/swiper-container';
+@import 'modules/arrow-big/arrow-big';
+@import 'modules/header/header';
+@import 'modules/nav/nav';
+@import 'modules/logo/logo';
+@import 'modules/authorization/authorization';
+@import 'modules/registration/registration';
+@import 'modules/banner/banner';
+@import 'modules/calendar/calendar';
+@import 'modules/footer/footer';
+@import 'modules/input-options/input-options';
+@import 'modules/input-dropdown/input-dropdown';
+@import 'modules/user/user';
+@import 'modules/sign-in/sign-in';
+@import 'modules/sign-up/sign-up';
+@import 'modules/label-large/label-large';
+@import 'modules/rectangle/rectangle';
+@import 'modules/input-list/input-list';
+@import 'modules/input-password/input-password';
+@import 'modules/input-text/input-text';
 
 .hidden {
   display: none;
 }
 
-
 .visuallyhidden {
   position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
+  border: 0;
   white-space: nowrap;
   clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }

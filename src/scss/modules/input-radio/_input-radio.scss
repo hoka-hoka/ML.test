@@ -1,1 +1,6 @@
-@import '__label/input-radio__label';
+.input-radio {
+  &__label {
+    font-size: rem(14);
+    cursor: pointer;
+  }
+}

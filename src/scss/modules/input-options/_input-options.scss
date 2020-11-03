@@ -1,11 +1,28 @@
 .input-options {
+  padding: 4px 6px 9px 13px;
   border: 1px solid $input__options--bd;
   border-top: none;
   border-radius: 0 0 4px 4px;
-  padding: 4px 6px 9px 13px;
+
+  &__opt {
+    display: flex;
+    align-items: center;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+
+    &:last-child {
+      padding-bottom: initial;
+    }
+  }
+
+  &__offensive {
+    width: 32px;
+    text-align: center;
+  }
+
+  &__marks {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
 }
-
-
-@import '__marks/input-options__marks';
-@import '__opt/input-options__opt';
-@import '__offensive/input-options__offensive';

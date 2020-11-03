@@ -1,9 +1,13 @@
 .uikit {
   display: flex;
   flex-direction: column;
-  background: rgb(244,244,246);
+  background: rgb(244, 244, 246);
+
+  &_bg {
+    background: initial;
+  }
+
+  &__container {
+    margin-left: 141px;
+  }
 }
-.uikit_bg {
-  background: initial;
-}
-@import "__container/uikit__container";

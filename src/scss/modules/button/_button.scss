@@ -1,24 +1,114 @@
 .button {
+  position: relative;
   display: inline-block;
-  font: bold rem(12) "Montserrat" ;
-  background-origin: border-box;
   border-radius: 20px;
+  background-origin: border-box;
+  font: bold rem(12) 'Montserrat';
   text-transform: uppercase;
   cursor: pointer;
-  position: relative;
+
+  &_width {
+    width: 100%;
+  }
+
+  &_margin-left {
+    margin-left: auto;
+  }
+
+  &_gradient {
+    padding: 2px;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  }
+
+  &_ds--hov:hover {
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &_color-prev {
+    margin-right: auto;
+    color: $button_color-prev--txt;
+  }
+
+  &_color-next {
+    color: $button_color-next--txt;
+  }
+
+  &_br--hov:hover {
+    background: linear-gradient(
+      to left,
+      rgba(#bc9cff, 0.5) 0%,
+      rgba(#8ba4f9, 0.5) 100%
+    );
+  }
+
+  &_bg--hov:hover {
+    opacity: 0.5;
+  }
+
+  &_arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    transform: translate(0, -50%);
+  }
+
+  &_arrow span {
+    color: $button_arrow--txt;
+    font-size: 14px;
+    font-family: 'fontello';
+  }
+
+  &__theme {
+    padding: 12px 17px;
+    border-radius: 18px;
+
+    @media (max-width: 320px) {
+      padding: 12px 6px;
+    }
+
+    &_br {
+      background: #fff;
+      color: $button__theme_br--txt;
+    }
+
+    &_bg {
+      color: $button__theme_bg--txt;
+    }
+  }
+
+  &__mark {
+    position: relative;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $input__marks--bd;
+    border-radius: 50%;
+    color: $input__mark-minus--txt;
+    font-size: em(18);
+    font-family: $mainFont;
+    line-height: em(22, 18);
+    cursor: pointer;
+
+    &_plus:after {
+      content: '+';
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -40%);
+    }
+
+    &_minus:after {
+      content: '-';
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -40%);
+    }
+
+    &_default {
+      opacity: 0.38;
+    }
+  }
 }
-
-@import "__theme/button__theme";
-@import "__mark/button__mark";
-@import "_color-next/button_color-next";
-@import "_color-prev/button_color-prev";
-@import "_br--hov/button_br--hov";
-@import "_bg--hov/button_bg--hov";
-@import "_ds--hov/button_ds--hov";
-@import "_gradient/button_gradient";
-@import "_width/button_width";
-@import "_arrow/button_arrow";
-@import "_margin-left/button_margin-left";
-
-
-

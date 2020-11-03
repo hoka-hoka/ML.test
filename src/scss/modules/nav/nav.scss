@@ -1,21 +1,139 @@
 .nav {
   margin-left: auto;
-}
 
-@media(max-width: 1023px) {
-  .nav {
+  @media (max-width: 1023px) {
     order: -1;
     margin: unset;
   }
+
+  &__overlay {
+    top: 70px;
+
+    @media (min-width: 1024px) {
+      position: static;
+      background: #fff;
+    }
+  }
+
+  &__modal {
+    @media (max-width: 1023px) {
+      position: absolute;
+      left: -200px;
+      width: max-content;
+      height: auto;
+      border: 1px solid $nav__modal-bd;
+      border-radius: 0 0 5px;
+      background-color: #fff;
+      transition-duration: 0.25s;
+    }
+  }
+
+  &__list {
+    display: flex;
+    color: $navText;
+
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      padding: 10px 40px 10px 30px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $navText;
+    font-size: rem(14);
+    cursor: pointer;
+
+    @media (max-width: 1023px) {
+      font-size: rem(16);
+    }
+
+    &_active {
+      color: $nav__link_active--txt;
+      font-weight: bold;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    @media (max-width: 1023px) {
+      margin: 14px 0;
+      transition-duration: 0.25s;
+    }
+    // TODO: class
+    & .button {
+      padding: 0px 7px;
+      cursor: pointer;
+      all: initial;
+      & span {
+        color: rgba(#1f2041, 0.5);
+      }
+    }
+  }
+
+  &__input {
+    &:checked ~ .nav__check > span {
+      transform: rotate(45deg);
+    }
+
+    &:checked ~ .nav__check > span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    &:checked ~ .nav__check > span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    &:checked ~ .nav__container {
+      visibility: visible;
+    }
+
+    &:checked ~ .nav__container > .nav__modal {
+      left: 0;
+    }
+  }
+
+  &__container {
+    @media (max-width: 1023px) {
+      visibility: hidden;
+    }
+  }
+
+  &__check {
+    position: relative;
+    display: none;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    @media (max-width: 1023px) {
+      display: flex;
+    }
+
+    & > span,
+    & > span::before,
+    & > span::after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #616161;
+      transition-duration: 0.25s;
+    }
+
+    & > span::before {
+      content: '';
+      top: -8px;
+    }
+
+    & > span::after {
+      content: '';
+      top: 8px;
+    }
+  }
 }
-
-@import '__check/nav__check';
-@import '__container/nav__container';
-@import '__list/nav__list';
-@import '__item/nav__item';
-@import '__modal/nav__modal';
-@import '__overlay/nav__overlay';
-
-@import '__input/nav__input';
-
-@import '__link/nav__link';

@@ -1,31 +1,36 @@
-:root{
+:root {
   --card-nav-height: 8px;
   --card-nav-width: 8px;
 }
 
 .swiper-container:hover .swiper-prev {
   position: absolute;
-  height: 100%;
-  left: 0;
   top: 0;
-  width: 42px;
+  left: 0;
   z-index: 1;
+  width: 42px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 99.99%,
+    rgba(255, 255, 255, 0) 100%
+  );
   cursor: pointer;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
 }
 
 .swiper-prev:after {
-  position: absolute;
   content: '';
-  height: var(--card-nav-height);
-  width: var(--card-nav-width);
+  position: absolute;
   top: 50%;
-  margin-top: calc(-1*var(--card-nav-height)/2);
-  cursor: pointer;
-  border: 2px solid white;
-  border-right: none;
-  border-top: none;
-  transform: rotate(45deg);
-  z-index: 1;
   left: 20px;
+  z-index: 1;
+  width: var(--card-nav-width);
+  height: var(--card-nav-height);
+  margin-top: calc(-1 * var(--card-nav-height) / 2);
+  border: 2px solid white;
+  border-top: none;
+  border-right: none;
+  cursor: pointer;
+  transform: rotate(45deg);
 }

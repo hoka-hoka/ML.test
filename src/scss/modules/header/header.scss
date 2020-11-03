@@ -1,8 +1,36 @@
 .header {
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   background: #fff;
-}
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-@import '__container/header__container';
-@import '__button/header__button';
-@import '__btn-login/header__btn-login';
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+
+  &__button {
+    display: flex;
+    @media (max-width: 1023px) {
+      margin: unset;
+    }
+
+    // TODO: class
+    & .button__theme {
+      padding: 7px 18px 8px 18px;
+    }
+  }
+
+  &__btn-login {
+    margin-right: 20px;
+    @media (max-width: 425px) {
+      margin-right: 18px;
+    }
+  }
+}
+// TODO: class
+@media (max-width: 425px) {
+  .header__button .button {
+    display: none;
+  }
+}

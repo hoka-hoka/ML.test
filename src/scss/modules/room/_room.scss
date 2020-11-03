@@ -1,12 +1,38 @@
 .room {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
+  justify-content: space-between;
   width: 100%;
-}
 
-@import '__number/room__number';
-@import '__luxury/room__luxury';
-@import '__price/room__price';
-@import '__container/room__container';
-@import '__text/room__text';
+  &__text {
+    font-size: rem(12px);
+  }
+
+  &__price {
+    padding-right: 3px;
+    color: $room__price--txt;
+    font-weight: bold;
+    font-size: rem(15);
+    letter-spacing: -0.4px;
+  }
+
+  &__number {
+    padding-right: 5px;
+    color: $room__number--txt;
+    font-weight: bold;
+    font-size: rem(19);
+    font-family: quicksand, Arial, sans-serif;
+
+    &:before {
+      content: '№ ';
+      font-size: 14px;
+    }
+  }
+
+  &__luxury {
+    color: $room__luxury--txt;
+    font-weight: bold;
+    font-size: rem(12);
+    text-transform: uppercase;
+  }
+}

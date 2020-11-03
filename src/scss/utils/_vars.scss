@@ -8,29 +8,28 @@ $iconFont: 'fontello';
 $mainFontSize: 16px;
 
 // Local color
-$x-dark: #1F2041;
+$x-dark: #1f2041;
 $x-dark-100: $x-dark;
-$x-dark-75: rgba($x-dark, .75);
-$x-dark-50: rgba($x-dark, .50);
-$x-dark-25: rgba($x-dark, .25);
-$x-dark-10: rgba($x-dark, .1);
-$x-dark-5: rgba($x-dark, .05);
+$x-dark-75: rgba($x-dark, 0.75);
+$x-dark-50: rgba($x-dark, 0.5);
+$x-dark-25: rgba($x-dark, 0.25);
+$x-dark-10: rgba($x-dark, 0.1);
+$x-dark-5: rgba($x-dark, 0.05);
 
-$x-gray: rgb(31,32,65);
-$x-gray-75: rgba(31,32,65,.75);
-$x-gray-50: rgba(31,32,65,.50);
-$x-gray-25: rgba(31,32,65,.25);
-$x-gray-10: rgba(31,32,65,.1);
+$x-gray: rgb(31, 32, 65);
+$x-gray-75: rgba(31, 32, 65, 0.75);
+$x-gray-50: rgba(31, 32, 65, 0.5);
+$x-gray-25: rgba(31, 32, 65, 0.25);
+$x-gray-10: rgba(31, 32, 65, 0.1);
 
 $x-purple: #bc9cff;
-$x-purple-10: rgba(31,32,65,.1);
-$x-purpure-stop: #8BA4F9;
+$x-purple-10: rgba(31, 32, 65, 0.1);
+$x-purpure-stop: #8ba4f9;
 
 $x-green: #6fcf97;
-$x-green-stop: #66D2EA;
+$x-green-stop: #66d2ea;
 
 $x-white: #fff;
-
 
 // Global color
 $offensive: $x-dark-100;
@@ -65,7 +64,7 @@ $button__theme_br--sh: $x-purple;
 $button__theme_br--txt: $x-purple;
 $button_color-prev--txt: $x-purple;
 $button_color-next--txt: $x-purple;
-$button_arrow--txt: $x-dark-50;;
+$button_arrow--txt: $x-dark-50;
 
 $description__line--bd: $x-dark-25;
 
@@ -109,7 +108,7 @@ $card__value--col: $x-dark-50;
 $card__about--col: $x-dark-50;
 
 $heart_bg--bg: $x-white;
-$heart_border--bg: rgb(193,193,193);
+$heart_border--bg: rgb(193, 193, 193);
 $customer__box--bg: $x-gray-25;
 $customer__box--bg_hov: $x-purple;
 $customer__box--bg-stop_hov: $x-purpure-stop;
@@ -145,3 +144,5 @@ $footer__links--txt: $x-dark-50;
 $line--txt: $x-gray-10;
 
 $user__name--txt: $x-gray-50;
+
+$input__list_pale_col--txt: $x-purple;

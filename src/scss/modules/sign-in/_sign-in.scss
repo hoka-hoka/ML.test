@@ -1,11 +1,10 @@
 .sign-in {
   display: none;
-}
-@media(max-width: 425px) {
-  .sign-in {
+
+  @media (max-width: 425px) {
     display: flex;
   }
-}
-.sign-in__icon {
-  fill: rgb(53,53,64);;
+  &__icon {
+    fill: rgb(53, 53, 64);
+  }
 }

@@ -1,23 +1,28 @@
 .uikit-label {
-  text-transform: uppercase;
-  font-family: $mainFont;
+  display: flex;
+  color: #1f2041;
   font-weight: bold;
   font-size: rem(12);
-  color: #1F2041;
-  display: flex;
-}
-.uikit-label_mb--18 {
-  margin-bottom: 18px;
-}
-.uikit-label_mb--14 {
-  margin-bottom: 14px;
-}
-.uikit-label_mb--17 {
-  margin-bottom: 17px;
-}
-.uikit-label_mb--16 {
-  margin-bottom: 16px;
-}
-.uikit-label_mb--10 {
-  margin-bottom: 10px;
+  font-family: $mainFont;
+  text-transform: uppercase;
+
+  &_mb--18 {
+    margin-bottom: 18px;
+  }
+
+  &_mb--14 {
+    margin-bottom: 14px;
+  }
+
+  &_mb--17 {
+    margin-bottom: 17px;
+  }
+
+  &_mb--16 {
+    margin-bottom: 16px;
+  }
+
+  &_mb--10 {
+    margin-bottom: 10px;
+  }
 }

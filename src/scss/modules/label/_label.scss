@@ -2,6 +2,11 @@
   position: relative;
   display: flex;
   font-family: $mainFont;
+  // TODO: class
+  &_color--50 {
+    color: $label_color--50;
+    font-size: rem(14px);
+    cursor: pointer;
+    user-select: none;
+  }
 }
-@import '_font--regular/label_font--regular';
-@import '_color--50/label_color--50';

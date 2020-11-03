@@ -1,89 +1,95 @@
 %font {
-  font-family: $mainFont;
   font-size: rem(14);
+  font-family: $mainFont;
 }
 element {
-    --top: 45%;
+  --top: 45%;
 }
 .input {
   @extend %font;
-  color: $input--txt;
-  border-radius: 4px;
-  border: 1px solid $input--br;
+  display: block;
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
   height: 44px;
   padding: 0 28px 0 14px;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-}
-.input::placeholder {
-  @extend %font;
-}
-.input::-webkit-datetime-edit {
-  @extend %font;
-}
-.input::-webkit-inner-spin-button {
-  display: none;
-}
-.input::-webkit-calendar-picker-indicator {
-  display: none;
-}
-.input[type='radio'], .input[type='checkbox'] {
-  appearance: none;
-}
-.input[type='checkbox'] + label::before {
-    content: "";
+  border: 1px solid $input--br;
+  border-radius: 4px;
+  color: $input--txt;
+
+  &::placeholder,
+  &::-webkit-datetime-edit {
+    @extend %font;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  &[type='radio'],
+  &[type='checkbox'] {
+    appearance: none;
+  }
+
+  &[type='checkbox'] + label::before {
+    content: '';
     position: absolute;
     left: 0;
+    box-sizing: border-box;
     width: 20px;
     min-width: 20px;
     height: 20px;
-    border-radius: 4px;
     border: 1px solid $input-checkbox--bd;
-    transition: all .15s;
-    box-sizing: border-box;
-}
-.input[type='checkbox'] + label::after {
-    content: "";
+    border-radius: 4px;
+    transition: all 0.15s;
+  }
+
+  &[type='checkbox'] + label::after {
+    content: '';
     position: absolute;
     top: 5px;
-    width: 6px;
-    height: 8px;
     left: 7px;
     box-sizing: border-box;
+    width: 6px;
+    height: 8px;
     transform: rotate(45deg);
-}
+  }
 
-.input[type='checkbox']:checked + label::before {
+  &[type='checkbox']:checked + label::before {
     border-color: $input-checkbox--bd-active;
-}
+  }
 
-.input[type='checkbox']:checked + label::after {
-  border-right: 2px solid;
-  border-bottom: 2px solid;
-  border-image: linear-gradient(180deg, $input-radio--bg 0%, $input-checkbox--bd-stop 100%);
-  border-image-slice: 1;
-}
+  &[type='checkbox']:checked + label::after {
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(
+      180deg,
+      $input-radio--bg 0%,
+      $input-checkbox--bd-stop 100%
+    );
+    border-image-slice: 1;
+  }
 
-.input[type='radio']:not(:checked) + label {
+  &[type='radio']:not(:checked) + label {
     color: $input-radio_check_lb--txt;
-}
+  }
 
-.input[type='radio'] + label::before {
-    content: "";
+  &[type='radio'] + label::before {
+    content: '';
     display: inline-block;
     vertical-align: middle;
+    box-sizing: border-box;
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    border-radius: 50%;
     border: 1px solid $input-radio--bd;
-    transition: all .15s;
-    box-sizing: border-box;
-}
+    border-radius: 50%;
+    transition: all 0.15s;
+  }
 
-.input[type='radio'] + label::after {
-    content: "";
+  &[type='radio'] + label::after {
+    content: '';
     position: absolute;
     top: 50%;
     left: 10px;
@@ -91,18 +97,52 @@ element {
     height: 12px;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-}
+  }
 
-.input[type='radio']:checked+label::after {
+  &[type='radio']:checked + label::after {
     width: 12px;
     height: 12px;
-    background: linear-gradient(180deg, $input-radio--bg 0%, $input-radio--bg-stop 100%);
     border: unset;
+    background: linear-gradient(
+      180deg,
+      $input-radio--bg 0%,
+      $input-radio--bg-stop 100%
+    );
+  }
+
+  &_position {
+    position: relative;
+  }
+
+  &__placeholder {
+    &::placeholder {
+      font-size: rem(14px);
+      font-family: $mainFont;
+      line-height: rem(14px, 18px);
+    }
+
+    &_color--25::placeholder {
+      color: $input__placeholder_color--25;
+    }
+
+    &_color--75::placeholder {
+      color: $input__placeholder_color--75;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    padding: 14px 0 4px 0;
+  }
+
+  &__border_color--50 {
+    border-color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translate(0, -50%) rotate(45deg);
+  }
 }
-
-
-@import '__arrow/input__arrow';
-@import '__btns/input__btns';
-@import '__placeholder/input__placeholder';
-@import '_position/input_position';
-@import '__border/input__border';

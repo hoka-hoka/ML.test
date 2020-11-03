@@ -1,7 +1,38 @@
+.color {
+  @for $i from 1 through length($colors) {
+    &-#{$i} {
+      background-color: nth($colors, $i);
+    }
+  }
 
-@import '__menu/color__menu';
-@import '__item/color__item';
-@import '__square/color__square';
-@import '__title/color__title';
-@import '__name/color__name';
-@import '__value/color__value';
+  &__value {
+    font-family: $additionalFont, Arial, sans-serif;
+  }
+
+  &__title {
+    color: $x-dark;
+    font-size: rem(19);
+    line-height: 30px;
+  }
+
+  &__square {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: rem(19);
+    font-family: $additionalFont, Arial, sans-serif;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: max-content max-content;
+    grid-gap: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}

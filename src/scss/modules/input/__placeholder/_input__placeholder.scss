@@ -1,8 +1,0 @@
-.input__placeholder::placeholder {
-  font-family: $mainFont;
-  font-size: rem(14px);
-  line-height: rem(14px, 18px);
-}
-
-@import '_color--75/input__placeholder_color--75';
-@import '_color--25/input__placeholder_color--25';

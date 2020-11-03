@@ -35,3 +35,6 @@
 /dist/
 /modules/
 /node_modules/
+.stylelintrc
+.prettierrc
+

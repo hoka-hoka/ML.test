@@ -1,7 +1,7 @@
 .uikit-toggle {
   margin-top: 37px;
-}
 
-.uikit-toggle .uikit-toggle__item:last-child {
-  margin-top: 16px;
+  & .uikit-toggle__item:last-child {
+    margin-top: 16px;
+  }
 }

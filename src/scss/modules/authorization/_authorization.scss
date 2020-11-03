@@ -1,12 +1,15 @@
 .authorization {
-  background-color: $x-white;
   width: 380px;
   height: min-content;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0,0,0,.2);
+  background-color: $x-white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
+  &__button_size {
+    width: 97px;
+  }
+
+  &__input {
+    margin-bottom: 10px;
+  }
 }
-.authorization__button_size {
-  width: 97px;
-}
-@import '__input/authorization__input';
