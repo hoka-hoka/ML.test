@@ -1,16 +1,18 @@
-function getSibling(start, list) { // ищет элемент list внутри родителя элемента start
+function getSibling(start, list) {
+  // ищет элемент list внутри родителя элемента start
   let sibling = start.parentNode.firstElementChild;
-  while ( sibling ) {
-    if ( sibling.classList.contains(list) ) {
+  while (sibling) {
+    if (sibling.classList.contains(list)) {
       return sibling;
     }
     sibling = sibling.nextElementSibling;
   }
 }
 
-function setSiblingIteration(iter, elem, find) { // ищет элемент find, начиная с родителя elem
-  while ( iter-- ) {
-    if ( getSibling(elem, find ) ) {
+function setSiblingIteration(iter, elem, find) {
+  // ищет элемент find, начиная с родителя elem
+  while (iter--) {
+    if (getSibling(elem, find)) {
       return getSibling(elem, find);
     } else {
       elem = elem.parentNode;
@@ -18,4 +20,4 @@ function setSiblingIteration(iter, elem, find) { // ищет элемент find
   }
 }
 
-export { setSiblingIteration, getSibling }
+export { setSiblingIteration, getSibling };

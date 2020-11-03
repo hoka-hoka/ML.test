@@ -12,28 +12,28 @@ block ruleList
 block canselList
 
 include ../utils/mixins
-include ../../assets/scss/modules/card/card
-include ../../assets/scss/modules/calendar/calendar
-include ../../assets/scss/modules/button/button
-include ../../assets/scss/modules/input-toggle/input-toggle
-include ../../assets/scss/modules/input-text/input-text
-include ../../assets/scss/modules/input-radio/input-radio
-include ../../assets/scss/modules/input-date/input-date
-include ../../assets/scss/modules/input-email/input-email
-include ../../assets/scss/modules/input-password/input-password
-include ../../assets/scss/modules/input-dropdown/input-dropdown
-include ../../assets/scss/modules/input-options/input-options
-include ../../assets/scss/modules/input-list/input-list
-include ../../assets/scss/modules/input-checkbox/input-checkbox
-include ../../assets/scss/modules/rule/rule
-include ../../assets/scss/modules/intelligence/intelligence
-include ../../assets/scss/modules/reviews/reviews
-include ../../assets/scss/modules/heart/heart
-include ../../assets/scss/modules/rating/rating
-include ../../assets/scss/modules/pagination/pagination
-include ../../assets/scss/modules/nav/nav
-include ../../assets/scss/modules/schedule/schedule
-include ../../assets/scss/modules/cancel/cancel
+include ../../scss/modules/card/card
+include ../../scss/modules/calendar/calendar
+include ../../scss/modules/button/button
+include ../../scss/modules/input-toggle/input-toggle
+include ../../scss/modules/input-text/input-text
+include ../../scss/modules/input-radio/input-radio
+include ../../scss/modules/input-date/input-date
+include ../../scss/modules/input-email/input-email
+include ../../scss/modules/input-password/input-password
+include ../../scss/modules/input-dropdown/input-dropdown
+include ../../scss/modules/input-options/input-options
+include ../../scss/modules/input-list/input-list
+include ../../scss/modules/input-checkbox/input-checkbox
+include ../../scss/modules/rule/rule
+include ../../scss/modules/intelligence/intelligence
+include ../../scss/modules/reviews/reviews
+include ../../scss/modules/heart/heart
+include ../../scss/modules/rating/rating
+include ../../scss/modules/pagination/pagination
+include ../../scss/modules/nav/nav
+include ../../scss/modules/schedule/schedule
+include ../../scss/modules/cancel/cancel
 
 doctype html
 html
@@ -50,7 +50,7 @@ body(id=title)
   each temp in templates
     case temp
       when "header"
-        include ../../assets/scss/modules/header/header
+        include ../../scss/modules/header/header
       when "banner"
         include ../includes/banner
       when "product"
@@ -60,7 +60,7 @@ body(id=title)
       when "home"
         include ../includes/home
       when "footer"
-        include ../../assets/scss/modules/footer/footer
+        include ../../scss/modules/footer/footer
       when "authorization"
         include ../includes/authorization
       when "registration"

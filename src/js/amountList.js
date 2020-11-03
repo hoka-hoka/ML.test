@@ -1,5 +1,5 @@
-'use strict';
-import { getSibling, setSiblingIteration } from './getSibling';
+"use strict";
+import { getSibling, setSiblingIteration } from "./getSibling";
 
 class amountList {
   constructor(box, name) {
@@ -8,78 +8,87 @@ class amountList {
     this.rezult = [0, 0, 0];
   }
   amountPerson() {
-    this.container.forEach( (value, index) => {
-      value.addEventListener( 'click', (event) => {
-        if ( event.target.className !== 'input-options__marks' &&  event.target !== value) {
-          let btnPrev = getSibling(event.target, 'button__mark_minus');
-          let amount = getSibling(event.target, 'input-options__offensive');
-          let btnNext = getSibling(event.target, 'button__mark_plus');
-          if ( event.target === btnNext ) {
+    this.container.forEach((value, index) => {
+      value.addEventListener("click", (event) => {
+        if (
+          event.target.className !== "input-options__marks" &&
+          event.target !== value
+        ) {
+          let btnPrev = getSibling(event.target, "button__mark_minus");
+          let amount = getSibling(event.target, "input-options__offensive");
+          let btnNext = getSibling(event.target, "button__mark_plus");
+          if (event.target === btnNext) {
             amount.innerText = +amount.innerText + 1;
-          }
-          else if ( event.target === btnPrev && amount.innerHTML > 0 ) {
+          } else if (event.target === btnPrev && amount.innerHTML > 0) {
             amount.innerText = +amount.innerText - 1;
           }
-          +amount.innerText ? btnPrev.classList.remove('button__mark_default') : btnPrev.classList.add('button__mark_default');
+          +amount.innerText
+            ? btnPrev.classList.remove("button__mark_default")
+            : btnPrev.classList.add("button__mark_default");
           this.rezult[index] = +amount.innerText;
-          this.amountInp = setSiblingIteration(5,event.target,'input');
-          this.amountInp.value = this.vocabularyDef()[0].join(', ');
-          this.amountInp.title = this.vocabularyDef()[1].join(', ');
+          this.amountInp = setSiblingIteration(5, event.target, "input");
+          this.amountInp.value = this.vocabularyDef()[0].join(", ");
+          this.amountInp.title = this.vocabularyDef()[1].join(", ");
         }
       });
     });
   }
   vocabularyDef() {
-
     let rezultAnswer = [];
     let row = 0;
     let rezult = [];
 
-    if ( this.name.length === 2 ) {
-       rezult = [this.rezult[0] + this.rezult[1], this.rezult[2]]
-    }
-    else {
+    if (this.name.length === 2) {
+      rezult = [this.rezult[0] + this.rezult[1], this.rezult[2]];
+    } else {
       rezult = this.rezult;
     }
 
-    rezult.forEach( (value, index) => {
-      switch(value) {
-        case 0: break;
-        case 1: rezultAnswer[index] = value + ' ' + this.name[index][0]; break;
+    rezult.forEach((value, index) => {
+      switch (value) {
+        case 0:
+          break;
+        case 1:
+          rezultAnswer[index] = value + " " + this.name[index][0];
+          break;
         case 2:
         case 3:
-        case 4: rezultAnswer[index] = value + ' ' + this.name[index][1]; break;
-        default: rezultAnswer[index] = value + ' ' + this.name[index][2];
+        case 4:
+          rezultAnswer[index] = value + " " + this.name[index][1];
+          break;
+        default:
+          rezultAnswer[index] = value + " " + this.name[index][2];
       }
     });
-    rezultAnswer = rezultAnswer.filter(word => word !== undefined);
-
+    rezultAnswer = rezultAnswer.filter((word) => word !== undefined);
 
     const btnPannel = this.container[0].parentNode.lastElementChild;
-    if ( btnPannel.classList.contains('input__btns') ) {
-      if ( rezultAnswer.length !== 0 ) {
-        btnPannel.querySelector('.button_js-prev').classList.remove('visuallyhidden');
-      }
-      else {
-        btnPannel.querySelector('.button_js-prev').classList.add('visuallyhidden');
+    if (btnPannel.classList.contains("input__btns")) {
+      if (rezultAnswer.length !== 0) {
+        btnPannel
+          .querySelector(".button_js-prev")
+          .classList.remove("visuallyhidden");
+      } else {
+        btnPannel
+          .querySelector(".button_js-prev")
+          .classList.add("visuallyhidden");
       }
     }
 
     let rezultTitle = rezultAnswer.slice();
-    if ( rezultAnswer.length == 3 ) {
-      rezultAnswer[2] = '...';
+    if (rezultAnswer.length == 3) {
+      rezultAnswer[2] = "...";
     }
     return [rezultAnswer, rezultTitle];
   }
 
   btnNext() {
-    this.amountInp.value = this.vocabularyDef()[0].join(', ');
-    this.amountInp.title = this.vocabularyDef()[1].join(', ');
+    this.amountInp.value = this.vocabularyDef()[0].join(", ");
+    this.amountInp.title = this.vocabularyDef()[1].join(", ");
   }
   clearDef() {
     this.amountInp.value = null;
     this.amountInp.title = null;
   }
-
 }
-export { amountList }
+export { amountList };

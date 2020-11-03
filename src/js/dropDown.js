@@ -1,18 +1,30 @@
-'use strict';
-import { setSiblingIteration, getSibling } from './getSibling';
+"use strict";
+import { setSiblingIteration, getSibling } from "./getSibling";
 
 let activeElem = 0;
 export function dropDown(elem) {
-  elem.forEach(function(item) {
-    item.addEventListener('click', function() {
-      let elem = new createElem(item, 'js--show');
-      elem.list.classList.toggle('hidden');
-      if ( elem.item.classList.contains('js--rotate')  || ( elem.item.nextElementSibling ? elem.item.nextElementSibling.classList.contains('js--rotate') : false ) ) {
+  elem.forEach(function (item) {
+    item.addEventListener("click", function () {
+      let elem = new createElem(item, "js--show");
+      elem.list.classList.toggle("hidden");
+      if (
+        elem.item.classList.contains("js--rotate") ||
+        (elem.item.nextElementSibling
+          ? elem.item.nextElementSibling.classList.contains("js--rotate")
+          : false)
+      ) {
         elem.rotate = true;
       }
-      if ( activeElem && !activeElem.list.classList.contains('hidden') && activeElem.item != elem.item && activeElem.item.nextElementSibling != elem.item && activeElem.item.previousElementSibling != elem.item && activeElem.list != elem.list) {
-        if ( document.body.id !== 'elements' ) {
-          activeElem.list.classList.toggle('hidden');
+      if (
+        activeElem &&
+        !activeElem.list.classList.contains("hidden") &&
+        activeElem.item != elem.item &&
+        activeElem.item.nextElementSibling != elem.item &&
+        activeElem.item.previousElementSibling != elem.item &&
+        activeElem.list != elem.list
+      ) {
+        if (document.body.id !== "elements") {
+          activeElem.list.classList.toggle("hidden");
         }
         activeElem.btnRotate();
       }
@@ -30,17 +42,13 @@ function createElem(item, listName) {
 createElem.prototype.setSiblingIteration = setSiblingIteration;
 createElem.prototype.getSibling = getSibling;
 
-createElem.prototype.btnRotate = function() {
-  if ( this.rotate ) {
-    let elemRotate = this.getSibling(this.item, 'js--rotate');
-    if ( this.list.classList.contains('hidden') ) {
-      elemRotate.firstChild.innerHTML = '\uf004';
+createElem.prototype.btnRotate = function () {
+  if (this.rotate) {
+    let elemRotate = this.getSibling(this.item, "js--rotate");
+    if (this.list.classList.contains("hidden")) {
+      elemRotate.firstChild.innerHTML = "\uf004";
     } else {
-      elemRotate.firstChild.innerHTML = '\uf005';
+      elemRotate.firstChild.innerHTML = "\uf005";
     }
   }
-}
-
-
-
-
+};

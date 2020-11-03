@@ -1,27 +1,23 @@
-'use strict';
-import '../assets/scss/modules/js--click/js--click'
+"use strict";
+import "../scss/modules/js--click/js--click";
 
 // main
-import '../assets/scss/modules/input/input'
-import '../assets/scss/modules/input-range/input-range'
-import '../assets/scss/modules/input-date/input-date'
-import '../assets/scss/modules/overlay/overlay'
-import '../assets/scss/modules/header/header'
-import '../assets/scss/modules/customer/customer'
-import '../assets/scss/modules/nav/nav'
+import "../scss/modules/input/input";
+import "../scss/modules/input-range/input-range";
+import "../scss/modules/input-date/input-date";
+import "../scss/modules/overlay/overlay";
+import "../scss/modules/header/header";
+import "../scss/modules/customer/customer";
+import "../scss/modules/nav/nav";
 
 // ui-kit
-import '../assets/scss/templates/rectangle/rectangle'
-import '../assets/scss/templates/input-range/input-range'
+import "../scss/templates/rectangle/rectangle";
+import "../scss/templates/input-range/input-range";
 
 // error
-import '../assets/scss/modules/calendar/calendar'
+import "../scss/modules/calendar/calendar";
 
-
-
-
-import './listSwiper'
-
+import "./listSwiper";
 
 //--- require ---
 /* подключаем какой-нибудь модуль. Для того, чтобы webpack вынес его отдельно используется require.ensure(). В
