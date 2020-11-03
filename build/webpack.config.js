@@ -1,99 +1,105 @@
-const fs = require('fs'); // утилиты для работы с файлами
-const paths = require('./webpack.paths.config');
-var webpack = require('webpack');
-const CopyPlugin = require('copy-webpack-plugin'); // для копирования файлов при build
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // создаёт автоматически index.html, может
-
+const fs = require("fs"); // утилиты для работы с файлами
+const paths = require("./webpack.paths.config");
+var webpack = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin"); // для копирования файлов при build
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // создаёт автоматически index.html, может
 
 const PAGES_DIR = `${paths.PATHS.src}/pug/pages`;
 
-
-let getFiles = function(dir, relative, files) {
+let getFiles = function (dir, relative, files) {
   let filesMap = files || [];
   var files = fs.readdirSync(dir);
-  for ( let i in  files ) {
-    let fullName = dir + '/' + files[i];
-    relativeName = relative + '/' + files[i];
-    if (fs.statSync(fullName).isDirectory()){
+  for (let i in files) {
+    let fullName = dir + "/" + files[i];
+    relativeName = relative + "/" + files[i];
+    if (fs.statSync(fullName).isDirectory()) {
       getFiles(fullName, relativeName, filesMap);
     } else {
       filesMap.push(relativeName.substring(1));
     }
   }
   return filesMap;
-}
+};
 const regexp = /(\w+.?)+\//g;
-const PAGES = getFiles(PAGES_DIR, '');
+const PAGES = getFiles(PAGES_DIR, "");
 
 // Test the patch
 // PAGES.forEach( ( page   ) => {
 //   console.log(`./${regexp.test(page) ? page.match(regexp)[0] : ''}${page.match(/(\w+(?!\/).)+\.pug/g)[0].replace(/.pug/, '.html')}`);
 // });
 
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const NODE_ENV = process.env.NODE_ENV || "development";
 /* При создании webpakc формирует граф зависимостей, где стартовая точка это точка входя entry */
 
-module.exports = function(){
+module.exports = function () {
   return {
     // resolve: {
     //   alias: {
     //     'assets': resolve('./assets')
     //   }
     // },
-    externals: { // для обращения к path из build и dev
-      paths: paths.PATHS
+    externals: {
+      // для обращения к path из build и dev
+      paths: paths.PATHS,
     },
-    entry: { // точка входа указывает на начало приложения
+    entry: {
+      // точка входа указывает на начало приложения
       home: paths.PATHS.src_home,
     },
     output: {
       filename: `${paths.PATHS.assets}js/[name].js`, // для каждой точки входа свой выход (EC6 - ${})
       path: paths.PATHS.dist, // __dirname + 'dist' (конкатенация путей)
-      publicPath: './' // его использует HtmlWebpackPlugin, как относительный путь для файлов стилей и скриптов
+      publicPath: "./", // его использует HtmlWebpackPlugin, как относительный путь для файлов стилей и скриптов
       // для формирования относительного пути для всех остальных ресурсов используется тег base
     },
-    devtool: NODE_ENV == 'development' ? 'cheap-inline-module-source-map' : null,
+    devtool: NODE_ENV == "development" ? false : "cheap-source-map",
 
     optimization: {
       splitChunks: {
-        chunks: 'all',
-        automaticNameDelimiter: '-',
-        automaticNameMaxLength: 20,
-        chunks (chunk) {
-          return chunk.name !== 'chunk';
-        }
-
-      }
+        chunks: "all",
+        automaticNameDelimiter: "-",
+        chunks(chunk) {
+          return chunk.name !== "chunk";
+        },
+      },
     },
     performance: {
-      hints: process.env.NODE_ENV === 'production' ? "warning" : false
+      hints: process.env.NODE_ENV === "production" ? "warning" : false,
     },
 
     plugins: [
       new webpack.DefinePlugin({
-        NODE_ENV: JSON.stringify(NODE_ENV)
+        NODE_ENV: JSON.stringify(NODE_ENV),
       }),
 
       new CopyPlugin({
         patterns: [
-          { from: `${paths.PATHS.src}/${paths.PATHS.assets}img`, to: `${paths.PATHS.assets}img`},
-          { from: `${paths.PATHS.src}/${paths.PATHS.assets}fonts`, to: `${paths.PATHS.assets}fonts`},
-          { from: `${paths.PATHS.src}/static`, to: ''},
+          {
+            from: `${paths.PATHS.src}/${paths.PATHS.assets}img`,
+            to: `${paths.PATHS.assets}img`,
+          },
+          {
+            from: `${paths.PATHS.src}/${paths.PATHS.assets}fonts`,
+            to: `${paths.PATHS.assets}fonts`,
+          },
+          { from: `${paths.PATHS.src}/static`, to: "" },
         ],
         options: { concurrency: 50 },
       }),
 
-      ...PAGES.map( page =>
-        new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${regexp.test(page) ? page.match(regexp)[0] : ''}${page.match(/(\w+(?!\/).)+\.pug/g)[0].replace(/.pug/, '.html')}`, // исходный index с заменой
-          hash: true, // md5
-          minify: false
-        })
-      )
-    ]
-  }
+      ...PAGES.map(
+        (page) =>
+          new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/${page}`,
+            filename: `./${
+              regexp.test(page) ? page.match(regexp)[0] : ""
+            }${page.match(/(\w+(?!\/).)+\.pug/g)[0].replace(/.pug/, ".html")}`, // исходный index с заменой
+            hash: true, // md5
+            minify: false,
+          })
+      ),
+    ],
+  };
 };
 
 /* При использовании HtmlWebpackPlugin "Ручной" файл index.html можно удалить. В результате сборки сгенерируется пустой index.html

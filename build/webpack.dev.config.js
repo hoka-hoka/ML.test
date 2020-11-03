@@ -1,12 +1,13 @@
-const webpack = require('webpack');
-const { merge } = require('webpack-merge');
-const baseWebpackConfig = require('./webpack.base.config');
-const devserver = require('../webpack/devserver');
+const webpack = require("webpack");
+const { merge } = require("webpack-merge");
+const baseWebpackConfig = require("./webpack.base.config");
+const devserver = require("../webpack/devserver");
 
 const devdWebpackConfig = merge([
   baseWebpackConfig,
+
   {
-    mode: 'development',
+    mode: "development",
     /*stats: {
       assets: false, // скрыть активы из статистики
       builtAt: false, // скрыть дату сборки
@@ -19,19 +20,16 @@ const devdWebpackConfig = merge([
       colors: true, // в разные цвета
       modules: false // скрыть одули
     },*/
-    devtool: 'inline-source-map',
+    devtool: "inline-source-map",
     plugins: [
       new webpack.SourceMapDevToolPlugin({
-        filename: '[file].map'
-      })
-    ]
+        filename: "[file].map",
+      }),
+    ],
   },
-  devserver()
-])
+  devserver(),
+]);
 
 module.exports = new Promise((resolve, reject) => {
-	resolve(devdWebpackConfig)
+  resolve(devdWebpackConfig);
 });
-
-
-
