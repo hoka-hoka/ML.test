@@ -1,0 +1,7 @@
+mixin input-mark(index, item, name, number, role)
+  -var status = role
+  .input-mark
+    input.input-checkbox.input-checkbox_hidden(type='checkbox' name=name + index id=name + '-' + index value=index checked=status)
+    label.input-mark__label(class=number==1 ? '' :  'input-mark__label_thick' for=name + '-' + index) #{ number==1 ? item : item.header }
+    if number == 0
+      .rectangle__text-small.input-mark__pd=item.title

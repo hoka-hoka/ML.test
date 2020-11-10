@@ -1,0 +1,13 @@
+.banner
+  .swiper-container.banner__swiper-container
+    .swiper-wrapper
+      -for(var i=1; i<3; ++i)
+        .swiper-slide
+          picture
+            source(type="image/webp" srcset="img/banner-"+i+".webp")
+            source(type="image/jpeg" srcset="img/banner-"+i+".jpg")
+            img.banner__img(src="img/banner-"+i+".jpg", alt="Лучшие номера")
+      - var i = null;
+  .banner__container
+    .banner__dialog
+      +registration()

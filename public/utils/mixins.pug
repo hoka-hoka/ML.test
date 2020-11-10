@@ -1,0 +1,12 @@
+mixin item(title)
+  .item
+    h2.item-title= title
+
+mixin icon(name, w, h, VB, cl, descr)
+  svg(class=cl viewBox=VB weight=w height=h role="image" aria-label=descr)
+    use(xlink:href = "#" + name)
+
+
+
+
+

@@ -1,0 +1,15 @@
+.registration {
+  width: 380px;
+
+  & .rectangle__item:last-child {
+    padding-top: 7px;
+  }
+
+  & .button_arrow {
+    display: none;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+}

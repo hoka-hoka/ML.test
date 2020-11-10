@@ -1,0 +1,45 @@
+mixin description()
+  .description
+    .rectangle
+      form(action="" name="descr")
+        fieldset.rectangle__container
+          ul.rectangle__schedule(role='none')
+            li.rectangle__item-top
+              .room
+                .room__container
+                  span.room__number 888
+                  strong.room__luxury люкс
+                .room__container
+                  span.room__price 9 990₽
+                  span.room__text в сутки
+            li.rectangle__date
+              -for(var i=0; i<2; ++i)
+                if date != undefined
+                  +input-date(date_id[i], date[i], "", "", ds_label[i])
+                else
+                  +input-date(date_id[i], "ДД.ММ.ГГГГ", "", "", ds_label[i])
+              - var i = null;
+              +calendar()
+            li.rectangle__item-top
+              label.label.label_large(for='arrive') Гости
+              .rectangle__content
+                +input-dropdown("", "arrive", "Сколько гостей", "", "gues", "1")
+            li.rectangle__item-bottom
+              ul.description__list
+                li.description__item
+                  span.description__text 9 990₽ x 4 суток
+                  span.description__text 39 960₽
+                li.description__item
+                  span.description__text.description__accent.accent Сбор за услуги: скидка 2 179₽
+                  span.description__text 0₽
+                li.description__item
+                  span.description__text.description__accent.accent Сбор за дополнительные услуги
+                  span.description__text 300₽
+            li.rectangle__item-top
+              .description__result
+                span.description__total Итого
+                span.description__line
+                span.description__total 38 081₽
+            li.rectangle__item
+              +buttons(2, 'Забронировать', 'button_width')
+              +icon("arrow-big", 18, 18, "0 0 17 18", "arrow-big rectangle__arrow-big", "Забронировать")

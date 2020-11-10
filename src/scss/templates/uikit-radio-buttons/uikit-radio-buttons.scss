@@ -1,0 +1,12 @@
+.uikit-radio-buttons {
+  margin-top: 39px;
+
+  &__list {
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+    & .input-radio:first-child {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.uikit-title {
+  position: relative;
+
+  &__text {
+    margin-bottom: 5px;
+  }
+
+  &__mark {
+    position: absolute;
+    right: 0;
+    color: rgba(#1f2041, 0.5);
+    font-size: rem(12);
+    font-family: $mainFont;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+}

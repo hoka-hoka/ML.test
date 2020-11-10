@@ -1,0 +1,50 @@
+.input-options {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 6px 9px 13px;
+  border: 1px solid $input-options--bd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: $canvas--bg;
+
+  &__opt {
+    display: flex;
+    align-items: center;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+
+    &:last-child {
+      padding-bottom: initial;
+    }
+  }
+
+  &__text {
+    color: #1f2041;
+    font-weight: bold;
+    font-size: rem(12);
+  }
+
+  &__amount {
+    width: 32px;
+    color: $input-options__amount--txt;
+    font-weight: bold;
+    font-size: rem(12);
+    font-family: $mainFont;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__btns {
+    display: flex;
+    padding: 14px 0 4px 0;
+  }
+
+  &__marks {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}

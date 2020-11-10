@@ -1,0 +1,22 @@
+mixin schedule()
+  .schedule
+    h2.details__title Впечатления от номера
+    .schedule__graph
+      .schedule__content
+        b.schedule__number 260
+        div.schedule__text голосов
+      ul.schedule__list
+        each val in schedule
+          li.schedule__item(class=val.color)
+    .schedule__mark.mark
+      ul.mark__list
+        each val in schedule
+          li.mark__item
+            .mark__circle(class=val.color)
+            span.mark__text=val.rating
+
+
+
+
+
+

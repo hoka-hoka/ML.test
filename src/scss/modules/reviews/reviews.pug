@@ -1,0 +1,20 @@
+mixin reviews(index, title, len)
+  .reviews
+    .reviews__container
+      if index == 1
+        .reviews__top
+          h2.reviews__title=title
+          span.reviews__amount=len + ' отзыва'
+        ul.reviews__list
+          each val, i in review
+            li.customer.reviews__customer
+              .customer__descr
+                img.customer__pick(src='img/svg/person-'+i+'.svg')
+              .customer__descr
+                b.customer__text=val.name
+                .customer__text=val.time
+              .customer__descr
+                .customer__like
+                  +heart("heart__btn_active-js", val.like)
+              .customer__descr
+                .customer__text=val.review

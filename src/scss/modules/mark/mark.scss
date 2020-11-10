@@ -1,0 +1,36 @@
+$colors: #ffe39c #ffba9c #6fcf97 #66d2ea #bc9cff #8ba4f9 #919191 #3d4975;
+$i: 1;
+.mark {
+  display: inline-block;
+
+  &__text {
+    padding-left: 5px;
+    font-size: rem(14);
+    line-height: rem(14, 24);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 14px;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+
+  &__circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    @each $col in lime, purpure, yellow, dark {
+      &.#{$col} {
+        background: linear-gradient(nth($colors, $i), nth($colors, $i + 1));
+      }
+      // TODO: wrining
+      $i: $i + 2;
+    }
+  }
+}

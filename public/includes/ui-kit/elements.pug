@@ -1,0 +1,186 @@
+.uikit.uikit_bg
+  .uikit__logo
+    include ../../../src/scss/templates/uikit-logo/uikit-logo
+  .uikit-elements
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-text-field
+          .uikit-title
+            span.uikit-title__mark default
+            label.label_large(for="ui-email") text field
+          +input-email("ui-email", "input_placeholder-light", "Email")
+      .uikit-elements__item
+        .uikit-text-field
+          .uikit-title
+            span.uikit-title__mark hover / focus
+            label.label_large(for="ui-text") text field
+          +input-text("ui-text", "This is pretty awesome", "lname", "[а-яёА-ЯЁ]", "input_placeholder-dark input__border_color--50")
+      .uikit-elements__item
+        .uikit-dropdown
+          .uikit-title
+            label.label_large(for="ui-text") dropdown
+          
+            +input-dropdown("", "ui-gues", "Сколько гостей", "", "gues", "0")
+      .uikit-elements__item
+        .uikit-masked-text
+          .uikit-title
+            label.label_large(for="ui-masded-text") masked text field
+          +input-date("ui-masded-text", "ДД.ММ.ГГГГ", "input_placeholder-light")
+      .uikit-elements__item
+        .uikit-date-dropdown
+          .rectangle
+            .rectangle__date
+              +input-date("ui-date-start","ДД.ММ.ГГГГ", "", "", "date dropdown")
+              +input-date("ui-date-end","19.08.2019", "", "", "date dropdown")
+              +calendar()
+      .uikit-elements__item
+        .uikit-filter-date
+          .uikit-title
+            label.label_large(for="ui-date-filter") filter date dropdown
+          .uikit-filter-date__list
+              +input-date("ui-date-filter","19 авг - 23 авг", "")
+          +calendar()
+      .uikit-elements__item
+        .uikit-subscription-text
+          .uikit-title
+            label.label_large(for="ui-subscription") subscription text field
+          .uikit-subscription-text__list
+              +input-email("ui-subscription", "input_placeholder-light", "Email", "")
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-checkbox-buttons
+          .rectangle
+            .uikit-title
+              span.uikit-label(for="ui-masded-text") checkbox buttons
+            .rectangle__list
+              each item, index in allowed
+                if index == 0
+                  +input-mark(index, item, "gues", 1, false)
+                else
+                  +input-mark(index, item, "gues", 1, true)
+      .uikit-elements__item
+        .uikit-radio-buttons
+          .uikit-title
+            span.uikit-label(for="ui-masded-text") radio buttons
+          .uikit-radio-buttons__list
+            +input-radio("reg-man", "", "Мужчина", true)
+            +input-radio("reg-wom", "", "Женщина", false)
+      .uikit-elements__item
+        .uikit-toggle
+          .uikit-title
+            span.uikit-label(for="ui-masded-text") toggle
+          .uikit-toggle__list
+            .uikit-toggle__item
+              +input-toggle("", "Получать спецпредложения", true)
+            .uikit-toggle__item
+              +input-toggle("", "Получать спецпредложения")
+      .uikit-elements__item
+        .uikit-like-button
+          .uikit-title
+            span.uikit-label(for="ui-masded-text") like button
+        .uikit-like-button__list
+          +heart("", 2)
+          +heart("heart__btn_active-js", 12)
+
+      .uikit-elements__item
+        .uikit-rate-button
+          .uikit-title
+            span.uikit-label(for="ui-masded-text") rate button
+          .uikit-rate-button__list
+            .uikit-rate-button__item
+              +rating(1, 2)
+            .uikit-rate-button__item
+              +rating(2, 1)
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-range-slider
+          .uikit-title
+            span.uikit-title__mark.rectangle__price
+            label.uikit-label(for="pr-price") range slider
+          .uikit-range-slider__list
+            
+              input.input-range(type='range' id='pr-price' multiple value='29.9,64.3' step="0.1")
+      .uikit-elements__item
+        .uikit-buttons
+          .uikit-title
+            span.uikit-label buttons
+          .uikit-buttons__list
+            .uikit-buttons__item
+              +buttons(2, "Click me")
+              +buttons(2, "Click me", "button_bg-active")
+            .uikit-buttons__item
+              +buttons(1, "Click me")
+              +buttons(1, "Click me", "button_br-active")
+            .uikit-buttons__item
+              +buttons(6, "Click me")
+              +buttons(6, "Click me")
+            .uikit-buttons__item
+              +buttons(2, 'перейти к оплате', 'button_width')
+              +icon("arrow-big", 18, 18, "0 0 17 18", "arrow-big rectangle__arrow-big", "перейти к оплате")
+      .uikit-elements__item
+        .uikit-pagination
+          .uikit-title
+            span.uikit-label pagination
+          .uikit-pagination__list
+            +pagination()
+
+  .uikit-dropdowns
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-dropdown
+          .uikit-title
+            span.uikit-title__mark default
+            label.label_large(for="ui-dropdown-one") dropdown
+            +input-dropdown("", "ui-dropdown-one", "Сколько комнат", "2 спальни, 2 кровати...", "room", "0")
+      .uikit-elements__item
+        .uikit-dropdown.uikit-dropdown_example-js
+          .uikit-title
+            span.uikit-title__mark expanded
+            label.label_large(for="ui-dropdown-two") dropdown
+            +input-dropdown("input-dropdown_active", "ui-dropdown-two", "Сколько комнат", "", "room", "0")
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-dropdown.uikit-gues
+          .uikit-title
+            label.label_large(for="ui-dropdown-three") dropdown
+          +input-dropdown("input-dropdown_active", "ui-dropdown-three", "Сколько гостей", "", "gues", "1")
+    .uikit-elements__list
+      .uikit-elements__item
+        .uikit-dropdown.uikit-dropdown_example-js
+          .uikit-title
+            label.label_large(for="ui-dropdown-four") dropdown
+          +input-dropdown("input-dropdown_active", "ui-dropdown-four", "Сколько гостей", "", "gues", "1")
+
+
+  .uikit-checkboxs
+    .uikit-checkboxs__list
+    
+      .uikit-checkboxs__item
+        .uikit-expandable-checkbox
+          +input-list("", "expandable checkbox list", "uikit-label", 1, "example")
+      .uikit-checkboxs__item
+        .uikit-expandable-checkbox.uikit-expandable-checkbox_example-js
+          +input-list("input-list_active", "expandable checkbox list", "", 1, "additional", "check")
+    .uikit-checkboxs__list
+      .uikit-checkboxs__item
+        .uikit-rich-checkbox
+          .uikit-title
+            span.uikit-label rich checkbox buttons
+          .uikit-rich-checkbox__list
+            each item, index in availabel
+              +input-mark(index, item, "available", 0)
+    .uikit-checkboxs__list
+      .uikit-checkboxs__item
+        .uikit-bullet
+          .uikit-title
+            span.uikit-label(for="") bullet list
+          .uikit-bullet__list
+            +rule()
+
+  .uikit-additionally
+    .uikit-additionally__list
+      .uikit-additionally__item.uikit-intelligence
+        +intelligence()
+    .uikit-additionally__list
+      .uikit-review
+        +reviews()

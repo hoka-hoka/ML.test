@@ -1,0 +1,6 @@
+mixin input-toggle(className, holder, active)
+  -var status = active || false;
+  label.input-toggle.label.label_font--regular(class=className)
+    input.input-toggle__tab(name='' type='checkbox' id='reg-toggle' checked=status)
+    span.input-toggle__slider
+    span.input-toggle__text=holder

@@ -1,0 +1,87 @@
+block variables
+block inputList
+block intelligenceList
+block reviewList
+block markList
+block optionsList
+block cardsList
+block dateList
+block navList
+block scheduleList
+block ruleList
+block canselList
+block searchList
+block descriptionList
+
+include utils/mixins
+include ../src/scss/modules/card/card
+include ../src/scss/modules/calendar/calendar
+include ../src/scss/modules/button/button
+include ../src/scss/modules/input-toggle/input-toggle
+include ../src/scss/modules/input-text/input-text
+include ../src/scss/modules/input-radio/input-radio
+include ../src/scss/modules/input-date/input-date
+include ../src/scss/modules/input-email/input-email
+include ../src/scss/modules/input-password/input-password
+include ../src/scss/modules/input-dropdown/input-dropdown
+include ../src/scss/modules/input-options/input-options
+include ../src/scss/modules/input-list/input-list
+include ../src/scss/modules/input-mark/input-mark
+include ../src/scss/modules/rule/rule
+include ../src/scss/modules/intelligence/intelligence
+include ../src/scss/modules/reviews/reviews
+include ../src/scss/modules/heart/heart
+include ../src/scss/modules/rating/rating
+include ../src/scss/modules/pagination/pagination
+include ../src/scss/modules/nav/nav
+include ../src/scss/modules/schedule/schedule
+include ../src/scss/modules/cancel/cancel
+include ../src/scss/modules/description/description
+include ../src/scss/modules/search/search
+include ../src/scss/modules/registration/registration
+include ../src/scss/modules/authorization/authorization
+include ../src/scss/modules/header/header
+include ../src/scss/modules/footer/footer
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  title #{title}
+body(id=title)
+  each temp in templates
+    case temp
+      when "header"
+        +header()
+        //- include ../src/scss/modules/header/header
+      when "banner"
+        include includes/banner
+      when "footer"
+        +footer()
+      when "sprite"
+        include ../src/assets/img/svg/sprite.svg
+      when "product"
+        include includes/product
+      when "details"
+        include includes/details
+      when "home"
+        include ../src/scss/modules/home/home
+      when "authorization"
+        include includes/authorization
+      when "registration"
+        include includes/registration
+      when "cards"
+        include includes/ui-kit/cards
+      when "form"
+        include includes/ui-kit/form
+      when "elements"
+        include includes/ui-kit/elements
+      when "header-footer"
+        include includes/ui-kit/header-footer
+      
+
+
+
+
+

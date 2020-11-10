@@ -1,0 +1,19 @@
+extends ../../index
+
+block variables
+  - var templates = ["header", "banner", "footer", "sprite"];
+  - var title = 'index';
+  - var footerList = ["Навигация", "О нас", "Служба поддержки", "Подписка"];
+  - var footerItem = [["О нас", "Новости", "Служба поддрежки", "Услуги"], ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"], ["Соглашения", "Сообщества", "Связь с нами"], "Получайте специальные предложения и новости сервиса"];
+
+block navList
+  - var navList = ["О нас", "Услуги", "Вакансии", "Новости", "Соглашения"];
+
+block searchList
+  - var sr_label = ['Прибытие', 'Выезд'];
+
+block dateList
+  - var date_id = ['sh-arrive', 'sh-departure']
+
+block optionsList
+  - var guesList = ["Взрослые", "Дети", "Младенцы"];

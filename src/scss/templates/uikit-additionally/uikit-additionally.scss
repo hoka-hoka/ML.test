@@ -1,0 +1,11 @@
+.uikit-additionally {
+  display: grid;
+  grid-template-columns: 320px 266px 320px;
+  grid-auto-flow: column;
+  grid-gap: 0 126px;
+  margin: 174px 141px 0;
+
+  &__list:last-child {
+    grid-column: 2/-1;
+  }
+}

@@ -1,0 +1,7 @@
+mixin heart(active, like)
+  .heart
+    button.heart__btn.heart__btn_js(type='button' class=active)
+      .heart__area
+        .heart__figure.heart__figure_outer
+        .heart__figure.heart__figure_inner
+        span.heart__amount.heart__amount_js=like

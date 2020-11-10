@@ -1,0 +1,37 @@
+mixin registration()
+  .registration
+    .rectangle
+      form(action="" name="reg")
+        fieldset.rectangle__container
+          legend.rectangle__title Регистрация аккаунта
+          ul.rectangle__schedule(role='none')
+            li.rectangle__item
+              .rectangle__content
+                +input-text("reg-name", "Имя", "name", "[а-яёА-ЯЁ]", "input_placeholder-light")
+                label.label.label_hidden(for="reg-name") #{Имя}
+              .rectangle__content
+                +input-text("reg-lname", "Фамилия", "lname", "[а-яёА-ЯЁ]", "input_placeholder-light")
+                label.label.label_hidden(for="reg-lname") #{Фамилия}
+              .rectangle__radio
+                +input-radio("reg-man", "", "Мужчина", true)
+                +input-radio("reg-wom",  "", "Женщина", false)
+            li.rectangle__item-top
+              label.label.label_large(for='reg-birth') Дата рождения
+              +input-date("reg-birth", "ДД.ММ.ГГГГ", "input_placeholder-light")
+            li.rectangle__item-top
+              .label.label_large Данные для входа в сервис
+              .rectangle__content
+                label.label.label_hidden(for='reg-email')
+                +input-email("reg-email", "input_placeholder-light", "Email")
+              .rectangle__content
+                label.label.label_hidden(for='reg-password')
+                +input-password("reg-password", "input_placeholder-light", "Пароль")
+              .rectangle__content
+                +input-toggle("", "Получать спецпредложения")
+            li.rectangle__item-bottom
+              .rectangle__submit
+                +buttons(2, 'Перейти к оплате', 'button_width')
+                +icon("arrow-big", 18, 18, "0 0 17 18", "arrow-big rectangle__arrow-big", "Войти")
+            .rectangle__create
+              p.rectangle__create-text Уже есть акаунт на Toxin?
+              +buttons( 1, 'Войти', 'authorization__button_size')

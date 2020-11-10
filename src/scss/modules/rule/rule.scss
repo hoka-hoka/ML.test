@@ -1,0 +1,26 @@
+.rule {
+  &__title {
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 11px;
+    font-size: rem(14);
+    line-height: rem(23, 16);
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      min-width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      border-radius: 100%;
+      background: $rule__item--bg;
+    }
+  }
+}

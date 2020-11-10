@@ -1,0 +1,5 @@
+mixin input-radio(id, labelClass, labelName, active)
+  -var status = active || false;
+  .input-radio
+    input.input-checkbox.input-checkbox_hidden(type='radio' id=id name='gender' checked=status)
+    label.input-radio__label(for=id class=labelClass)=labelName

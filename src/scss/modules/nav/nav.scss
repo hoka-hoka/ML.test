@@ -1,0 +1,125 @@
+.nav {
+  margin-left: auto;
+
+  @media (max-width: 1023px) {
+    order: -1;
+    margin: unset;
+  }
+
+  &__container {
+    @media (max-width: 1023px) {
+      position: absolute;
+      top: 100%;
+      left: -200px;
+      z-index: 3;
+      width: max-content;
+      height: auto;
+      border: 1px solid $nav__container--bd;
+      border-radius: 0 0 5px;
+      background-color: #fff;
+      transition-duration: 0.25s;
+    }
+  }
+
+  &__list {
+    display: flex;
+    color: $navText;
+
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      padding: 10px 40px 10px 30px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $navText;
+    font-size: rem(14);
+    cursor: pointer;
+
+    @media (max-width: 1023px) {
+      font-size: rem(16);
+    }
+
+    & .button {
+      position: static;
+      padding: 0px 7px;
+      cursor: pointer;
+      transform: unset;
+
+      & span {
+        color: rgba(#1f2041, 0.5);
+      }
+    }
+
+    &_active {
+      color: $nav__link_active--txt;
+      font-weight: bold;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    @media (max-width: 1023px) {
+      margin: 14px 0;
+      transition-duration: 0.25s;
+    }
+  }
+
+  & .input-checkbox {
+    &:checked ~ .nav__label > .nav__hamburger {
+      transform: rotate(45deg);
+    }
+
+    &:checked ~ .nav__label > .nav__hamburger::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    &:checked ~ .nav__label > .nav__hamburger::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    &:checked ~ .nav__container {
+      left: 0;
+    }
+
+    &__container {
+      @media (max-width: 1023px) {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: none;
+    @media (max-width: 1023px) {
+      display: block;
+      width: 20px;
+    }
+    & > .nav__hamburger,
+    & > .nav__hamburger::before,
+    & > .nav__hamburger::after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #616161;
+      transition-duration: 0.25s;
+    }
+
+    & > .nav__hamburger::before {
+      content: '';
+      top: -8px;
+    }
+
+    & > .nav__hamburger::after {
+      content: '';
+      top: 8px;
+    }
+  }
+}

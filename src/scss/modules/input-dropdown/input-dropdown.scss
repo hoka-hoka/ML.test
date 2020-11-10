@@ -1,0 +1,17 @@
+.input-dropdown {
+  position: relative;
+
+  &_active {
+    & .input-options {
+      display: block;
+      border: 1px solid $input-dropdown_active--bd;
+      border-top: 0;
+    }
+
+    & .input {
+      border: 1px solid $input-dropdown_active--bd;
+      border-bottom-right-radius: initial;
+      border-bottom-left-radius: initial;
+    }
+  }
+}

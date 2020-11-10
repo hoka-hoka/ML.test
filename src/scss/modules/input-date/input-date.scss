@@ -1,0 +1,12 @@
+.input-date {
+  position: relative;
+  cursor: default;
+
+  &_active ~ .calendar {
+    display: block;
+  }
+
+  &__field {
+    position: relative;
+  }
+}

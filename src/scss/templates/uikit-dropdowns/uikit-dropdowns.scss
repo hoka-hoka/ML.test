@@ -1,0 +1,11 @@
+.uikit-dropdowns {
+  display: grid;
+  grid-template-columns: 375px max-content 320px;
+  grid-auto-flow: column;
+  grid-gap: 0 72px;
+  margin: 100px 140px 0;
+
+  & .uikit-elements__list:first-child {
+    width: 266px;
+  }
+}

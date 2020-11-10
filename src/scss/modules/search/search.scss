@@ -1,0 +1,107 @@
+.search {
+  max-width: 380px;
+  margin-top: 70px;
+
+  @media (max-width: 767px) {
+    height: 374px;
+    margin: 70px auto;
+  }
+
+  @media (max-width: 425px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    margin: unset;
+    background: unset;
+  }
+
+  & .input-date {
+    flex-basis: 47%;
+  }
+
+  & .rectangle {
+    @media (max-width: 374px) {
+      padding: 20px;
+    }
+  }
+
+  &__menu {
+    @media (max-width: 425px) {
+      overflow: hidden;
+      width: 0;
+      height: 0;
+      margin: unset;
+      padding: unset;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+  }
+
+  &__label {
+    visibility: hidden;
+
+    @media (max-width: 425px) {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(
+        180deg,
+        rgb(188, 156, 255),
+        rgb(139, 164, 249)
+      );
+      visibility: visible;
+      transition: 0.5s;
+      transform: scale(0.8);
+
+      &:after {
+        content: attr(data-click);
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        height: 95%;
+        border-radius: 50%;
+        background: #fff;
+        color: rgb(188, 156, 255);
+        font-weight: bolder;
+        font-size: rem(30);
+      }
+    }
+  }
+
+  & .input-checkbox {
+    @media (max-width: 425px) {
+      &:checked {
+        & ~ .search__label {
+          transition: 0.5s;
+          transform: scale(1);
+        }
+
+        & ~ .search__label::after {
+          background: transparent;
+          color: #fff;
+        }
+
+        & ~ .search__menu .rectangle__close {
+          opacity: 1;
+          transition: 2s;
+        }
+
+        & ~ .search__menu {
+          overflow: auto;
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          transition: 0.5s width 0.3s, 0.5s height 0.3s, 0.5s border-radius 0.5s,
+            0.5s padding ease-out 0.6s;
+        }
+      }
+    }
+  }
+}

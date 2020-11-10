@@ -1,0 +1,31 @@
+.uikit-elements {
+  display: grid;
+  grid-template-columns: 320px 266px 320px;
+  grid-auto-flow: column;
+  grid-gap: 0 126px;
+  margin: 65px 141px 0;
+
+  & .rectangle {
+    position: relative;
+    display: block;
+    all: initial;
+  }
+
+  &__item {
+    position: relative;
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: unset;
+    }
+
+    & > .customer {
+      display: flex;
+      all: initial;
+    }
+
+    & .uikit-elements__item > .pagination {
+      text-align: initial;
+    }
+  }
+}

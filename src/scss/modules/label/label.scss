@@ -1,0 +1,36 @@
+.label {
+  position: relative;
+  display: flex;
+  font-family: $mainFont;
+
+  &_hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+  }
+
+  &_large {
+    display: block;
+    margin-bottom: 5px;
+    color: $label_large--txt;
+    font-weight: bold;
+    font-size: rem(12);
+    font-family: $mainFont;
+    text-transform: uppercase;
+  }
+
+  // TODO: class
+  &_color--50 {
+    color: $label_color--50;
+    font-size: rem(14px);
+    cursor: pointer;
+    user-select: none;
+  }
+}

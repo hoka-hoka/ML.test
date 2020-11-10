@@ -1,0 +1,21 @@
+include ../../src/scss/modules/card/card
+
+block input
+block cards
+
+.product
+  .product__container
+    include ../../src/scss/modules/filter/filter
+    .product__list
+      .product__card.card
+        h1.card__title Номера, которые мы для вас подобрали
+        ul.card__list
+          each card, index in cards
+            +card(card["number"], card["status"], card["price"], card["checked"], card["reviews"], index)
+      +pagination()
+
+
+
+
+
+

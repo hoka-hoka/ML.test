@@ -1,0 +1,6 @@
+mixin input-date(id, holder, className, labelClass, labelText)
+  .input-date.input-date_js
+    label.label.label_large(for=id)=labelText
+    .input-date__field
+      input.input.input_clicked-js(name='' id=id type='text' required autocorrect='off' inputmode='numeric' autocomplete='cc-exp' placeholder=holder onfocus="(this.type='date')" onblur="(this.type='text')" class=className maxlength='10')
+      +buttons(5, "", "button_clicked-js")

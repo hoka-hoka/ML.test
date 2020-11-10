@@ -1,0 +1,5 @@
+mixin input-dropdown(className, id, holder, val, role, i)
+  .input-dropdown.input-dropdown_js(class=className)
+    input.input.input_clicked-js(type='text' id=id required readonly placeholder=holder autocomplete="off" value=val data-role=role)
+    +buttons(5, "", "button_arrow button_clicked-js")
+    +input-options(i, role)

@@ -1,0 +1,23 @@
+.reviews {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__customer {
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__amount {
+    color: $reviews__amount--txt;
+    font-size: rem(14);
+  }
+}

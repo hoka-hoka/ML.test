@@ -1,0 +1,20 @@
+.uikit
+  .uikit__logo
+    include ../../../src/scss/templates/uikit-logo/uikit-logo
+  .uikit-form
+    .uikit-form__item.uikit-form__search
+      +search()
+    .uikit-form__item.uikit-form__descr
+      +description()
+    .uikit-form__item.uikit-form__calendar.uikit-form__calendar_create--js
+      +calendar()
+    .uikit-form__item.uikit-form__reg
+      +registration()
+    .uikit-form__item.uikit-form__aut
+      +authorization()
+    .uikit-form__item
+      ul.uikit-form__cards
+        each card, index in elem
+          +card(card["number"], card["status"], card["price"], card["checked"], card["reviews"], index)
+
+

@@ -1,0 +1,7 @@
+mixin input-list(className, name, labelClass, variant, id, role)
+  .input-list.input-list_js(class=className)
+    span.label.label_large.label_js(class=labelClass, data-role=role)=name
+    +buttons(5, "", "button_clicked-js")
+    .input-list__options
+      each item, index in additional
+        +input-mark(index, item, id, variant)

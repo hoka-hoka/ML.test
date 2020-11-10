@@ -1,0 +1,14 @@
+mixin input-options(index, role)
+  -var list = role=="gues" ? guesList : roomList
+    .input-options.input-options_init-js
+      each v, i in list
+        .input-options__opt
+          span.input-options__text=v
+          .input-options__marks.input-options__marks_elem-js
+            +buttons(4, '', 'button__mark_minus button__mark_default button__mark_minus-js')
+            span.input-options__amount.input-options__amount-js 0
+            +buttons(4, '', 'button__mark_plus button__mark_plus-js')
+      if index == 1
+       .input-options__btns
+         +buttons(3, 'Очистить', 'button_color-prev button_hidden button_prev-js')
+         +buttons(3, 'Применить', 'button_color-next button_margin-left button_next-js')

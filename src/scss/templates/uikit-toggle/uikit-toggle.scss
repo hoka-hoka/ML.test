@@ -1,0 +1,11 @@
+.uikit-toggle {
+  margin-top: 42px;
+
+  &__list {
+    margin-top: 16px;
+  }
+
+  & .uikit-toggle__item:last-child {
+    margin-top: 16px;
+  }
+}

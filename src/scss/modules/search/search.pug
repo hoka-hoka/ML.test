@@ -1,0 +1,24 @@
+mixin search()
+  .search
+    input.input-checkbox.input-checkbox_hidden(type="checkbox" id="sr-form")
+    label.search__label(for="sr-form" data-click="Click me")
+    main.search__menu
+      .rectangle
+        label.rectangle__close(for="sr-form")
+        form(action="")
+          fieldset.rectangle__container
+            legend.rectangle__title Найдём номера под ваши пожелания
+            ul.rectangle__schedule(role='none')
+              li.rectangle__date
+                -for(var i=0; i<2; ++i)
+                  +input-date(date_id[i],"ДД.ММ.ГГГГ", "", "", sr_label[i]) 
+                - var i = null;
+                +calendar()
+               
+              li.rectangle__item-bottom
+                label.label.label_large(for='s-gues') Гости
+                .rectangle__content
+                  +input-dropdown("", "s-gues", "Сколько гостей", "", "gues")
+              li.rectangle__submit
+                +buttons(2, 'Подобрать номер', 'button_width')
+                +icon("arrow-big", 18, 18, "0 0 17 18", "arrow-big rectangle__arrow-big", "Подобрать номер")
