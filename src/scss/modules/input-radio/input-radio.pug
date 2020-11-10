@@ -1,5 +1,0 @@
-mixin input-radio(id, className, classLabel, labelName, active)
-  -var status = active || false;
-  .input-radio(class=className)
-    input.input.visuallyhidden(type='radio' id=id name='gender' checked=status)
-    label.label(for=id class=classLabel)=labelName
