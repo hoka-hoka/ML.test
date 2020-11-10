@@ -1,19 +1,22 @@
-[//]: # (# = h1)
-[//]: # (``` = code)
+[//]: # '# = h1'
+[//]: # '``` = code'
+
 # FSD-task
+
 Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-[Демо](https://hoka-hoka.github.io/task_1-view/#modal-1 "Необязательная подсказка")
+[Демо](https://hoka-hoka.github.io/task_1-view/#modal-1 'Необязательная подсказка')
+
 ### Установка
 
 Клонирование проекта  
-`git clone https://github.com/hoka-hoka/task_1.git`  
+`git clone https://github.com/hoka-hoka/task_1.git`
 
 Установка зависимостей  
-`npm i`
+`npm install`
 
 Разработка  
-`npm run dev`
+`npm run server`
 
 Сборка  
 `npm run build`
@@ -22,45 +25,49 @@
 
 ```
 ├── dist
+|
 ├── node_modules
-├── modules
+|
+├── public
+|   |
+|   ├── includes
+|   ├── pages
+|   |   ├── uikit
+|   |   └── website
+|   ├── utils
+|   └── index.pug
+|
 ├── src
+|   |
 |   ├── assets
-|   |   ├── css
-|   |   ├── img
+|   |   ├── fonts
+|   |   └── img
 |   |       └── svg
-|   |   └── scss
-|   |       ├── modules
-|   |       ├── templates
-|   |       └── utils
 |   |
 |   ├── js
-|   |
-|   ├── pug
-|   |   ├── includes
-|   |   |   └── uikit
-|   |   ├── layout
-|   |   ├── pages
-|   |   |   ├── uikit
-|   |   |   └── website
+|   └── scss
+|   |   ├── modules
+|   |   ├── templates
 |   |   └── utils
-|   ├── static 
 |   |
-|   ├── home.js
-|   └── index.html
-├── webpack
-├── .babelrc
-├── .gitignore  
+|   └── main.js
+|
+├── .browserslistrc
+├── .gitignore
+├── .prettierrc
+├── .stylelintrc
+├── babel.config.js
 ├── package.json
 ├── package-lock.json
-├── package-lock.json
-└── README.md
+├── README.md
+└── vue.config.js
+
 ```
 
 ### Дорожная карта
+
 См. [открытые проблемы](https://github.com/hoka-hoka/task_1/issues) для получения списка предлагаемых функций (и известных проблем).
 
 ### Лицензия
+
 Распространяется по лицензии MIT. См. `LICENSE`.
-
-
