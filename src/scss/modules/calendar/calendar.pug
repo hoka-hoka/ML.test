@@ -3,10 +3,22 @@ mixin calendar()
     .calendar__container
       .swiper-container.calendar__swiper-container
         .swiper-wrapper
-        button.calendar__arrow-next
-          +icon("arrow-big", 17, 18, "0 0 17 18", "", "Календарь, следующий месяц")
-        button.calendar__arrow-prev
-          +icon("arrow-big", 17, 18, "0 0 17 18", "", "Календарь, предыдущий месяц")
+        +button({
+          theme: "arrow-prev",
+          text: "Календарь, следующий месяц",
+          mod: {locale: "arrow-prev", clicked: "arrow-prev-js"},
+        })
+        +button({
+          theme: "arrow-next",
+          text: "Календарь, предыдущий месяц",
+          mod: {locale: "arrow-next", clicked: "arrow-next-js"},
+        })
       .calendar__response
-        +buttons(3, 'Очистить', 'button_color-prev')
-        +buttons(3, 'Применить', 'button_color-next')
+        +button({
+          text: "Очистить",
+          mod: {color: "purple"},
+        })
+        +button({
+          text: "Применить",
+          mod: {color: "purple"},
+        })

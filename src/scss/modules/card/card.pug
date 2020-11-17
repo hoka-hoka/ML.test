@@ -1,27 +1,24 @@
-mixin card(number, status, price, checked, reviews, index)
-  li.card__item
-    .swiper-container.card__swiper-container
-      .swiper-wrapper
-        -for(var i=1; i<=4; ++i)
-          .swiper-slide
-            picture.card__pic
-              source.card__img(type="image/webp" srcset="img/card-"+i+".webp")
-              source.card__img(type="image/png" srcset="img/card-"+i+".png")
-              img.card__img(src="img/card-"+i+".jpg", alt="Номер в гостинице")
-      .card__pagination
-      .swiper-prev
-      .swiper-next
-    .card__descr
-      .card__content
-        .room
-          .room__container
-            span.room__number #{number}
-            strong.room__luxury=status
-          .room__container
-            span.room__price #{price}&#8381
-            span.room__text в сутки
-      hr.line.card__line
-      .card__content
-        +rating(index, checked)
-        span.card__value #{reviews}
-        span.card__about Отзывов
+//- mixin card(number, status, price, checked, reviews, index)
+mixin card(card)
+  .card
+    li.card__item
+      +swiper({
+        mod: {init: "card-js"},
+        pagination: "card__pagination",
+        prev: "swiper-prev",
+        next: "swiper-next",
+      })
+      .card__descr
+        .card__content
+          .card__room
+            .room__container
+              span.room__number=card.number
+              strong.room__luxury=card.status
+            .room__container
+              span.room__price #{card.price} &#8381
+              span.room__text в сутки
+        hr.line.card__line
+        .card__content
+          +rating(card.starIndex, card.checked)
+          span.card__value=card.reviews
+          span.card__about Отзывов

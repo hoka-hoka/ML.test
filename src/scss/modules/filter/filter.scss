@@ -6,8 +6,59 @@
     min-width: inherit;
   }
 
-  & .input-date {
-    flex-basis: 100%;
+  &__close {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 17px;
+      background: rgb(139, 164, 249);
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__date {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__item-bottom {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__range {
+    margin-top: 20px;
+  }
+
+  &__content {
+    margin-bottom: 10px;
   }
 
   & .rectangle {
@@ -40,6 +91,10 @@
   & .input-checkbox:checked ~ .filter__menu .rectangle__close {
     opacity: 1;
     transition: 2s;
+  }
+
+  &__list {
+    margin-top: 16px;
   }
 
   &__label {

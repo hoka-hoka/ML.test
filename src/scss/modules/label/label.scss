@@ -26,11 +26,47 @@
     text-transform: uppercase;
   }
 
-  // TODO: class
-  &_color--50 {
-    color: $label_color--50;
-    font-size: rem(14px);
+  &_checked {
+    position: relative;
+    display: flex;
+    padding-left: 30px;
+    color: $label_checked--txt;
+    font-weight: normal;
+    font-size: rem(14);
+    font-family: $mainFont;
+    line-height: rem(20);
     cursor: pointer;
     user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      box-sizing: border-box;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      border: 1px solid $label_checked--bd;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 7px;
+      box-sizing: border-box;
+      width: 6px;
+      height: 8px;
+      transform: rotate(45deg);
+    }
+    // &_thick {
+    //   color: $label_thick--txt;
+    //   font-weight: bold;
+    //   font-size: rem(14);
+    //   cursor: pointer;
+    //   user-select: none;
+    // }
   }
 }

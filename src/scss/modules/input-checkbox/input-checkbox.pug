@@ -1,0 +1,14 @@
+mixin input-checkbox(checkbox)
+  - var modClasses = '';
+  - if (checkbox.mod) {
+  -   var styles = Object.values(checkbox.mod);
+  -     for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-checkbox_' + styles[index];
+  -   }
+  - }
+
+  input.input-checkbox(
+    class=modClasses 
+    type="checkbox" 
+    id=checkbox.id 
+  )

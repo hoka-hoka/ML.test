@@ -1,0 +1,19 @@
+mixin icon(icon)
+  - var modClasses = '';
+  - if (icon.mod) {
+  -   var styles = Object.values(icon.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'icon__pick_' + styles[index];
+  -   }
+  - }
+
+  .icon
+    svg.icon__pick(
+      class=modClasses 
+      viewBox=icon.viewBox 
+      weight=icon.width 
+      height=icon.height 
+      role="image" 
+      aria-label=icon.alt
+    )
+      use(xlink:href = "#" + icon.id)

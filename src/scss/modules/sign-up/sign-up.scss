@@ -1,9 +1,7 @@
 .sign-up {
   display: none;
+  fill: rgb(53, 53, 64);
   @media (max-width: 425px) {
     display: flex;
-  }
-  &__icon {
-    fill: rgb(53, 53, 64);
   }
 }

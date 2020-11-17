@@ -1,7 +1,7 @@
-mixin intelligence(index, title)
+mixin intelligence(intelligence)
   .intelligence
-    if index == 1
-      h2.details__title #{title}
+    if intelligence.title
+      h2.details__title=intelligence.text
     ul.intelligence__list
       each val in convenience
         li.intelligence__item

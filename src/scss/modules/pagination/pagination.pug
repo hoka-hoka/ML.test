@@ -13,5 +13,11 @@ mixin pagination()
         a.pagination__link(href="") 15
       li.pagination__item
         a.pagination__link.pagination__link_next(href="#")
-          +icon('arrow-big', 16, 16, "0 0 17 18", 'pagination__link-icon', 'Следующая страница')
+          +icon({
+            id: "arrow-big",
+            width: "16",
+            height: "16",
+            viewBox: "0 0 17 18",
+            alt: "Следующая страница",
+          })
     .pagination__text 1 - 12 из 100+ вариантов аренды

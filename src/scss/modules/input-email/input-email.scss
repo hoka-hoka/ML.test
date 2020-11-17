@@ -1,3 +1,28 @@
 .input-email {
   position: relative;
+
+  &__field {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    padding: 0 28px 0 14px;
+    border: 1px solid $input-email__field--br;
+    border-radius: 4px;
+    color: $input-email__field--txt;
+    font-size: rem(14);
+    font-family: $mainFont;
+
+    &::placeholder {
+      font-size: rem(14);
+      font-family: $mainFont;
+    }
+
+    &_light::placeholder {
+      color: $input-email__field_light--txt;
+      font-size: rem(14px);
+      font-family: $mainFont;
+      line-height: rem(14px, 18px);
+    }
+  }
 }

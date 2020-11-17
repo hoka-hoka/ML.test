@@ -1,4 +1,8 @@
 .intelligence {
+  &__title {
+    margin-bottom: 20px;
+  }
+
   &__text {
     font-size: rem(14);
     line-height: rem(21, 14);

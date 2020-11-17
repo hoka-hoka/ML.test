@@ -3,6 +3,23 @@
     --thumb-color-start: #6fcf97;
     --thumb-color-stop: #66d2ea;
   }
+  .input-range {
+    &__text {
+      padding-top: 4px;
+      color: $input-range__text--txt;
+      font-size: rem(12);
+      line-height: 14px;
+    }
+
+    &__price {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $input-range__price--txt;
+      font-size: rem(12);
+      line-height: rem(15, 12);
+    }
+  }
   .pail-range {
     position: absolute;
     right: calc(100% - var(--stop));

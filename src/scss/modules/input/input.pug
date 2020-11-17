@@ -1,0 +1,24 @@
+mixin input(input)
+  - var modClasses = '';
+  - if (input.mod) {
+  -   var styles = Object.values(input.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input_' + styles[index];
+  -   }
+  - }
+
+  input.input(
+    class=modClasses
+    id=input.id 
+    type=input.type 
+    required readonly 
+    placeholder=input.placeholder
+    value=input.value
+    data-role=input.role
+    autocorrect=(input.autocorrect ? input.autocorrect : false)
+    inputmode=(input.inputmode ? input.inputmode: false)
+    autocomplete=(input.autocomplete ? input.autocomplete : false)
+    onfocus=(input.onfocus ? input.onfocus : false)
+    onblur=(input.onblur ? input.onblur : false)
+    maxlength=(input.maxlength ? input.maxlength : false)
+    )

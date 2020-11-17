@@ -13,7 +13,6 @@ let roomName = [
 ];
 
 let input = document.querySelectorAll('.input_clicked-js');
-
 if (input) {
   input.forEach(value => {
     const optionList = setSiblingIteration(2, value, 'input-options_init-js');

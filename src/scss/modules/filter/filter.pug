@@ -1,47 +1,76 @@
-.filter
-  input.input-checkbox.input-checkbox_hidden(type="checkbox" id="filter")
-  label.filter__label(for="filter")
-    span.filter__btn Фильтр
-  .filter__menu
-    .rectangle
-      label.rectangle__close(for="filter")
+mixin filter()
+  .filter
+    +input-checkbox({
+      id: "filter",
+      mod: {visible: "hidden"},
+    })
+    label.filter__label(for="filter")
+      span.filter__btn Фильтр
+    .filter__menu
+      label.filter__close(for="filter")
       form(action="" name="")
-        ul.rectangle__schedule(role='none')
-          li.rectangle__date
-            +input-date("pr-date", "ДД.ММ.ГГГГ", "", "", "Даты пребывания в отеле")
+        ul.filter__schedule(role='none')
+          li.filter__date
+            +input-date({
+              id: "pr-date",
+              placeholder: "ДД.ММ.ГГГГ",
+              text: "Даты пребывания в отеле",
+              mod: {width: "wide"},
+            })
             +calendar()
-
-          li.rectangle__item-bottom
-            label.label.label_large(for='pr-gues') Гости
-            .rectangle__content
-              +input-dropdown("", "pr-gues", "Сколько гостей", "", "gues", "1")
-
-          li.rectangle__item-bottom
-            .rectangle__label
-              label.label.label_large Диапазон цены
-              span.rectangle__price
-            .rectangle__range
-              input.input-range(type='range' multiple value='10,80')
-              span.rectangle__text-small Стоимость за сутки пребывания в номере
-
-          li.rectangle__item-bottom
-            .rectangle__content
-              span.label.label_large Правила дома
-              .rectangle__list
-                each item, index in allowed
-                  +input-mark(index, item, "gues", 1)
-
-          li.rectangle__item-bottom
-            span.label.label_large Доступность
-            .rectangle__list
-              each item, index in availabel
-                +input-mark(index, item, "available", 0)
-
-          li.rectangle__item-bottom
-            label.label.label_large(for='pr-room') Удобство номера
-            .rectangle__content
-              +input-dropdown("", "pr-room", "Сколько комнат", "", "room", 0)
-
-          li.rectangle__item-bottom
-            .rectangle__content
-              +input-list("","Дополнительные удобства", "", 1, "additional")
+          li.filter__item-bottom
+            .filter__content
+              +input-dropdown({
+                id: "pr-gues",
+                text: "Гости",
+                placeholder: "Сколько гостей",
+                role: "gues",
+                list: guesList,
+                btnPannel: true,
+              })
+          li.filter__item-bottom 
+            .filter__range
+              +input-range({
+                value: "10,80",
+                text: "Диапазон цены",
+                footnote: "Стоимость за сутки пребывания в номере",
+              })
+          li.filter__item-bottom
+            .filter__content
+              +label({
+                text: "Правила дома",
+                mod: {weigth: "large"},
+              })
+              .filter__list
+                each value, index in allowed
+                  +input-mark({
+                    id: "allowed-"+index,
+                    text: value.title,
+                    description: value.descr,
+                  })
+          li.filter__item-bottom
+            +label({
+              text: "Доступность",
+              mod: {weigth: "large"},
+            })
+            .filter__list
+              each value, index in availabel
+                +input-mark({
+                  id: "availabel-"+index,
+                  text: value.title,
+                  description: value.descr,
+                })
+          li.filter__item-bottom
+            .filter__content
+              +input-dropdown({
+                id: "pr-room",
+                text: "Удобство номера",
+                placeholder: "Сколько комнат",
+                role: "room",
+                list: roomList,
+              })
+          li.filter__item-bottom
+            .filter__content
+              +input-list({
+                text: "Дополнительные удобства",
+              })

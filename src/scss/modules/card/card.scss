@@ -13,10 +13,6 @@
     font-size: rem(14);
   }
 
-  &__title {
-    margin-bottom: 20px;
-  }
-
   &__pic {
     display: block;
     height: 151px;
@@ -41,16 +37,6 @@
 
     &_active {
       background-color: #fff;
-    }
-  }
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 9px 20px;
-
-    @media (min-width: 1601px) {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
   }
 

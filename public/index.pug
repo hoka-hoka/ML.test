@@ -13,7 +13,7 @@ block canselList
 block searchList
 block descriptionList
 
-include utils/mixins
+include ../src/scss/modules/icon/icon
 include ../src/scss/modules/card/card
 include ../src/scss/modules/calendar/calendar
 include ../src/scss/modules/button/button
@@ -28,6 +28,7 @@ include ../src/scss/modules/input-options/input-options
 include ../src/scss/modules/input-list/input-list
 include ../src/scss/modules/input-mark/input-mark
 include ../src/scss/modules/rule/rule
+include ../src/scss/modules/filter/filter
 include ../src/scss/modules/intelligence/intelligence
 include ../src/scss/modules/reviews/reviews
 include ../src/scss/modules/heart/heart
@@ -42,6 +43,17 @@ include ../src/scss/modules/registration/registration
 include ../src/scss/modules/authorization/authorization
 include ../src/scss/modules/header/header
 include ../src/scss/modules/footer/footer
+include ../src/scss/modules/input-range/input-range
+include ../src/scss/modules/label/label
+include ../src/scss/modules/input-checkbox/input-checkbox
+include ../src/scss/modules/input/input
+include ../src/scss/modules/swiper/swiper
+include ../src/scss/modules/logo/logo
+include ../src/scss/modules/user/user
+include ../src/scss/modules/details/details
+include ../src/scss/modules/banner/banner
+include ../src/scss/modules/home/home
+include ../src/scss/modules/sign-in/sign-in
 
 doctype html
 html(lang="en")
@@ -54,9 +66,10 @@ body(id=title)
     case temp
       when "header"
         +header()
-        //- include ../src/scss/modules/header/header
       when "banner"
-        include includes/banner
+        +banner({
+          mixinName: "search",
+        })
       when "footer"
         +footer()
       when "sprite"
@@ -64,11 +77,11 @@ body(id=title)
       when "product"
         include includes/product
       when "details"
-        include includes/details
+        +details()
       when "home"
-        include ../src/scss/modules/home/home
+        +home()
       when "authorization"
-        include includes/authorization
+        +sign-in()
       when "registration"
         include includes/registration
       when "cards"

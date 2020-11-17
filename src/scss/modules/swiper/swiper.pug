@@ -1,0 +1,23 @@
+block swiperList
+mixin swiper(swiper)
+  - var modClasses = '';
+  - if (swiper.mod) {
+  -   var styles = Object.values(swiper.mod);
+  -     for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'swiper-container_' + styles[index];
+  -   }
+  - }
+
+  .swiper-container(class=modClasses)
+    .swiper-wrapper
+      each value in images
+        .swiper-slide
+          picture.swiper-side__pick
+            source(type="image/webp" srcset=value+".webp")
+            source(type="image/jpeg" srcset=value+".jpg")
+            img.swiper-side__img(src=value+".jpg", alt=alt)
+    if swiper.pagination
+      .swiper__pagination(class=swiper.pagination)
+    if swiper.prev
+      .swiper__prev(class=swiper.prev)
+      .swiper__next(class=swiper.next)

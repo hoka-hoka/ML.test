@@ -19,7 +19,7 @@ const calendarBtn = document.querySelectorAll(
   '.input-date_js .button_clicked-js',
 );
 const calendarDay = document.querySelectorAll('.input-date_js');
-const btn = document.querySelectorAll('.calendar .button');
+const btn = document.querySelectorAll('.calendar .button_purple');
 
 if (
   document.body.id === 'index' ||
@@ -81,7 +81,6 @@ if (btn.length) {
             .join('-');
         }
       } else {
-        console.log(calendarDay[0]);
         calendarDay[0].querySelector('.input_clicked-js').value += `${
           v.innerText
         } ${checkDate[0].slice(0, 3)}. ${

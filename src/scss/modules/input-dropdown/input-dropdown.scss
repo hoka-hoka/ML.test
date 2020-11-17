@@ -1,6 +1,10 @@
 .input-dropdown {
   position: relative;
 
+  &__field {
+    position: relative;
+  }
+
   &_active {
     & .input-options {
       display: block;

@@ -1,7 +1,20 @@
-mixin input-email(id, className, holder, classLabel)
+mixin input-email(email)
+  - var modClasses = '';
+  - if (email.mod) {
+  -   var styles = Object.values(email.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-email__field_' + styles[index];
+  -   }
+  - }
+
   .input-email
-    input.input(name='email' id=id class=className type='email' autocorrect='off' inputmode='email' autocomplete='email' required placeholder=holder)
-
-
-    if (classLabel !== undefined)
-      +icon("arrow-big", 18, 18, "0 0 17 18", "arrow-big footer__arrow-big", "Подписка")
+    input.input-email__field(name='email' id=email.id class=modClasses type='email' autocorrect='off' inputmode='email' autocomplete='email' required placeholder=email.placeholder)
+    if (email.arrow)
+      +icon({
+        id: "arrow-big",
+        width: "18",
+        height: "18",
+        viewBox: "0 0 17 18",
+        alt: "Подписка",
+        mod: {position: "center", color: "purple"},
+      })

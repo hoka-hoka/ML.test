@@ -9,4 +9,8 @@
   &__field {
     position: relative;
   }
+
+  &_wide {
+    flex-basis: 100%;
+  }
 }

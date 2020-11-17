@@ -1,16 +1,42 @@
-mixin buttons(index, name, mix, date)
-  case index
-    when 1
-      button.button.button_gradient.button_br--hov(type="button" class=mix date=date)
-        .button__theme.button__theme_br=name
-    when 2
-      button.button.button_gradient.button_bg--hov(type="button" class=mix date=date)
-        .button__theme.button__theme_bg=name
-    when 3
-      button.button(type="button" class=mix)=name
-    when 4
-      button.button__mark(type="button" class=mix)
-    when 5
-      button.button.button_arrow(type="button" class=mix)
-    when 6
-      button.button.button__theme_br.button_ds--hov(type="button" class=mix date=date)=name
+mixin button(btn)
+  - var modClasses = '';
+  - if (btn.mod) {
+  -   var styles = Object.values(btn.mod);
+  -     for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'button_' + styles[index];
+  -   }
+  - }
+  - var text = btn.theme ? '' : btn.text;
+
+  button.button(type="button" class=modClasses data=btn.data)=text
+    case btn.theme
+      when "light"
+        .button__text.button__text_boundary=btn.text
+        .button__light
+      when "purple"
+        .button__text.button__text_flooded=btn.text
+      when "mark-minus"
+        .button__mark.button__mark_minus.button__mark_default.button__mark_minus-js(type="button" class=mix)
+      when "mark-plus"
+        .button__mark.button__mark_plus.button__mark_plus-js(type="button" class=mix)
+      when "arrow-prev"
+        +icon({
+          id: "arrow-big",
+          width: "17",
+          height: "18",
+          viewBox: "0 0 17 18",
+          alt: btn.text,
+        })
+      when "arrow-next"
+        +icon({
+          id: "arrow-big",
+          width: "17",
+          height: "18",
+          viewBox: "0 0 17 18",
+          alt: btn.text,
+        })
+
+//- when 5
+//-   button.button.button_arrow(type="button" class=mix)
+//- when 6
+//-   button.button.button__theme_br.button_ds--hov(type="button" class=mix date=date)=name

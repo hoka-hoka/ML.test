@@ -16,6 +16,7 @@ class amountList {
         let btnPrev = value.querySelector('.button__mark_minus-js');
         let amount = value.querySelector('.input-options__amount-js');
         let btnNext = value.querySelector('.button__mark_plus-js');
+
         if (event.target === btnNext) {
           amount.innerText = +amount.innerText + 1;
         } else if (event.target === btnPrev && amount.innerHTML > 0) {

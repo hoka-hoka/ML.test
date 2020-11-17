@@ -130,6 +130,7 @@ hr {
   margin: 0 140px;
 }
 
+@import 'modules/icon/icon';
 @import 'modules/arrow/arrow';
 @import 'modules/button/button';
 @import 'modules/search/search';
@@ -145,18 +146,15 @@ hr {
 @import 'modules/input-checkbox/input-checkbox';
 @import 'modules/canvas/canvas';
 @import 'modules/card/card';
-@import 'modules/room/room';
 @import 'modules/js--click/js--click';
 @import 'modules/line/line';
 @import 'modules/pagination/pagination';
 @import 'modules/intelligence/intelligence';
 @import 'modules/details/details';
 @import 'modules/schedule/schedule';
-@import 'modules/mark/mark';
 @import 'modules/description/description';
 @import 'modules/accent/accent';
 @import 'modules/reviews/reviews';
-@import 'modules/customer/customer';
 @import 'modules/heart/heart';
 @import 'modules/rule/rule';
 @import 'modules/cancel/cancel';
@@ -166,13 +164,13 @@ hr {
 @import 'modules/swiper-prev/swiper-prev';
 @import 'modules/product/product';
 @import 'modules/swiper-container/swiper-container';
-@import 'modules/arrow-big/arrow-big';
 @import 'modules/header/header';
 @import 'modules/sticky/sticky';
 @import 'modules/nav/nav';
 @import 'modules/logo/logo';
 @import 'modules/authorization/authorization';
 @import 'modules/registration/registration';
+@import 'modules/swiper/swiper';
 @import 'modules/banner/banner';
 @import 'modules/calendar/calendar';
 @import 'modules/footer/footer';

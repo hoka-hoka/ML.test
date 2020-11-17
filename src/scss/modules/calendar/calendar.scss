@@ -46,6 +46,7 @@
 
   &__response {
     display: flex;
+    justify-content: space-between;
     margin-top: 22px;
   }
 
@@ -131,24 +132,6 @@
     @media (max-width: 375px) {
       padding: 10px;
     }
-  }
-
-  &__arrow-prev {
-    position: absolute;
-    top: 1px;
-    z-index: 1;
-    cursor: pointer;
-    fill: $calendar__arrow-prev--fill;
-    transform: rotate(180deg);
-  }
-
-  &__arrow-next {
-    position: absolute;
-    top: 1px;
-    right: 0;
-    z-index: 1;
-    cursor: pointer;
-    fill: $calendar__arrow-next--fill;
   }
 }
 

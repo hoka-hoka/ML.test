@@ -1,5 +1,31 @@
-mixin input-dropdown(className, id, holder, val, role, i)
-  .input-dropdown.input-dropdown_js(class=className)
-    input.input.input_clicked-js(type='text' id=id required readonly placeholder=holder autocomplete="off" value=val data-role=role)
-    +buttons(5, "", "button_arrow button_clicked-js")
-    +input-options(i, role)
+mixin input-dropdown(dropdown)
+  - var modClasses = '';
+  - if (dropdown.mod) {
+  -   var styles = Object.values(dropdown.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-dropdown_' + styles[index];
+  -   }
+  - }
+
+  .input-dropdown.input-dropdown_js(class=modClasses)
+    +label({
+        for: dropdown.id,
+        text: dropdown.text,
+        mod: { font: "large" },
+      })
+    .input-dropdown__field
+      +input({
+        type: "text",
+        id: dropdown.id,
+        placeholder: dropdown.placeholder,
+        role: dropdown.role,
+        mod: {clicked: "clicked-js"},
+      })
+      +button({
+        mod: {arrow: "arrow", clicked: "clicked-js"}
+      })
+      +input-options({
+        role: dropdown.role,
+        list: dropdown.list,
+        btnPannel: dropdown.btnPannel,
+      })

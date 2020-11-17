@@ -1,7 +1,15 @@
-mixin heart(active, like)
+mixin heart(heart)
+  - var modClasses = '';
+  - if (heart.mod) {
+  -   var styles = Object.values(heart.mod);
+  -     for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'heart__btn_' + styles[index];
+  -   }
+  - }
+
   .heart
-    button.heart__btn.heart__btn_js(type='button' class=active)
+    button.heart__btn.heart__btn_js(type='button' class=modClasses)
       .heart__area
         .heart__figure.heart__figure_outer
         .heart__figure.heart__figure_inner
-        span.heart__amount.heart__amount_js=like
+        span.heart__amount.heart__amount_js=heart.amount

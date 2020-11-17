@@ -6,7 +6,6 @@
   border-radius: 50%;
   mix-blend-mode: lighten;
 }
-
 $colors: #6fcf97 #66d2ea #bc9cff #8ba4f9 #ffe39c #ffba9c #919191 #3d4975;
 $deg-start: 1deg -89deg 136deg 91deg;
 $deg-end: 89deg -1deg 269deg -226deg;
@@ -16,6 +15,11 @@ $m: 1;
 .schedule {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 161px));
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 20px;
+  }
 
   &__text {
     font-size: rem(12);
@@ -30,8 +34,40 @@ $m: 1;
   }
 
   &__mark {
+    display: inline-block;
     align-self: end;
     margin-top: 20px;
+  }
+
+  &__mark-text {
+    padding-left: 5px;
+    font-size: rem(14);
+    line-height: rem(14, 24);
+  }
+
+  &__mark-item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 14px;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+
+  &__mark-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    @each $col in lime, purpure, yellow, dark {
+      &.#{$col} {
+        background: linear-gradient(nth($colors, $i), nth($colors, $i + 1));
+      }
+      // TODO: wrining
+      $i: $i + 2;
+    }
   }
 
   &__item {

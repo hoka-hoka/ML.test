@@ -10,7 +10,7 @@ import '../scss/modules/input-range/input-range';
 import '../scss/modules/input-date/input-date';
 import '../scss/modules/overlay/overlay';
 import '../scss/modules/header/header';
-import '../scss/modules/customer/customer';
+import '../scss/modules/heart/heart';
 import '../scss/modules/nav/nav';
 import '../scss/modules/input-options/input-options';
 import '../scss/modules/input-list/input-list';

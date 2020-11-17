@@ -1,7 +1,7 @@
-mixin rule(index, title)
+mixin rule(rule)
   .rule
-    if index == 1
-      h2.rule__title=title
+    if rule.title
+      h2.rule__title=rule.text
     ul.rule__list
       each value in rules
         li.rule__item=value

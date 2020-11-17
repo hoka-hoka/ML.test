@@ -1,7 +1,7 @@
 import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper';
 Swiper.use([Navigation, Pagination, Scrollbar]);
 
-let mainSwiper = new Swiper(".banner__swiper-container", {
+let mainSwiper = new Swiper('.swiper-container_banner-js', {
   //loop: true, don't work width the cssMode
   cssMode: true,
   initialSlide: 2,
@@ -17,10 +17,10 @@ let detailsSwiper = new Swiper('.details__swiper', {
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
-  }
+  },
 });
 
-let cardSwiper = new Swiper(".card__swiper-container", {
+let cardSwiper = new Swiper('.swiper-container_card-js', {
   speed: 400,
   spaceBetween: 10,
   loop: true,

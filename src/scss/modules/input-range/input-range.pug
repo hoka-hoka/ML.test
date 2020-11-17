@@ -1,0 +1,20 @@
+mixin input-range(range)
+  - var modClasses = '';
+  - if (range.mod) {
+  -   var styles = Object.values(range.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-range__field_' + styles[index];
+  -   }
+  - }
+
+  .input-range.input-range_pull-js(class=modClasses)
+    .input-range__top
+      if range.text
+        +label({
+          text: range.text,
+          mod: {weigth: "large"},
+        })
+        span.input-range__price
+    input.input-range__field(type='range' multiple value=range.value)
+    if range.footnote
+      span.input-range__text=range.footnote

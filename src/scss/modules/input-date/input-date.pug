@@ -1,6 +1,31 @@
-mixin input-date(id, holder, className, labelClass, labelText)
-  .input-date.input-date_js
-    label.label.label_large(for=id)=labelText
+mixin input-date(date)
+  - var modClasses = '';
+  - if (date.mod) {
+  -   var styles = Object.values(date.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-date_' + styles[index];
+  -   }
+  - }
+
+  .input-date.input-date_js(class=modClasses)
+    +label({
+      for: date.id,
+      text: date.text,
+      mod: {font: "large"},
+    })
     .input-date__field
-      input.input.input_clicked-js(name='' id=id type='text' required autocorrect='off' inputmode='numeric' autocomplete='cc-exp' placeholder=holder onfocus="(this.type='date')" onblur="(this.type='text')" class=className maxlength='10')
-      +buttons(5, "", "button_clicked-js")
+      +input({
+        id: date.id,
+        type: "text",
+        placeholder: date.placeholder,
+        autocorrect: "off",
+        inputmode: "numeric",
+        autocomplete: "cc-exp",
+        mod: {clicked: "clicked-js"},
+        onfocus: "(this.type='date')",
+        onblur: "(this.type='text')",
+        maxlength: "10",
+      })
+      +button({
+        mod: {arrow: "arrow", clicked: "clicked-js"}
+      })

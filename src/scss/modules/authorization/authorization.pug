@@ -1,21 +1,50 @@
 mixin authorization()
   .authorization
-    .rectangle
-      form(action="" name="aut")
-        fieldset.rectangle__container
-          legend.rectangle__title Войти
-          ul.rectangle__schedule(role='none')
-            li.rectangle__item-top
-              .rectangle__content
-                +input-email("aut-email", " input_placeholder-light", "Email")
-                label.label.label_hidden(for='aut-email') Email
-              .rectangle__content
-                +input-password("aut-pass", "input_placeholder-light", "Пароль")
-                label.label.label_hidden(for='aut-pass') Пароль
-            li.rectangle__item-bottom
-              .rectangle__submit
-                +buttons(2, 'Войти', 'button_width')
-                +icon("arrow-big", 18, 18, "0 0 17 18", "arrow-big rectangle__arrow-big", "Войти")
-            .rectangle__create
-              p.rectangle__create-text Нет акаунта на Toxin?
-              +buttons( 1, 'Создать', 'button_end-focus')
+    form(action="" name="aut")
+      fieldset.authorization__container
+        legend.authorization__title Войти
+        ul.authorization__schedule(role='none')
+          li.authorization__item-top
+            .authorization__content
+              +input-email({
+                id: "aut-email",
+                placeholder: "Email",
+                arrow: false,
+                mod: {placeholderColor: 'light'}
+              })
+              +label({
+                for: "aut-email",
+                text: "Email",
+                mod: {visible: "hidden"},
+              })
+            .authorization__content
+              +input-password({
+                id: "aut-pass",
+                placeholder: "Пароль",
+              })
+              +label({
+                for: "aut-pass",
+                text: "Пароль",
+                mod: {visible: "hidden"},
+              })
+          li.authorization__item-bottom
+            .authorization__submit
+              +button({
+                theme: "purple",
+                text: "Войти",
+                mod: {background: "with-gradient", size: "broad", hover: "active"},
+              })
+              +icon({
+                id: "arrow-big",
+                width: "18",
+                height: "18",
+                viewBox: "0 0 17 18",
+                alt: "Войти",
+                mod: {position: "center", color: "light"},
+              })
+          .authorization__create
+            p.authorization__create-text Нет акаунта на Toxin?
+            +button({
+              theme: "light",
+              text: "Создать",
+            })

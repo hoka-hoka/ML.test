@@ -1,14 +1,23 @@
 .product {
   &__list {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__cards {
     padding-left: 50px;
   }
 
-  &__find {
-    min-width: 260px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 9px 20px;
 
-    @media (max-width: 425px) {
-      position: absolute;
-      visibility: hidden;
+    @media (min-width: 1601px) {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
   }
 
@@ -20,10 +29,6 @@
     @media (max-width: 1240px) {
       margin: 0 5vw;
     }
-  }
-
-  &__card {
-    margin-bottom: 40px;
   }
 }
 // TODO: media

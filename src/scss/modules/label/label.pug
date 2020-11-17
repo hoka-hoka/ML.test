@@ -1,0 +1,13 @@
+mixin label(label)
+  - var modClasses = '';
+  - if (label.mod) {
+  -   var styles = Object.values(label.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'label_' + styles[index];
+  -   }
+  - }
+
+  label.label(
+    class=modClasses 
+    for=label.for
+  )=label.text

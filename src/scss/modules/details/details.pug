@@ -1,0 +1,46 @@
+mixin details()
+  .details
+    .details__grid
+      each value, index in ["first", "second", "third"]
+        picture.details__pic(class = "details__pick_" + value)
+          source(
+            media="(min-width: 426px)"
+            srcset="img/details-" + index + ".png 981w",
+            alt="Номер в гостинице")
+          img.details__img(src="#")
+    .swiper-container.details__swiper(hidden)
+      .swiper-wrapper
+        -for(var k=0; k<3; k++)
+          .swiper-slide
+            picture.details__pic
+              source(
+              media="(max-width: 425px)"
+              srcset="img/details-"+k+".png 981w",
+              alt="Номер в гостинице")
+              img.details__img(src="#")
+      .swiper-prev
+      .swiper-next
+      .swiper-scrollbar
+    .details__container
+      .details__cell.details__cell_first
+        +intelligence({
+          title: true,
+          text: "Сведения о номере",
+        })
+      .details__cell.details__cell_second
+        +schedule()
+      .details__cell.details__cell_third
+        +description()
+      .details__cell.details__cell_fourth
+        +reviews({
+          amount: true,
+          title: "Отзывы поситителей номера",
+          number: "2",
+        })
+      .details__cell.details__cell_fifth
+        +rule({
+          title: true,
+          text: "Правила",
+        })
+      .details__cell.details__cell_sixth
+        +cansel()

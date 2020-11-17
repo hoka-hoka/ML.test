@@ -1,0 +1,18 @@
+mixin banner(banner)
+
+  - var modClasses = '';
+  - if (banner.mod) {
+  -   var styles = Object.values(banner.mod);
+  -     for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'banner__container_' + styles[index];
+  -   }
+  - }
+
+  .banner
+    +swiper({
+      mod: {init: "banner-js"},
+    })
+    .banner__container(class=modClasses)
+      if banner.text
+        .banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+      +#{banner.mixinName}()
