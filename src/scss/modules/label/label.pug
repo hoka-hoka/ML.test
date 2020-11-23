@@ -3,7 +3,9 @@ mixin label(label)
   - if (label.mod) {
   -   var styles = Object.values(label.mod);
   -   for (index in styles) {
-  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'label_' + styles[index];
+  -     if ( styles[index] != '' ) {
+  -       modClasses = modClasses + (index != 0 ? ' ' : '') + 'label_' + styles[index]; 
+  -     }
   -   }
   - }
 

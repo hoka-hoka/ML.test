@@ -1,0 +1,16 @@
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 22px;
+
+  &:last-child {
+    margin: unset;
+  }
+
+  &_indent {
+    margin-right: 22px;
+    &:last-child {
+      margin-right: unset;
+    }
+  }
+}

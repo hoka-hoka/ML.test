@@ -6,10 +6,19 @@
     min-width: inherit;
   }
 
+  &__schedule {
+    background: #fff;
+
+    @media (max-width: 425px) {
+      padding: 0 10px;
+    }
+  }
+
   &__close {
     position: absolute;
-    top: 25px;
+    top: -4px;
     right: 15px;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,10 +27,15 @@
     opacity: 0;
     cursor: pointer;
 
+    @media (max-width: 425px) {
+      opacity: unset;
+    }
+
     &::before,
     &::after {
       content: '';
       position: absolute;
+
       width: 2px;
       height: 17px;
       background: rgb(139, 164, 249);

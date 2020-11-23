@@ -33,7 +33,7 @@ if (
 
 if (document.body.id === 'form') {
   let calendar = document.querySelector(
-    '.uikit-form__calendar_create--js>.calendar',
+    '.uikit-forms__calendar_create-js>.calendar',
   );
   if (calendar) {
     calendar.style.display = 'block';
@@ -73,7 +73,7 @@ if (btn.length) {
               .join('-'));
           });
         } else {
-          calendarDay[i].querySelector('.input_clicked-js').value = day
+          calendarDay[i].querySelector('.input__field_clicked-js').value = day
             .toLocaleString('ru')
             .slice(0, 10)
             .split('.')
@@ -81,7 +81,7 @@ if (btn.length) {
             .join('-');
         }
       } else {
-        calendarDay[0].querySelector('.input_clicked-js').value += `${
+        calendarDay[0].querySelector('.input__field_clicked-js').value += `${
           v.innerText
         } ${checkDate[0].slice(0, 3)}. ${
           i == 0 && arr.length !== 1 ? '- ' : ''
@@ -111,6 +111,6 @@ function closeCalendar() {
 
 function clearDate(num) {
   for (let elem of num) {
-    elem.value = '';
+    elem.querySelector('.input__field_clicked-js').value = '';
   }
 }

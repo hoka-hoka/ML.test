@@ -1,0 +1,17 @@
+include ../uikit-cards/uikit-cards
+include ../uikit-additionally/uikit-additionally
+include ../uikit-dropdowns/uikit-dropdowns
+include ../uikit-boxes/uikit-boxes
+
+mixin uikit-elements()
+  .uikit-elements
+    .uikit-elements__logo
+      img(src="img/svg/logo-mini.svg", alt="TOXIN главная страница")
+    +uikit-cards()
+    +uikit-dropdowns()
+    +uikit-boxes()
+    +uikit-additionally()
+
+    
+
+    

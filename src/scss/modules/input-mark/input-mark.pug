@@ -1,6 +1,10 @@
-//- mixin input-mark(index, item, name, number, role)
 mixin input-mark(mark)
-  -var status = role
+
+  - var fontWeigth = '';
+  - if ( mark.description ) {
+  -   fontWeigth = 'thick';
+  - }
+
   .input-mark
     +input-checkbox({
       id: mark.id,
@@ -9,7 +13,7 @@ mixin input-mark(mark)
     +label({
       for: mark.id,
       text: mark.text,
-      mod: {checked: "checked"},
+      mod: {checked: "checked", weigth: fontWeigth},
     })
     if mark.description
       .input-mark__description=mark.description

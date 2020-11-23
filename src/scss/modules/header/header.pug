@@ -9,6 +9,7 @@ mixin header()
             +button({
               theme: "light",
               text: "Войти",
+              mod: {size: "high"},
             })
             +icon({
               id: "sign-in",
@@ -22,7 +23,8 @@ mixin header()
           a.header__link(href="website/authorization.html" target="_blank" rel="nofollow noopener")
             +button({
               theme: "purple",
-              text: "Зарегистрироваться"
+              text: "Зарегистрироваться",
+              mod: {size: "high"},
             })
             +icon({
               id: "sign-up",

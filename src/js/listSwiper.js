@@ -1,9 +1,8 @@
-import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper';
-Swiper.use([Navigation, Pagination, Scrollbar]);
+import { Swiper, Navigation, Pagination } from 'swiper';
+Swiper.use([Navigation, Pagination]);
 
 let mainSwiper = new Swiper('.swiper-container_banner-js', {
-  //loop: true, don't work width the cssMode
-  cssMode: true,
+  loop: true,
   initialSlide: 2,
 });
 

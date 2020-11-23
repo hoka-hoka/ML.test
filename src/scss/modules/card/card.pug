@@ -1,24 +1,29 @@
-//- mixin card(number, status, price, checked, reviews, index)
+block swiperList
+
 mixin card(card)
   .card
     li.card__item
-      +swiper({
-        mod: {init: "card-js"},
-        pagination: "card__pagination",
-        prev: "swiper-prev",
-        next: "swiper-next",
-      })
+      .swiper-container.swiper-container_card-js
+        .swiper-wrapper
+          each value in images
+            .swiper-slide
+              picture.card__pic
+                source(type="image/webp" srcset=value+".webp")
+                source(type="image/jpeg" srcset=value+".jpg")
+                img.swiper-side__img(src=value+".jpg", alt=alt)
+        .swiper__pagination.card__pagination
+        .swiper__prev
+        .swiper__next
       .card__descr
+        .card__top
+          .card__container
+            span.card__number #{card.number}
+            strong.card__status=card.status
+          .card__container
+            span.card__price #{card.price}&#8381 
+              span.card__text в сутки
+        hr.card__line
         .card__content
-          .card__room
-            .room__container
-              span.room__number=card.number
-              strong.room__luxury=card.status
-            .room__container
-              span.room__price #{card.price} &#8381
-              span.room__text в сутки
-        hr.line.card__line
-        .card__content
-          +rating(card.starIndex, card.checked)
+          +rating(card.starIndex, card.starChecked)
           span.card__value=card.reviews
           span.card__about Отзывов

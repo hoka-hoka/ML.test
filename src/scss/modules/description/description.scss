@@ -16,6 +16,10 @@
   &__item-top {
     position: relative;
     margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: unset;
+    }
   }
 
   &__item-bottom {
@@ -34,7 +38,7 @@
     padding-right: 5px;
     color: $description__room-number--txt;
     font-weight: bold;
-    font-size: rem(19);
+    font-size: rem(24);
     font-family: quicksand, Arial, sans-serif;
 
     &:before {
@@ -132,8 +136,27 @@
     margin-bottom: 10px;
   }
 
+  &__accent {
+    position: relative;
+    display: inline-block;
+    font-size: rem(14);
+    line-height: 19px;
+
+    &::after {
+      content: 'i';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $accetes--bd;
+      border-radius: 50%;
+      color: $accetes--txt;
+      line-height: rem(18, 14);
+      text-align: center;
+    }
+  }
+
   &__accent:after {
     top: -3px;
-    right: -17px;
+    margin-left: 8px;
   }
 }

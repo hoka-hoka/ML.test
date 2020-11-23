@@ -1,5 +1,6 @@
-mixin banner(banner)
+block swiperList
 
+mixin banner(banner)
   - var modClasses = '';
   - if (banner.mod) {
   -   var styles = Object.values(banner.mod);
@@ -9,9 +10,15 @@ mixin banner(banner)
   - }
 
   .banner
-    +swiper({
-      mod: {init: "banner-js"},
-    })
+    .swiper-container.swiper-container_banner-js
+      .swiper-wrapper
+        each value in images
+          .swiper-slide
+            picture.swiper-side__pick
+              source(type="image/webp" srcset=value+".webp")
+              source(type="image/jpeg" srcset=value+".jpg")
+              img.swiper-side__img(src=value+".jpg", alt=alt)
+
     .banner__container(class=modClasses)
       if banner.text
         .banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения

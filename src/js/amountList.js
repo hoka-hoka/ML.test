@@ -26,13 +26,13 @@ class amountList {
           ? btnPrev.classList.remove('button__mark_default')
           : btnPrev.classList.add('button__mark_default');
         this.rezult[index] = +amount.innerText;
-        this.amountInp = setSiblingIteration(
-          5,
-          event.target,
-          'input_clicked-js',
+        this.amountInp = this.optionList.parentNode.querySelector(
+          '.input__field_clicked-js',
         );
-        this.amountInp.value = this.vocabularyDef()[0].join(', ');
-        this.amountInp.title = this.vocabularyDef()[1].join(', ');
+        if (this.amountInp) {
+          this.amountInp.value = this.vocabularyDef()[0].join(', ');
+          this.amountInp.title = this.vocabularyDef()[1].join(', ');
+        }
       });
     });
   }

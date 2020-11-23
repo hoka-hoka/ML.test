@@ -1,6 +1,13 @@
-mixin input-toggle(className, holder, active)
-  -var status = active || false;
-  label.input-toggle.label.label_font--regular(class=className)
-    input.input-toggle__tab(name='' type='checkbox' id='reg-toggle' checked=status)
+mixin input-toggle(toggle)
+  - var modClasses = '';
+  - if (toggle.mod) {
+  -   var styles = Object.values(toggle.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-toggle_' + styles[index];
+  -   }
+  - }
+
+  label.input-toggle(class=modClasses)
+    input.input-toggle__tab(name='' type='checkbox' id='reg-toggle' checked=toggle.status?toggle.status:false)
     span.input-toggle__slider
-    span.input-toggle__text=holder
+    span.input-toggle__text=toggle.text

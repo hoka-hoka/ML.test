@@ -2,13 +2,11 @@
 
 import 'swiper/swiper-bundle.min.css';
 import '../scss/modules/input-dropdown/input-dropdown';
-import '../scss/modules/js--click/js--click';
 
 // main
 import '../scss/modules/input/input';
 import '../scss/modules/input-range/input-range';
 import '../scss/modules/input-date/input-date';
-import '../scss/modules/overlay/overlay';
 import '../scss/modules/header/header';
 import '../scss/modules/heart/heart';
 import '../scss/modules/nav/nav';
@@ -16,9 +14,9 @@ import '../scss/modules/input-options/input-options';
 import '../scss/modules/input-list/input-list';
 
 // ui-kit
-import '../scss/templates/uikit-dropdown/uikit-dropdown';
-import '../scss/templates/uikit-expandable-checkbox/uikit-expandable-checkbox';
-import '../scss/templates/input-range/input-range';
+import '../scss/templates/uikit-cards/uikit-cards';
+import '../scss/templates/uikit-dropdowns/uikit-dropdowns';
+import '../scss/templates/uikit-boxes/uikit-boxes';
 
 import '../scss/modules/calendar/calendar';
 

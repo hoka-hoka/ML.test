@@ -1,53 +1,50 @@
-%font {
-  font-size: rem(14);
-  font-family: $mainFont;
-}
 element {
   --top: 45%;
 }
 .input {
-  @extend %font;
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  height: 44px;
-  padding: 0 28px 0 14px;
-  border: 1px solid $input--br;
-  border-radius: 4px;
-  color: $input--txt;
-
-  &::placeholder,
-  &::-webkit-datetime-edit {
-    @extend %font;
+  &__top {
+    position: relative;
   }
 
-  &::-webkit-inner-spin-button,
-  &::-webkit-calendar-picker-indicator {
-    display: none;
-  }
-
-  &_placeholder-light::placeholder {
-    color: $input_placeholder-light--txt;
-    font-size: rem(14px);
+  &__field {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    padding: 0 28px 0 14px;
+    border: 1px solid $input--br;
+    border-radius: 4px;
+    color: $input__field--txt;
+    font-size: rem(14);
     font-family: $mainFont;
-    line-height: rem(14px, 18px);
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+
+    &::placeholder {
+      color: $input__field_placeholder--txt;
+      font-size: rem(14px);
+      font-family: $mainFont;
+      line-height: rem(14px, 18px);
+    }
+
+    &_placeholder-dark::placeholder {
+      color: $input_placeholder-dark--txt;
+      font-size: rem(14px);
+      font-family: $mainFont;
+      line-height: rem(14px, 18px);
+    }
   }
 
-  &_placeholder-dark {
-    color: $input_placeholder-dark--txt;
-    font-size: rem(14px);
-    font-family: $mainFont;
-    line-height: rem(14px, 18px);
-  }
-
-  &__border_color--50 {
-    border-color: rgba(31, 32, 65, 0.5);
-  }
-
-  &__arrow {
+  &__descr {
     position: absolute;
-    top: 50%;
-    right: 16px;
-    transform: translate(0, -50%) rotate(45deg);
+    top: 0;
+    right: 0;
+    color: rgba(#1f2041, 0.5);
+    font-size: rem(12);
+    line-height: 15px;
+    text-transform: uppercase;
   }
 }

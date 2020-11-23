@@ -17,14 +17,15 @@ mixin input-date(date)
       +input({
         id: date.id,
         type: "text",
+        value: date.value,
         placeholder: date.placeholder,
         autocorrect: "off",
         inputmode: "numeric",
         autocomplete: "cc-exp",
-        mod: {clicked: "clicked-js"},
         onfocus: "(this.type='date')",
         onblur: "(this.type='text')",
         maxlength: "10",
+        mod: {clicked: "clicked-js", placeholderClolor: "placeholder-dark"},
       })
       +button({
         mod: {arrow: "arrow", clicked: "clicked-js"}

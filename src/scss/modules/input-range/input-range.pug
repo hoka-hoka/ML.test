@@ -7,7 +7,7 @@ mixin input-range(range)
   -   }
   - }
 
-  .input-range.input-range_pull-js(class=modClasses)
+  .input-range.input-range_pull-js
     .input-range__top
       if range.text
         +label({
@@ -15,6 +15,12 @@ mixin input-range(range)
           mod: {weigth: "large"},
         })
         span.input-range__price
-    input.input-range__field(type='range' multiple value=range.value)
+    input.input-range__field(
+      class=modClasses
+      type='range' 
+      multiple 
+      value=range.value
+      step=(range.step ? range.step : false)
+    )
     if range.footnote
       span.input-range__text=range.footnote

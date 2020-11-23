@@ -1,7 +1,7 @@
 // Font
 $mainFont: 'montserrat';
 $secondFont: 'opensans';
-$additionalFont: 'quicksand';
+$additionalFont: 'quicksand', Arial, sans-serif;
 $iconFont: 'fontello';
 
 // Size
@@ -75,18 +75,18 @@ $button_arrow--txt: $x-dark-50;
 $description__line--bd: $x-dark-25;
 
 $input_foc_hov: $x-dark-50;
-$input--txt: $x-dark-75;
+$input__field--txt: $x-dark-75;
 $input--br: $x-dark-25;
 
 $input-email__field--br: $x-dark-25;
 $input-email__field--txt: $x-dark-75;
-$input-email__field_light--txt: $x-dark-25;
+$input-email__field_placeholder--txt: $x-dark-25;
 
 $input-password__field--br: $x-dark-25;
 $input-password__field--txt: $x-dark-75;
-$input-password__field_light--txt: $x-dark-25;
+$input-password__field_placeholder--txt: $x-dark-25;
 
-$input_placeholder-light--txt: $x-dark-25;
+$input__field_placeholder--txt: $x-dark-25;
 $input_placeholder-dark--txt: $x-dark-75;
 
 $input-options--bd: $x-dark-25;
@@ -124,8 +124,12 @@ $button_arrow-prev--fill: $x-purple;
 $calendar__day_track--bg: $x-purple-10;
 $calendar__day-num--col: $x-dark-50;
 
+$card__number--text: $x-dark-100;
+$card__status--txt: $x-purple;
+$card__price--txt: $x-dark-50;
 $card__value--col: $x-dark-50;
 $card__about--col: $x-dark-50;
+$card__line--txt: $x-gray-10;
 
 $heart_bg--bg: $x-white;
 $heart_border--bg: rgb(193, 193, 193);
@@ -160,8 +164,6 @@ $footer__text--txt: $x-dark-75;
 $footer__line--col: $x-dark-10;
 $footer__links--txt: $x-dark-50;
 $footer__title--txt: $x-dark-100;
-
-$line--txt: $x-gray-10;
 
 $user__name--txt: $x-gray-50;
 

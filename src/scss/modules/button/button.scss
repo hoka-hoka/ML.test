@@ -6,12 +6,28 @@
   text-transform: uppercase;
   cursor: pointer;
 
+  &_high {
+    .button__text_flooded {
+      height: 34px;
+    }
+
+    .button__text_boundary {
+      display: flex;
+      align-items: center;
+      height: 30px;
+    }
+  }
+
   &__text {
     &_boundary {
       position: relative;
       z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
       margin: 2px;
-      padding: 12px 17px;
+      padding: 0 17px;
       border-radius: 18px;
       background: #fff;
       color: $button__text_boundary--txt;
@@ -26,8 +42,12 @@
     }
 
     &_flooded {
-      padding: 14px 18px;
-      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      padding: 0 20px;
+      border-radius: 22px;
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       color: $button__text_flooded--txt;
 
@@ -45,12 +65,6 @@
     left: 0;
     border-radius: 20px;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  }
-
-  &__purple {
-    &_active:hover {
-      opacity: 0.5;
-    }
   }
 
   &_broad {

@@ -41,8 +41,11 @@
   }
 
   &__line {
+    height: 1px;
     margin-top: 10px;
     margin-bottom: 9px;
+    background-color: $card__line--txt;
+    color: $card__line--txt;
   }
 
   &__item {
@@ -62,10 +65,49 @@
     padding: 20px 18px 20px 20px;
   }
 
+  &__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   &__content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+  }
+
+  &__number {
+    padding-right: 5px;
+    color: $card__number--text;
+    font-weight: 700;
+    font-size: rem(20);
+    font-family: $additionalFont;
+
+    &::before {
+      content: '№ ';
+      font-size: rem(14);
+    }
+  }
+
+  &__status {
+    color: $card__status--txt;
+    font-weight: 700;
+    font-size: rem(12);
+    text-transform: uppercase;
+  }
+
+  &__price {
+    padding-right: 3px;
+    color: $card__price--txt;
+    font-weight: 700;
+    font-size: rem(14);
+    letter-spacing: -0.4px;
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: rem(12);
   }
 
   &__about {

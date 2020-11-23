@@ -1,0 +1,17 @@
+mixin social-icon(icon)
+  - var modClasses = '';
+  - if (icon.mod) {
+  -   var styles = Object.values(icon.mod);
+  -   for (index in styles) {
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'social-icon_' + styles[index];
+  -   }
+  - }
+
+  a.social-icon(class=modClasses href=icon.href?icon.href:"#")
+    +icon({
+      id: icon.id,
+      width: icon.width,
+      height: icon.height,
+      viewBox: icon.viewBox,
+      alt: icon.alt,
+    })

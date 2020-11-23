@@ -12,7 +12,7 @@ let roomName = [
   ['вання комната', 'ванные комнаты', 'ванных комнат'],
 ];
 
-let input = document.querySelectorAll('.input_clicked-js');
+let input = document.querySelectorAll('.input__field_clicked-js');
 if (input) {
   input.forEach(value => {
     const optionList = setSiblingIteration(2, value, 'input-options_init-js');
@@ -50,7 +50,7 @@ function addButtonsPanel(objList) {
       const eventTarget = setSiblingIteration(
         4,
         optionList,
-        'input_clicked-js',
+        'input__field_clicked-js',
       );
       eventTarget.dispatchEvent(inputEvent);
     } else return;

@@ -131,7 +131,6 @@ hr {
 }
 
 @import 'modules/icon/icon';
-@import 'modules/arrow/arrow';
 @import 'modules/button/button';
 @import 'modules/search/search';
 @import 'modules/input/input';
@@ -144,21 +143,16 @@ hr {
 @import 'modules/label/label';
 @import 'modules/input-mark/input-mark';
 @import 'modules/input-checkbox/input-checkbox';
-@import 'modules/canvas/canvas';
 @import 'modules/card/card';
-@import 'modules/js--click/js--click';
-@import 'modules/line/line';
 @import 'modules/pagination/pagination';
 @import 'modules/intelligence/intelligence';
 @import 'modules/details/details';
 @import 'modules/schedule/schedule';
 @import 'modules/description/description';
-@import 'modules/accent/accent';
 @import 'modules/reviews/reviews';
 @import 'modules/heart/heart';
 @import 'modules/rule/rule';
 @import 'modules/cancel/cancel';
-@import 'modules/overlay/overlay';
 @import 'modules/filter/filter';
 @import 'modules/swiper-next/swiper-next';
 @import 'modules/swiper-prev/swiper-prev';
@@ -179,11 +173,11 @@ hr {
 @import 'modules/user/user';
 @import 'modules/sign-in/sign-in';
 @import 'modules/sign-up/sign-up';
-@import 'modules/rectangle/rectangle';
 @import 'modules/input-list/input-list';
 @import 'modules/input-password/input-password';
-@import 'modules/input-text/input-text';
 @import 'modules/home/home';
+@import 'modules/social-icon/social-icon';
+@import 'modules/footer-mobile/footer-mobile';
 
 .hidden {
   display: none;

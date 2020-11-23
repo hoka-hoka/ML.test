@@ -8,13 +8,33 @@ mixin input-email(email)
   - }
 
   .input-email
-    input.input-email__field(name='email' id=email.id class=modClasses type='email' autocorrect='off' inputmode='email' autocomplete='email' required placeholder=email.placeholder)
-    if (email.arrow)
-      +icon({
-        id: "arrow-big",
-        width: "18",
-        height: "18",
-        viewBox: "0 0 17 18",
-        alt: "Подписка",
-        mod: {position: "center", color: "purple"},
-      })
+    .input-email__top
+      if email.text
+        +label({
+          for: email.id,
+          text: email.text,
+          mod: {visible: email.labelHidden ? "hidden" : "large"},
+        })
+      if email.descr
+        span.input-email__descr=email.descr
+    .input-email__bottom
+      input.input-email__field(
+        class=modClasses
+        id=email.id 
+        placeholder=email.placeholder
+        name='email' 
+        type='email' 
+        autocorrect='off' 
+        inputmode='email' 
+        autocomplete='email' 
+        required
+      )
+      if (email.arrow)
+        +icon({
+          id: "arrow-big",
+          width: "18",
+          height: "18",
+          viewBox: "0 0 17 18",
+          alt: "Подписка",
+          mod: {position: "center", color: "purple"},
+        })

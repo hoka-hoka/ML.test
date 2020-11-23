@@ -12,13 +12,12 @@ block ruleList
 block canselList
 block searchList
 block descriptionList
+block socialIconList
 
 include ../src/scss/modules/icon/icon
-include ../src/scss/modules/card/card
 include ../src/scss/modules/calendar/calendar
 include ../src/scss/modules/button/button
 include ../src/scss/modules/input-toggle/input-toggle
-include ../src/scss/modules/input-text/input-text
 include ../src/scss/modules/input-radio/input-radio
 include ../src/scss/modules/input-date/input-date
 include ../src/scss/modules/input-email/input-email
@@ -39,8 +38,6 @@ include ../src/scss/modules/schedule/schedule
 include ../src/scss/modules/cancel/cancel
 include ../src/scss/modules/description/description
 include ../src/scss/modules/search/search
-include ../src/scss/modules/registration/registration
-include ../src/scss/modules/authorization/authorization
 include ../src/scss/modules/header/header
 include ../src/scss/modules/footer/footer
 include ../src/scss/modules/input-range/input-range
@@ -52,8 +49,22 @@ include ../src/scss/modules/logo/logo
 include ../src/scss/modules/user/user
 include ../src/scss/modules/details/details
 include ../src/scss/modules/banner/banner
+include ../src/scss/modules/registration/registration
+include ../src/scss/modules/authorization/authorization
 include ../src/scss/modules/home/home
 include ../src/scss/modules/sign-in/sign-in
+include ../src/scss/modules/sign-up/sign-up
+include ../src/scss/modules/product/product
+include ../src/scss/modules/footer-mobile/footer-mobile
+include ../src/scss/modules/social-icon/social-icon
+include ../src/scss/modules/card/card
+
+include ../src/scss/templates/uikit-elements/uikit-elements
+include ../src/scss/templates/uikit-forms/uikit-forms
+include ../src/scss/templates/uikit-header-footer/uikit-header-footer
+include ../src/scss/templates/uikit-type/uikit-type
+
+
 
 doctype html
 html(lang="en")
@@ -75,7 +86,7 @@ body(id=title)
       when "sprite"
         include ../src/assets/img/svg/sprite.svg
       when "product"
-        include includes/product
+        +product()
       when "details"
         +details()
       when "home"
@@ -83,15 +94,15 @@ body(id=title)
       when "authorization"
         +sign-in()
       when "registration"
-        include includes/registration
+        +sign-up()
       when "cards"
-        include includes/ui-kit/cards
+        +uikit-type()
       when "form"
-        include includes/ui-kit/form
+        +uikit-forms()
       when "elements"
-        include includes/ui-kit/elements
+        +uikit-elements()
       when "header-footer"
-        include includes/ui-kit/header-footer
+        +uikit-header-footer()
       
 
 

@@ -4,6 +4,10 @@
     --thumb-color-stop: #66d2ea;
   }
   .input-range {
+    &__top {
+      margin-bottom: 24px;
+    }
+
     &__text {
       padding-top: 4px;
       color: $input-range__text--txt;

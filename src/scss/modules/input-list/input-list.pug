@@ -19,6 +19,6 @@ mixin input-list(list)
     .input-list__options
       each value, index in additional
         +input-mark({
-          id: "additional-"+index,
+          id: list.id + index,
           text: value,
         })

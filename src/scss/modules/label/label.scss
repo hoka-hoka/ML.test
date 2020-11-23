@@ -61,12 +61,12 @@
       height: 8px;
       transform: rotate(45deg);
     }
-    // &_thick {
-    //   color: $label_thick--txt;
-    //   font-weight: bold;
-    //   font-size: rem(14);
-    //   cursor: pointer;
-    //   user-select: none;
-    // }
+  }
+
+  &_thick {
+    color: $label_thick--txt;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
   }
 }

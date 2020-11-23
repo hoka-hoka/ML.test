@@ -2,18 +2,9 @@ mixin footer()
   footer.footer(role="contentinfo")
     hr.footer__line
     .footer__container
-
       ul.footer__row
         li.footer__col.footer__logo
-          .logo
-            a.logo__link(href="#")
-              +icon({
-                id: "pick",
-                width: "106",
-                height: "40",
-                viewBox: "0 0 106 40",
-                alt: "TOXIN, бронирование номеров",
-              })
+          +logo()
           .footer__description
             p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
@@ -27,7 +18,10 @@ mixin footer()
                   p.footer__text.footer__text_margin=footerItem[i]
                   .footer__email
                     form(action="")
-                      +input-email("", "input_placeholder-light", "Email", true)
+                      +input-email({
+                        placeholder: "Email",
+                        arrow: true,
+                      })
               else
                 each v in footerItem[i]
                   li.footer__item
@@ -36,40 +30,17 @@ mixin footer()
     hr.footer__line
     .footer__date
       .footer__logo.footer__logo_show
-        .logo
-          a.logo__link(href="#")
-            +icon({
-              id: "pick",
-              width: "106",
-              height: "40",
-              viewBox: "0 0 106 40",
-              alt: "TOXIN, бронирование номеров",
-            })
-      p.footer__cop Copyright ©
+        +logo()
+      p.footer__cop Copyright © 
         time(datetime='2018') 2018 &nbsp
         | Toxin отель. Все права защищены.
       .footer__social
-        a.footer__social-link(href="#")
-          +icon({
-            id: "twit",
-            width: "24",
-            height: "21",
-            viewBox: "0 0 24 21",
-            alt: "Мы в twitter",
+        each value in icons
+          +social-icon({
+            id: value.id,
+            width: value.width,
+            height: value.height,
+            viewBox: value.viewBox,
+            alt: value.alt,
+            mod: {indention: "indent"},
           })
-        a.footer__social-link(href="#")
-          +icon({
-            id: "face",
-            width: "22",
-            height: "22",
-            viewBox: "0 0 22 22",
-            alt: "Мы в facebook",
-          })
-        a.footer__social-link(href="#")
-           +icon({
-              id: "insta",
-              width: "22",
-              height: "22",
-              viewBox: "0 0 22 22",
-              alt: "Мы в instagram",
-            })

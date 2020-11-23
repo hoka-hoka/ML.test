@@ -8,18 +8,24 @@ mixin input-dropdown(dropdown)
   - }
 
   .input-dropdown.input-dropdown_js(class=modClasses)
-    +label({
+    .input-dropdown__top
+      +label({
         for: dropdown.id,
         text: dropdown.text,
         mod: { font: "large" },
       })
+      if dropdown.descr
+        span.input-dropdown__descr=dropdown.descr
+
     .input-dropdown__field
       +input({
         type: "text",
         id: dropdown.id,
+        value: dropdown.value,
         placeholder: dropdown.placeholder,
         role: dropdown.role,
-        mod: {clicked: "clicked-js"},
+        readonly: true,
+        mod: {clicked: "clicked-js", placeholderClolor: "placeholder-dark"},
       })
       +button({
         mod: {arrow: "arrow", clicked: "clicked-js"}

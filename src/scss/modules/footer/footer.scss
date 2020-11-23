@@ -1,11 +1,13 @@
 .footer {
   background: #fff;
+
   &__text {
     color: $footer__text--txt;
     font-size: rem(14px);
     font-family: $mainFont;
     line-height: rem(24px, 16px);
     text-transform: none;
+
     @media (max-width: 1023px) {
       margin-top: unset;
     }
@@ -22,19 +24,10 @@
     text-transform: uppercase;
   }
 
-  &__social-link {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 22px;
-
-    &:last-child {
-      margin: unset;
-    }
-  }
-
   &__row {
     display: flex;
     flex-wrap: wrap;
+
     @media (max-width: 768px) {
       display: none;
     }
@@ -52,6 +45,7 @@
     height: 1px;
     border: none;
     background: $footer__line--col;
+
     @media (max-width: 768px) {
       display: none;
     }
@@ -82,9 +76,11 @@
     justify-content: space-between;
     margin: 0 140px;
     padding: 23px 0;
+
     @media (max-width: 1240px) {
       margin: 0 5vw;
     }
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
@@ -96,6 +92,7 @@
     font-family: $mainFont;
     line-height: rem(17px, 14px);
     letter-spacing: -0.2px;
+
     @media (max-width: 768px) {
       width: initial;
       margin-top: 22px;
@@ -107,6 +104,7 @@
   &__container {
     margin: 0 140px;
     padding: 100px 0;
+
     @media (max-width: 1240px) {
       margin: 0 5vw;
       padding: 50px 0 50px;
@@ -122,6 +120,7 @@
     flex: 1 0 240px;
     flex-direction: column;
     padding-right: 20px;
+
     @media (min-width: 769px) and (max-width: 1023px) {
       flex-basis: 100%;
       flex-direction: row;
@@ -129,8 +128,10 @@
       margin-bottom: 50px;
       padding-right: unset;
     }
+
     &_show {
       display: none;
+
       @media (max-width: 768px) {
         display: block;
         flex-grow: initial;
@@ -138,10 +139,13 @@
         flex-basis: initial;
       }
     }
-    // TODO: class
     &.logo {
       margin-bottom: 9px;
     }
+  }
+
+  &__social {
+    display: flex;
   }
 
   &__check {

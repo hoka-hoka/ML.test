@@ -14,7 +14,9 @@ mixin nav()
             li.nav__item
               a.nav__link(disabled)
                 .nav__text=v
-                //- +buttons(5)
+                +button({
+                  mod: {arrow: "arrow"}
+                })
           else
             li.nav__item
               a.nav__link(disabled)

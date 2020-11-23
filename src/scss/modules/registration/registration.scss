@@ -1,15 +1,78 @@
 .registration {
+  position: relative;
   width: 380px;
+  padding: 40px 30px 30px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
-  & .rectangle__item:last-child {
-    padding-top: 7px;
+  &__title {
+    margin-bottom: 20px;
+    color: $rectangle__title--txt;
+    font: bold em(24) $secondFont;
+    line-height: em(30, 24);
+    @media (max-width: 320px) {
+      padding-right: 30px;
+    }
   }
 
-  & .button_arrow {
-    display: none;
+  &__content {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: unset;
+    }
+  }
+
+  &__radio {
+    position: relative;
+    display: flex;
+    margin-bottom: 23px;
+
+    & .input-radio:first-child {
+      margin-right: 20px;
+    }
   }
 
   &__item {
     margin-bottom: 20px;
+  }
+
+  &__item-top {
+    position: relative;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: unset;
+    }
+  }
+
+  &__item-bottom {
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 30px;
+  }
+
+  &__submit {
+    position: relative;
+  }
+
+  &__create-text {
+    margin-right: auto;
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+  }
+
+  &__create {
+    display: flex;
+    align-items: center;
+
+    .button {
+      width: 99px;
+    }
+  }
+
+  & .button_arrow {
+    display: none;
   }
 }

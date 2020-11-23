@@ -9,6 +9,8 @@ mixin input-checkbox(checkbox)
 
   input.input-checkbox(
     class=modClasses 
-    type="checkbox" 
-    id=checkbox.id 
+    type=(checkbox.type ? checkbox.type : "checkbox")
+    id=checkbox.id
+    name=checkbox.name
+    checked=(checkbox.status ? checkbox.status : false)
   )

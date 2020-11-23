@@ -3,22 +3,34 @@ mixin input(input)
   - if (input.mod) {
   -   var styles = Object.values(input.mod);
   -   for (index in styles) {
-  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input_' + styles[index];
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input__field_' + styles[index];
   -   }
   - }
 
-  input.input(
-    class=modClasses
-    id=input.id 
-    type=input.type 
-    required readonly 
-    placeholder=input.placeholder
-    value=input.value
-    data-role=input.role
-    autocorrect=(input.autocorrect ? input.autocorrect : false)
-    inputmode=(input.inputmode ? input.inputmode: false)
-    autocomplete=(input.autocomplete ? input.autocomplete : false)
-    onfocus=(input.onfocus ? input.onfocus : false)
-    onblur=(input.onblur ? input.onblur : false)
-    maxlength=(input.maxlength ? input.maxlength : false)
-    )
+  .input
+    .input__top
+      if input.text
+        +label({
+          for: input.id,
+          text: input.text,
+          mod: {visible: input.labelHidden ? "hidden" : "large"},
+        })
+      if input.descr
+        span.input__descr=input.descr
+    input.input__field(
+      class=modClasses
+      id=input.id 
+      type=(input.type ? input.type : "text")
+      value=input.value
+      required
+      placeholder=input.placeholder
+      data-role=input.role
+      readonly=(input.readonly ? input.readonly : false)
+      autocorrect=(input.autocorrect ? input.autocorrect : false)
+      inputmode=(input.inputmode ? input.inputmode: false)
+      autocomplete=(input.autocomplete ? input.autocomplete : false)
+      patern=(input.patern? input.patern : false)
+      onfocus=(input.onfocus ? input.onfocus : false)
+      onblur=(input.onblur ? input.onblur : false)
+      maxlength=(input.maxlength ? input.maxlength : false)
+      )

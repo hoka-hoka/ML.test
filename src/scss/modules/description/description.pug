@@ -31,7 +31,7 @@ mixin description()
             .description__content
               +input-dropdown({
                 id: "arrive",
-                placeholder: "Сколько гостей",
+                placeholder: "3 гостя",
                 text: "Гости",
                 role: "gues",
                 list: guesList,
@@ -42,17 +42,17 @@ mixin description()
                 span.description__text 9 990₽ x 4 суток
                 span.description__text 39 960₽
               li.description__price-item
-                span.description__text.description__accent.accent Сбор за услуги: скидка 2 179₽
+                span.description__accent Сбор за услуги: скидка 2 179₽
                 span.description__text 0₽
               li.description__price-item
-                span.description__text.description__accent.accent Сбор за дополнительные услуги
+                span.description__accent Сбор за дополнительные услуги
                 span.description__text 300₽
           li.description__item-top
             .description__result
               span.description__total Итого
               span.description__line
               span.description__total 38 081₽
-          li.description__item
+          li.description__item-top
             +button({
               theme: "purple",
               text: "Забронировать",
