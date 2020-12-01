@@ -1,72 +1,54 @@
 @font-face {
   font-weight: bold;
   font-style: bold;
-  font-family: "opensans";
-  src: url("../assets/fonts/open-sans-bold/open-sans-bold.eot");
-  src: url("../assets/fonts/open-sans-bold/open-sans-bold.eot#iefix")
-      format("embedded-opentype"),
-    url("../assets/fonts/open-sans-bold/open-sans-bold.woff") format("woff"),
-    url("../assets/fonts/open-sans-bold/open-sans-bold.ttf") format("truetype");
+  font-family: 'Opensans';
+  src: url('../assets/fonts/open-sans-bold/open-sans-bold.woff2')
+      format('woff2'),
+    url('../assets/fonts/open-sans-bold/open-sans-bold.woff') format('woff');
 }
 
 @font-face {
   font-weight: normal;
   font-style: normal;
-  font-family: "montserrat";
-  src: url("../assets/fonts/montserrat-regular/montserrat-regular.eot");
-  src: url("../assets/fonts/montserrat-regular/montserrat-regular.eot#iefix")
-      format("embedded-opentype"),
-    url("../assets/fonts/montserrat-regular/montserrat-regular.woff")
-      format("woff"),
-    url("../assets/fonts/montserrat-regular/montserrat-regular.ttf")
-      format("truetype");
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/montserrat-regular/montserrat-regular.woff2')
+      format('woff2'),
+    url('../assets/fonts/montserrat-regular/montserrat-regular.woff')
+      format('woff');
 }
+
 @font-face {
   font-weight: bold;
   font-style: bold;
-  font-family: "montserrat";
-  src: url("../assets/fonts/montserrat-bold/montserrat-bold.eot");
-  src: url("../assets/fonts/montserrat-bold/montserrat-bold.eot#iefix")
-      format("embedded-opentype"),
-    url("../assets/fonts/montserrat-bold/montserrat-bold.woff") format("woff"),
-    url("../assets/fonts/montserrat-bold/montserrat-bold.ttf") format("truetype");
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/montserrat-bold/montserrat-bold.woff2')
+      format('woff2'),
+    url('../assets/fonts/montserrat-bold/montserrat-bold.woff') format('woff');
 }
 
 @font-face {
   font-weight: normal;
   font-style: normal;
-  font-family: "fontello";
-  src: url("../assets/fonts/fontello-icons/fontello.eot");
-  src: url("../assets/fonts/fontello-icons/fontello.eot#iefix")
-      format("embedded-opentype"),
-    url("../assets/fonts/fontello-icons/fontello.woff") format("woff"),
-    url("../assets/fonts/fontello-icons/fontello.woff2") format("woff2"),
-    url("../assets/fonts/fontello-icons/fontello.ttf") format("truetype"),
-    url("../assets/fonts/fontello-icons/fontello.svg#fontello") format("svg");
+  font-family: 'Fontello';
+  src: url('../assets/fonts/fontello-icons/fontello.woff2') format('woff2'),
+    url('../assets/fonts/fontello-icons/fontello.woff') format('woff');
 }
 
 @font-face {
   font-weight: normal;
   font-style: normal;
-  font-family: "quicksand";
-  src: url("../assets/fonts/quicksand-regular/quicksand-regular.eot");
-  src: url("../assets/fonts/quicksand-regular/quicksand-regular.eot#iefix")
-      format("embedded-opentype"),
-    url("../assets/fonts/quicksand-regular/quicksand-regular.woff")
-      format("woff"),
-    url("../assets/fonts/quicksand-regular/quicksand-regular.woff2")
-      format("woff2"),
-    url("../assets/fonts/quicksand-regular/quicksand-regular.ttf")
-      format("truetype");
+  font-family: 'Quicksand';
+  src: url('../assets/fonts/quicksand-regular/quicksand-regular.woff2')
+      format('woff2'),
+    url('../assets/fonts/quicksand-regular/quicksand-regular.woff')
+      format('woff');
 }
+
 @font-face {
   font-weight: bold;
   font-style: bold;
-  font-family: "quicksand";
-  src: url("../assets/fonts/quicksand-bold/quicksand-bold.eot");
-  src: url("../assets/fonts/quicksand-bold/quicksand-bold.eot#iefix")
-      format("embedded-opentype"),
-    url("../assets/fonts/quicksand-bold/quicksand-bold.woff") format("woff"),
-    url("../assets/fonts/quicksand-bold/quicksand-bold.woff2") format("woff2"),
-    url("../assets/fonts/quicksand-bold/quicksand-bold.ttf") format("truetype");
+  font-family: 'Quicksand';
+  src: url('../assets/fonts/quicksand-bold/quicksand-bold.woff2')
+      format('woff2'),
+    url('../assets/fonts/quicksand-bold/quicksand-bold.woff') format('woff');
 }
