@@ -16,7 +16,7 @@
 `npm install`
 
 Разработка  
-`npm run server`
+`npm run serve`
 
 Сборка  
 `npm run build`
@@ -30,7 +30,6 @@
 |
 ├── public
 |   |
-|   ├── includes
 |   ├── pages
 |   |   ├── uikit
 |   |   └── website
