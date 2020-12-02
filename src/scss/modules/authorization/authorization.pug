@@ -42,9 +42,10 @@ mixin authorization()
                 alt: "Войти",
                 mod: {position: "center", color: "light"},
               })
-          .authorization__create
-            p.authorization__create-text Нет акаунта на Toxin?
-            +button({
-              theme: "light",
-              text: "Создать",
-            })
+          li.authorization__item-bottom
+            .authorization__create
+              p.authorization__create-text Нет акаунта на Toxin?
+              +button({
+                theme: "light",
+                text: "Создать",
+              })

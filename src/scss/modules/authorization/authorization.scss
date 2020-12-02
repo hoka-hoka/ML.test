@@ -31,6 +31,10 @@
   &__item-bottom {
     position: relative;
     margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: unset;
+    }
   }
 
   &__submit {
