@@ -1,13 +1,14 @@
 mixin input-toggle(toggle)
-  - var modClasses = '';
-  - if (toggle.mod) {
-  -   var styles = Object.values(toggle.mod);
+  - const {status, text, mod} = toggle;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-toggle_' + styles[index];
   -   }
   - }
 
   label.input-toggle(class=modClasses)
-    input.input-toggle__tab(name='' type='checkbox' id='reg-toggle' checked=toggle.status?toggle.status:false)
+    input.input-toggle__tab(name='' type='checkbox' id='reg-toggle' checked=status?status:false)
     span.input-toggle__slider
-    span.input-toggle__text=toggle.text
+    span.input-toggle__text=text

@@ -1,19 +1,19 @@
 mixin input-mark(mark)
-
-  - var fontWeigth = '';
-  - if ( mark.description ) {
-  -   fontWeigth = 'thick';
+  - const {id, text, description} = mark;
+  - let fontWeigth = '';
+  - if ( description ) {
+  -  let fontWeigth = 'thick';
   - }
 
   .input-mark
     +input-checkbox({
-      id: mark.id,
+      id: id,
       mod: {visible: "hidden"},
     })
     +label({
-      for: mark.id,
-      text: mark.text,
+      forId: id,
+      text: text,
       mod: {checked: "checked", weigth: fontWeigth},
     })
-    if mark.description
-      .input-mark__description=mark.description
+    if description
+      .input-mark__description=description

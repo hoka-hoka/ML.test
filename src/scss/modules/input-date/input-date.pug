@@ -1,7 +1,8 @@
 mixin input-date(date)
-  - var modClasses = '';
-  - if (date.mod) {
-  -   var styles = Object.values(date.mod);
+  - const {id, text, value, placeholder, mod} = date;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-date_' + styles[index];
   -   }
@@ -9,16 +10,16 @@ mixin input-date(date)
 
   .input-date.input-date_js(class=modClasses)
     +label({
-      for: date.id,
-      text: date.text,
+      forId: id,
+      text: text,
       mod: {font: "large"},
     })
     .input-date__field
       +input({
-        id: date.id,
+        id: id,
         type: "text",
-        value: date.value,
-        placeholder: date.placeholder,
+        value: value,
+        placeholder: placeholder,
         autocorrect: "off",
         inputmode: "numeric",
         autocomplete: "cc-exp",

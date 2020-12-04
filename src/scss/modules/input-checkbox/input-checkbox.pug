@@ -1,7 +1,8 @@
 mixin input-checkbox(checkbox)
-  - var modClasses = '';
-  - if (checkbox.mod) {
-  -   var styles = Object.values(checkbox.mod);
+  - const {id, name, type, status, mod} = checkbox;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -     for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-checkbox_' + styles[index];
   -   }
@@ -9,8 +10,8 @@ mixin input-checkbox(checkbox)
 
   input.input-checkbox(
     class=modClasses 
-    type=(checkbox.type ? checkbox.type : "checkbox")
-    id=checkbox.id
-    name=checkbox.name
-    checked=(checkbox.status ? checkbox.status : false)
+    type=(type ? type : "checkbox")
+    id=id
+    name=name
+    checked=(status ? status : false)
   )

@@ -1,7 +1,8 @@
 mixin heart(heart)
-  - var modClasses = '';
-  - if (heart.mod) {
-  -   var styles = Object.values(heart.mod);
+  - const {amount, mod} = heart
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -     for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'heart__btn_' + styles[index];
   -   }
@@ -12,4 +13,4 @@ mixin heart(heart)
       .heart__area
         .heart__figure.heart__figure_outer
         .heart__figure.heart__figure_inner
-        span.heart__amount.heart__amount_js=heart.amount
+        span.heart__amount.heart__amount_js=amount

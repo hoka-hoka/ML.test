@@ -1,20 +1,21 @@
 mixin button(btn)
-  - var modClasses = '';
-  - if (btn.mod) {
-  -   var styles = Object.values(btn.mod);
+  - const {theme, text, mod, data} = btn;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -     for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'button_' + styles[index];
   -   }
   - }
-  - var text = btn.theme ? '' : btn.text;
+  - let fieldText = theme ? '' : text;
 
-  button.button(type="button" class=modClasses data=btn.data)=text
-    case btn.theme
+  button.button(type="button" class=modClasses data=btn.data)=fieldText
+    case theme
       when "light"
-        .button__text.button__text_boundary=btn.text
+        .button__text.button__text_boundary=text
         .button__light
       when "purple"
-        .button__text.button__text_flooded=btn.text
+        .button__text.button__text_flooded=text
       when "mark-minus"
         .button__mark.button__mark_minus.button__mark_default.button__mark_minus-js(type="button" class=mix)
       when "mark-plus"
@@ -25,7 +26,7 @@ mixin button(btn)
           width: "17",
           height: "18",
           viewBox: "0 0 17 18",
-          alt: btn.text,
+          alt: text,
         })
       when "arrow-next"
         +icon({
@@ -33,5 +34,5 @@ mixin button(btn)
           width: "17",
           height: "18",
           viewBox: "0 0 17 18",
-          alt: btn.text,
+          alt: text,
         })

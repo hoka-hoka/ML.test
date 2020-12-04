@@ -1,9 +1,10 @@
 block swiperList
 
 mixin banner(banner)
-  - var modClasses = '';
-  - if (banner.mod) {
-  -   var styles = Object.values(banner.mod);
+  - const {text, mixinName, mod} = banner;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -     for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'banner__container_' + styles[index];
   -   }
@@ -20,6 +21,6 @@ mixin banner(banner)
               img.swiper-side__img(src=value+".jpg", alt=alt)
 
     .banner__container(class=modClasses)
-      if banner.text
+      if text
         .banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-      +#{banner.mixinName}()
+      +#{mixinName}()

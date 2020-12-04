@@ -1,7 +1,7 @@
-//- mixin input-options(index, role)
 mixin input-options(options)
+  - const {list, btnPannel} = options;
   .input-options.input-options_init-js
-    each v, i in options.list
+    each v, i in list
       .input-options__opt
         span.input-options__text=v
         .input-options__marks.input-options__marks_elem-js
@@ -12,7 +12,7 @@ mixin input-options(options)
           +button({
             theme: "mark-plus",
           })
-    if options.btnPannel
+    if btnPannel
       .input-options__btns
         +button({
           text: "Очистить",

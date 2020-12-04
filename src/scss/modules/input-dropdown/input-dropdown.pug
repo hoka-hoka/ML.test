@@ -1,7 +1,8 @@
 mixin input-dropdown(dropdown)
-  - var modClasses = '';
-  - if (dropdown.mod) {
-  -   var styles = Object.values(dropdown.mod);
+  - const {id, value, placeholder, role, list, btnPannel, text, descr, mod} = dropdown;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-dropdown_' + styles[index];
   -   }
@@ -10,20 +11,20 @@ mixin input-dropdown(dropdown)
   .input-dropdown.input-dropdown_js(class=modClasses)
     .input-dropdown__top
       +label({
-        for: dropdown.id,
-        text: dropdown.text,
+        forId: id,
+        text: text,
         mod: { font: "large" },
       })
-      if dropdown.descr
-        span.input-dropdown__descr=dropdown.descr
+      if descr
+        span.input-dropdown__descr=descr
 
     .input-dropdown__field
       +input({
         type: "text",
-        id: dropdown.id,
-        value: dropdown.value,
-        placeholder: dropdown.placeholder,
-        role: dropdown.role,
+        id: id,
+        value: value,
+        placeholder: placeholder,
+        role: role,
         readonly: true,
         mod: {clicked: "clicked-js", placeholderClolor: "placeholder-dark"},
       })
@@ -31,7 +32,7 @@ mixin input-dropdown(dropdown)
         mod: {arrow: "arrow", clicked: "clicked-js"}
       })
       +input-options({
-        role: dropdown.role,
-        list: dropdown.list,
-        btnPannel: dropdown.btnPannel,
+        role: role,
+        list: list,
+        btnPannel: btnPannel,
       })

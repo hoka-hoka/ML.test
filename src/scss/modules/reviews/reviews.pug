@@ -1,10 +1,11 @@
 mixin reviews(reviews)
+  - const {amount, number} = reviews;
   .reviews
     .reviews__container
-      if reviews.amount
+      if amount
         .reviews__top
-          h2.reviews__title=reviews.title
-          span.reviews__amount=reviews.number + ' отзыва'
+          h2.reviews__title=title
+          span.reviews__amount=number + ' отзыва'
 
       ul.reviews__list
         each val, i in review

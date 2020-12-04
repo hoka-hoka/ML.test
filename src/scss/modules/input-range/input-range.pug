@@ -1,7 +1,8 @@
 mixin input-range(range)
-  - var modClasses = '';
-  - if (range.mod) {
-  -   var styles = Object.values(range.mod);
+  - const {text, value, step, footnote, mod} = range;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-range__field_' + styles[index];
   -   }
@@ -9,9 +10,9 @@ mixin input-range(range)
 
   .input-range.input-range_pull-js
     .input-range__top
-      if range.text
+      if text
         +label({
-          text: range.text,
+          text: text,
           mod: {weigth: "large"},
         })
         span.input-range__price
@@ -19,8 +20,8 @@ mixin input-range(range)
       class=modClasses
       type='range' 
       multiple 
-      value=range.value
-      step=(range.step ? range.step : false)
+      value=value
+      step=(step ? step : false)
     )
-    if range.footnote
-      span.input-range__text=range.footnote
+    if footnote
+      span.input-range__text=footnote

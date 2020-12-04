@@ -1,17 +1,18 @@
 mixin social-icon(icon)
-  - var modClasses = '';
-  - if (icon.mod) {
-  -   var styles = Object.values(icon.mod);
+  - const {id, width, height, viewBox, alt, href, mod} = icon;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'social-icon_' + styles[index];
   -   }
   - }
 
-  a.social-icon(class=modClasses href=icon.href?icon.href:"#")
+  a.social-icon(class=modClasses href=href?href:"#")
     +icon({
-      id: icon.id,
-      width: icon.width,
-      height: icon.height,
-      viewBox: icon.viewBox,
-      alt: icon.alt,
+      id: id,
+      width: width,
+      height: height,
+      viewBox: viewBox,
+      alt: alt,
     })

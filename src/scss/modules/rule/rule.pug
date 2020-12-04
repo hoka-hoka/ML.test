@@ -1,7 +1,8 @@
 mixin rule(rule)
+  - const {title, text} = rule;
   .rule
-    if rule.title
-      h2.rule__title=rule.text
+    if title
+      h2.rule__title=text
     ul.rule__list
       each value in rules
         li.rule__item=value

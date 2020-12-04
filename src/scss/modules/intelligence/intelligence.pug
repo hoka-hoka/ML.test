@@ -1,7 +1,9 @@
 mixin intelligence(intelligence)
+  - const {title, text, } = intelligence;
+
   .intelligence
-    if intelligence.title
-      h2.details__title=intelligence.text
+    if title
+      h2.details__title=text
     ul.intelligence__list
       each val in convenience
         li.intelligence__item

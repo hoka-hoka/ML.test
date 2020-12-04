@@ -1,7 +1,8 @@
 mixin input-email(email)
-  - var modClasses = '';
-  - if (email.mod) {
-  -   var styles = Object.values(email.mod);
+  - const {id, text, labelHidden, descr, placeholder, arrow, mod} = email;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-email__field_' + styles[index];
   -   }
@@ -9,19 +10,19 @@ mixin input-email(email)
 
   .input-email
     .input-email__top
-      if email.text
+      if text
         +label({
-          for: email.id,
-          text: email.text,
-          mod: {visible: email.labelHidden ? "hidden" : "large"},
+          forId: id,
+          text: text,
+          mod: {visible: labelHidden ? "hidden" : "large"},
         })
-      if email.descr
-        span.input-email__descr=email.descr
+      if descr
+        span.input-email__descr=descr
     .input-email__bottom
       input.input-email__field(
         class=modClasses
-        id=email.id 
-        placeholder=email.placeholder
+        id=id 
+        placeholder=placeholder
         name='email' 
         type='email' 
         autocorrect='off' 
@@ -29,7 +30,7 @@ mixin input-email(email)
         autocomplete='email' 
         required
       )
-      if (email.arrow)
+      if (arrow)
         +icon({
           id: "arrow-big",
           width: "18",

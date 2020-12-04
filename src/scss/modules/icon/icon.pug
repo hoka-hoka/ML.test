@@ -1,7 +1,8 @@
 mixin icon(icon)
-  - var modClasses = '';
-  - if (icon.mod) {
-  -   var styles = Object.values(icon.mod);
+  - const {viewBox, width, height, alt, id, mod} = icon;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'icon__pick_' + styles[index];
   -   }
@@ -10,10 +11,10 @@ mixin icon(icon)
   .icon
     svg.icon__pick(
       class=modClasses 
-      viewBox=icon.viewBox 
-      weight=icon.width 
-      height=icon.height 
+      viewBox=viewBox 
+      weight=width 
+      height=height 
       role="image" 
-      aria-label=icon.alt
+      aria-label=alt
     )
-      use(xlink:href = "#" + icon.id)
+      use(xlink:href = "#" + id)

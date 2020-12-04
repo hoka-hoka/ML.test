@@ -1,8 +1,8 @@
-//- mixin input-list(className, name, labelClass, variant, id, role)
 mixin input-list(list)
-  - var modClasses = '';
-  - if (list.mod) {
-  -   var styles = Object.values(list.mod);
+  - const {id, text, mod} = list;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-list_' + styles[index];
   -   }
@@ -10,7 +10,7 @@ mixin input-list(list)
 
   .input-list.input-list_js(class=modClasses)
     +label({
-      text: list.text,
+      text: text,
       mod: {weigth: "large", clicked: "js"},
     })
     +button({
@@ -19,6 +19,6 @@ mixin input-list(list)
     .input-list__options
       each value, index in additional
         +input-mark({
-          id: list.id + index,
+          id: id + index,
           text: value,
         })

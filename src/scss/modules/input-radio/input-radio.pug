@@ -1,8 +1,8 @@
-//- mixin input-radio(id, labelClass, labelName, active)
 mixin input-radio(radio)
-  - var modClasses = '';
-  - if (radio.mod) {
-  -   var styles = Object.values(radio.mod);
+  - const {id, status, name, text, mod} = radio;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-radio_' + styles[index];
   -   }
@@ -11,9 +11,9 @@ mixin input-radio(radio)
   .input-radio
     +input-checkbox({
       type: "radio",
-      id: radio.id,
+      id: id,
       mod: {visible: "hidden"},
-      status: radio.status,
-      name: radio.name,
+      status: status,
+      name: name,
     })
-    label.input-radio__label(for=radio.id)=radio.text
+    label.input-radio__label(for=id)=text

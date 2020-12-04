@@ -1,7 +1,8 @@
 mixin label(label)
-  - var modClasses = '';
-  - if (label.mod) {
-  -   var styles = Object.values(label.mod);
+  - const {forId, text, mod} = label;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     if ( styles[index] != '' ) {
   -       modClasses = modClasses + (index != 0 ? ' ' : '') + 'label_' + styles[index]; 
@@ -9,7 +10,4 @@ mixin label(label)
   -   }
   - }
 
-  label.label(
-    class=modClasses 
-    for=label.for
-  )=label.text
+  label.label(class=modClasses for=forId)=text

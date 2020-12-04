@@ -1,7 +1,8 @@
 mixin input(input)
-  - var modClasses = '';
-  - if (input.mod) {
-  -   var styles = Object.values(input.mod);
+  - const {text, id, labelHidden, descr, type, value, placeholder, role, readonly, autocorrect, inputmode, autocomplete, patern, onfocus, onblur, maxlength, mod} = input;
+  - let modClasses = '';
+  - if (mod) {
+  -   let styles = Object.values(mod);
   -   for (index in styles) {
   -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input__field_' + styles[index];
   -   }
@@ -9,28 +10,28 @@ mixin input(input)
 
   .input
     .input__top
-      if input.text
+      if text
         +label({
-          for: input.id,
-          text: input.text,
-          mod: {visible: input.labelHidden ? "hidden" : "large"},
+          forId: id,
+          text: text,
+          mod: {visible: labelHidden ? "hidden" : "large"},
         })
-      if input.descr
-        span.input__descr=input.descr
+      if descr
+        span.input__descr=descr
     input.input__field(
       class=modClasses
-      id=input.id 
-      type=(input.type ? input.type : "text")
-      value=input.value
+      id=id 
+      type=(type ? type : "text")
+      value=value
       required
-      placeholder=input.placeholder
-      data-role=input.role
-      readonly=(input.readonly ? input.readonly : false)
-      autocorrect=(input.autocorrect ? input.autocorrect : false)
-      inputmode=(input.inputmode ? input.inputmode: false)
-      autocomplete=(input.autocomplete ? input.autocomplete : false)
-      patern=(input.patern? input.patern : false)
-      onfocus=(input.onfocus ? input.onfocus : false)
-      onblur=(input.onblur ? input.onblur : false)
-      maxlength=(input.maxlength ? input.maxlength : false)
+      placeholder=placeholder
+      data-role=role
+      readonly=(readonly ? readonly : false)
+      autocorrect=(autocorrect ? autocorrect : false)
+      inputmode=(inputmode ? inputmode: false)
+      autocomplete=(autocomplete ? autocomplete : false)
+      patern=(patern? patern : false)
+      onfocus=(onfocus ? onfocus : false)
+      onblur=(onblur ? onblur : false)
+      maxlength=(maxlength ? maxlength : false)
       )
