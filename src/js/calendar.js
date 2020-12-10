@@ -11,8 +11,8 @@ let swiperParam = {
   observeSlideChildren: true,
   initialSlide: 1, // center slide
   navigation: {
-    nextEl: '.button_arrow-next-js',
-    prevEl: '.button_arrow-prev-js',
+    nextEl: '.button_next_arrow-js',
+    prevEl: '.button_prev_arrow-js',
   },
 };
 let mainSwiper = new Swiper('.calendar__swiper-container', swiperParam);

@@ -4,14 +4,14 @@ mixin calendar()
       .swiper-container.calendar__swiper-container
         .swiper-wrapper
         +button({
-          theme: "arrow-prev",
+          theme: "prev-arrow",
           text: "Календарь, следующий месяц",
-          mod: {locale: "arrow-prev", clicked: "arrow-prev-js"},
+          mod: {locale: "prev_arrow", clicked: "prev_arrow-js"},
         })
         +button({
-          theme: "arrow-next",
+          theme: "next-arrow",
           text: "Календарь, предыдущий месяц",
-          mod: {locale: "arrow-next", clicked: "arrow-next-js"},
+          mod: {locale: "next_arrow", clicked: "next_arrow-js"},
         })
       .calendar__response
         +button({

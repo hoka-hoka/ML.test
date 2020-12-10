@@ -91,22 +91,22 @@
     color: rgba(31, 32, 65, 0.5);
   }
 
-  &_arrow-prev {
+  &_prev_arrow {
     position: absolute;
     top: 1px;
     z-index: 1;
     cursor: pointer;
-    fill: $button_arrow-prev--fill;
+    fill: $button_prev_arrow--fill;
     transform: rotate(180deg);
   }
 
-  &_arrow-next {
+  &_next_arrow {
     position: absolute;
     top: 1px;
     right: 0;
     z-index: 1;
     cursor: pointer;
-    fill: $button_arrow-next--fill;
+    fill: $button_next_arrow--fill;
   }
 
   &_arrow {
