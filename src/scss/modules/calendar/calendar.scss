@@ -23,12 +23,6 @@
     }
   }
 
-  &__today {
-    color: white;
-    font-weight: bold;
-    mix-blend-mode: color;
-  }
-
   &__table {
     position: relative;
     width: 278px;
@@ -75,6 +69,29 @@
     color: $calendar__day-num--col;
     cursor: pointer;
     user-select: none;
+
+    &_right_border {
+      border-radius: 0 50% 50% 0;
+    }
+
+    &_left_border {
+      border-radius: 50% 0 0 50%;
+    }
+
+    &_current {
+      color: white;
+      font-weight: bold;
+      mix-blend-mode: color;
+    }
+
+    &_active {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    &_painted {
+      background: $calendar__day-num_painted--bg;
+    }
   }
 
   &__day-mark {
@@ -91,23 +108,6 @@
       width: var(--size-m);
       height: var(--size-m);
     }
-  }
-
-  &__day_track {
-    background: $calendar__day_track--bg;
-  }
-
-  &__day_bd--right {
-    border-radius: 0 50% 50% 0;
-  }
-
-  &__day_bd--left {
-    border-radius: 50% 0 0 50%;
-  }
-
-  &__day_active {
-    color: #fff;
-    font-weight: 700;
   }
 
   &__day {

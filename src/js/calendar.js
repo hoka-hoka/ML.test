@@ -60,7 +60,7 @@ class Calendar {
       if (month === this.date.getMonth()) {
         if (String(this.date) === String(new Date())) {
           this.table +=
-            '<td class="calendar__day-num calendar__today">' +
+            '<td class="calendar__day-num calendar__day-num_current">' +
             this.date.getDate() +
             '</td>';
         } else {
@@ -124,7 +124,7 @@ function Mark(parent) {
   let cell = activeSwiper.querySelectorAll('.calendar__day-num'); // cells
 
   // markToday
-  let tdToday = activeSwiper.querySelector('.calendar__today');
+  let tdToday = activeSwiper.querySelector('.calendar__day-num_current');
 
   let marks = new Map([
     [
@@ -164,7 +164,7 @@ function Mark(parent) {
 }
 class createMark {
   constructor(name, parent) {
-    this.today = parent.querySelector('.calendar__today');
+    this.today = parent.querySelector('.calendar__day-num_current');
     this.mark = document.createElement('span');
     this.mark.className = name;
     this.prev = 0;
@@ -177,20 +177,20 @@ class createMark {
         // the border track
         return;
       }
-      td.classList.add('calendar__day_active');
+      td.classList.add('calendar__day-num_active');
       if (this.prev && td !== this.prev) {
         if (
           this.prev.childNodes.length === 2 ||
           (this.prev === this.today && this.prev.childNodes.length !== 4)
         ) {
-          this.prev.classList.remove('calendar__day_active');
+          this.prev.classList.remove('calendar__day-num_active');
         }
       }
       this.prev = td;
       td.appendChild(this.mark);
       this.mark.style.top = td.offsetTop + 'px';
       this.mark.style.left = td.offsetLeft + 'px';
-      createTrack('calendar__day_active', this.parent);
+      createTrack('calendar__day-num_active', this.parent);
     }
   }
   pullOf() {
@@ -218,16 +218,16 @@ function createTrack(find, parent) {
   let cells = parent.querySelectorAll('.calendar__day-num');
   let cellFind = [];
   let borderRs = parent.querySelectorAll(
-    '.calendar__day_bd--left, .calendar__day_bd--right',
+    '.calendar__day-num_left_border, .calendar__day-num_right_border',
   );
   if (borderRs.length) {
-    borderRs[0].classList.remove('calendar__day_bd--left');
-    borderRs[1].classList.remove('calendar__day_bd--right');
+    borderRs[0].classList.remove('calendar__day-num_left_border');
+    borderRs[1].classList.remove('calendar__day-num_right_border');
   }
-  let cellActive = parent.querySelectorAll('.calendar__day_track');
+  let cellActive = parent.querySelectorAll('.calendar__day-num_painted');
   if (cellActive.length) {
     for (let val of cellActive) {
-      val.classList.remove('calendar__day_track');
+      val.classList.remove('calendar__day-num_painted');
     }
   }
   [...cells].findIndex((element, index) => {
@@ -240,14 +240,14 @@ function createTrack(find, parent) {
     cellFind[cellFind.length - 1] + 1,
   );
   if (trackElements.length >= 2) {
-    trackElements[0].classList.add('calendar__day_bd--left');
+    trackElements[0].classList.add('calendar__day-num_left_border');
     trackElements[trackElements.length - 1].classList.add(
-      'calendar__day_bd--right',
+      'calendar__day-num_right_border',
     );
   }
   for (let val of trackElements) {
     if (!val.classList.contains('calendar__day-other')) {
-      val.classList.add('calendar__day_track');
+      val.classList.add('calendar__day-num_painted');
     }
   }
 }

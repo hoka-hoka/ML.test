@@ -49,7 +49,7 @@ if (btn.length) {
   btn[1].addEventListener('click', event => {
     clearDate(calendarDay);
     let tdActive = document.querySelectorAll(
-      '.calendar__day-num.calendar__day_active',
+      '.calendar__day-num.calendar__day-num_active',
     );
     tdActive.forEach((v, i, arr) => {
       let checkDate = setSiblingIteration(
