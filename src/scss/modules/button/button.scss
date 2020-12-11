@@ -143,8 +143,8 @@
     line-height: em(22, 18);
     cursor: pointer;
 
-    &_plus:after {
-      content: '+';
+    &_plus:after,
+    &_minus:after {
       position: absolute;
       top: 50%;
       right: 0;
@@ -152,13 +152,12 @@
       transform: translate(0, -50%);
     }
 
+    &_plus:after {
+      content: '+';
+    }
+
     &_minus:after {
       content: '-';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      left: 0;
-      transform: translate(0, -50%);
     }
 
     &_default {
