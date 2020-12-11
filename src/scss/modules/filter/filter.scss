@@ -1,4 +1,6 @@
 .filter {
+  $filter: &;
+
   min-width: 320px;
   max-width: 380px;
 
@@ -95,16 +97,11 @@
     }
   }
 
-  & .input-checkbox:checked ~ .filter__menu {
+  & .input-checkbox:checked ~ #{$filter}__menu {
     left: 0;
   }
 
   &__close {
-  }
-
-  & .input-checkbox:checked ~ .filter__menu .rectangle__close {
-    opacity: 1;
-    transition: 2s;
   }
 
   &__list {
@@ -131,7 +128,7 @@
     }
   }
 
-  & .input-checkbox:checked ~ .filter__label {
+  & .input-checkbox:checked ~ #{$filter}__label {
     left: 100%;
   }
 

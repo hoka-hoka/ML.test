@@ -1,4 +1,6 @@
 .input-radio {
+  $input-radio: &;
+
   &__label {
     position: relative;
     display: flex;
@@ -8,7 +10,7 @@
   }
 
   & .input-checkbox {
-    & ~ .input-radio__label::before {
+    & ~ #{$input-radio}__label::before {
       content: '';
       display: inline-block;
       vertical-align: middle;
@@ -21,7 +23,7 @@
       transition: all 0.15s;
     }
 
-    & ~ .input-radio__label::after {
+    & ~ #{$input-radio}__label::after {
       content: '';
       position: absolute;
       top: 50%;
@@ -32,7 +34,7 @@
       transform: translate(-50%, -50%);
     }
 
-    &:checked ~ .input-radio__label::after {
+    &:checked ~ #{$input-radio}__label::after {
       width: 12px;
       height: 12px;
       border: unset;

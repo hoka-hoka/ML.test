@@ -1,4 +1,6 @@
 .nav {
+  $nav: &;
+
   margin-left: auto;
 
   @media (max-width: 1023px) {
@@ -69,21 +71,21 @@
   }
 
   & .input-checkbox {
-    &:checked ~ .nav__label > .nav__hamburger {
+    &:checked ~ #{$nav}__label > #{$nav}__hamburger {
       transform: rotate(45deg);
     }
 
-    &:checked ~ .nav__label > .nav__hamburger::before {
+    &:checked ~ #{$nav}__label > #{$nav}__hamburger::before {
       top: 0;
       transform: rotate(0);
     }
 
-    &:checked ~ .nav__label > .nav__hamburger::after {
+    &:checked ~ #{$nav}__label > #{$nav}__hamburger::after {
       top: 0;
       transform: rotate(90deg);
     }
 
-    &:checked ~ .nav__container {
+    &:checked ~ #{$nav}__container {
       left: 0;
     }
 
@@ -112,12 +114,12 @@
       transition-duration: 0.25s;
     }
 
-    & > .nav__hamburger::before {
+    & > #{$nav}__hamburger::before {
       content: '';
       top: -8px;
     }
 
-    & > .nav__hamburger::after {
+    & > #{$nav}__hamburger::after {
       content: '';
       top: 8px;
     }

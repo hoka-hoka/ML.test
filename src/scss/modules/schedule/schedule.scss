@@ -16,6 +16,31 @@ $m: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 161px));
 
+  @each $col in lime, purpure, yellow, dark {
+    &__item.#{$col}::before {
+      @extend %p;
+      background-image: linear-gradient(
+          nth($deg-start, $i),
+          transparent 50%,
+          #fff calc(50% + 0.5px),
+          #fff
+        ),
+        linear-gradient(
+          nth($deg-end, $i),
+          #fff 50%,
+          #000 calc(50% + 0.5px),
+          #000
+        );
+    }
+
+    $i: $i + 1;
+    &__item.#{$col}::after {
+      @extend %p;
+      background-image: linear-gradient(nth($colors, $m), nth($colors, $m + 1));
+    }
+    $m: $m + 2;
+  }
+
   &__title {
     grid-column: 1/-1;
     margin-bottom: 20px;
@@ -95,24 +120,4 @@ $m: 1;
     text-align: center;
     transform: translate(-50%, -50%);
   }
-}
-
-@each $col in lime, purpure, yellow, dark {
-  .schedule__item.#{$col}::before {
-    @extend %p;
-    background-image: linear-gradient(
-        nth($deg-start, $i),
-        transparent 50%,
-        #fff calc(50% + 0.5px),
-        #fff
-      ),
-      linear-gradient(nth($deg-end, $i), #fff 50%, #000 calc(50% + 0.5px), #000);
-  }
-
-  $i: $i + 1;
-  .schedule__item.#{$col}::after {
-    @extend %p;
-    background-image: linear-gradient(nth($colors, $m), nth($colors, $m + 1));
-  }
-  $m: $m + 2;
 }

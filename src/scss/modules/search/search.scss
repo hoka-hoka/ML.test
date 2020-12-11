@@ -1,4 +1,6 @@
 .search {
+  $search: &;
+
   max-width: 380px;
   margin-top: 70px;
 
@@ -81,20 +83,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 20px;
   }
 
   &__content {
     margin-bottom: 10px;
   }
 
-  &__submit {
+  &__item {
     position: relative;
-  }
 
-  &__item-bottom {
-    position: relative;
-    margin-bottom: 30px;
+    &_middle_margin-bottom {
+      margin-bottom: 20px;
+    }
+
+    &_large_margin-bottom {
+      margin-bottom: 30px;
+    }
   }
 
   &__label {
@@ -137,22 +141,22 @@
   & .input-checkbox {
     @media (max-width: 425px) {
       &:checked {
-        & ~ .search__label {
+        & ~ #{$search}__label {
           transition: 0.5s;
           transform: scale(1);
         }
 
-        & ~ .search__label::after {
+        & ~ #{$search}__label::after {
           background: transparent;
           color: #fff;
         }
 
-        & ~ .search__menu .search__close {
+        & ~ #{$search}__menu #{$search}__close {
           opacity: 1;
           transition: 2s;
         }
 
-        & ~ .search__menu {
+        & ~ #{$search}__menu {
           overflow: auto;
           width: 100%;
           height: 100%;

@@ -12,6 +12,8 @@ $nav: top left;
 $col: $heart_bg--bg;
 
 .heart {
+  $heart: &;
+
   &__area {
     position: relative;
     display: flex;
@@ -83,12 +85,13 @@ $col: $heart_bg--bg;
         $heart__btn_active-stop_hov
       );
 
-      & .heart__figure_outer {
+      & #{$heart}__figure_outer {
         display: none;
       }
 
-      & .heart__figure_inner {
+      & #{$heart}__figure_inner {
         background: $heart__btn_active_hov;
+
         @each $val in after, before {
           &::#{$val} {
             background: $heart__btn_active_hov;
@@ -96,7 +99,7 @@ $col: $heart_bg--bg;
         }
       }
 
-      & .heart__amount {
+      & #{$heart}__amount {
         color: $heart__amount--txt_hov;
       }
     }

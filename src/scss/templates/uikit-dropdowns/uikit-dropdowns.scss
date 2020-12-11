@@ -1,4 +1,6 @@
 .uikit-dropdowns {
+  $uikit-dropdowns: &;
+
   display: grid;
   grid-template-columns: 375px 320px 320px;
   grid-auto-flow: column;
@@ -7,7 +9,8 @@
 
   &__list:first-child {
     width: 266px;
-    .uikit-dropdowns__dropdown:last-child {
+
+    #{$uikit-dropdowns}__dropdown:last-child {
       margin-top: 20px;
     }
   }

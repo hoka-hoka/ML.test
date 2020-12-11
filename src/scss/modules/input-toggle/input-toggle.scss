@@ -1,6 +1,11 @@
 .input-toggle {
+  $input-toggle: &;
   position: relative;
   display: inline-block;
+
+  &:focus-within {
+    outline: 1px solid black;
+  }
 
   &__text {
     padding-left: 43px;
@@ -27,10 +32,6 @@
     cursor: pointer;
     transition: 0.4s;
 
-    & .input-toggle__tab:checked + .input-toggle__slider {
-      border: 1px solid $input-toggle__tab_check_lb--bd;
-    }
-
     &:before {
       content: '';
       position: absolute;
@@ -45,13 +46,16 @@
       transform: translate(0px, -50%);
     }
   }
-}
 
-.input-toggle__tab:focus + .input-toggle__slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-.input-toggle__tab:checked + .input-toggle__slider:before {
-  background: $input-toggle__tab_check_lb--bg;
-  box-shadow: inset 0px -6px 5px -2px $input-toggle__tab_check_lb--shadow;
-  transform: translate(20px, -50%);
+  &__tab {
+    &:focus + #{$input-toggle}__slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    &:checked + #{$input-toggle}__slider:before {
+      background: $input-toggle__tab_check_lb--bg;
+      box-shadow: inset 0px -6px 5px -2px $input-toggle__tab_check_lb--shadow;
+      transform: translate(20px, -50%);
+    }
+  }
 }

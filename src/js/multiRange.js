@@ -1,25 +1,28 @@
 (function() {
   'use strict';
-  var supportsMultiple =
+  let supportsMultiple =
     self.HTMLInputElement && 'valueLow' in HTMLInputElement.prototype;
-  var descriptor = Object.getOwnPropertyDescriptor(
+  let descriptor = Object.getOwnPropertyDescriptor(
     HTMLInputElement.prototype,
     'value',
   );
 
-  var multirange = function(input, price, num) {
+  let multirange = function(input, price, num) {
     if (supportsMultiple || input.classList.contains('multirange')) {
       return;
     }
-    var value = input.getAttribute('value'); // "10,80"
-    var values = value === null ? [] : value.split(','); // ["10", "80"]
-    var min = +(input.min || 0);
-    var max = +(input.max || 100);
-    var ghost = input.cloneNode(); // deep = true
+    let inputClass = input.className;
+    let value = input.getAttribute('value'); // "10,80"
+    let values = value === null ? [] : value.split(','); // ["10", "80"]
+    let min = +(input.min || 0);
+    let max = +(input.max || 100);
+    let ghost = input.cloneNode(); // deep = true
     let divRange = document.createElement('div');
-    divRange.className = 'pail-range';
-    input.classList.add('multirange', 'original');
-    ghost.classList.add('multirange', 'ghost');
+    divRange.className = 'input-range__band';
+
+    input.classList.add(inputClass + '_multirange', inputClass + '_original');
+    ghost.classList.add(inputClass + '_multirange', inputClass + '_ghostly');
+
     input.value = values[0] || min + (max - min) / 2;
     ghost.value = values[1] || min + (max - min) / 2;
     input.after(divRange, ghost);

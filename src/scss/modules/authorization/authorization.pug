@@ -4,7 +4,7 @@ mixin authorization()
       fieldset.authorization__container
         legend.authorization__title Войти
         ul.authorization__schedule(role='none')
-          li.authorization__item-top
+          li.authorization__item.authorization__item_middle_margin-bottom
             .authorization__content
               +input-email({
                 id: "aut-email",
@@ -17,7 +17,7 @@ mixin authorization()
                 text: "Email",
                 mod: {visible: "hidden"},
               })
-            .authorization__content
+            .authorization__content.authorization__item_large_margin-bottom
               +input-password({
                 id: "aut-pass",
                 placeholder: "Пароль",
@@ -27,7 +27,7 @@ mixin authorization()
                 text: "Пароль",
                 mod: {visible: "hidden"},
               })
-          li.authorization__item-bottom
+          li.authorization__item.authorization__item_large_margin-bottom
             .authorization__submit
               +button({
                 theme: "purple",
@@ -42,7 +42,7 @@ mixin authorization()
                 alt: "Войти",
                 mod: {position: "center", color: "light"},
               })
-          li.authorization__item-bottom
+          li.authorization__item
             .authorization__create
               p.authorization__create-text Нет акаунта на Toxin?
               +button({

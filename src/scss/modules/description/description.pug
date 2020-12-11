@@ -3,7 +3,7 @@ mixin description()
     form(action="" name="descr")
       fieldset.description__container
         ul.description__schedule(role='none')
-          li.description__item-top
+          li.description__item.description__item_middle_margin-bottom
             .description__room
               .description__room-container
                 span.description__room-number 888
@@ -11,23 +11,24 @@ mixin description()
               .description__room-container
                 span.description__room-price 9 990₽
                 span.description__room-text в сутки
-          li.description__date
-            -for(var i=0; i<2; ++i)
-              if date != undefined
-                +input-date({
-                  id: date_id[i],
-                  placeholder: date[i],
-                  text: ds_label[i],
-                })
-              else
-                +input-date({
-                  id: date_id[i],
-                  placeholder: "ДД.ММ.ГГГГ",
-                  text: ds_label[i],
-                })
-            - var i = null;
-            +calendar()
-          li.description__item-top
+          li.description__item.description__item_middle_margin-bottom
+            .description__date
+              -for(var i=0; i<2; ++i)
+                if date != undefined
+                  +input-date({
+                    id: date_id[i],
+                    placeholder: date[i],
+                    text: ds_label[i],
+                  })
+                else
+                  +input-date({
+                    id: date_id[i],
+                    placeholder: "ДД.ММ.ГГГГ",
+                    text: ds_label[i],
+                  })
+              - var i = null;
+              +calendar()
+          li.description__item.description__item_middle_margin-bottom
             .description__content
               +input-dropdown({
                 id: "arrive",
@@ -36,7 +37,7 @@ mixin description()
                 role: "gues",
                 list: guesList,
               })
-          li.description__item-bottom
+          li.description__item.description__item_large_margin-bottom
             ul.description__price-list
               li.description__price-item
                 span.description__text 9 990₽ x 4 суток
@@ -47,12 +48,12 @@ mixin description()
               li.description__price-item
                 span.description__accent Сбор за дополнительные услуги
                 span.description__text 300₽
-          li.description__item-top
+          li.description__item.description__item_middle_margin-bottom
             .description__result
               span.description__total Итого
               span.description__line
               span.description__total 38 081₽
-          li.description__item-top
+          li.description__item
             +button({
               theme: "purple",
               text: "Забронировать",

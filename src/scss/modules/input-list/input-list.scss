@@ -1,4 +1,6 @@
 .input-list {
+  $input-lsit: &;
+
   position: relative;
 
   &__options {
@@ -14,7 +16,7 @@
   }
 
   &_active {
-    & .input-list__options {
+    & #{$input-lsit}__options {
       display: block;
     }
     & .button_arrow::after {

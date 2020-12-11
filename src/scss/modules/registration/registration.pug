@@ -4,7 +4,7 @@ mixin registration()
       fieldset.registration__container
         legend.registration__title Регистрация аккаунта
         ul.registration__schedule(role='none')
-          li.registration__item-top
+          li.registration__item.registration__item_middle_margin-bottom
             .registration__content
               +input({
                 id: "reg-name",
@@ -43,15 +43,13 @@ mixin registration()
                 text: "Женщина",
                 name: "gender",
               })
-          li.registration__item-top
+          li.registration__item.registration__item_middle_margin-bottom
             +input-date({
               id: "reg-birth",
               placeholder: "ДД.ММ.ГГГГ",
               text: "Дата рождения",
             })
-
-          li.registration__item-top
-            .label.label_large 
+          li.registration__item.registration__item_middle_margin-bottom
             .registration__content
               +input-email({
                 id: "reg-email",
@@ -68,7 +66,7 @@ mixin registration()
               +input-toggle({
                 text: "Получать спецпредложения"
               })
-          li.registration__item-bottom
+          li.registration__item.registration__item_large_margin-bottom
             .registration__submit
               +button({
                 theme: "purple",
@@ -83,9 +81,10 @@ mixin registration()
                 alt: "Войти",
                 mod: {position: "center", color: "light"},
               })
-          .registration__create
-            p.registration__create-text Уже есть акаунт на Toxin
-            +button({
-              theme: "light",
-              text: "Войти",
-            })
+          li.registration__item
+            .registration__create
+              p.registration__create-text Уже есть акаунт на Toxin
+              +button({
+                theme: "light",
+                text: "Войти",
+              })

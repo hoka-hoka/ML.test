@@ -1,4 +1,6 @@
 .button {
+  $button: &;
+
   position: relative;
   display: inline-block;
   background-origin: border-box;
@@ -7,11 +9,11 @@
   cursor: pointer;
 
   &_high {
-    .button__text_flooded {
+    #{$button}__text_flooded {
       height: 34px;
     }
 
-    .button__text_boundary {
+    #{$button}__text_boundary {
       display: flex;
       align-items: center;
       height: 30px;
@@ -32,7 +34,7 @@
       background: #fff;
       color: $button__text_boundary--txt;
 
-      &:hover ~ .button__light {
+      &:hover ~ #{$button}__light {
         background: linear-gradient(
           180deg,
           rgba(#bc9cff, 0.5) 0%,
