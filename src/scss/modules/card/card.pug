@@ -1,6 +1,7 @@
 block swiperList
 
 mixin card(card)
+  - const {number, status, price, starIndex, starChecked, reviews} = card;
   .card
     li.card__item
       .swiper-container.swiper-container_card-js
@@ -17,13 +18,16 @@ mixin card(card)
       .card__descr
         .card__top
           .card__container
-            span.card__number #{card.number}
-            strong.card__status=card.status
+            span.card__number #{number}
+            strong.card__status=status
           .card__container
-            span.card__price #{card.price}&#8381 
+            span.card__price #{price}&#8381 
               span.card__text в сутки
         hr.card__line
         .card__content
-          +rating(card.starIndex, card.starChecked)
-          span.card__value=card.reviews
+          +rating({
+            index: starIndex,
+            check: starChecked,
+          })
+          span.card__value=reviews
           span.card__about Отзывов

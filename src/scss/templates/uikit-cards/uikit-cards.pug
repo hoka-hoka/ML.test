@@ -117,9 +117,15 @@ mixin uikit-cards()
         .uikit-cards__title rate button
         .uikit-cards__rating-list
           .uikit-cards__rating-item
-            +rating(1, 2)
+            +rating({
+              index: 1,
+              check: 2,
+            })
           .uikit-cards__rating-item
-            +rating(2, 1)
+            +rating({
+              index: 2,
+              check: 1,
+            })
         
     .uikit-cards__list
       .uikit-cards__range-slider
