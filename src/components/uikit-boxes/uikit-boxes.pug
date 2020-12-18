@@ -1,0 +1,28 @@
+mixin uikit-boxes()
+  .uikit-boxes
+    .uikit-boxes__list
+      .uikit-boxes__checkbox-list
+        +input-list({
+          text: "expandable checkbox list",
+          id: "first-list",
+        })
+      .uikit-boxes__checkbox-list.uikit-boxes__checkbox-list_example-js.uikit-boxes__checkbox-list_active-js
+        +input-list({
+          text: "expandable checkbox list",
+          id: "second-list",
+          mod: {active: "active"}
+        })
+    .uikit-boxes__list
+      .uikit-boxes__title rich checkbox buttons
+      .uikit-boxes__checkbox-buttons
+        each value, index in availabel
+          +input-mark({
+            id: "list-" + index,
+            text: value.title,
+            description: value.descr,  
+          })
+
+    .uikit-boxes__list
+      .uikit-boxes__title bullet list
+      .uikit-boxes__bullet-list
+        +rule({})

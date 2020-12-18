@@ -1,0 +1,28 @@
+.icon {
+  &__pick {
+    &_dark {
+      display: none;
+      fill: rgb(53, 53, 64);
+
+      @media (max-width: 425px) {
+        display: flex;
+      }
+    }
+
+    &_light {
+      fill: #fff;
+    }
+
+    &_purple {
+      fill: url(#paint0_linear);
+    }
+
+    &_center {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      cursor: pointer;
+      transform: translate(0, -50%);
+    }
+  }
+}

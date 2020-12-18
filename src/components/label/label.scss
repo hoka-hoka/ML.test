@@ -1,0 +1,72 @@
+.label {
+  position: relative;
+  display: flex;
+  font-family: $mainFont;
+
+  &_hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+  }
+
+  &_large {
+    display: block;
+    margin-bottom: 5px;
+    color: $label_large--txt;
+    font-weight: bold;
+    font-size: rem(12);
+    font-family: $mainFont;
+    text-transform: uppercase;
+  }
+
+  &_checked {
+    position: relative;
+    display: flex;
+    padding-left: 30px;
+    color: $label_checked--txt;
+    font-weight: normal;
+    font-size: rem(14);
+    font-family: $mainFont;
+    line-height: rem(20);
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      box-sizing: border-box;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      border: 1px solid $label_checked--bd;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 7px;
+      box-sizing: border-box;
+      width: 6px;
+      height: 8px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &_thick {
+    color: $label_thick--txt;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+}

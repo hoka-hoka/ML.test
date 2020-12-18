@@ -1,13 +1,13 @@
 @import 'utils/libs';
-@import 'utils/vars';
+// @import 'utils/vars';
 @import 'utils/fonts';
 @import 'utils/mixins';
 
-@import 'templates/uikit-elements/uikit-elements';
-@import 'templates/uikit-forms/uikit-forms';
-@import 'templates/uikit-dropdowns/uikit-dropdowns';
-@import 'templates/uikit-boxes/uikit-boxes';
-@import 'templates/uikit-additionally/uikit-additionally';
-@import 'templates/uikit-cards/uikit-cards';
-@import 'templates/uikit-header-footer/uikit-header-footer';
-@import 'templates/uikit-type/uikit-type';
+@import '../components/uikit-elements/uikit-elements';
+@import '../components/uikit-forms/uikit-forms';
+@import '../components/uikit-dropdowns/uikit-dropdowns';
+@import '../components/uikit-boxes/uikit-boxes';
+@import '../components/uikit-additionally/uikit-additionally';
+@import '../components/uikit-cards/uikit-cards';
+@import '../components/uikit-header-footer/uikit-header-footer';
+@import '../components/uikit-type/uikit-type';

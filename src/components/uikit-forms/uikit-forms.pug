@@ -1,0 +1,33 @@
+mixin uikit-forms()
+  .uikit-forms
+    .uikit-forms__logo
+      img(src="img/svg/logo-mini.svg", alt="TOXIN главная страница")
+    .uikit-forms__list
+      .uikit-forms__item
+        .uikit-forms__search
+          +search()
+      .uikit-forms__item
+        .uikit-forms__descr
+          +description()
+      .uikit-forms__item
+        .uikit-forms__calendar.uikit-forms__calendar_create-js
+          +calendar()
+      .uikit-forms__item
+        .uikit-forms__reg
+          +registration()
+      .uikit-forms__item
+        .uikit-forms__aut
+          +authorization()
+      .uikit-forms__item
+        ul.uikit-forms__cards
+          each card, index in elem
+            +card({
+              number: card.number,
+              status: card.status,
+              price: card.price,
+              starChecked: card.checked,
+              starIndex: index,
+              reviews: card.reviews,
+            })
+
+

@@ -1,24 +1,22 @@
-'use strict';
-
 import 'swiper/swiper-bundle.min.css';
-import '../scss/modules/input-dropdown/input-dropdown';
+import '../components/input-dropdown/input-dropdown';
 
 // main
-import '../scss/modules/input/input';
-import '../scss/modules/input-range/input-range';
-import '../scss/modules/input-date/input-date';
-import '../scss/modules/header/header';
-import '../scss/modules/heart/heart';
-import '../scss/modules/nav/nav';
-import '../scss/modules/input-options/input-options';
-import '../scss/modules/input-list/input-list';
+import '../components/input/input';
+import '../components/input-range/input-range';
+import '../components/input-date/input-date';
+import '../components/header/header';
+import '../components/heart/heart';
+import '../components/nav/nav';
+import '../components/input-options/input-options';
+import '../components/input-list/input-list';
 
 // ui-kit
-import '../scss/templates/uikit-cards/uikit-cards';
-import '../scss/templates/uikit-dropdowns/uikit-dropdowns';
-import '../scss/templates/uikit-boxes/uikit-boxes';
+import '../components/uikit-cards/uikit-cards';
+import '../components/uikit-dropdowns/uikit-dropdowns';
+import '../components/uikit-boxes/uikit-boxes';
 
-import '../scss/modules/calendar/calendar';
+import '../components/calendar/calendar';
 
 import './listSwiper';
 
