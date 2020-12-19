@@ -1,24 +1,27 @@
-import 'swiper/swiper-bundle.min.css';
-import '../components/input-dropdown/input-dropdown';
+// import '../scss/fonts.scss';
+// import '../scss/mixins.scss';
+// import '../scss/variables.scss';
+// import '../scss/normalize.scss';
 
-// main
-import '../components/input/input';
-import '../components/input-range/input-range';
-import '../components/input-date/input-date';
-import '../components/header/header';
-import '../components/heart/heart';
-import '../components/nav/nav';
-import '../components/input-options/input-options';
-import '../components/input-list/input-list';
+// import 'swiper/swiper-bundle.min.css';
+// import '../components/input-dropdown/input-dropdown';
 
-// ui-kit
-import '../components/uikit-cards/uikit-cards';
-import '../components/uikit-dropdowns/uikit-dropdowns';
-import '../components/uikit-boxes/uikit-boxes';
+// import '../components/input/input';
+// import '../components/input-range/input-range';
+// import '../components/input-date/input-date';
+// import '../components/header/header';
+// import '../components/heart/heart';
+// import '../components/nav/nav';
+// import '../components/input-options/input-options';
+// import '../components/input-list/input-list';
 
-import '../components/calendar/calendar';
+// import '../components/uikit-cards/uikit-cards';
+// import '../components/uikit-dropdowns/uikit-dropdowns';
+// import '../components/uikit-boxes/uikit-boxes';
 
-import './listSwiper';
+// import '../components/calendar/calendar';
+
+// import './listSwiper';
 
 //--- require ---
 /* подключаем какой-нибудь модуль. Для того, чтобы webpack вынес его отдельно используется require.ensure(). В

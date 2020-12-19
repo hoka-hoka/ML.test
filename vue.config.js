@@ -15,13 +15,6 @@ if (!devMode) {
   );
 }
 plugins.push(
-  // new CopyPlugin([
-  //   {
-  //     from: path.resolve(__dirname, 'src/assets/img'),
-  //     to: path.resolve(__dirname, 'dist/img'),
-  //     toType: 'dir',
-  //   },
-  // ]),
   new CopyPlugin([
     {
       from: path.resolve(__dirname, 'src/assets/img'),
@@ -36,7 +29,7 @@ plugins.push(
 
 module.exports = {
   outputDir: 'dist',
-  publicPath: process.env.NODE_ENV === 'production' ? '' : './', // Если используется многостраничный режим (pages), то не писать
+  publicPath: process.env.NODE_ENV === 'production' ? './' : './', // Если используется многостраничный режим (pages), то не писать
   assetsDir: '',
   indexPath: 'index.html', // по умолчанию index.html
   pages: {
@@ -45,16 +38,16 @@ module.exports = {
       template: 'public/pages/website/home.pug',
       chunks: ['chunk-vendors', 'chunk-common', 'index'],
     },
-    // 'landing-page': {
-    //   entry: 'src/js/entries/landing-page.js',
-    //   template: 'public/pages/website/landing-page.pug',
-    //   chunks: ['chunk-vendors', 'chunk-common', 'landing-page'],
-    // },
-    // 'search-room': {
-    //   entry: 'src/js/entries/search-room.js',
-    //   template: 'public/pages/website/search-room.pug',
-    //   chunks: ['chunk-vendors', 'chunk-common', 'search-room'],
-    // },
+    'landing-page': {
+      entry: 'src/js/entries/landing-page.js',
+      template: 'public/pages/website/landing-page.pug',
+      chunks: ['chunk-vendors', 'chunk-common', 'landing-page'],
+    },
+    'search-room': {
+      entry: 'src/js/entries/search-room.js',
+      template: 'public/pages/website/search-room.pug',
+      chunks: ['chunk-vendors', 'chunk-common', 'search-room'],
+    },
     // 'rooom-details': {
     //   entry: 'src/js/entries/rooom-details.js',
     //   template: 'public/pages/website/rooom-details.pug',
@@ -114,14 +107,11 @@ module.exports = {
       rules: [
         {
           test: /\.(sa|sc|c)ss$/,
+          exclude: /node_modules/,
           use: [
             devMode
               ? {
-                  loader: 'vue-style-loader',
-                  options: {
-                    sourceMap: false,
-                    shadowMode: false,
-                  },
+                  loader: 'style-loader',
                 }
               : MiniCssExtractPlugin.loader,
             {
@@ -129,6 +119,7 @@ module.exports = {
               options: {
                 sourceMap: false,
                 importLoaders: 2,
+                url: true,
               },
             },
             {
@@ -142,9 +133,18 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 sourceMap: false,
-                additionalData: `@import "scss/variables";
-                                 @import "scss/fonts";
-                                 @import "scss/mixins";`,
+                additionalData: (content, loaderContext) => {
+                  const { resourcePath, rootContext } = loaderContext;
+                  const relativePath = path.relative(rootContext, resourcePath);
+                  if (/components/g.test(relativePath)) {
+                    return `@import "scss/variables";
+                            @import "scss/fonts";
+                            @import "scss/mixins";`;
+                  } else {
+                    return `@import "scss/variables";
+                            @import "scss/mixins";`;
+                  }
+                },
                 sassOptions: {
                   includePaths: [__dirname, 'src'],
                 },
@@ -166,17 +166,6 @@ module.exports = {
     /* delete config.plugins('CopyPlugin') */
     config.plugins.delete('copy');
 
-    /* delete config.module.rule('fonts') */
-    // const fontsRule = config.module.rule('fonts');
-    // fontsRule.uses.clear();
-    // fontsRule
-    //   .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
-    //   .use('url-loader')
-    //   .loader('url-loader')
-    //   .options({
-    //     limit: 4096,
-    //   });
-
     /* delete config.module.rule('svg') */
     const svgRule = config.module.rule('svg');
     svgRule.uses.clear();
@@ -188,6 +177,20 @@ module.exports = {
       .options({
         limit: 4096,
       });
+
+    // const fontsRule = config.module.rule('fonts');
+    // fontsRule.uses.clear();
+    // fontsRule
+    //   .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
+    //   .use('url-loader')
+    //   .loader('url-loader')
+    //   .options({
+    //     limit: 4096,
+    //     fallback: 'file-loader',
+    //     name: '[name].[ext]',
+    //     outputPath: 'fonts',
+    //     publicPath: 'src/scss',
+    //   });
   },
 
   productionSourceMap: false,

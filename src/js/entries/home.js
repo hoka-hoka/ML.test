@@ -1,1 +1,1 @@
-import '../../components/home/home.scss';
+import '../../components/home/home';
