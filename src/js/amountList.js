@@ -1,6 +1,3 @@
-'use strict';
-import { setSiblingIteration } from './getSibling';
-
 class amountList {
   constructor(box, name) {
     this.optionList = box; //  container

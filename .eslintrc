@@ -1,0 +1,19 @@
+{
+  "env": {
+    "es6": true
+  },
+  "extends": ["airbnb-base"],
+  "rules": {
+    "linebreak-style": ["error", "windows"], // CRLF - windows and LF - unix
+    "func-names": ["error", "never"],
+    "for-direction": "error",
+    "no-var": "error",
+    "semi": "error",
+    "indent": ["error", 2], // число пробелов
+    "no-multi-spaces": "error",
+    "space-in-parens": "error",
+    "no-multiple-empty-lines": "error",
+    "prefer-const": "error",
+    "no-use-before-define": "error"
+  }
+}
