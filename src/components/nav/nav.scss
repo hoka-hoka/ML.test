@@ -16,7 +16,7 @@
       z-index: 3;
       width: max-content;
       height: auto;
-      border: 1px solid $nav__container--bd;
+      border: 1px solid $dark-10;
       border-radius: 0 0 5px;
       background-color: #fff;
       transition-duration: 0.25s;
@@ -25,7 +25,7 @@
 
   &__list {
     display: flex;
-    color: $navText;
+    color: $dark-50;
 
     @media (max-width: 1023px) {
       flex-direction: column;
@@ -36,7 +36,7 @@
   &__link {
     display: flex;
     align-items: center;
-    color: $navText;
+    color: $dark-50;
     font-size: rem(14);
     cursor: pointer;
 
@@ -56,7 +56,7 @@
     }
 
     &_active {
-      color: $nav__link_active--txt;
+      color: $gray-75;
       font-weight: bold;
     }
   }

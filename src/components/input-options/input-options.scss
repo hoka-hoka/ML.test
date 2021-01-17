@@ -5,10 +5,10 @@
   box-sizing: border-box;
   width: 100%;
   padding: 4px 6px 9px 13px;
-  border: 1px solid $input-options--bd;
+  border: 1px solid $dark-25;
   border-top: none;
   border-radius: 0 0 4px 4px;
-  background-color: $canvas--bg;
+  background-color: $white;
 
   &__opt {
     display: flex;
@@ -29,7 +29,7 @@
 
   &__amount {
     width: 32px;
-    color: $input-options__amount--txt;
+    color: $dark;
     font-weight: bold;
     font-size: rem(12);
     font-family: $mainFont;

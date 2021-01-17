@@ -7,163 +7,25 @@ $iconFont: 'Fontello';
 // Size
 $mainFontSize: 16px;
 
-// Local color
-$x-dark: #1f2041;
-$x-dark-100: $x-dark;
-$x-dark-75: rgba($x-dark, 0.75);
-$x-dark-50: rgba($x-dark, 0.5);
-$x-dark-25: rgba($x-dark, 0.25);
-$x-dark-10: rgba($x-dark, 0.1);
-$x-dark-5: rgba($x-dark, 0.05);
+$dark: #1f2041;
+$dark-75: rgba($dark, 0.75);
+$dark-50: rgba($dark, 0.5);
+$dark-25: rgba($dark, 0.25);
+$dark-10: rgba($dark, 0.1);
+$dark-5: rgba($dark, 0.05);
 
-$x-gray: rgb(31, 32, 65);
-$x-gray-75: rgba(31, 32, 65, 0.75);
-$x-gray-50: rgba(31, 32, 65, 0.5);
-$x-gray-25: rgba(31, 32, 65, 0.25);
-$x-gray-10: rgba(31, 32, 65, 0.1);
+$gray: rgb(31, 32, 65);
+$gray-75: rgba(31, 32, 65, 0.75);
+$gray-50: rgba(31, 32, 65, 0.5);
+$gray-25: rgba(31, 32, 65, 0.25);
+$gray-10: rgba(31, 32, 65, 0.1);
 
-$x-purple: #bc9cff;
-$x-purple-10: rgba(31, 32, 65, 0.1);
-$x-purpure-stop: #8ba4f9;
+$purple: #bc9cff;
+$purpure-light: #8ba4f9;
+$purple-10: rgba(31, 32, 65, 0.1);
 
-$x-green: #6fcf97;
-$x-green-stop: #66d2ea;
+$green: #6fcf97;
+$green-light: #66d2ea;
 
-$x-white: #fff;
-
-// Global color
-$input-options__amount--txt: $x-dark-100;
-
-$mainTitleBlock: $x-dark-100;
-
-$canvas--bg: $x-white;
-
-$label_large--txt: $x-dark-100;
-$label_color--50: $x-dark-50;
-
-$authorization__title--txt: $x-dark-100;
-
-$search__title--txt: $x-dark-100;
-
-$rectangle__title--txt: $x-dark-100;
-$rectangle__text-small--txt: $x-dark-50;
-
-$input-mark__description--txt: $x-dark-50;
-
-$rectangle__lb-regular_active--txt: $x-dark-75;
-$rectangle__price--txt: $x-dark-50;
-
-$input-range__text--txt: $x-dark-50;
-$input-range__price--txt: $x-dark-50;
-
-$body-text: $x-dark-75;
-
-$navText: $x-dark-50;
-$nav__container--bd: $x-dark-10;
-
-$authorization--txt: $x-white;
-$accetes--bd: $x-dark-25;
-$accetes--txt: $x-dark-25;
-
-$button__text_boundary--txt: $x-purple;
-$button__text_flooded--txt: $x-white;
-
-$button_purple--txt: $x-purple;
-
-$button_arrow--txt: $x-dark-50;
-
-$description__line--bd: $x-dark-25;
-
-$input_foc_hov: $x-dark-50;
-$input__field--txt: $x-dark-75;
-$input--br: $x-dark-25;
-
-$input-email__field--br: $x-dark-25;
-$input-email__field--txt: $x-dark-75;
-$input-email__field_placeholder--txt: $x-dark-25;
-
-$input-password__field--br: $x-dark-25;
-$input-password__field--txt: $x-dark-75;
-$input-password__field_placeholder--txt: $x-dark-25;
-
-$input__field_placeholder--txt: $x-dark-25;
-$input_placeholder-dark--txt: $x-dark-75;
-
-$input-options--bd: $x-dark-25;
-$input-dropdown_active--bd: $x-dark-50;
-
-$input__mark-minus--txt: $x-dark-50;
-$input__marks--bd: $x-dark-25;
-
-$label_thick--txt: $x-dark-75;
-$label_checked--txt: $x-dark-50;
-$label_checked--bd: $x-dark-25;
-$label_checked--bg-stop: $x-purpure-stop;
-$label_checked--bd-active: $x-purple;
-
-$input-radio--bd: $x-purple;
-
-$input-radio__label--bg: $x-purple;
-$input-radio__label--bg-stop: $x-purpure-stop;
-
-$input-toggle__slider--bd: $x-dark-25;
-$input-toggle__slider--bg: $x-dark-25;
-$input-toggle__tab_check_lb--bg: $x-purple;
-$input-toggle__tab_check_lb--shadow: $x-purpure-stop;
-
-$calendar__container--bg: $x-white;
-$calendar__container--br: $x-dark-25;
-$calendar__month-title--txt: $x-dark-100;
-$calendar__box--txt: $x-purple;
-$calendar__day-other--txt: $x-dark-50;
-
-$button_next_arrow--fill: $x-purple;
-$button_prev_arrow--fill: $x-purple;
-
-$calendar__day-num_painted--bg: $x-purple-10;
-$calendar__day-num--col: $x-dark-50;
-
-$card__number--text: $x-dark-100;
-$card__status--txt: $x-purple;
-$card__price--txt: $x-dark-50;
-$card__value--col: $x-dark-50;
-$card__about--col: $x-dark-50;
-$card__line--txt: $x-gray-10;
-
-$heart_bg--bg: $x-white;
-$heart_border--bg: rgb(193, 193, 193);
-$heart__btn--bg: $x-gray-25;
-$heart__btn_active_hov: $x-purple;
-$heart__btn_active-stop_hov: $x-purpure-stop;
-
-$heart__amount--txt: $x-gray-25;
-$heart__amount--txt_hov: $x-purple;
-
-$nav__link_active--txt: $x-gray-75;
-
-$reviews__amount--txt: $x-gray-50;
-
-$description__room-number--txt: $x-dark-100;
-$description__room-luxury--txt: $x-purple;
-$description__room-price--txt: $x-dark-50;
-
-$rule__item--bg: $x-gray-25;
-
-$pagination__link--txt: $x-dark-50;
-$pagination__link_active--bg: $x-purple;
-$pagination__link_active--bg-stop: $x-purpure-stop;
-$pagination__link_next--bg: $x-green;
-$pagination__link_next--bg-stop: $x-green-stop;
-
-$schedule__content--txt: $x-purple;
-
-$footer__list--txt: $x-dark-50;
-$footer__list--bd: $x-dark-10;
-$footer__text--txt: $x-dark-75;
-$footer__line--col: $x-dark-10;
-$footer__links--txt: $x-dark-50;
-$footer__title--txt: $x-dark-100;
-
-$user__name--txt: $x-gray-50;
-
-$input__list_pale_col--txt: $x-purple;
+$white: #fff;
+$heart-border: rgb(193, 193, 193);

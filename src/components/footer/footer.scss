@@ -2,7 +2,7 @@
   background: #fff;
 
   &__text {
-    color: $footer__text--txt;
+    color: $dark-75;
     font-size: rem(14px);
     font-family: $mainFont;
     line-height: rem(24px, 16px);
@@ -18,7 +18,7 @@
   }
 
   &__title {
-    color: $footer__title--txt;
+    color: $dark;
     font-weight: bold;
     font-size: rem(12);
     text-transform: uppercase;
@@ -34,7 +34,7 @@
   }
 
   &__links {
-    color: $footer__links--txt;
+    color: $dark-50;
     font-size: rem(14px);
     font-family: $mainFont;
     line-height: rem(17px, 14px);
@@ -44,7 +44,7 @@
   &__line {
     height: 1px;
     border: none;
-    background: $footer__line--col;
+    background: $dark-10;
 
     @media (max-width: 768px) {
       display: none;

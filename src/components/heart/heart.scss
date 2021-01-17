@@ -9,7 +9,7 @@
 }
 $position: 2px;
 $nav: top left;
-$col: $heart_bg--bg;
+$col: $white;
 
 .heart {
   $heart: &;
@@ -52,12 +52,12 @@ $col: $heart_bg--bg;
       left: 6px;
       width: 5px;
       height: 5px;
-      background-color: $heart_border--bg;
+      background-color: $heart-border;
       &:after,
       &:before {
         width: 5px;
         height: 5px;
-        background-color: $heart_border--bg;
+        background-color: $heart-border;
       }
     }
   }
@@ -65,7 +65,7 @@ $col: $heart_bg--bg;
   &__amount {
     margin-left: auto;
     padding-left: 18px;
-    color: $heart__amount--txt;
+    color: $gray-25;
     font-size: rem(10);
     line-height: rem(12);
   }
@@ -76,31 +76,27 @@ $col: $heart_bg--bg;
     width: 40px;
     padding: 1px;
     border-radius: 10px;
-    background: linear-gradient(-180deg, $heart__btn--bg, $heart__btn--bg);
+    background: linear-gradient(-180deg, $gray-25, $gray-25);
 
     &_active {
-      background: linear-gradient(
-        -180deg,
-        $heart__btn_active_hov,
-        $heart__btn_active-stop_hov
-      );
+      background: linear-gradient(-180deg, $purple, $purpure-light);
 
       & #{$heart}__figure_outer {
         display: none;
       }
 
       & #{$heart}__figure_inner {
-        background: $heart__btn_active_hov;
+        background: $purple;
 
         @each $val in after, before {
           &::#{$val} {
-            background: $heart__btn_active_hov;
+            background: $purple;
           }
         }
       }
 
       & #{$heart}__amount {
-        color: $heart__amount--txt_hov;
+        color: $purple;
       }
     }
   }

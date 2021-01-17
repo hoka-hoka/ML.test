@@ -2,17 +2,13 @@
   appearance: none;
 
   &:checked ~ .label_checked::before {
-    border-color: $label_checked--bd-active;
+    border-color: $purple;
   }
 
   &:checked ~ .label_checked::after {
     border-right: 2px solid;
     border-bottom: 2px solid;
-    border-image: linear-gradient(
-      180deg,
-      $label_checked--bd 0%,
-      $label_checked--bg-stop 100%
-    );
+    border-image: linear-gradient(180deg, $dark-25 0%, $purpure-light 100%);
     border-image-slice: 1;
   }
 

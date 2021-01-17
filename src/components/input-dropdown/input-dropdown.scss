@@ -18,12 +18,12 @@
   &_active {
     & .input-options {
       display: block;
-      border: 1px solid $input-dropdown_active--bd;
+      border: 1px solid $dark-50;
       border-top: 0;
     }
 
     & .input__field {
-      border: 1px solid $input-dropdown_active--bd;
+      border: 1px solid $dark-50;
       border-bottom-right-radius: initial;
       border-bottom-left-radius: initial;
     }

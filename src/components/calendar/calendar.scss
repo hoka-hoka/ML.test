@@ -54,19 +54,19 @@
   &__month {
     margin-right: auto;
     margin-left: auto;
-    color: $calendar__month-title--txt;
+    color: $dark;
     font-weight: bold;
     font-size: em(19);
     font-family: $secondFont;
   }
 
   &__day-other {
-    color: $calendar__day-other--txt;
+    color: $dark-50;
   }
 
   &__day-num {
     height: 40px;
-    color: $calendar__day-num--col;
+    color: $dark-50;
     cursor: pointer;
     user-select: none;
 
@@ -90,7 +90,7 @@
     }
 
     &_painted {
-      background: $calendar__day-num_painted--bg;
+      background: $purple-10;
     }
   }
 
@@ -112,7 +112,7 @@
 
   &__day {
     padding: 10px 0;
-    color: $calendar__box--txt;
+    color: $purple;
     font-family: $secondFont;
   }
 
@@ -124,9 +124,9 @@
     height: 369px;
     margin-top: 10px;
     padding: 20px;
-    border: 1px solid $calendar__container--br;
+    border: 1px solid $dark-25;
     border-radius: 4px;
-    background: $calendar__container--bg;
+    background: $white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
     @media (max-width: 375px) {

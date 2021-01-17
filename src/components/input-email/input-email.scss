@@ -7,14 +7,14 @@
     width: 100%;
     height: 44px;
     padding: 0 28px 0 14px;
-    border: 1px solid $input-email__field--br;
+    border: 1px solid $dark-25;
     border-radius: 4px;
-    color: $input-email__field--txt;
+    color: $dark-75;
     font-size: rem(14);
     font-family: $mainFont;
 
     &::placeholder {
-      color: $input-email__field_placeholder--txt;
+      color: $dark-25;
     }
   }
   &__descr {

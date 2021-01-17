@@ -19,7 +19,7 @@
   &_large {
     display: block;
     margin-bottom: 5px;
-    color: $label_large--txt;
+    color: $dark;
     font-weight: bold;
     font-size: rem(12);
     font-family: $mainFont;
@@ -30,7 +30,7 @@
     position: relative;
     display: flex;
     padding-left: 30px;
-    color: $label_checked--txt;
+    color: $dark-50;
     font-weight: normal;
     font-size: rem(14);
     font-family: $mainFont;
@@ -46,7 +46,7 @@
       width: 20px;
       min-width: 20px;
       height: 20px;
-      border: 1px solid $label_checked--bd;
+      border: 1px solid $dark-25;
       border-radius: 4px;
       transition: all 0.15s;
     }
@@ -64,7 +64,7 @@
   }
 
   &_thick {
-    color: $label_thick--txt;
+    color: $dark-75;
     font-weight: bold;
     cursor: pointer;
     user-select: none;

@@ -27,7 +27,7 @@
     width: 40px;
     height: 20px;
     margin: auto 0;
-    border: 1px solid $input-toggle__slider--bd;
+    border: 1px solid $dark-25;
     border-radius: 34px;
     cursor: pointer;
     transition: 0.4s;
@@ -41,7 +41,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: $input-toggle__slider--bg;
+      background: $dark-25;
       transition: 0.4s;
       transform: translate(0px, -50%);
     }
@@ -53,8 +53,8 @@
     }
 
     &:checked + #{$input-toggle}__slider:before {
-      background: $input-toggle__tab_check_lb--bg;
-      box-shadow: inset 0px -6px 5px -2px $input-toggle__tab_check_lb--shadow;
+      background: $purple;
+      box-shadow: inset 0px -6px 5px -2px $purpure-light;
       transform: translate(20px, -50%);
     }
   }

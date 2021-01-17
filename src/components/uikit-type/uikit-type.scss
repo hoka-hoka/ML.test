@@ -1,11 +1,11 @@
 $colors: (
-  'dark-100': $x-dark,
-  'dark-75': transparentize($x-dark, 0.25),
-  'dark-50': transparentize($x-dark, 0.5),
-  'dark-25': transparentize($x-dark, 0.75),
-  'dark-5': transparentize($x-dark, 0.95),
-  'purple': $x-purple,
-  'green': $x-green,
+  'dark-100': $dark,
+  'dark-75': transparentize($dark, 0.25),
+  'dark-50': transparentize($dark, 0.5),
+  'dark-25': transparentize($dark, 0.75),
+  'dark-5': transparentize($dark, 0.95),
+  'purple': $purple,
+  'green': $green,
 );
 
 .uikit-type {
@@ -47,7 +47,7 @@ $colors: (
   }
 
   &__title {
-    color: $x-dark;
+    color: $dark;
     font-size: rem(19);
     line-height: 27px;
   }
@@ -112,19 +112,19 @@ $colors: (
 
   &__text {
     &_first-level {
-      color: $x-dark;
+      color: $dark;
       font-weight: 700;
       font-size: 24px;
     }
 
     &_second-level {
-      color: $x-dark;
+      color: $dark;
       font-weight: 700;
       font-size: 19px;
     }
 
     &_third-level {
-      color: $x-dark;
+      color: $dark;
       font-weight: 700;
       font-size: 12px;
       text-transform: uppercase;

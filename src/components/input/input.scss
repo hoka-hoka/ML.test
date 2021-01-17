@@ -12,9 +12,9 @@ element {
     width: 100%;
     height: 44px;
     padding: 0 28px 0 14px;
-    border: 1px solid $input--br;
+    border: 1px solid $dark-25;
     border-radius: 4px;
-    color: $input__field--txt;
+    color: $dark-75;
     font-size: rem(14);
     font-family: $mainFont;
 
@@ -24,14 +24,14 @@ element {
     }
 
     &::placeholder {
-      color: $input__field_placeholder--txt;
+      color: $dark-25;
       font-size: rem(14px);
       font-family: $mainFont;
       line-height: rem(14px, 18px);
     }
 
     &_placeholder-dark::placeholder {
-      color: $input_placeholder-dark--txt;
+      color: $dark-75;
       font-size: rem(14px);
       font-family: $mainFont;
       line-height: rem(14px, 18px);

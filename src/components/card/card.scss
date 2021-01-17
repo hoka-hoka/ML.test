@@ -8,7 +8,7 @@
   &__value {
     margin-right: 4px;
     margin-left: auto;
-    color: $card__value--col;
+    color: $dark-50;
     font-weight: bold;
     font-size: rem(14);
   }
@@ -44,8 +44,8 @@
     height: 1px;
     margin-top: 10px;
     margin-bottom: 9px;
-    background-color: $card__line--txt;
-    color: $card__line--txt;
+    background-color: $gray-10;
+    color: $gray-10;
   }
 
   &__item {
@@ -79,7 +79,7 @@
 
   &__number {
     padding-right: 5px;
-    color: $card__number--text;
+    color: $dark;
     font-weight: 700;
     font-size: rem(20);
     font-family: $additionalFont;
@@ -91,7 +91,7 @@
   }
 
   &__status {
-    color: $card__status--txt;
+    color: $purple;
     font-weight: 700;
     font-size: rem(12);
     text-transform: uppercase;
@@ -99,7 +99,7 @@
 
   &__price {
     padding-right: 3px;
-    color: $card__price--txt;
+    color: $dark-50;
     font-weight: 700;
     font-size: rem(14);
     letter-spacing: -0.4px;
@@ -112,7 +112,7 @@
 
   &__about {
     padding-right: 2px;
-    color: $card__about--col;
+    color: $dark-50;
     font-size: rem(14);
   }
 }

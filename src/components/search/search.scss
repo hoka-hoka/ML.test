@@ -71,7 +71,7 @@
 
   &__title {
     margin-bottom: 20px;
-    color: $search__title--txt;
+    color: $dark;
     font: bold em(24) $secondFont;
     line-height: em(30, 24);
     @media (max-width: 320px) {

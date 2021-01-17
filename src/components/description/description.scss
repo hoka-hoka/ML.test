@@ -33,7 +33,7 @@
 
   &__room-number {
     padding-right: 5px;
-    color: $description__room-number--txt;
+    color: $dark;
     font-weight: bold;
     font-size: rem(24);
     font-family: quicksand, Arial, sans-serif;
@@ -45,7 +45,7 @@
   }
 
   &__room-luxury {
-    color: $description__room-luxury--txt;
+    color: $purple;
     font-weight: bold;
     font-size: rem(12);
     text-transform: uppercase;
@@ -53,7 +53,7 @@
 
   &__room-price {
     padding-right: 3px;
-    color: $description__room-price--txt;
+    color: $dark-50;
     font-weight: bold;
     font-size: rem(15);
     letter-spacing: -0.4px;
@@ -115,7 +115,7 @@
     flex-grow: 1;
     height: 18px;
     margin: 0 5px;
-    border-bottom: 1px dotted $description__line--bd;
+    border-bottom: 1px dotted $dark-25;
   }
 
   &__price-item {
@@ -143,9 +143,9 @@
       position: absolute;
       width: 20px;
       height: 20px;
-      border: 1px solid $accetes--bd;
+      border: 1px solid $dark-25;
       border-radius: 50%;
-      color: $accetes--txt;
+      color: $dark-25;
       line-height: rem(18, 14);
       text-align: center;
     }
