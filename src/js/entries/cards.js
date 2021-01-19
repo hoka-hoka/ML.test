@@ -1,3 +1,4 @@
+import 'jquery';
 import '../../scss/normalize.scss';
 
 import '../../components/button/button';

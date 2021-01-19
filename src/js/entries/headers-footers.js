@@ -1,3 +1,4 @@
+import 'jquery';
 import '../../scss/normalize.scss';
 
 import '../../components/uikit-header-footer/uikit-header-footer';

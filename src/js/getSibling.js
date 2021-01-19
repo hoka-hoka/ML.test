@@ -1,6 +1,5 @@
 function getSibling(start, list) {
   // ищет элемент list внутри родителя элемента start
-
   let sibling = start.parentNode.firstElementChild;
   while (sibling) {
     if (typeof list === 'object') {

@@ -1,9 +1,11 @@
 {
   "env": {
-    "es6": true
+    "es6": true,
+    "browser": true
   },
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb-base", "prettier"],
   "rules": {
+    "max-classes-per-file": ["error", 2],
     "linebreak-style": ["error", "windows"], // CRLF - windows and LF - unix
     "func-names": ["error", "never"],
     "for-direction": "error",

@@ -1,10 +1,11 @@
 // vue.config.js
 const CopyPlugin = require('copy-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 const devMode = process.env.NODE_ENV !== 'production';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const plugins = [];
 if (!devMode) {
   // enable in production only
@@ -26,6 +27,12 @@ plugins.push(
       to: path.resolve(__dirname, 'dist/fonts'),
     },
   ]),
+  new webpack.ProvidePlugin({
+    $: 'jquery/dist/jquery.min.js',
+    jQuery: 'jquery/dist/jquery.min.js',
+    'window.jQuery': 'jquery/dist/jquery.min.js',
+    'window.$': 'jquery/dist/jquery.min.js',
+  }),
 );
 
 module.exports = {
@@ -112,9 +119,7 @@ module.exports = {
           exclude: /node_modules/,
           use: [
             devMode
-              ? {
-                  loader: 'vue-style-loader',
-                }
+              ? { loader: 'vue-style-loader' }
               : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
@@ -135,7 +140,7 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 sourceMap: false,
-                additionalData: `@import "scss/utils";`,
+                additionalData: '@import "scss/utils";',
                 sassOptions: {
                   includePaths: [__dirname, 'src'],
                 },
@@ -147,7 +152,7 @@ module.exports = {
     },
   },
 
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.module.rules.delete('sass');
     config.module.rules.delete('postcss');
     config.module.rules.delete('less');
@@ -175,7 +180,7 @@ module.exports = {
 };
 
 // 1. Если есть изображения в html они не обрабатываются url-loader и file-loader -и.
-/* 2. minCssExtractPlugin - создаёт файлы стилей для каждой точки входа. 
+/* 2. minCssExtractPlugin - создаёт файлы стилей для каждой точки входа.
 Также он поддерживает модульное подключение стилей через import */
 /*
   style-loader - создаёт узлы стилей из строк JS
