@@ -1,5 +1,5 @@
 import './input-range.scss';
-import multirange from '../../js/multiRange';
+import multirange from '../../common/multiRange';
 
 if (document.body.id === 'product') {
   let range = document.querySelector('.input-range_pull-js');

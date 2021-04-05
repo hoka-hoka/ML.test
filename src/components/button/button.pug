@@ -1,5 +1,5 @@
 mixin button(btn)
-  - const {theme, text, mod, data} = btn;
+  - const {theme, text, data, tabindex, mod} = btn;
   - let modClasses = '';
   - if (mod) {
   -   let styles = Object.values(mod);
@@ -9,7 +9,12 @@ mixin button(btn)
   - }
   - let fieldText = theme ? '' : text;
 
-  button.button(type="button" class=modClasses data=btn.data)=fieldText
+  button.button(
+    type="button"
+    class=modClasses
+    data=btn.data
+    tabindex=(tabindex ? tabindex : 0)
+    )=fieldText
     case theme
       when "light"
         .button__text.button__text_boundary=text
@@ -17,9 +22,9 @@ mixin button(btn)
       when "purple"
         .button__text.button__text_flooded=text
       when "mark-minus"
-        .button__mark.button__mark_minus.button__mark_default.button__mark_minus-js(type="button" class=mix)
+        .button__mark.button__mark_minus.button__mark_default.button__mark_minus-js(class=mix)
       when "mark-plus"
-        .button__mark.button__mark_plus.button__mark_plus-js(type="button" class=mix)
+        .button__mark.button__mark_plus.button__mark_plus-js(class=mix)
       when "prev-arrow"
         +icon({
           id: "arrow-big",

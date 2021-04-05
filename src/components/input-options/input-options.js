@@ -1,6 +1,6 @@
 import './input-options.scss';
-import { amountList } from '../../js/amountList';
-import { setSiblingIteration } from '../../js/getSibling';
+import AmountList from '../../common/AmountList';
+import Sibling from '../../common/Sibling';
 
 let guesName = [
   ['гость', 'гостя', 'гостей'],
@@ -15,21 +15,25 @@ let roomName = [
 
 let input = document.querySelectorAll('.input__field_clicked-js');
 if (input) {
-  input.forEach(value => {
-    const optionList = setSiblingIteration(2, value, 'input-options_init-js');
+  input.forEach((value) => {
+    const optionList = Sibling.getOlderSibling({
+      iter: 2,
+      $elem: $(value),
+      find: 'input-options_init-js',
+    });
     if (!optionList) {
       return;
     }
     if (value.getAttribute('data-role') === 'gues') {
-      createList(optionList, guesName);
+      createList(optionList.get(0), guesName);
     } else if (value.getAttribute('data-role') === 'room') {
-      createList(optionList, roomName);
+      createList(optionList.get(0), roomName);
     } else return;
   });
 }
 
 function createList(list, name) {
-  let newList = new amountList(list, name);
+  let newList = new AmountList(list, name);
   newList.amountPerson();
   addButtonsPanel(newList);
 }
@@ -42,18 +46,20 @@ function addButtonsPanel(objList) {
   if (!buttonsPanel) {
     return;
   }
-  optionList.addEventListener('click', event => {
+  optionList.addEventListener('click', (event) => {
     if (event.target.classList.contains('button_prev-js')) {
       objList.clearAmount();
     } else if (event.target.classList.contains('button_next-js')) {
       objList.toApply();
-      const inputEvent = new Event('click');
-      const eventTarget = setSiblingIteration(
-        4,
-        optionList,
-        'input__field_clicked-js',
-      );
-      eventTarget.dispatchEvent(inputEvent);
+      const eventTarget = Sibling.getOlderSibling({
+        iter: 4,
+        $elem: $(optionList),
+        find: 'input__field_clicked-js',
+      });
+      if (eventTarget?.length) {
+        const inputEvent = new Event('mousedown');
+        eventTarget.get(0).dispatchEvent(inputEvent);
+      }
     } else return;
   });
 }

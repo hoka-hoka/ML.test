@@ -1,36 +1,31 @@
 import './calendar.scss';
-import { createCalendar } from '../../js/calendar';
-import { setSiblingIteration, getSibling } from '../../js/getSibling';
+import Sibling from '../../common/Sibling';
+import createCalendar from '../../common/createCalendar';
+import { month } from '../../js/constants';
 
-const month = [
-  'Январь',
-  'Февраль',
-  'Март',
-  'Апрель',
-  'Май',
-  'Июнь',
-  'Июль',
-  'Август',
-  'Сентябрь',
-  'Октябрь',
-  'Ноябрь',
-  'Декабрь',
-];
-const calendarBtn = document.querySelectorAll(
-  '.input-date_js .button_clicked-js',
-);
+const $date = $('.input-date__field_js');
+
+if ($date.length) {
+  $date.each((_, item) => {
+    const $interact = $(item).find(
+      '.input__field_clicked-js, .button_clicked-js',
+    );
+
+    $(item).on('click', () => {
+      const calendar = Sibling.getOlderSibling({
+        iter: 2,
+        $elem: $(item),
+        find: 'calendar',
+      });
+      if (calendar.length) {
+        createCalendar(calendar.get(0));
+      }
+    });
+  });
+}
+
 const calendarDay = document.querySelectorAll('.input-date_js');
 const btn = document.querySelectorAll('.calendar .button_purple');
-
-if (
-  document.body.id === 'index' ||
-  document.body.id === 'details' ||
-  document.body.id === 'product' ||
-  document.body.id === 'elements' ||
-  document.body.id === 'form'
-) {
-  dateFormat();
-}
 
 if (document.body.id === 'form') {
   let calendar = document.querySelector(
@@ -43,21 +38,25 @@ if (document.body.id === 'form') {
 }
 
 if (btn.length) {
-  btn[0].addEventListener('click', event => {
+  btn[0].addEventListener('click', (event) => {
     clearDate(calendarDay);
   });
 
-  btn[1].addEventListener('click', event => {
+  btn[1].addEventListener('click', (event) => {
     clearDate(calendarDay);
     let tdActive = document.querySelectorAll(
       '.calendar__day-num.calendar__day-num_active',
     );
     tdActive.forEach((v, i, arr) => {
-      let checkDate = setSiblingIteration(
-        4,
-        v,
-        'calendar__month',
-      ).innerHTML.split(' ');
+      let checkDate = Sibling.getOlderSibling({
+        iter: 4,
+        $elem: $(v),
+        find: 'calendar__month',
+      });
+      if (!checkDate) {
+        return;
+      }
+      checkDate = checkDate.get(0).innerHTML.split(' ');
       let day = new Date(
         checkDate[1],
         month.indexOf(checkDate[0]),
@@ -65,7 +64,7 @@ if (btn.length) {
       );
       if (calendarDay.length !== 1) {
         if (arr.length === 1) {
-          [...calendarDay].map(num => {
+          [...calendarDay].map((num) => {
             return (num.value = day
               .toLocaleString('ru')
               .slice(0, 10)
@@ -74,7 +73,9 @@ if (btn.length) {
               .join('-'));
           });
         } else {
-          calendarDay[i].querySelector('.input__field_clicked-js').value = day
+          calendarDay[i].querySelector(
+            '.input__field_clicked-js',
+          ).value = day
             .toLocaleString('ru')
             .slice(0, 10)
             .split('.')
@@ -91,15 +92,6 @@ if (btn.length) {
     });
     closeCalendar();
   });
-}
-
-function dateFormat() {
-  for (let i of calendarBtn) {
-    i.addEventListener('click', event => {
-      let calendar = setSiblingIteration(5, event.target, 'calendar'); // calendar
-      createCalendar(calendar);
-    });
-  }
 }
 
 function closeCalendar() {

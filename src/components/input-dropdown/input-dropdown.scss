@@ -3,6 +3,24 @@
 
   &__field {
     position: relative;
+
+    &_active {
+      & .input-options {
+        display: block;
+        border: 1px solid $dark-50;
+        border-top: 0;
+      }
+
+      & .input__field {
+        border: 1px solid $dark-50;
+        border-bottom-right-radius: initial;
+        border-bottom-left-radius: initial;
+      }
+    }
+  }
+
+  & .input__field {
+    cursor: pointer;
   }
 
   &__descr {
@@ -13,19 +31,5 @@
     font-size: rem(12);
     line-height: 15px;
     text-transform: uppercase;
-  }
-
-  &_active {
-    & .input-options {
-      display: block;
-      border: 1px solid $dark-50;
-      border-top: 0;
-    }
-
-    & .input__field {
-      border: 1px solid $dark-50;
-      border-bottom-right-radius: initial;
-      border-bottom-left-radius: initial;
-    }
   }
 }

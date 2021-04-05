@@ -8,13 +8,14 @@ mixin input-list(list)
   -   }
   - }
 
-  .input-list.input-list_js(class=modClasses)
+  .input-list.input-list_js(class=modClasses tabindex="0")
     +label({
       text: text,
       mod: {weigth: "large", clicked: "js"},
     })
     +button({
-      mod: {arrow: "arrow", clicked: "clicked-js"}
+      tabindex: "-1",
+      mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"}
     })
     .input-list__options
       each value, index in additional

@@ -4,11 +4,11 @@ mixin input-dropdown(dropdown)
   - if (mod) {
   -   let styles = Object.values(mod);
   -   for (index in styles) {
-  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-dropdown_' + styles[index];
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input-dropdown__field_' + styles[index];
   -   }
   - }
 
-  .input-dropdown.input-dropdown_js(class=modClasses)
+  .input-dropdown.input-dropdown_js
     .input-dropdown__top
       +label({
         forId: id,
@@ -18,18 +18,23 @@ mixin input-dropdown(dropdown)
       if descr
         span.input-dropdown__descr=descr
 
-    .input-dropdown__field
+    .input-dropdown__field(class=modClasses tabindex="0" role="button" aria-haspopup="true" aria-expanded="false")
       +input({
         type: "text",
         id: id,
         value: value,
         placeholder: placeholder,
-        role: role,
         readonly: true,
+        role: role,
+        tabindex: -1,
         mod: {clicked: "clicked-js", placeholderClolor: "placeholder-dark"},
+        aria: {ariaHidden: true},
       })
       +button({
-        mod: {arrow: "arrow", clicked: "clicked-js"}
+        ariaHospopup: true,
+        ariaLabel: "Расскрыть список",
+        tabindex: -1,
+        mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"},
       })
       +input-options({
         role: role,

@@ -3,9 +3,9 @@
 
   position: relative;
   display: inline-block;
-  background-origin: border-box;
   font: bold rem(12) 'Montserrat';
   text-transform: uppercase;
+  background-origin: border-box;
   cursor: pointer;
 
   &_high {
@@ -30,9 +30,9 @@
       height: 40px;
       margin: 2px;
       padding: 0 17px;
-      border-radius: 18px;
-      background: #fff;
       color: $purple;
+      background: #fff;
+      border-radius: 18px;
 
       &:hover ~ #{$button}__light {
         background: linear-gradient(
@@ -49,9 +49,9 @@
       justify-content: center;
       height: 44px;
       padding: 0 20px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       color: $white;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 22px;
 
       &:hover {
         opacity: 0.5;
@@ -65,8 +65,12 @@
     right: 0;
     bottom: 0;
     left: 0;
-    border-radius: 20px;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 20px;
+  }
+
+  &_focused {
+    outline: none;
   }
 
   &_broad {
@@ -93,9 +97,9 @@
     position: absolute;
     top: 1px;
     z-index: 1;
+    transform: rotate(180deg);
     cursor: pointer;
     fill: $purple;
-    transform: rotate(180deg);
   }
 
   &_next_arrow {
@@ -118,11 +122,11 @@
     transform: translate(0, -50%);
 
     &::after {
-      content: '\f004';
       color: $dark-50;
       font-size: 14px;
       font-family: $iconFont;
       font-family: 'fontello';
+      content: '\f004';
     }
   }
 
@@ -131,12 +135,12 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    border: 1px solid $dark-25;
-    border-radius: 50%;
     color: $dark-50;
     font-size: em(18);
     font-family: $mainFont;
     line-height: em(22, 18);
+    border: 1px solid $dark-25;
+    border-radius: 50%;
     cursor: pointer;
 
     &_plus:after,

@@ -1,9 +1,23 @@
 import './input-date.scss';
-import dropDown from '../../js/dropDown';
+import DropDown from '../../common/DropDown';
+import Sibling from '../../common/Sibling';
 
-const active = document.querySelectorAll('.input-date_js .button_clicked-js');
-if (active) {
-  active.forEach((value) => {
-    dropDown(value, value.closest('.input-date_js'), 'input-date_active');
+const $drop = $('.input-date__field_js');
+if ($drop.length) {
+  $drop.each((index, item) => {
+    const $calendar = Sibling.getOlderSibling({
+      iter: 2,
+      $elem: $(item),
+      find: 'calendar',
+    });
+
+    const listOptions = {
+      $elem: $(item).find('.button_clicked-js'),
+      $par: $(item).parent(),
+      $list: $calendar,
+      $focus: $(item),
+      addedClass: 'input-date_active',
+    };
+    new DropDown(listOptions);
   });
 }

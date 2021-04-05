@@ -5,7 +5,7 @@ const optionsExample = document.querySelectorAll(
 );
 
 if (optionsExample) {
-  optionsExample.forEach(v => {
+  optionsExample.forEach((v) => {
     setOptionAmount(v);
   });
 }
@@ -36,10 +36,4 @@ function setOptionAmount(element) {
     }
     crateEvent(dropdownOptions[1].querySelector('.button__mark_plus-js'));
   }
-  // else if (element === 'check' && v.closest('.rectangle_example_js')) {
-  //   const options = v.nextElementSibling.querySelectorAll('.input-checkbox');
-  //   options[1].checked = true;
-  //   options[2].checked = true;
-  //   options[3].checked = true;
-  // }
 }

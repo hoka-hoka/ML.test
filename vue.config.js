@@ -26,6 +26,10 @@ plugins.push(
       from: path.resolve(__dirname, 'src/assets/fonts'),
       to: path.resolve(__dirname, 'dist/fonts'),
     },
+    {
+      from: path.resolve(__dirname, 'dll/vendor.bundle.js'),
+      to: path.resolve(__dirname, 'dist/js'),
+    },
   ]),
   new webpack.ProvidePlugin({
     $: 'jquery/dist/jquery.min.js',
@@ -173,6 +177,14 @@ module.exports = {
       .options({
         limit: 4096,
       });
+
+    /* reference to DLL manifest */
+    config.plugin('vendorDll').use(webpack.DllReferencePlugin, [
+      {
+        context: __dirname,
+        manifest: require('./dll/vendor-manifest.json'),
+      },
+    ]);
   },
 
   productionSourceMap: false,

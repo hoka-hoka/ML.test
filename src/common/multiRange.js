@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
   let supportsMultiple =
     self.HTMLInputElement && 'valueLow' in HTMLInputElement.prototype;
@@ -7,7 +7,7 @@
     'value',
   );
 
-  let multirange = function(input, price, num) {
+  let multirange = function (input, price, num) {
     if (supportsMultiple || input.classList.contains('multirange')) {
       return;
     }
@@ -21,7 +21,7 @@
     divRange.className = 'input-range__band';
 
     input.classList.add(inputClass + '_multirange', inputClass + '_original');
-    ghost.classList.add(inputClass + '_multirange', inputClass + '_ghostly');
+    ghost.classList.add(inputClass + '_multirange', inputClass + '_ghost');
 
     input.value = values[0] || min + (max - min) / 2;
     ghost.value = values[1] || min + (max - min) / 2;
@@ -33,10 +33,10 @@
       descriptor.get
         ? descriptor
         : {
-            get: function() {
+            get: function () {
               return this.value;
             },
-            set: function(v) {
+            set: function (v) {
               this.value = v;
             },
           },
@@ -45,19 +45,19 @@
     Object.defineProperties(input, {
       // сразу для нескольких свойств
       valueLow: {
-        get: function() {
+        get: function () {
           return Math.min(this.originalValue, ghost.value);
         },
-        set: function(v) {
+        set: function (v) {
           this.originalValue = v;
         },
         enumerable: true,
       },
       valueHigh: {
-        get: function() {
+        get: function () {
           return Math.max(this.originalValue, ghost.value);
         },
-        set: function(v) {
+        set: function (v) {
           ghost.value = v;
         },
         enumerable: true,
@@ -93,7 +93,7 @@
     update();
   };
 
-  multirange.init = function() {
+  multirange.init = function () {
     [].slice
       .call(
         document.querySelectorAll(

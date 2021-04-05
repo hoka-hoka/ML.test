@@ -4,12 +4,6 @@ import '../../scss/normalize.scss';
 import '../../components/button/button';
 import '../../components/icon/icon';
 
-import '../../components/uikit-elements/uikit-elements';
-import '../../components/uikit-cards/uikit-cards';
-import '../../components/uikit-dropdowns/uikit-dropdowns';
-import '../../components/uikit-boxes/uikit-boxes';
-import '../../components/uikit-additionally/uikit-additionally';
-
 import '../../components/intelligence/intelligence';
 import '../../components/reviews/reviews';
 import '../../components/rule/rule';
@@ -37,3 +31,9 @@ import '../../components/calendar/calendar';
 import '../../components/heart/heart';
 import '../../components/rating/rating';
 import '../../components/pagination/pagination';
+
+import '../../components/uikit-elements/uikit-elements';
+import '../../components/uikit-cards/uikit-cards';
+import '../../components/uikit-dropdowns/uikit-dropdowns';
+import '../../components/uikit-boxes/uikit-boxes';
+import '../../components/uikit-additionally/uikit-additionally';

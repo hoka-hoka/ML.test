@@ -1,5 +1,6 @@
 mixin input(input)
-  - const {text, id, labelHidden, descr, type, value, placeholder, role, readonly, autocorrect, inputmode, autocomplete, patern, onfocus, onblur, maxlength, mod} = input;
+  - const {text, id, labelHidden, descr, type, value, placeholder, role, readonly, autocorrect, inputmode, autocomplete, patern, onfocus, onblur, maxlength, tabindex, mod, aria} = input;
+  - const {ariaHidden} = aria || 0;
   - let modClasses = '';
   - if (mod) {
   -   let styles = Object.values(mod);
@@ -9,15 +10,15 @@ mixin input(input)
   - }
 
   .input
-    .input__top
-      if text
+    if text
+      .input__top
         +label({
           forId: id,
           text: text,
           mod: {visible: labelHidden ? "hidden" : "large"},
         })
-      if descr
-        span.input__descr=descr
+        if descr
+          span.input__descr=descr
     input.input__field(
       class=modClasses
       id=id 
@@ -34,4 +35,6 @@ mixin input(input)
       onfocus=(onfocus ? onfocus : false)
       onblur=(onblur ? onblur : false)
       maxlength=(maxlength ? maxlength : false)
+      tabindex=(tabindex ? tabindex : 0)
+      aria-hidden=(ariaHidden ? true : false)
       )

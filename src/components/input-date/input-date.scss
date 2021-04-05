@@ -2,15 +2,15 @@
   position: relative;
   cursor: default;
 
-  &_active ~ .calendar {
-    display: block;
-  }
-
   &__field {
     position: relative;
   }
 
   &_wide {
     flex-basis: 100%;
+  }
+
+  &_active ~ .calendar {
+    display: block;
   }
 }
