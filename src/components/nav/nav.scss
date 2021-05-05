@@ -16,15 +16,16 @@
       z-index: 3;
       width: max-content;
       height: auto;
+      background-color: #fff;
       border: 1px solid $dark-10;
       border-radius: 0 0 5px;
-      background-color: #fff;
       transition-duration: 0.25s;
     }
   }
 
   &__list {
     display: flex;
+    align-items: center;
     color: $dark-50;
 
     @media (max-width: 1023px) {
@@ -47,8 +48,8 @@
     & .button {
       position: static;
       padding: 0px 7px;
-      cursor: pointer;
       transform: unset;
+      cursor: pointer;
 
       & span {
         color: rgba(#1f2041, 0.5);
@@ -115,13 +116,13 @@
     }
 
     & > #{$nav}__hamburger::before {
-      content: '';
       top: -8px;
+      content: '';
     }
 
     & > #{$nav}__hamburger::after {
-      content: '';
       top: 8px;
+      content: '';
     }
   }
 }

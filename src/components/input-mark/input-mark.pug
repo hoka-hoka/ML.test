@@ -1,13 +1,14 @@
 mixin input-mark(mark)
-  - const {id, text, description} = mark;
+  - const {id, text, status, description} = mark;
   - let fontWeigth = '';
   - if ( description ) {
-  -  let fontWeigth = 'thick';
+  -  fontWeigth = 'thick';
   - }
 
   .input-mark(tabindex="0")
     +input-checkbox({
       id: id,
+      status: status,
       mod: {visible: "hidden"},
     })
     +label({

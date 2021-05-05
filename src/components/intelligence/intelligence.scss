@@ -9,12 +9,12 @@
   }
 
   &__pick {
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     width: 48px;
     height: 48px;
-    padding: 4px;
     text-align: center;
   }
 
@@ -38,8 +38,8 @@
 
   &__container {
     display: inline-block;
-    vertical-align: middle;
     padding: 0 10px;
+    vertical-align: top;
   }
 
   &__accent {

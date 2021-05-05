@@ -1,4 +1,6 @@
+import '../../components/loader/loader';
 import 'jquery';
+
 import '../../scss/normalize.scss';
 
 import '../../components/header/header';
@@ -11,9 +13,8 @@ import '../../components/icon/icon';
 import '../../components/banner/banner';
 import '../../components/search/search';
 
+import '../../components/swiper/swiper';
 import '../../components/swiper-container/swiper-container';
-import '../../components/swiper-next/swiper-next';
-import '../../components/swiper-prev/swiper-prev';
 
 import '../../components/label/label';
 import '../../components/input/input';

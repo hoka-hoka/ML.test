@@ -1,8 +1,8 @@
 .uikit-boxes {
   display: grid;
-  grid-template-columns: 320px 266px 320px;
   grid-auto-flow: column;
   grid-gap: 0 126px;
+  grid-template-columns: 320px 266px 320px;
   margin: 172px 141px 0;
 
   &__title {
@@ -16,6 +16,10 @@
 
   &__list:first-child {
     width: 266px;
+  }
+
+  &__list:last-child .rule__list {
+    padding: 0;
   }
 
   &__checkbox-list:first-child {

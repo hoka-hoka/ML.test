@@ -19,7 +19,7 @@ mixin reviews(reviews)
               .reviews__like
                 +heart({
                   amount: val.like,
-                  mod: {clicked: "active-js"},
+                  mod: val.active ? {clicked: 'active-js'} : false,
                 })
             .reviews__descr
               .reviews__text=val.review

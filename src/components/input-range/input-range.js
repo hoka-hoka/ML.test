@@ -6,6 +6,6 @@ if (document.body.id === 'product') {
   if (range) {
     let inputRange = range.querySelector('.input-range__field');
     let priceElem = range.querySelector('.input-range__price');
-    multirange(inputRange, priceElem, '5000');
+    multirange(inputRange, priceElem, '16000');
   }
 }

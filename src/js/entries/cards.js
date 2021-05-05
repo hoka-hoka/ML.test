@@ -1,3 +1,4 @@
+import '../../components/loader/loader';
 import 'jquery';
 import '../../scss/normalize.scss';
 
@@ -6,14 +7,13 @@ import '../../components/icon/icon';
 
 import '../../components/uikit-forms/uikit-forms';
 import '../../components/search/search';
-import '../../components/registration/registration';
+import '../../components/reg/reg';
 import '../../components/description/description';
-import '../../components/authorization/authorization';
+import '../../components/auth/auth';
 import '../../components/card/card';
 
+import '../../components/swiper/swiper';
 import '../../components/swiper-container/swiper-container';
-import '../../components/swiper-next/swiper-next';
-import '../../components/swiper-prev/swiper-prev';
 
 import '../../components/label/label';
 import '../../components/input/input';

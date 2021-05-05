@@ -17,7 +17,7 @@ mixin description()
                 if date != undefined
                   +input-date({
                     id: date_id[i],
-                    placeholder: date[i],
+                    value: date[i],
                     text: ds_label[i],
                   })
                 else
@@ -46,7 +46,7 @@ mixin description()
                 span.description__accent Сбор за услуги: скидка 2 179₽
                 span.description__text 0₽
               li.description__price-item
-                span.description__accent Сбор за дополнительные услуги
+                span.description__accent Сбор за доп. услуги
                 span.description__text 300₽
           li.description__item.description__item_middle_margin-bottom
             .description__result

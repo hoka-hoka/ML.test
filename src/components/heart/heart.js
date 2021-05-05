@@ -3,8 +3,9 @@ import './heart.scss';
 let customer = document.querySelectorAll('.heart__btn_js');
 if (customer.length > 0) {
   customer.forEach((val, i) => {
-    val.addEventListener('click', event => {
+    val.addEventListener('click', (event) => {
       toggleHeart(val, 'heart__btn_active');
+
       const amountLike = event.target.parentNode.querySelector(
         '.heart__amount_js',
       );
@@ -17,6 +18,7 @@ if (customer.length > 0) {
   });
 }
 const activeCustomer = document.querySelectorAll('.heart__btn_active-js');
+
 if (activeCustomer.length) {
   activeCustomer.forEach((val, i) => {
     val.classList.add('heart__btn_active');

@@ -4,6 +4,7 @@ block intelligenceList
 block reviewList
 block markList
 block optionsList
+block swiperList
 block cardsList
 block dateList
 block navList
@@ -14,6 +15,8 @@ block searchList
 block descriptionList
 block socialIconList
 
+
+include ../src/components/loader/loader
 include ../src/components/icon/icon
 include ../src/components/calendar/calendar
 include ../src/components/button/button
@@ -48,11 +51,9 @@ include ../src/components/logo/logo
 include ../src/components/user/user
 include ../src/components/details/details
 include ../src/components/banner/banner
-include ../src/components/registration/registration
-include ../src/components/authorization/authorization
+include ../src/components/reg/reg
+include ../src/components/auth/auth
 include ../src/components/home/home
-include ../src/components/sign-in/sign-in
-include ../src/components/sign-up/sign-up
 include ../src/components/product/product
 include ../src/components/footer-mobile/footer-mobile
 include ../src/components/social-icon/social-icon
@@ -72,36 +73,39 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
   title #{title}
 body(id=title)
-  each temp in templates
-    case temp
-      when "header"
-        +header()
-      when "banner"
-        +banner({
-          mixinName: "search",
-        })
-      when "footer"
-        +footer()
-      when "sprite"
-        include ../src/assets/img/svg/sprite.svg
-      when "product"
-        +product()
-      when "details"
-        +details()
-      when "home"
-        +home()
-      when "authorization"
-        +sign-in()
-      when "registration"
-        +sign-up()
-      when "cards"
-        +uikit-type()
-      when "form"
-        +uikit-forms()
-      when "elements"
-        +uikit-elements()
-      when "header-footer"
-        +uikit-header-footer()
+  +loader()
+  .wrapper(hidden)
+    each temp in templates
+      case temp
+        when "header"
+          +header()
+        when "banner"
+          +banner({
+            text: "Лучшие номера для вашей работы, отдыха и просто вдохновения",
+            mixinName: "search",
+          })
+        when "footer"
+          +footer()
+        when "sprite"
+          include ../src/assets/img/svg/sprite.svg
+        when "product"
+          +product()
+        when "details"
+          +details()
+        when "home"
+          +home()
+        when "auth"
+          +auth()
+        when "reg"
+          +reg()
+        when "cards"
+          +uikit-type()
+        when "form"
+          +uikit-forms()
+        when "elements"
+          +uikit-elements()
+        when "header-footer"
+          +uikit-header-footer()
         
   script(type="text/javascript" src="js/vendor.bundle.js")
       

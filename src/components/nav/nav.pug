@@ -8,7 +8,7 @@ mixin nav()
         each v, i in navList
           if i == 0
             li.nav__item
-              a.nav__link.nav__link_active(disabled)
+              a.nav__link(disabled)
                 .nav__text=v
           else if i == 1 || i == 4
             li.nav__item

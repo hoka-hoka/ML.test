@@ -1,5 +1,3 @@
-block swiperList
-
 mixin banner(banner)
   - const {text, mixinName, mod} = banner;
   - let modClasses = '';
@@ -16,11 +14,11 @@ mixin banner(banner)
         each value in images
           .swiper-slide
             picture.swiper-side__pick
-              source(type="image/webp" srcset=value+".webp")
+              //- source(type="image/webp" srcset=value+".webp")
               source(type="image/jpeg" srcset=value+".jpg")
               img.swiper-side__img(src=value+".jpg", alt=alt)
 
     .banner__container(class=modClasses)
       if text
-        .banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+        .banner__text=text
       +#{mixinName}()

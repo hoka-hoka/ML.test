@@ -5,7 +5,7 @@ mixin header()
       +nav()
       .header__buttons
         .header__btn-login
-          a.header__link(href="website/registration.html" target="_blank" rel="nofollow noopener")
+          a.header__link(href="website/reg.html" target="_blank" rel="nofollow noopener" draggable="false")
             +button({
               theme: "light",
               text: "Войти",
@@ -20,7 +20,7 @@ mixin header()
               mod: {color: "dark"},
             })
         .header__btn-auth
-          a.header__link(href="website/authorization.html" target="_blank" rel="nofollow noopener")
+          a.header__link(href="website/auth.html" target="_blank" rel="nofollow noopener" draggable="false")
             +button({
               theme: "purple",
               text: "Зарегистрироваться",

@@ -10,6 +10,7 @@
   &__text {
     padding-left: 43px;
     font-size: rem(14px);
+    line-height: rem(22);
   }
 
   & input {
@@ -33,17 +34,17 @@
     transition: 0.4s;
 
     &:before {
-      content: '';
       position: absolute;
       top: 50%;
       bottom: 4px;
       left: 3px;
       width: 12px;
       height: 12px;
-      border-radius: 50%;
       background: $dark-25;
-      transition: 0.4s;
+      border-radius: 50%;
       transform: translate(0px, -50%);
+      transition: 0.4s;
+      content: '';
     }
   }
 

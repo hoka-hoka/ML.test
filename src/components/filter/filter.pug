@@ -1,4 +1,7 @@
+block markList
+
 mixin filter()
+
   .filter
     +input-checkbox({
       id: "filter",
@@ -31,7 +34,7 @@ mixin filter()
           li.filter__item-bottom 
             .filter__range
               +input-range({
-                value: "10,80",
+                value: "30,64",
                 text: "Диапазон цены",
                 footnote: "Стоимость за сутки пребывания в номере",
               })
@@ -46,7 +49,6 @@ mixin filter()
                   +input-mark({
                     id: "allowed-"+index,
                     text: value.title,
-                    description: value.descr,
                   })
           li.filter__item-bottom
             +label({

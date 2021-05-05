@@ -1,6 +1,5 @@
 mixin footer()
   footer.footer(role="contentinfo")
-    hr.footer__line
     .footer__container
       ul.footer__row
         li.footer__col.footer__logo
@@ -32,8 +31,8 @@ mixin footer()
       .footer__logo.footer__logo_show
         +logo()
       p.footer__cop Copyright © 
-        time(datetime='2018') 2018 &nbsp
-        | Toxin отель. Все права защищены.
+        time(datetime='2018') 2018
+        |  Toxin отель. Все права защищены.
       .footer__social
         each value in icons
           +social-icon({

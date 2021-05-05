@@ -1,8 +1,8 @@
 .uikit-cards {
   display: grid;
-  grid-template-columns: 320px 266px 320px;
   grid-auto-flow: column;
   grid-gap: 0 126px;
+  grid-template-columns: 320px 266px 320px;
   margin: 65px 141px 0;
 
   &__list {
@@ -56,6 +56,10 @@
   &__subscription-text {
     width: 266px;
     margin-top: 41px;
+  }
+
+  &__checkbox-buttons {
+    width: 240px;
   }
 
   &__mark {

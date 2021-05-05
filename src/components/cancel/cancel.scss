@@ -1,9 +1,11 @@
 .cancel {
   &__title {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   &__text {
-    line-height: rem(24, 14);
+    padding-right: 10px;
+    font-size: 14px;
+    line-height: rem(24);
   }
 }

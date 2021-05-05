@@ -13,10 +13,10 @@
 
     &:before,
     &:after {
-      content: '';
       flex-basis: 100%;
       order: 2;
       width: 0;
+      content: '';
     }
   }
 
@@ -32,12 +32,21 @@
     margin-top: unset;
   }
 
+  &__calendar .calendar__day-num {
+    position: relative;
+  }
+
   & .search {
     margin-top: 0;
   }
 
-  &__aut,
-  &__reg {
+  & .reg__img,
+  .auth__img {
+    display: none;
+  }
+
+  & .reg__cont,
+  .auth__cont {
     position: relative;
   }
 

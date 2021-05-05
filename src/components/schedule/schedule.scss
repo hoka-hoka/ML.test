@@ -1,24 +1,23 @@
 %p {
-  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   mix-blend-mode: lighten;
+  content: '';
 }
 $colors: #6fcf97 #66d2ea #bc9cff #8ba4f9 #ffe39c #ffba9c #919191 #3d4975;
-$deg-start: 1deg -89deg 136deg 91deg;
-$deg-end: 89deg -1deg 269deg -226deg;
+$deg-start: 1deg -89deg 91deg 0deg;
+$deg-end: 89deg -1deg 269deg 0deg;
 $i: 1;
 $m: 1;
 
 .schedule {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 161px));
+  grid-template-columns: repeat(auto-fit, minmax(151px, max-content));
 
   @each $col in lime, purpure, yellow, dark {
     &__item.#{$col}::before {
-      @extend %p;
       background-image: linear-gradient(
           nth($deg-start, $i),
           transparent 50%,
@@ -31,12 +30,13 @@ $m: 1;
           #000 calc(50% + 0.5px),
           #000
         );
+      @extend %p;
     }
 
     $i: $i + 1;
     &__item.#{$col}::after {
-      @extend %p;
       background-image: linear-gradient(nth($colors, $m), nth($colors, $m + 1));
+      @extend %p;
     }
     $m: $m + 2;
   }
@@ -53,8 +53,8 @@ $m: 1;
   }
 
   &__number {
+    margin-bottom: 4px;
     font-size: rem(24);
-    font-family: $secondFont;
     line-height: rem(30, 24);
   }
 
@@ -76,7 +76,7 @@ $m: 1;
     padding-bottom: 14px;
 
     &:last-child {
-      padding: 0;
+      padding-bottom: 6px;
     }
   }
 
@@ -90,7 +90,6 @@ $m: 1;
       &.#{$col} {
         background: linear-gradient(nth($colors, $i), nth($colors, $i + 1));
       }
-      // TODO: wrining
       $i: $i + 2;
     }
   }
@@ -100,7 +99,7 @@ $m: 1;
     position: absolute;
     width: 100%;
     height: 100%;
-    background: radial-gradient(#fff 63%, #000 65%, #000 68%, #fff 70%);
+    background: radial-gradient(#fff 64%, #000 68%, #000 68%, #fff 70%);
     mix-blend-mode: darken;
   }
 

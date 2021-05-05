@@ -1,3 +1,4 @@
+import '../../components/loader/loader';
 import 'jquery';
 
 import '../../scss/normalize.scss';

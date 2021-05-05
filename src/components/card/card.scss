@@ -30,9 +30,9 @@
     width: 8px;
     height: 8px;
     margin: 0 3px 2px 0;
+    background: transparent;
     border: 1px solid #fff;
     border-radius: 50%;
-    background: transparent;
     cursor: pointer;
 
     &_active {
@@ -44,21 +44,21 @@
     height: 1px;
     margin-top: 10px;
     margin-bottom: 9px;
-    background-color: $gray-10;
     color: $gray-10;
+    background-color: $gray-10;
   }
 
   &__item {
-    overflow: hidden;
     min-width: 210px;
-    border-radius: 4px;
+    overflow: hidden;
     background: #fff;
+    border-radius: 4px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
 
   &__img {
-    object-fit: cover;
     height: 100%;
+    object-fit: cover;
   }
 
   &__descr {
@@ -78,15 +78,14 @@
   }
 
   &__number {
-    padding-right: 5px;
+    padding-right: 8px;
     color: $dark;
     font-weight: 700;
     font-size: rem(20);
-    font-family: $additionalFont;
 
     &::before {
-      content: '№ ';
       font-size: rem(14);
+      content: '№ ';
     }
   }
 

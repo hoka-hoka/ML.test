@@ -43,7 +43,6 @@
     );
 
     Object.defineProperties(input, {
-      // сразу для нескольких свойств
       valueLow: {
         get: function () {
           return Math.min(this.originalValue, ghost.value);
@@ -85,7 +84,10 @@
         const maxPrice =
           Math.round((maxProc.slice(0, -1) * num) / 100 / 1000) * 1000;
         price.innerText =
-          minPrice.toLocaleString() + '₽ - ' + maxPrice.toLocaleString() + '₽';
+          minPrice.toLocaleString('ru-RU') +
+          '₽ - ' +
+          maxPrice.toLocaleString('ru-RU') +
+          '₽';
       }
     }
     input.addEventListener('input', update);

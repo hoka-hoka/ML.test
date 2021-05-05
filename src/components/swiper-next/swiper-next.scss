@@ -20,7 +20,6 @@
 }
 
 .swiper-next:after {
-  content: '';
   position: absolute;
   top: 50%;
   right: 20px;
@@ -29,7 +28,10 @@
   height: var(--card-nav-height);
   margin-top: calc(-1 * var(--card-nav-height) / 2);
   border: 2px solid white;
-  border-top: none;
-  border-left: none;
   transform: rotate(-45deg);
+  content: '';
+  border: {
+    top: none;
+    left: none;
+  }
 }

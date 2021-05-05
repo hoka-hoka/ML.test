@@ -1,3 +1,4 @@
+import '../../components/loader/loader';
 import 'jquery';
 import '../../scss/normalize.scss';
 
@@ -16,9 +17,8 @@ import '../../components/reviews/reviews';
 import '../../components/rule/rule';
 import '../../components/cancel/cancel';
 
+import '../../components/swiper/swiper';
 import '../../components/swiper-container/swiper-container';
-import '../../components/swiper-next/swiper-next';
-import '../../components/swiper-prev/swiper-prev';
 
 import '../../components/label/label';
 import '../../components/input/input';

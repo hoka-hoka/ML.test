@@ -20,8 +20,8 @@ $col: $white;
     align-items: center;
     justify-content: space-between;
     padding: 3px 12px 3px 0;
-    border-radius: 9px;
     background: #fff;
+    border-radius: 9px;
   }
 
   &__figure {
@@ -33,12 +33,12 @@ $col: $white;
 
     @each $val in after, before {
       &::#{$val} {
-        content: '';
         position: absolute;
         width: 3px;
         height: 3px;
-        border-radius: 50%;
         background-color: $col;
+        border-radius: 50%;
+        content: '';
         @include petal($val);
       }
     }
@@ -72,11 +72,11 @@ $col: $white;
 
   &__btn {
     display: inline-block;
-    overflow: hidden;
     width: 40px;
     padding: 1px;
-    border-radius: 10px;
+    overflow: hidden;
     background: linear-gradient(-180deg, $gray-25, $gray-25);
+    border-radius: 10px;
 
     &_active {
       background: linear-gradient(-180deg, $purple, $purpure-light);

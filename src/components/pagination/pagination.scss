@@ -1,5 +1,4 @@
 .pagination {
-  margin-bottom: 70px;
   text-align: center;
 
   &__text {
@@ -10,7 +9,7 @@
   &__list {
     display: inline-flex;
     justify-content: center;
-    margin-bottom: 11px;
+    margin-bottom: 14px;
   }
 
   &__link {
@@ -23,8 +22,8 @@
     text-align: center;
 
     &_next {
-      border-radius: 50%;
       background: linear-gradient(180deg, $green 0%, $green-light 100%);
+      border-radius: 50%;
     }
 
     &_next svg {
@@ -38,10 +37,10 @@
     }
 
     &_active {
-      border-radius: 50%;
-      background: linear-gradient(180deg, $purple 0%, $purpure-light 100%);
       color: #fff;
       font-weight: bold;
+      background: linear-gradient(180deg, $purple 0%, $purpure-light 100%);
+      border-radius: 50%;
     }
   }
 

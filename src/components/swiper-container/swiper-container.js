@@ -5,17 +5,17 @@ Swiper.use([Navigation, Pagination]);
 
 import 'swiper/swiper-bundle.min.css';
 
-let mainSwiper = new Swiper('.swiper-container_banner-js', {
+new Swiper('.swiper-container_banner-js', {
   loop: true,
   initialSlide: 2,
 });
 
-let detailsSwiper = new Swiper('.details__swiper', {
+new Swiper('.details__swiper', {
   speed: 400,
   spaceBetween: 10,
   navigation: {
-    nextEl: '.swiper-next',
-    prevEl: '.swiper-prev',
+    nextEl: '.swiper__next',
+    prevEl: '.swiper__prev',
   },
   scrollbar: {
     el: '.swiper-scrollbar',
@@ -23,13 +23,13 @@ let detailsSwiper = new Swiper('.details__swiper', {
   },
 });
 
-let cardSwiper = new Swiper('.swiper-container_card-js', {
+new Swiper('.swiper-container_card-js', {
   speed: 400,
   spaceBetween: 10,
   loop: true,
   navigation: {
-    nextEl: '.swiper-next',
-    prevEl: '.swiper-prev',
+    nextEl: '.swiper__next',
+    prevEl: '.swiper__prev',
   },
   pagination: {
     el: '.card__pagination',

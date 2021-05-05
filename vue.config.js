@@ -42,7 +42,7 @@ plugins.push(
 module.exports = {
   filenameHashing: false,
   outputDir: 'dist',
-  publicPath: process.env.NODE_ENV === 'production' ? '' : './', // Если используется многостраничный режим (pages), то не писать
+  publicPath: './', // Если используется многостраничный режим (pages), то не писать
   assetsDir: '',
   indexPath: 'index.html', // по умолчанию index.html
   pages: {
@@ -66,15 +66,15 @@ module.exports = {
       template: 'public/pages/website/rooom-details.pug',
       chunks: ['chunk-vendors', 'chunk-common', 'rooom-details'],
     },
-    registration: {
-      entry: 'src/js/entries/registration.js',
+    reg: {
+      entry: 'src/js/entries/reg.js',
       template: 'public/pages/website/registration.pug',
-      chunks: ['chunk-vendors', 'chunk-common', 'registration'],
+      chunks: ['chunk-vendors', 'chunk-common', 'reg'],
     },
-    'sign-in': {
-      entry: 'src/js/entries/sign-in.js',
-      template: 'public/pages/website/sign-in.pug',
-      chunks: ['chunk-vendors', 'chunk-common', 'sign-in'],
+    auth: {
+      entry: 'src/js/entries/auth.js',
+      template: 'public/pages/website/authorization.pug',
+      chunks: ['chunk-vendors', 'chunk-common', 'auth'],
     },
     'colors-type': {
       entry: 'src/js/entries/colors-type.js',
@@ -176,6 +176,18 @@ module.exports = {
       .loader('url-loader')
       .options({
         limit: 4096,
+      });
+
+    /* clear config.module.rule('fonts') */
+    const font = config.module.rule('fonts');
+    font.uses.clear();
+    font
+      .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
+      .use('file-loader')
+      .loader('file-loader')
+      .options({
+        publicPath: '../', // url(../fonts/...)
+        name: 'fonts/[name]/[name].[ext]',
       });
 
     /* reference to DLL manifest */

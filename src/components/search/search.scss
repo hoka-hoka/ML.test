@@ -72,8 +72,9 @@
   &__title {
     margin-bottom: 20px;
     color: $dark;
-    font: bold em(24) $secondFont;
+    font: bold em(24) $mainFont;
     line-height: em(30, 24);
+
     @media (max-width: 320px) {
       padding-right: 30px;
     }

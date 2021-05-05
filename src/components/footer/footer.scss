@@ -43,8 +43,8 @@
 
   &__line {
     height: 1px;
-    border: none;
     background: $dark-10;
+    border: none;
 
     @media (max-width: 768px) {
       display: none;
@@ -52,7 +52,7 @@
   }
 
   &__item {
-    padding-top: 18px;
+    padding-top: 20px;
   }
 
   &__email {
@@ -75,7 +75,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 140px;
-    padding: 23px 0;
+    padding: 17px 0;
 
     @media (max-width: 1240px) {
       margin: 0 5vw;
@@ -91,7 +91,6 @@
     font-size: rem(14px);
     font-family: $mainFont;
     line-height: rem(17px, 14px);
-    letter-spacing: -0.2px;
 
     @media (max-width: 768px) {
       width: initial;
@@ -103,7 +102,7 @@
 
   &__container {
     margin: 0 140px;
-    padding: 100px 0;
+    padding: 104px 0;
 
     @media (max-width: 1240px) {
       margin: 0 5vw;
@@ -134,9 +133,9 @@
 
       @media (max-width: 768px) {
         display: block;
+        flex-basis: initial;
         flex-grow: initial;
         flex-shrink: initial;
-        flex-basis: initial;
       }
     }
     &.logo {
