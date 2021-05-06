@@ -1,23 +1,21 @@
 // vue.config.js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
 const devMode = process.env.NODE_ENV !== 'production';
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const plugins = [];
-if (!devMode) {
-  // enable in production only
-  plugins.push(
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-      chunkFilename: 'css/[id].css',
-    }),
-  );
-}
-plugins.push(
-  new CopyPlugin([
+const setMiniCssExtractPlugin = () => {
+  const rezult = new MiniCssExtractPlugin({
+    filename: 'css/[name].css',
+    chunkFilename: 'css/[id].css',
+  });
+  return rezult;
+};
+
+const setCopyPlugin = () => {
+  const rezult = new CopyPlugin([
     {
       from: path.resolve(__dirname, 'src/assets/img'),
       to: path.resolve(__dirname, 'dist/img'),
@@ -26,18 +24,30 @@ plugins.push(
       from: path.resolve(__dirname, 'src/assets/fonts'),
       to: path.resolve(__dirname, 'dist/fonts'),
     },
-    {
+  ]);
+  if (!devMode) {
+    rezult.patterns.push({
       from: path.resolve(__dirname, 'dll/vendor.bundle.js'),
       to: path.resolve(__dirname, 'dist/js'),
-    },
-  ]),
-  new webpack.ProvidePlugin({
+    });
+  }
+  return rezult;
+};
+
+const setProvidePlugin = () => {
+  const rezult = new webpack.ProvidePlugin({
     $: 'jquery/dist/jquery.min.js',
     jQuery: 'jquery/dist/jquery.min.js',
     'window.jQuery': 'jquery/dist/jquery.min.js',
     'window.$': 'jquery/dist/jquery.min.js',
-  }),
-);
+  });
+  return rezult;
+};
+
+const plugins = [setCopyPlugin(), setProvidePlugin()];
+if (!devMode) {
+  plugins.push(setMiniCssExtractPlugin());
+}
 
 module.exports = {
   filenameHashing: false,
@@ -191,7 +201,7 @@ module.exports = {
       });
 
     /* reference to DLL manifest */
-    process.env.NODE_ENV === 'production'
+    !devMode
       ? config.plugin('vendorDll').use(webpack.DllReferencePlugin, [
           {
             context: __dirname,

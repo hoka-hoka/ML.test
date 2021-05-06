@@ -106,7 +106,8 @@ body(id=title)
           +uikit-elements()
         when "header-footer"
           +uikit-header-footer()
-        
+
+if process.env.NODE_ENV === 'production'
   script(type="text/javascript" src="js/vendor.bundle.js")
       
 

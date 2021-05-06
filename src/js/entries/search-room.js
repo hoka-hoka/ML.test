@@ -14,8 +14,8 @@ import '../../components/filter/filter';
 import '../../components/product/product';
 import '../../components/card/card';
 
-import '../../components/swiper/swiper';
 import '../../components/swiper-container/swiper-container';
+import '../../components/swiper/swiper';
 
 import '../../components/label/label';
 import '../../components/input/input';

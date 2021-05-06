@@ -13,8 +13,8 @@ import '../../components/icon/icon';
 import '../../components/banner/banner';
 import '../../components/search/search';
 
-import '../../components/swiper/swiper';
 import '../../components/swiper-container/swiper-container';
+import '../../components/swiper/swiper';
 
 import '../../components/label/label';
 import '../../components/input/input';

@@ -1,16 +1,19 @@
+import 'swiper/swiper-bundle.min.css';
 import './swiper-container.scss';
 
 import { Swiper, Navigation, Pagination } from 'swiper';
 Swiper.use([Navigation, Pagination]);
 
-import 'swiper/swiper-bundle.min.css';
-
 new Swiper('.swiper-container_banner-js', {
+  observer: true,
+  observeParents: true,
   loop: true,
   initialSlide: 2,
 });
 
 new Swiper('.details__swiper', {
+  observer: true,
+  observeParents: true,
   speed: 400,
   spaceBetween: 10,
   navigation: {
@@ -24,6 +27,8 @@ new Swiper('.details__swiper', {
 });
 
 new Swiper('.swiper-container_card-js', {
+  observer: true,
+  observeParents: true,
   speed: 400,
   spaceBetween: 10,
   loop: true,
