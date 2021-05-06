@@ -191,12 +191,14 @@ module.exports = {
       });
 
     /* reference to DLL manifest */
-    config.plugin('vendorDll').use(webpack.DllReferencePlugin, [
-      {
-        context: __dirname,
-        manifest: require('./dll/vendor-manifest.json'),
-      },
-    ]);
+    process.env.NODE_ENV === 'production'
+      ? config.plugin('vendorDll').use(webpack.DllReferencePlugin, [
+          {
+            context: __dirname,
+            manifest: require('./dll/vendor-manifest.json'),
+          },
+        ])
+      : false;
   },
 
   productionSourceMap: false,
