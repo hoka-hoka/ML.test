@@ -2,13 +2,12 @@ import CalendarDOM from './CalendarDOM';
 import Mark from './Mark';
 
 export default class Calendar {
-  constructor(calendar) {
+  initCalendar = (calendar) => {
     this.cont = calendar.querySelector('.swiper-container');
     this.swiper = this.cont.swiper;
-    // this.swiper.activeIndex = 1;
     this.createCalendar();
-    this.createMark();
-  }
+    this.createMarks();
+  };
 
   createCalendar = () => {
     let date = new Date();
@@ -23,25 +22,30 @@ export default class Calendar {
     });
   };
 
-  createMark = () => {
-    const { cont } = this;
-    let table = cont.querySelectorAll('.calendar__box'); // boxes cell
-    let cell = cont.querySelectorAll('.calendar__day-num'); // cells
+  initMarks = () => {
+    const { cont, marks } = this;
     let tdToday = cont.querySelector('.calendar__day-num_current');
-    const marks = {
-      today: new Mark('calendar__today-mark', cont),
-      first: new Mark('calendar__day-mark calendar__day-mark_1', cont),
-      second: new Mark('calendar__day-mark calendar__day-mark_2', cont),
-    };
-
+    let cell = cont.querySelectorAll('.calendar__day-num'); // cells
     marks.today.moveAt(tdToday);
     for (let i in cell) {
-      if (cell[i] === tdToday) {
+      if (cell[i] == tdToday) {
         marks.first.moveAt(cell[i]);
         marks.second.moveAt(cell[+i + 1]);
       }
     }
+  };
 
+  createMarks = () => {
+    const { cont } = this;
+    this.marks = {
+      today: new Mark('calendar__today-mark', cont),
+      first: new Mark('calendar__day-mark calendar__day-mark_1', cont),
+      second: new Mark('calendar__day-mark calendar__day-mark_2', cont),
+    };
+    const { marks } = this;
+
+    let table = cont.querySelectorAll('.calendar__box'); // boxes cell
+    this.initMarks();
     for (let val of table) {
       val.onmousedown = function (event) {
         if (event.target.contains(marks.first.mark)) {

@@ -3,10 +3,12 @@ import Sibling from '../../common/Sibling';
 import Calendar from '../../common/Calendar';
 import { calendar } from '../../js/constants';
 
+const mainCalendar = new Calendar();
+
 const calendars = $('.calendar');
 if (calendars.length) {
   calendars.each((_, calendar) => {
-    new Calendar(calendar);
+    mainCalendar.initCalendar(calendar);
   });
 }
 
@@ -98,5 +100,6 @@ function clearDate(num) {
       return;
     }
     field.value = '';
+    mainCalendar.initMarks();
   }
 }
