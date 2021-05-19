@@ -72,6 +72,10 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
   title #{title}
+
+  if process.env.NODE_ENV === 'production'
+    script(type="text/javascript" src="js/vendor.bundle.js")
+    
 body(id=title)
   +loader()
   .wrapper(hidden)
@@ -106,9 +110,6 @@ body(id=title)
           +uikit-elements()
         when "header-footer"
           +uikit-header-footer()
-
-if process.env.NODE_ENV === 'production'
-  script(type="text/javascript" src="js/vendor.bundle.js")
       
 
 

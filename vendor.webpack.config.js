@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: {
-    vendor: ['vue', 'swiper'],
+    vendor: ['swiper'],
   },
   output: {
     filename: 'vendor.bundle.js',

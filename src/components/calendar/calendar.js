@@ -1,26 +1,12 @@
 import './calendar.scss';
 import Sibling from '../../common/Sibling';
-import createCalendar from '../../common/createCalendar';
-import { month } from '../../js/constants';
+import Calendar from '../../common/Calendar';
+import { calendar } from '../../js/constants';
 
-const $date = $('.input-date__field_js');
-
-if ($date.length) {
-  $date.each((_, item) => {
-    const $interact = $(item).find(
-      '.input__field_clicked-js, .button_clicked-js',
-    );
-
-    $(item).on('click', () => {
-      const calendar = Sibling.getOlderSibling({
-        iter: 2,
-        $elem: $(item),
-        find: 'calendar',
-      });
-      if (calendar.length) {
-        createCalendar(calendar.get(0));
-      }
-    });
+const calendars = $('.calendar');
+if (calendars.length) {
+  calendars.each((_, calendar) => {
+    new Calendar(calendar);
   });
 }
 
@@ -33,7 +19,7 @@ if (document.body.id === 'form') {
   );
   if (calendar) {
     calendar.style.display = 'block';
-    createCalendar(calendar);
+    new Calendar(calendar);
   }
 }
 
@@ -59,7 +45,7 @@ if (btn.length) {
       checkDate = checkDate.get(0).innerHTML.split(' ');
       let day = new Date(
         checkDate[1],
-        month.indexOf(checkDate[0]),
+        calendar.months.indexOf(checkDate[0]),
         v.innerText,
       );
       if (calendarDay.length !== 1) {
@@ -73,8 +59,9 @@ if (btn.length) {
               .join('-'));
           });
         } else {
+          console.log();
           calendarDay[i].querySelector(
-            '.input__field_clicked-js',
+            '.input__field',
           ).value = day
             .toLocaleString('ru')
             .slice(0, 10)
@@ -83,27 +70,33 @@ if (btn.length) {
             .join('-');
         }
       } else {
-        calendarDay[0].querySelector('.input__field_clicked-js').value += `${
+        calendarDay[0].querySelector('.input__field').value += `${
           v.innerText
         } ${checkDate[0].slice(0, 3)}. ${
           i == 0 && arr.length !== 1 ? '- ' : ''
         }`;
       }
     });
-    closeCalendar();
+    closeCalendar(event);
   });
 }
 
-function closeCalendar() {
-  let eventArrow = new Event('click');
+function closeCalendar(event) {
   let eventTarget = event.target
     .closest('.calendar')
-    .parentNode.querySelector('.button_clicked-js');
-  eventTarget.dispatchEvent(eventArrow);
+    .parentNode.querySelectorAll('.button_clicked-js');
+  if (eventTarget.length) {
+    let eventArrow = new Event('click');
+    eventTarget[0].dispatchEvent(eventArrow);
+  }
 }
 
 function clearDate(num) {
   for (let elem of num) {
-    elem.querySelector('.input__field_clicked-js').value = '';
+    const field = elem.querySelector('.input__field');
+    if (!field) {
+      return;
+    }
+    field.value = '';
   }
 }

@@ -46,3 +46,16 @@ new Swiper('.swiper-container_card-js', {
     progressbarOpposite: true,
   },
 });
+
+new Swiper('.calendar__swiper-container', {
+  slideActiveClass: 'clandar__slide-active',
+  observer: true,
+  allowTouchMove: false, // d't move
+  observeParents: true,
+  observeSlideChildren: true,
+  initialSlide: 1, // center slide
+  navigation: {
+    nextEl: '.button_next_arrow-js',
+    prevEl: '.button_prev_arrow-js',
+  },
+});

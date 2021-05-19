@@ -4,13 +4,13 @@
 
   &__field {
     position: relative;
+
+    &_active ~ .calendar {
+      display: block;
+    }
   }
 
   &_wide {
     flex-basis: 100%;
-  }
-
-  &_active ~ .calendar {
-    display: block;
   }
 }

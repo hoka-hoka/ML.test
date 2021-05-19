@@ -20,13 +20,9 @@ mixin input-date(date)
         type: "text",
         value: value,
         placeholder: placeholder,
-        autocorrect: "off",
-        inputmode: "numeric",
-        autocomplete: "cc-exp",
-        onfocus: "(this.type='date')",
-        onblur: "(this.type='text')",
-        maxlength: "10",
-        mod: {clicked: "clicked-js", placeholderClolor: "placeholder"},
+        format: "ДД{.}ММ{.}ГГГГ",
+        mod: {placeholderClolor: "placeholder"},
+        
       })
       +button({
         tabindex: "-1",

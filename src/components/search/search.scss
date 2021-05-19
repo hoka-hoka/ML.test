@@ -84,6 +84,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    &_active > .calendar {
+      display: block;
+    }
   }
 
   &__content {

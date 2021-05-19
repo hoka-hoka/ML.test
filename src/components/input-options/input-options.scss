@@ -1,14 +1,14 @@
 .input-options {
   position: absolute;
   z-index: 3;
-  display: none;
   box-sizing: border-box;
   width: 100%;
   padding: 4px 6px 9px 13px;
+  background-color: $white;
   border: 1px solid $dark-25;
   border-top: none;
   border-radius: 0 0 4px 4px;
-  background-color: $white;
+  opacity: 0;
 
   &__opt {
     display: flex;

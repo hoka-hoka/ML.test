@@ -13,7 +13,7 @@ if ($drop.length) {
       $par: $par,
       $list: $par.find('.input-list__options'),
       $focus: $par,
-      addedClass: 'input-list_active',
+      extClass: 'input-list_active',
       aria: true,
     };
     new DropDown(listOptions);

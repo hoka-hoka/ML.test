@@ -1,5 +1,5 @@
 mixin input(input)
-  - const {text, id, labelHidden, descr, type, value, placeholder, role, readonly, autocorrect, inputmode, autocomplete, patern, onfocus, onblur, maxlength, tabindex, mod, aria} = input;
+  - const {text, id, labelHidden, descr, type, value, placeholder, format, role, readonly, autocorrect, inputmode, autocomplete, patern, onfocus, onblur, maxlength, tabindex, mod, aria} = input;
   - const {ariaHidden} = aria || 0;
   - let modClasses = '';
   - if (mod) {
@@ -26,11 +26,12 @@ mixin input(input)
       value=value
       required
       placeholder=placeholder
+      data-date-format=format
       data-role=role
       readonly=(readonly ? readonly : false)
       autocorrect=(autocorrect ? autocorrect : false)
       inputmode=(inputmode ? inputmode: false)
-      autocomplete=(autocomplete ? autocomplete : false)
+      autocomplete=(autocomplete ? autocomplete : "off")
       patern=(patern? patern : false)
       onfocus=(onfocus ? onfocus : false)
       onblur=(onblur ? onblur : false)

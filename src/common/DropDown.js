@@ -1,15 +1,15 @@
 import Sibling from '../common/Sibling';
 
 class DropDown {
-  constructor({ $elem, $par, $list, $focus, addedClass, aria }) {
-    this.state = { active: false, overflow: false };
+  constructor({ $elem, $par, $list, $focus, extClass, aria }) {
+    this.state = { active: false };
 
     this.props = {
       $element: $elem,
       $parent: $par,
       $options: $list,
       $focused: $focus,
-      class: addedClass,
+      extClass,
       aria: aria ?? false,
     };
     this.timeOutId = undefined;
@@ -18,12 +18,7 @@ class DropDown {
       return;
     }
 
-    this.handleClick = this.handleClick.bind(this);
-    this.onBlurHandler = this.onBlurHandler.bind(this);
-    this.onFocusHandler = this.onFocusHandler.bind(this);
-    this.handleKeydown = this.handleKeydown.bind(this);
-
-    $elem.on('mousedown', this.handleClick);
+    $elem.on('click', this.handleClick);
 
     if (aria) {
       $par.get(0).addEventListener('blur', this.onBlurHandler, true);
@@ -36,42 +31,41 @@ class DropDown {
     this.state = { ...state };
   }
 
-  handleClick() {
-    const $elem = this.props.$element;
-    const $par = this.props.$parent;
+  handleClick = () => {
+    // console.log('click');
     this.setState({
       ...this.state,
       active: !this.state.active,
-      overflow: !this.state.overflow,
     });
     this.rasingFocus();
-  }
+  };
 
   rasingFocus() {
     const $focused = this.props.$focused;
+    // console.log($focused, 'rasing');
     setTimeout(() => {
       $focused.focus();
     });
   }
 
-  onFocusHandler() {
+  onFocusHandler = () => {
     const $focused = this.props.$focused;
     $focused.on('keydown', this.handleKeydown);
-  }
+  };
 
-  onBlurHandler(event) {
+  onBlurHandler = (event) => {
     const $par = this.props.$parent;
     $par.off('keydown');
     setTimeout(() => {
+      // console.log(document.activeElement, 'blur');
       const $active = $(document.activeElement);
-
       if (!$par.is($active) && !$par.find($active).length) {
-        this.setState({ ...this.state, active: false, overflow: false });
+        this.setState({ ...this.state, active: false });
       }
     });
-  }
+  };
 
-  handleKeydown(event) {
+  handleKeydown = (event) => {
     const $par = this.props.$parent;
     if (!$par.get(0).isSameNode(event.target)) {
       return;
@@ -80,34 +74,26 @@ class DropDown {
     if (![32, 13].includes(keyCode)) return;
     this.setState({
       active: !this.state.active,
-      overflow: !this.state.overflow,
     });
-  }
+  };
 
   changeActive(newState) {
-    const $par = this.props.$parent;
+    const { $parent, $options, extClass } = this.props;
     if (newState.active == this.state.active) {
       return;
     }
-    newState.active
-      ? $par.addClass(this.props.class)
-      : $par.removeClass(this.props.class);
-  }
 
-  changeOverflow(newState) {
-    if (newState.active === this.state.active) {
-      return;
-    }
-    if (newState.overflow) {
-      $(document.body).css('overflow', 'hidden');
+    if (newState.active) {
+      $parent.addClass(extClass);
+      $options.css('opacity', 0).animate({ opacity: 1 }, 200);
     } else {
-      $(document.body).css('overflow', 'auto');
+      $parent.removeClass(extClass);
+      $options.css('opacity', 1).animate({ opacity: 0 }, 100);
     }
   }
 
   componentDidUpdate(newState) {
     this.changeActive(newState);
-    this.changeOverflow(newState);
   }
 }
 
