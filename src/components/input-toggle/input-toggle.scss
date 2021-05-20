@@ -53,10 +53,13 @@
       box-shadow: 0 0 1px #2196f3;
     }
 
-    &:checked + #{$input-toggle}__slider:before {
-      background: $purple;
-      box-shadow: inset 0px -6px 5px -2px $purpure-light;
-      transform: translate(20px, -50%);
+    &:checked ~ #{$input-toggle}__slider {
+      border-color: $purple;
+
+      &:before {
+        background: linear-gradient($purple, $purpure-light);
+        transform: translate(20px, -50%);
+      }
     }
   }
 }
