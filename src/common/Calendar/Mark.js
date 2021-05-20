@@ -1,37 +1,50 @@
 export default class Mark {
-  constructor(name, parent) {
+  constructor(name, parent, moveCallback) {
     this.today = parent.querySelector('.calendar__day-num_current');
     this.mark = document.createElement('span');
+    this.moveCallback = moveCallback;
     this.mark.className = name;
     this.prev = 0;
     this.parent = parent;
   }
 
   moveAt = (td) => {
-    if (td.nodeName === 'TD') {
-      let a = this.today.compareDocumentPosition(td);
-      if (a & 2 || td.classList.contains('calendar__day-other')) {
-        // the border track
-        return;
-      }
-      td.classList.add('calendar__day-num_active');
-      if (this.prev && td !== this.prev) {
-        if (
-          this.prev.childNodes.length === 2 ||
-          (this.prev === this.today && this.prev.childNodes.length !== 4)
-        ) {
-          this.prev.classList.remove('calendar__day-num_active');
-        }
-      }
-      this.prev = td;
-      td.appendChild(this.mark);
-      Track('calendar__day-num_active', this.parent);
+    if (td.nodeName != 'TD') {
+      return;
     }
+    let a = this.today.compareDocumentPosition(td);
+    if (a & 2 || td.classList.contains('calendar__day-other')) {
+      return;
+    }
+    td.classList.add('calendar__day-num_active');
+    if (this.prev && td !== this.prev) {
+      if (
+        this.prev.childNodes.length === 2 ||
+        (this.prev === this.today && this.prev.childNodes.length !== 4)
+      ) {
+        this.prev.classList.remove('calendar__day-num_active');
+      }
+    }
+    this.prev = td;
+    td.appendChild(this.mark);
+    Track('calendar__day-num_active', this.parent);
+
+    this.day = td;
   };
 
   pullOf = () => {
-    document.onmousemove = () => {
+    document.onmousemove = (event) => {
+      if (
+        (this.day && this.day.isSameNode(event.target)) ||
+        event.target.nodeName != 'TD'
+      ) {
+        return;
+      }
       this.moveAt(event.target);
+
+      if (this.moveCallback) {
+        this.moveCallback();
+      }
     };
   };
 
@@ -46,6 +59,7 @@ export default class Mark {
   };
 
   markFullStack = (td) => {
+    console.log(td);
     this.pullOf();
     this.moveAt(td);
     this.reload();
