@@ -5,40 +5,49 @@
     position: relative;
     display: flex;
     align-items: center;
+    color: $gray-50;
     font-size: rem(14);
     cursor: pointer;
   }
 
-  & .input-checkbox {
+  &__label::before {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid $gray-25;
+    border-radius: 50%;
+    transition: all 0.15s;
+    content: '';
+  }
+
+  &__label::after {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+  }
+
+  & .input-checkbox:checked {
+    & ~ #{$input-radio}__label {
+      color: $gray-75;
+    }
+
     & ~ #{$input-radio}__label::before {
-      content: '';
-      display: inline-block;
-      vertical-align: middle;
-      box-sizing: border-box;
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
       border: 1px solid $purple;
-      border-radius: 50%;
-      transition: all 0.15s;
     }
 
     & ~ #{$input-radio}__label::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 10px;
       width: 12px;
       height: 12px;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    &:checked ~ #{$input-radio}__label::after {
-      width: 12px;
-      height: 12px;
-      border: unset;
       background: linear-gradient(180deg, $purple 0%, $purpure-light 100%);
+      border: unset;
     }
   }
 }
