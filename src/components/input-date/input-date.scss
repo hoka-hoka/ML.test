@@ -5,6 +5,10 @@
   &__field {
     position: relative;
 
+    .button:hover ~ .input > .inpput__field {
+      border: 1px solid $gray-50;
+    }
+
     &_active ~ .calendar {
       display: block;
     }

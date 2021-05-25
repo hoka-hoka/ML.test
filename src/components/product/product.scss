@@ -16,7 +16,7 @@
 
   &__list {
     display: grid;
-    grid-gap: 20px 12px;
+    grid-gap: 19px 12px;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
     @media (min-width: 1601px) {

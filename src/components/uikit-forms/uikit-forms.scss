@@ -3,8 +3,21 @@
   padding-top: 30px;
   background: #f4f4f6;
 
-  &__calendar > .calendar {
-    opacity: 1;
+  &__calendar {
+    & > .calendar .calendar__container {
+      position: relative;
+      max-width: 320px;
+      margin-top: unset;
+    }
+
+    & > .calendar {
+      display: block;
+      opacity: 1;
+    }
+
+    & .calendar__day-num {
+      position: relative;
+    }
   }
 
   &__list {
@@ -31,10 +44,6 @@
       right: 30px;
       left: 30px;
     }
-  }
-
-  &__calendar .calendar__day-num {
-    position: relative;
   }
 
   & .search {
@@ -65,13 +74,6 @@
 
     &:nth-child(3n) {
       order: 3;
-    }
-  }
-
-  &__calendar {
-    & > .calendar .calendar__container {
-      position: relative;
-      max-width: 320px;
     }
   }
 

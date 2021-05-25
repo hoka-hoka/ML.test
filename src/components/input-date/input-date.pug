@@ -16,6 +16,10 @@ mixin input-date(date)
       mod: {font: "large"},
     })
     .input-date__field.input-date__field_js(tabindex="0")
+      +button({
+        tabindex: "-1",
+        mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"}
+      })
       +input({
         id: id,
         type: "text",
@@ -26,7 +30,4 @@ mixin input-date(date)
         mod: {placeholderClolor: "placeholder", clicked: inpClicked},
         
       })
-      +button({
-        tabindex: "-1",
-        mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"}
-      })
+      
