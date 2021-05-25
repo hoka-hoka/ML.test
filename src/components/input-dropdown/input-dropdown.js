@@ -12,7 +12,7 @@ if ($drop.length) {
     const listOptions = {
       $elem: $interact,
       $par: $par,
-      $list: $drop.find('.input-options'),
+      $list: $(item).find('.input-options'),
       $focus: $par,
       extClass: 'input-dropdown__field_active',
       aria: true,

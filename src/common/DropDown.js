@@ -32,7 +32,6 @@ class DropDown {
   }
 
   handleClick = () => {
-    // console.log('click');
     this.setState({
       ...this.state,
       active: !this.state.active,
@@ -42,7 +41,6 @@ class DropDown {
 
   rasingFocus() {
     const $focused = this.props.$focused;
-    // console.log($focused, 'rasing');
     setTimeout(() => {
       $focused.focus();
     });
@@ -57,7 +55,6 @@ class DropDown {
     const $par = this.props.$parent;
     $par.off('keydown');
     setTimeout(() => {
-      // console.log(document.activeElement, 'blur');
       const $active = $(document.activeElement);
       if (!$par.is($active) && !$par.find($active).length) {
         this.setState({ ...this.state, active: false });
@@ -85,10 +82,17 @@ class DropDown {
 
     if (newState.active) {
       $parent.addClass(extClass);
-      $options.css('opacity', 0).animate({ opacity: 1 }, 200);
+      $options
+        .css({
+          opacity: '0',
+          display: 'block',
+        })
+        .animate({ opacity: 1 }, 200);
     } else {
       $parent.removeClass(extClass);
-      $options.css('opacity', 1).animate({ opacity: 0 }, 100);
+      $options
+        .css('opacity', 1)
+        .animate({ opacity: 0 }, 100, (e) => $options.css('display', 'none'));
     }
   }
 

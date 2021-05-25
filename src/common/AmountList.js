@@ -40,8 +40,6 @@ class AmountList {
 
     this.rezult[index] = restore ? 0 : +amountPer.innerText;
 
-    console.log(this.rezult);
-
     if (this.amountInp) {
       this.amountInp.value = this.vocabularyDef()[0].join(', ');
       this.amountInp.title = this.vocabularyDef()[1].join(', ');
