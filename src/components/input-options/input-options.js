@@ -24,9 +24,9 @@ if (input) {
     if (!optionList) {
       return;
     }
-    if (value.getAttribute('data-role') === 'gues') {
+    if (value.dataset.role == 'gues') {
       createList(optionList.get(0), guesName);
-    } else if (value.getAttribute('data-role') === 'room') {
+    } else if (value.dataset.role == 'room') {
       createList(optionList.get(0), roomName);
     } else return;
   });
@@ -34,7 +34,7 @@ if (input) {
 
 function createList(list, name) {
   let newList = new AmountList(list, name);
-  newList.amountPerson();
+  newList.computeAmountPerson();
   addButtonsPanel(newList);
 }
 
@@ -57,7 +57,7 @@ function addButtonsPanel(objList) {
         find: 'input__field_clicked-js',
       });
       if (eventTarget?.length) {
-        const inputEvent = new Event('mousedown');
+        const inputEvent = new Event('click');
         eventTarget.get(0).dispatchEvent(inputEvent);
       }
     } else return;

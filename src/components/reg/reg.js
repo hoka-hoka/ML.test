@@ -12,6 +12,5 @@ const $dateFields = $('.input-date_js');
 if ($dateFields.length) {
   $dateFields.each((_, item) => {
     formatDate(item);
-    // initCalendar(item);
   });
 }

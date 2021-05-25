@@ -59,7 +59,6 @@ export default class Mark {
   };
 
   markFullStack = (td) => {
-    console.log(td);
     this.pullOf();
     this.moveAt(td);
     this.reload();

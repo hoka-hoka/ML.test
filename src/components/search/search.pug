@@ -17,7 +17,9 @@ mixin search()
                   +input-date({
                     id: date_id[i],
                     text: sr_label[i],
-                    placeholder: 'ДД.ММ.ГГГГ'
+                    format: 'ДД{.}ММ{.}ГГГГ',
+                    placeholder: 'ДД.ММ.ГГГГ',
+                    readonly: true,
                   }) 
                 - var i = null;
                 +calendar()    

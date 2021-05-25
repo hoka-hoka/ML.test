@@ -1,19 +1,21 @@
 .rating {
-  display: inline-flex;
-  transform: scale(-1, 1);
-
-  & > input:checked ~ label,
-  &:not(:checked) > label:hover,
-  &:not(:checked) > label:hover ~ label {
-    background-position: 50% 0;
+  select {
+    display: none;
   }
 
-  &__label {
+  &__stars .rateit-range {
     display: inline-block;
     width: 20px;
     height: 19px;
-    margin: 2px;
-    background: url('../../assets/img/svg/star.svg') no-repeat 50% -20px/100% auto;
+    background: 0 21px/24px 41px url('../../assets/img/svg/star.svg');
     cursor: pointer;
+  }
+
+  &__stars .rateit-hover {
+    background: 0 1px/24px 41px url('../../assets/img/svg/star.svg');
+  }
+
+  &__stars .rateit-selected {
+    background: 0 1px/24px 41px url('../../assets/img/svg/star.svg');
   }
 }

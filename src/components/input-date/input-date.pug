@@ -1,6 +1,7 @@
 mixin input-date(date)
-  - const {id, text, value, placeholder, mod} = date;
+  - const {id, text, value, placeholder, format, readonly, mod} = date;
   - let modClasses = '';
+  - let inpClicked = readonly ? "clicked-js" : '';
   - if (mod) {
   -   let styles = Object.values(mod);
   -   for (index in styles) {
@@ -20,8 +21,9 @@ mixin input-date(date)
         type: "text",
         value: value,
         placeholder: placeholder,
-        format: "ДД{.}ММ{.}ГГГГ",
-        mod: {placeholderClolor: "placeholder"},
+        format: format,
+        readonly: readonly,
+        mod: {placeholderClolor: "placeholder", clicked: inpClicked},
         
       })
       +button({

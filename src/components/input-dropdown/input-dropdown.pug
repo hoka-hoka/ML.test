@@ -1,5 +1,5 @@
 mixin input-dropdown(dropdown)
-  - const {id, value, placeholder, role, list, btnPannel, text, descr, mod} = dropdown;
+  - const {id, value, placeholder, amount, role, list, btnPannel, text, descr, mod} = dropdown;
   - let modClasses = '';
   - if (mod) {
   -   let styles = Object.values(mod);
@@ -25,6 +25,7 @@ mixin input-dropdown(dropdown)
         value: value,
         placeholder: placeholder,
         readonly: true,
+        amount,
         role: role,
         tabindex: -1,
         mod: {clicked: "clicked-js", placeholderClolor: "placeholder-dark"},

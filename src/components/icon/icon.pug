@@ -4,17 +4,17 @@ mixin icon(icon)
   - if (mod) {
   -   let styles = Object.values(mod);
   -   for (index in styles) {
-  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'icon__pick_' + styles[index];
+  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'icon_' + styles[index];
   -   }
   - }
 
-  .icon
-    svg.icon__pick(
-      class=modClasses 
-      viewBox=viewBox 
-      weight=width 
-      height=height 
-      role="image" 
-      aria-label=alt
-    )
-      use(xlink:href = "#" + id)
+  svg.icon(
+    class=modClasses 
+    viewBox=viewBox 
+    weight=width 
+    height=height 
+    role="image"
+    tabindex="-1"
+    aria-label=alt
+  )
+    use(xlink:href = "#" + id)

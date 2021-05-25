@@ -36,6 +36,10 @@ element {
       font-family: $mainFont;
       line-height: rem(14px, 18px);
     }
+
+    &_clicked-js {
+      cursor: pointer;
+    }
   }
 
   &__descr {

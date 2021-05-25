@@ -17,7 +17,9 @@ mixin filter()
             +input-date({
               id: "pr-date",
               placeholder: "ДД.ММ.ГГГГ",
+              format: 'DD MMM',
               text: "Даты пребывания в отеле",
+              readonly: true,
               mod: {width: "wide"},
             })
             +calendar()

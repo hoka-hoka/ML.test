@@ -1,6 +1,8 @@
 import CalendarDOM from './CalendarDOM';
 import Mark from './Mark';
 import Sibling from '../Sibling';
+import DateFormat from '../DateFormat';
+import moment from 'moment';
 import { calendar } from '../../js/constants';
 
 export default class Calendar {
@@ -15,7 +17,7 @@ export default class Calendar {
   }
 
   initCalendar = () => {
-    const { btnClear, bntApply } = this.options;
+    const { btnClear, bntApply, dateFields } = this.options;
     this.createCalendar();
     this.createMarks();
     if (btnClear) {
@@ -25,6 +27,11 @@ export default class Calendar {
       bntApply.addEventListener('click', () => {
         this.applyDate();
         this.closeCalendar();
+      });
+    }
+    if (dateFields.length) {
+      dateFields.forEach((field) => {
+        this.formatDate(field);
       });
     }
   };
@@ -53,6 +60,8 @@ export default class Calendar {
         marks.second.moveAt(cell[+i + 1]);
       }
     }
+    this.swiper.activeIndex = 1;
+    this.swiper.update();
   };
 
   createMarks = () => {
@@ -95,12 +104,16 @@ export default class Calendar {
     if (!trigger) {
       return;
     }
-    debugger;
     const e = new Event('click');
     trigger.dispatchEvent(e);
   };
 
   applyDate = () => {
+    const {
+      marks: { first, second },
+      options: { dateFields },
+    } = this;
+
     const getDate = (day) => {
       const today = this.marks.today.day;
       let checkDate = Sibling.getOlderSibling({
@@ -116,27 +129,38 @@ export default class Calendar {
         return;
       }
       const date = new Date(year, calendar.months.indexOf(month), day);
-      const rezult = date
-        ? date.toLocaleString('ru').slice(0, 10).split('.').join('-')
-        : '';
+      return date;
+    };
+
+    const dateFormatting = (date) => {
+      if (!date) {
+        return;
+      }
+      const { dateFields } = this.options;
+      let rezult;
+      moment.locale('ru');
+      if (dateFields.length == 1) {
+        rezult = moment(date).format('DD MMM');
+      } else {
+        rezult = moment(date).format('DD-MM-YYYY');
+      }
       return rezult;
     };
 
-    const {
-      marks: { first, second },
-      options: { dateFields },
-    } = this;
-
     const [start = '', end = ''] = [
-      getDate(first.day ? first.day.innerText : ''),
-      getDate(second.day ? second.day.innerText : ''),
+      dateFormatting(getDate(first.day ? first.day.innerText : '')),
+      dateFormatting(getDate(second.day ? second.day.innerText : '')),
     ].sort();
 
     if (!dateFields.length) {
       return;
     }
     dateFields.forEach((field, index) => {
-      !index ? (field.value = start) : (field.value = end);
+      if (dateFields.length == 1) {
+        field.value = `${start} - ${end}`;
+      } else {
+        !index ? (field.value = start) : (field.value = end);
+      }
     });
   };
 
@@ -150,4 +174,14 @@ export default class Calendar {
       this.initMarks();
     });
   };
+
+  formatDate = (field) => {
+    new DateFormat(field, field.dataset.dateFormat);
+  };
 }
+
+// calendarDay[0].querySelector('.input__field').value += `${
+//   v.innerText
+// } ${checkDate[0].slice(0, 3)}. ${
+//   i == 0 && arr.length !== 1 ? '- ' : ''
+// }`;

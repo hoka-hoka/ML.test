@@ -1,11 +1,15 @@
 mixin input(input)
-  - const {text, id, labelHidden, descr, type, value, placeholder, format, role, readonly, autocorrect, inputmode, autocomplete, patern, onfocus, onblur, maxlength, tabindex, mod, aria} = input;
+  - const {text, id, labelHidden, descr, type, value, placeholder, format, amount, role, readonly, autocorrect, inputmode, autocomplete, patern, onfocus, onblur, maxlength, tabindex, mod, aria} = input;
   - const {ariaHidden} = aria || 0;
   - let modClasses = '';
   - if (mod) {
   -   let styles = Object.values(mod);
   -   for (index in styles) {
-  -     modClasses = modClasses + (index != 0 ? ' ' : '') + 'input__field_' + styles[index];
+  -     if (styles[index] == '') {
+  -       modClasses = modClasses;
+  -     } else {
+  -       modClasses = modClasses + (index != 0 ? ' ' : '') + 'input__field_' + styles[index];
+  -     }
   -   }
   - }
 
@@ -27,6 +31,7 @@ mixin input(input)
       required
       placeholder=placeholder
       data-date-format=format
+      data-amount=amount
       data-role=role
       readonly=(readonly ? readonly : false)
       autocorrect=(autocorrect ? autocorrect : false)

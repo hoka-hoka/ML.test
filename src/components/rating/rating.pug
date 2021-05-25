@@ -1,8 +1,8 @@
 mixin rating(rating)
   - const {index, check} = rating;
   .rating
-    -for(var i=1; i<=5; i++)
-      - var ch = check==i ? true : false
-      input.input-checkbox.input-checkbox_hidden(id="rating_"+i value=i checked=ch disabled name="rating-"+index type="radio")
-      label.rating__label(for="rating_"+i)
-    -var i=null
+    select(id="backing3b")
+      -for(var i=1; i<=5; i++)
+        - var ch = check==i ? true : false
+        option(value=i)
+    div.rateit(class="rating__stars" data-rateit-backingfld="#backing3b" data-rateit-value=check data-rateit-resetable="false" data-rateit-starwidth="24" data-rateit-starheight="20")

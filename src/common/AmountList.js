@@ -2,27 +2,45 @@ class AmountList {
   constructor(box, name) {
     this.optionList = box; //  container
     this.name = name; // map
-    this.rezult = [0, 0, 0];
     this.amountInp = this.optionList.parentNode.querySelector(
       '.input__field_clicked-js',
     );
+    this.rezult = this.prepareAmountPer();
   }
 
-  handlerBtns(event, value, index) {
-    let btnPrev = value.querySelector('.button__mark_minus-js');
-    let amount = value.querySelector('.input-options__amount-js');
-    let btnNext = value.querySelector('.button__mark_plus-js');
+  prepareAmountPer = () => {
+    if (!this.amountInp) {
+      return;
+    }
+    const amount = this.amountInp.dataset.amount;
+    const rezult = amount ? amount.split(' ').map((item) => +item) : [0, 0, 0];
+    return rezult;
+  };
 
-    if (event.target.contains(btnNext)) {
-      amount.innerText = +amount.innerText + 1;
-    } else if (event.target.contains(btnPrev) && amount.innerHTML > 0) {
-      amount.innerText = +amount.innerText - 1;
+  handlerBtns(target, line, index, restore = false) {
+    let btnPrev = line.querySelector('.button__mark_minus-js');
+    let amountPer = line.querySelector('.input-options__amount-js');
+    let btnNext = line.querySelector('.button__mark_plus-js');
+
+    if (target) {
+      if (target.contains(btnNext)) {
+        amountPer.innerText = restore ? 0 : +amountPer.innerText + 1;
+      } else if (target.contains(btnPrev) && amountPer.innerHTML > 0) {
+        amountPer.innerText = restore ? 0 : +amountPer.innerText - 1;
+      }
+    } else if (restore) {
+      amountPer.innerText = 0;
+    } else {
+      amountPer.innerText = this.rezult[index];
     }
 
-    +amount.innerText
+    +amountPer.innerText
       ? btnPrev.classList.remove('button__mark_default')
       : btnPrev.classList.add('button__mark_default');
-    this.rezult[index] = +amount.innerText;
+
+    this.rezult[index] = restore ? 0 : +amountPer.innerText;
+
+    console.log(this.rezult);
 
     if (this.amountInp) {
       this.amountInp.value = this.vocabularyDef()[0].join(', ');
@@ -30,14 +48,17 @@ class AmountList {
     }
   }
 
-  amountPerson() {
+  computeAmountPerson({ restore } = {}) {
     let optionLine = this.optionList.querySelectorAll(
       '.input-options__marks_elem-js',
     );
-    optionLine.forEach((value, index) => {
-      value.addEventListener('click', (event) => {
-        this.handlerBtns(event, value, index);
-      });
+    optionLine.forEach((line, index) => {
+      if (!restore) {
+        line.addEventListener('click', (event) => {
+          this.handlerBtns(event.target, line, index);
+        });
+      }
+      this.handlerBtns(false, line, index, restore);
     });
   }
 
@@ -92,6 +113,7 @@ class AmountList {
   }
 
   clearAmount() {
+    this.computeAmountPerson({ restore: true });
     this.amountInp.value = null;
     this.amountInp.title = null;
   }
