@@ -19,6 +19,12 @@ mixin input-dropdown(dropdown)
         span.input-dropdown__descr=descr
 
     .input-dropdown__field(class=modClasses tabindex="0" role="button" aria-haspopup="true" aria-expanded="false")
+      +button({
+        ariaHospopup: true,
+        ariaLabel: "Расскрыть список",
+        tabindex: -1,
+        mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"},
+      })
       +input({
         type: "text",
         id: id,
@@ -30,12 +36,6 @@ mixin input-dropdown(dropdown)
         tabindex: -1,
         mod: {clicked: "clicked-js", placeholderClolor: "placeholder-dark"},
         aria: {ariaHidden: true},
-      })
-      +button({
-        ariaHospopup: true,
-        ariaLabel: "Расскрыть список",
-        tabindex: -1,
-        mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"},
       })
       +input-options({
         role: role,

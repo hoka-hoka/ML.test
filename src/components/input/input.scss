@@ -23,6 +23,12 @@ element {
       display: none;
     }
 
+    &:focus,
+    &:hover {
+      border: 1px solid $dark-50;
+      outline: 0;
+    }
+
     &::placeholder {
       color: $dark-25;
       font-size: rem(14px);

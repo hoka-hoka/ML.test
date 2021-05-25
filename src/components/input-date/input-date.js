@@ -1,13 +1,10 @@
 import './input-date.scss';
 import DropDown from '../../common/DropDown';
-import Sibling from '../../common/Sibling';
+import DateFormat from '../../common/DateFormat';
 
 const calendarDropdown = (item) => {
-  const $calendar = Sibling.getOlderSibling({
-    iter: 2,
-    $elem: $(item),
-    find: 'calendar',
-  });
+  const $calendar = $(item).find('.calendar');
+
   const listOptions = {
     $elem: $(item).find('.input__field_clicked-js, .button_clicked-js'),
     $par: $(item),
@@ -18,9 +15,28 @@ const calendarDropdown = (item) => {
   new DropDown(listOptions);
 };
 
-const $drop = $('.search__date, .filter__date');
+const $drop = $(
+  '.search__date, .filter__date, .description__date, .uikit-cards__date-dropdown, .uikit-cards__filter-date',
+);
 if ($drop.length) {
   $drop.each((_, item) => {
     calendarDropdown(item);
+  });
+}
+
+const formatDate = (item) => {
+  const fields = $(item).find('.input__field');
+  fields.each((_, elem) => {
+    if (!elem.dataset.dateFormat) {
+      return;
+    }
+    new DateFormat(elem, elem.dataset.dateFormat);
+  });
+};
+
+const $dateFields = $('.input-date_js');
+if ($dateFields.length) {
+  $dateFields.each((_, item) => {
+    formatDate(item);
   });
 }

@@ -8,6 +8,10 @@
   background-origin: border-box;
   cursor: pointer;
 
+  &:hover ~ .input > .input__field {
+    border: 1px solid $dark-50;
+  }
+
   &_high {
     #{$button}__text_flooded {
       height: 34px;

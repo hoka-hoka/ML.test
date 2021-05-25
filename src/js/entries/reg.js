@@ -21,6 +21,7 @@ import '../../components/input-password/input-password';
 import '../../components/input-toggle/input-toggle';
 import '../../components/input-radio/input-radio';
 import '../../components/input-checkbox/input-checkbox';
+import '../../components/input-date/input-date';
 
 import '../../components/footer/footer';
 import '../../components/social-icon/social-icon';

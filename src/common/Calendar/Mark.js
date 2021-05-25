@@ -41,7 +41,6 @@ export default class Mark {
         return;
       }
       this.moveAt(event.target);
-
       if (this.moveCallback) {
         this.moveCallback();
       }
@@ -62,6 +61,10 @@ export default class Mark {
     this.pullOf();
     this.moveAt(td);
     this.reload();
+
+    if (this.moveCallback) {
+      this.moveCallback();
+    }
   };
 }
 

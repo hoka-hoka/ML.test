@@ -1,7 +1,6 @@
 import CalendarDOM from './CalendarDOM';
 import Mark from './Mark';
 import Sibling from '../Sibling';
-import DateFormat from '../DateFormat';
 import moment from 'moment';
 import { calendar } from '../../js/constants';
 
@@ -27,11 +26,6 @@ export default class Calendar {
       bntApply.addEventListener('click', () => {
         this.applyDate();
         this.closeCalendar();
-      });
-    }
-    if (dateFields.length) {
-      dateFields.forEach((field) => {
-        this.formatDate(field);
       });
     }
   };
@@ -142,7 +136,7 @@ export default class Calendar {
       if (dateFields.length == 1) {
         rezult = moment(date).format('DD MMM');
       } else {
-        rezult = moment(date).format('DD-MM-YYYY');
+        rezult = moment(date).format('DD.MM.YYYY');
       }
       return rezult;
     };
@@ -174,14 +168,4 @@ export default class Calendar {
       this.initMarks();
     });
   };
-
-  formatDate = (field) => {
-    new DateFormat(field, field.dataset.dateFormat);
-  };
 }
-
-// calendarDay[0].querySelector('.input__field').value += `${
-//   v.innerText
-// } ${checkDate[0].slice(0, 3)}. ${
-//   i == 0 && arr.length !== 1 ? '- ' : ''
-// }`;

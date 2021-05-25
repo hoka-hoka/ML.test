@@ -3,6 +3,10 @@
   padding-top: 30px;
   background: #f4f4f6;
 
+  &__calendar > .calendar {
+    opacity: 1;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -27,9 +31,6 @@
       right: 30px;
       left: 30px;
     }
-  }
-  & .calendar__container {
-    margin-top: unset;
   }
 
   &__calendar .calendar__day-num {

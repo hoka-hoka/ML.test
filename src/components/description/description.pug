@@ -18,12 +18,17 @@ mixin description()
                   +input-date({
                     id: date_id[i],
                     value: date[i],
+                    placeholder: "ДД.ММ.ГГГГ",
+                    format: 'ДД{.}ММ{.}ГГГГ',
+                    readonly: true,
                     text: ds_label[i],
                   })
                 else
                   +input-date({
                     id: date_id[i],
                     placeholder: "ДД.ММ.ГГГГ",
+                    format: 'ДД{.}ММ{.}ГГГГ',
+                    readonly: true,
                     text: ds_label[i],
                   })
               - var i = null;
