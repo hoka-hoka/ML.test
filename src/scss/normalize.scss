@@ -19,14 +19,9 @@
 }
 
 html {
-  box-sizing: border-box;
   color: $dark-75;
   font-size: $mainFontSize;
   font-family: $mainFont;
-}
-
-html * {
-  box-sizing: border-box;
 }
 
 body {

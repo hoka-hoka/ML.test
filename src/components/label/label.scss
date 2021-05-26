@@ -41,7 +41,6 @@
     &::before {
       position: absolute;
       left: 0;
-      box-sizing: border-box;
       width: 20px;
       min-width: 20px;
       height: 20px;
@@ -55,7 +54,6 @@
       position: absolute;
       top: 5px;
       left: 7px;
-      box-sizing: border-box;
       width: 6px;
       height: 8px;
       transform: rotate(45deg);
