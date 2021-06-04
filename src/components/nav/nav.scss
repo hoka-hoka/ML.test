@@ -45,6 +45,12 @@
       font-size: rem(16);
     }
 
+    &_active {
+      color: $gray-75;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
     & .button {
       position: static;
       padding: 0px 7px;
@@ -54,11 +60,6 @@
       & span {
         color: rgba(#1f2041, 0.5);
       }
-    }
-
-    &_active {
-      color: $gray-75;
-      font-weight: bold;
     }
   }
 

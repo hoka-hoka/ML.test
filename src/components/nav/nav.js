@@ -1,16 +1,10 @@
 import './nav.scss';
 
-// let navList = document.querySelectorAll('.nav__item');
-// let activeBtn = document.querySelector('.nav__link_active');
-// navList.forEach((v, i) => {
-//   v.addEventListener('click', event => {
-//     setDefault(activeBtn);
-//     event.target.classList.add('nav__link_active');
-//     activeBtn = event.target;
-//   });
+// const nav = $();
+// const $navItems = $('.nav_js .nav__link');
+// const activeClass = 'nav__link_active';
+
+// $navItems.on('click', 'div', ({ target }) => {
+//   $navItems.filter('.nav__link_active').removeClass(activeClass);
+//   $(target).addClass(activeClass);
 // });
-// function setDefault(btn) {
-//   if (btn) {
-//     btn.classList.remove('nav__link_active');
-//   }
-// }
