@@ -37,12 +37,18 @@
   &__link {
     display: flex;
     align-items: center;
+    padding: 4px 0;
     color: $dark-50;
     font-size: rem(14);
     cursor: pointer;
 
     @media (max-width: 1023px) {
       font-size: rem(16);
+    }
+
+    &:hover,
+    &:focus {
+      color: $dark-75;
     }
 
     &_active {

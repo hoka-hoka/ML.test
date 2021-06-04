@@ -11,8 +11,9 @@ mixin nav()
               a.nav__link.nav__link_active(href="/mock-address/change-me" draggable="true" rel="noopener noreferrer" target="_blank")=v
           else if i == 1 || i == 4
             li.nav__item
-              .nav__link=v
+              .nav__link(tabindex="0")=v
                 +button({
+                  tabindex: "-1",
                   mod: {arrow: "arrow"}
                 })
           else
