@@ -1,11 +1,11 @@
-import './input-list.scss';
 import DropDown from '../../common/DropDown';
+import './input-list.scss';
 
-const $drop = $('.input-list');
+const $drop = $('.input-list_js');
 
 if ($drop.length) {
   $drop.each((_, item) => {
-    const $interact = $(item).find('.label_js, .button_clicked-js');
+    const $interact = $(item).find('.input-list__title, .button');
     const $par = $(item);
 
     const listOptions = {

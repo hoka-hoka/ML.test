@@ -31,13 +31,21 @@ export default class Calendar {
   };
 
   createCalendar = () => {
-    let date = new Date();
-    date.setDate(1);
-    let dateArr = [
-      new Date(date.setMonth(date.getMonth() - 1)),
-      new Date(date.setMonth(date.getMonth() + 1)),
-      new Date(date.setMonth(date.getMonth() + 1)),
-    ];
+    const { dateFields = [] } = this.options;
+
+    this.firstDate = dateFields[0].value
+      ? new Date(calendar.reverseDate(dateFields[0].value))
+      : new Date();
+    this.secondDate = dateFields[1].value
+      ? new Date(calendar.reverseDate(dateFields[1].value))
+      : new Date();
+
+    const dateArr = [];
+    for (let i = 0; i < 12; ++i) {
+      dateArr.push(
+        new Date(this.firstDate.getFullYear(), i, this.firstDate.getDate()),
+      );
+    }
     dateArr.forEach((date) => {
       this.swiper.appendSlide(new CalendarDOM(date).table);
     });
@@ -45,38 +53,53 @@ export default class Calendar {
 
   initMarks = () => {
     const { cont, marks } = this;
+
     let tdToday = cont.querySelector('.calendar__day-num_current');
-    let cell = cont.querySelectorAll('.calendar__day-num'); // cells
-    marks.today.moveAt(tdToday);
-    for (let i in cell) {
-      if (cell[i] == tdToday) {
-        marks.first.moveAt(cell[i]);
-        marks.second.moveAt(cell[+i + 1]);
-      }
+    if (tdToday) {
+      marks.today.moveAt(tdToday);
     }
-    this.swiper.activeIndex = 1;
+
+    const firstCells = cont
+      .querySelectorAll('.swiper-slide')
+      [this.firstDate.getMonth()].querySelectorAll(
+        'td:not(.calendar__day-other)',
+      );
+
+    const firstTD = [...firstCells].find(
+      (td) => td.innerText == this.firstDate.getDate(),
+    );
+
+    marks.first.moveAt(firstTD);
+
+    const secondCells = cont
+      .querySelectorAll('.swiper-slide')
+      [this.secondDate.getMonth()].querySelectorAll(
+        'td:not(.calendar__day-other)',
+      );
+
+    const secondTD = [...secondCells].find(
+      (td) => td.innerText == this.secondDate.getDate(),
+    );
+
+    marks.second.moveAt(secondTD);
+
+    this.swiper.activeIndex = this.firstDate.getMonth();
     this.swiper.update();
   };
 
   createMarks = () => {
     const { cont } = this;
+
     this.marks = {
       today: new Mark('calendar__today-mark', cont),
-      first: new Mark(
-        'calendar__day-mark calendar__day-mark_1',
-        cont,
-        this.applyDate,
-      ),
-      second: new Mark(
-        'calendar__day-mark calendar__day-mark_2',
-        cont,
-        this.applyDate,
-      ),
+      first: new Mark('calendar__day-mark', cont, this.applyDate),
+      second: new Mark('calendar__day-mark', cont, this.applyDate),
     };
     const { marks } = this;
 
     let table = cont.querySelectorAll('.calendar__box'); // boxes cell
     this.initMarks();
+
     for (let val of table) {
       val.onmousedown = function (event) {
         if (event.target.contains(marks.first.mark)) {
@@ -86,6 +109,7 @@ export default class Calendar {
           marks.first.i = 0;
           marks.second.i = 1;
         }
+
         marks.first.i
           ? marks.first.markFullStack(event.target)
           : marks.second.markFullStack(event.target);
@@ -109,20 +133,29 @@ export default class Calendar {
     } = this;
 
     const getDate = (day) => {
-      const today = this.marks.today.day;
+      if (!day) {
+        return;
+      }
+
       let checkDate = Sibling.getOlderSibling({
         iter: 4,
-        $elem: $(today),
+        $elem: $(day),
         find: 'calendar__month',
       });
-      if (!checkDate.length) {
+
+      if (!checkDate) {
         return;
       }
       const [month, year] = checkDate.get(0).innerHTML.split(' ');
       if (!month && !year) {
         return;
       }
-      const date = new Date(year, calendar.months.indexOf(month), day);
+
+      const date = new Date(
+        year,
+        calendar.months.indexOf(month),
+        day.innerText,
+      );
       return date;
     };
 
@@ -142,8 +175,8 @@ export default class Calendar {
     };
 
     const [start = '', end = ''] = [
-      dateFormatting(getDate(first.day ? first.day.innerText : '')),
-      dateFormatting(getDate(second.day ? second.day.innerText : '')),
+      dateFormatting(getDate(first.day)),
+      dateFormatting(getDate(second.day)),
     ].sort();
 
     if (!dateFields.length) {

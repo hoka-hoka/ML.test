@@ -4,6 +4,7 @@
   &__field {
     display: block;
     width: 100%;
+    min-width: 320px;
     height: 44px;
     padding: 0 28px 0 14px;
     color: $dark-75;

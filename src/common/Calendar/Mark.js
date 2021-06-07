@@ -9,11 +9,10 @@ export default class Mark {
   }
 
   moveAt = (td) => {
-    if (td.nodeName != 'TD') {
+    if (td.nodeName !== 'TD') {
       return;
     }
-    let a = this.today.compareDocumentPosition(td);
-    if (a & 2 || td.classList.contains('calendar__day-other')) {
+    if (td.classList.contains('calendar__day-other')) {
       return;
     }
     td.classList.add('calendar__day-num_active');

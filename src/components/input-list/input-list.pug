@@ -9,10 +9,7 @@ mixin input-list(list)
   - }
 
   .input-list.input-list_js(class=modClasses tabindex="0")
-    +label({
-      text: text,
-      mod: {weigth: "large", clicked: "js"},
-    })
+    .input-list__title=text
     +button({
       tabindex: "-1",
       mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"}

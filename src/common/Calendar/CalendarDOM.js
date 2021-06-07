@@ -1,7 +1,7 @@
 import { calendar } from '../../js/constants';
 
 export default class CalendarDOM {
-  constructor(e) {
+  constructor(e, today) {
     this.date = new Date(e);
     this.calendarMonths = calendar.months;
     this.year = this.date.getFullYear();
@@ -13,41 +13,33 @@ export default class CalendarDOM {
       '</div><table class="calendar__table"><thead class="calendar__column"><tr><th class="calendar__day">пн</th><th class="calendar__day">вт</th><th class="calendar__day">ср</th><th class="calendar__day">чт</th><th class="calendar__day">пт</th><th class="calendar__day">сб</th><th class="calendar__day">вс</th></tr></thead><tbody class="calendar__box">';
 
     this.setDateBefore(calendar.getDay(e));
-    this.setDateAfter();
+    this.setDateAfter(today);
   }
 
   setDateBefore = (iter) => {
+    const date = new Date(this.date);
     for (let i = 0; i < iter; i++) {
-      this.date.setDate(this.date.getDate() - calendar.getDay(this.date) + i); // дней до текущего
+      date.setDate(this.date.getDate() - calendar.getDay(this.date) + i); // дней до текущего
       this.table +=
         '<td class="calendar__day-num calendar__day-other">' +
-        this.date.getDate() +
+        date.getDate() +
         '</td>';
     }
   };
 
-  setDateAfter = () => {
-    this.date.setDate(this.date.getDate() + 1);
+  setDateAfter = (today) => {
     let i = 0;
-    let month = this.date.getMonth();
-
     while (i < 5) {
-      if (month === this.date.getMonth()) {
-        if (String(this.date) === String(new Date())) {
-          this.table +=
-            '<td class="calendar__day-num calendar__day-num_current">' +
-            this.date.getDate() +
-            '</td>';
-        } else {
-          this.table +=
-            '<td class="calendar__day-num">' + this.date.getDate() + '</td>';
-        }
-      } else {
+      if (this.date.toLocaleDateString() == new Date().toLocaleDateString()) {
         this.table +=
-          '<td class="calendar__day-num calendar__day-other">' +
+          '<td class="calendar__day-num calendar__day-num_current">' +
           this.date.getDate() +
           '</td>';
+      } else {
+        this.table +=
+          '<td class="calendar__day-num">' + this.date.getDate() + '</td>';
       }
+
       if (calendar.getDay(this.date) % 7 === 6) {
         this.table += '</tr><tr>';
         ++i;

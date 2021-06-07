@@ -63,10 +63,11 @@
   }
 
   &__create-text {
-    margin-right: 49px;
+    margin-right: auto;
     color: #000;
     font-size: 14px;
     letter-spacing: 0.4px;
+    white-space: nowrap;
 
     @media (max-width: 375px) {
       margin-right: 10px;

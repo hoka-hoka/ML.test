@@ -19,6 +19,11 @@ const calendar = {
     if (day == 0) day = 7;
     return day - 1;
   },
+
+  reverseDate: (str) => {
+    const rezult = str.split('.').reverse().join('-');
+    return rezult;
+  },
 };
 
 export { calendar };
