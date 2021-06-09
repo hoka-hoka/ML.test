@@ -1,7 +1,7 @@
 import { calendar } from '../../js/constants';
 
 export default class CalendarDOM {
-  constructor(e, today) {
+  constructor(e) {
     this.date = new Date(e);
     this.calendarMonths = calendar.months;
     this.year = this.date.getFullYear();
@@ -13,38 +13,40 @@ export default class CalendarDOM {
       '</div><table class="calendar__table"><thead class="calendar__column"><tr><th class="calendar__day">пн</th><th class="calendar__day">вт</th><th class="calendar__day">ср</th><th class="calendar__day">чт</th><th class="calendar__day">пт</th><th class="calendar__day">сб</th><th class="calendar__day">вс</th></tr></thead><tbody class="calendar__box">';
 
     this.setDateBefore(calendar.getDay(e));
-    this.setDateAfter(today);
+    this.setDateAfter();
   }
 
   setDateBefore = (iter) => {
-    const date = new Date(this.date);
-    for (let i = 0; i < iter; i++) {
-      date.setDate(this.date.getDate() - calendar.getDay(this.date) + i); // дней до текущего
+    const prevDate = new Date(this.date - 1);
+    const lastDay = new Date(prevDate).getDate();
+    for (let i = 0; i < iter; ++i) {
+      const shift = lastDay - calendar.getDay(this.date) + i + 1;
+      prevDate.setDate(shift); // дней до текущего
       this.table +=
-        '<td class="calendar__day-num calendar__day-other">' +
-        date.getDate() +
+        '<td class="calendar__day-num calendar__day-before">' +
+        prevDate.getDate() +
         '</td>';
     }
   };
 
-  setDateAfter = (today) => {
+  setDateAfter = () => {
+    const date = new Date(this.date);
+    const month = date.getMonth();
     let i = 0;
     while (i < 5) {
-      if (this.date.toLocaleDateString() == new Date().toLocaleDateString()) {
-        this.table +=
-          '<td class="calendar__day-num calendar__day-num_current">' +
-          this.date.getDate() +
-          '</td>';
+      if (date.toLocaleDateString() == new Date().toLocaleDateString()) {
+        this.table += `<td class="calendar__day-num calendar__day-num_current">${date.getDate()}</td>`;
+      } else if (month != date.getMonth()) {
+        this.table += `<td class="calendar__day-num calendar__day-after">${date.getDate()}</td>`;
       } else {
-        this.table +=
-          '<td class="calendar__day-num">' + this.date.getDate() + '</td>';
+        this.table += `<td class="calendar__day-num">${date.getDate()}</td>`;
       }
-
-      if (calendar.getDay(this.date) % 7 === 6) {
+      // 6 & 7 == 6
+      if (calendar.getDay(date) % 7 === 6) {
         this.table += '</tr><tr>';
         ++i;
       }
-      this.date.setDate(this.date.getDate() + 1);
+      date.setDate(date.getDate() + 1);
     }
     this.table += '</tr></table></div></div>';
   };

@@ -1,32 +1,44 @@
 export default class Mark {
-  constructor(name, parent, moveCallback) {
-    this.today = parent.querySelector('.calendar__day-num_current');
-    this.mark = document.createElement('span');
-    this.moveCallback = moveCallback;
-    this.mark.className = name;
+  constructor(className, parent, moveCallback = (f) => f) {
+    this.mark = this.createMark(className);
+
+    this.today = parent
+      ? parent.querySelector('.calendar__day-num_current')
+      : undefined;
+
     this.prev = 0;
     this.parent = parent;
+    this.moveCallback = moveCallback;
   }
+
+  createMark = (className = '') => {
+    const mark = document.createElement('span');
+    mark.className = className;
+    return mark;
+  };
 
   moveAt = (td) => {
     if (td.nodeName !== 'TD') {
       return;
     }
-    if (td.classList.contains('calendar__day-other')) {
-      return;
-    }
-    td.classList.add('calendar__day-num_active');
-    if (this.prev && td !== this.prev) {
-      if (
-        this.prev.childNodes.length === 2 ||
-        (this.prev === this.today && this.prev.childNodes.length !== 4)
-      ) {
-        this.prev.classList.remove('calendar__day-num_active');
+
+    if (this.parent) {
+      td.classList.add('calendar__day-num_active');
+      if (this.prev && td !== this.prev) {
+        if (
+          this.prev.childNodes.length === 2 ||
+          (this.prev === this.today && this.prev.childNodes.length !== 4)
+        ) {
+          this.prev.classList.remove('calendar__day-num_active');
+        }
       }
     }
     this.prev = td;
     td.appendChild(this.mark);
-    Track('calendar__day-num_active', this.parent);
+
+    if (this.parent) {
+      Track('calendar__day-num_active', this.parent);
+    }
 
     this.day = td;
   };
@@ -99,8 +111,8 @@ function Track(find, parent) {
     );
   }
   for (let val of trackElements) {
-    if (!val.classList.contains('calendar__day-other')) {
-      val.classList.add('calendar__day-num_painted');
-    }
+    // if (!val.classList.contains('calendar__day-o')) {
+    val.classList.add('calendar__day-num_painted');
+    // }
   }
 }

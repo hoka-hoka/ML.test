@@ -18,7 +18,9 @@ class DropDown {
       return;
     }
 
-    $elem.on('click', this.handleClick);
+    $elem.each((i, item) => {
+      $(item).on('click', { index: i }, this.handleClick);
+    });
 
     if (aria) {
       $par.get(0).addEventListener('blur', this.onBlurHandler, true);
@@ -31,7 +33,9 @@ class DropDown {
     this.state = { ...state };
   }
 
-  handleClick = () => {
+  handleClick = (event) => {
+    const { data, target } = event;
+    $(target).data('trigger', data.index);
     this.setState({
       ...this.state,
       active: !this.state.active,

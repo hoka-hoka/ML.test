@@ -17,6 +17,7 @@
     height: var(--size);
     background: linear-gradient(180deg, #6fcf97, #66d2ea);
     border-radius: 50%;
+    pointer-events: none;
 
     @media (max-width: 320px) {
       width: var(--size-m);
@@ -61,7 +62,7 @@
     font-family: $secondFont;
   }
 
-  &__day-other {
+  &__day-before {
     color: $dark-50;
   }
 

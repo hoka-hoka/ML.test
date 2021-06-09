@@ -16,7 +16,9 @@ const calendar = {
 
   getDay: (date) => {
     let day = date.getDay();
-    if (day == 0) day = 7;
+    if (day == 0) {
+      day = 7;
+    }
     return day - 1;
   },
 

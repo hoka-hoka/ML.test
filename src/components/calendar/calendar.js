@@ -4,7 +4,7 @@ import Calendar from '../../common/Calendar';
 
 const calendars = document.querySelectorAll('.calendar');
 
-const initCalendar = (calendar) => {
+const createCalendar = (calendar) => {
   const btns = calendar.querySelectorAll('.button_purple');
   const fields = Sibling.getOlderSibling({
     iter: 2,
@@ -17,9 +17,7 @@ const initCalendar = (calendar) => {
     btnClear: btns[0],
     bntApply: btns[1],
     trigger: dateFields[0]
-      ? dateFields[0]
-          .closest('.input-date__field_js')
-          .querySelector('.button_clicked-js')
+      ? dateFields[0].closest('.input-date__field_js')
       : undefined,
   });
   return rezult;
@@ -27,6 +25,15 @@ const initCalendar = (calendar) => {
 
 if (calendars.length) {
   calendars.forEach((calendar) => {
-    const mainCalendar = initCalendar(calendar);
+    const newCalendar = createCalendar(calendar);
+
+    const $triggers = $(calendar).parent().find('.input-date__field_js');
+    if (!$triggers.length) {
+      return;
+    }
+    $triggers.on('click', (event) => {
+      const active = $(event.target).data('trigger');
+      newCalendar.updateCalendar({ activeField: active });
+    });
   });
 }

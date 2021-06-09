@@ -9,14 +9,16 @@ export default class Calendar {
     if (!calendar) {
       console.error('узел календаря не передан в класс Calendar');
     }
+    this.calendar = calendar;
     this.options = { ...options };
     this.cont = calendar.querySelector('.swiper-container');
     this.swiper = this.cont.swiper;
+
     this.initCalendar();
   }
 
   initCalendar = () => {
-    const { btnClear, bntApply, dateFields } = this.options;
+    const { btnClear, bntApply } = this.options;
     this.createCalendar();
     this.createMarks();
     if (btnClear) {
@@ -30,77 +32,83 @@ export default class Calendar {
     }
   };
 
-  createCalendar = () => {
+  getFieldDates = () => {
     const { dateFields = [] } = this.options;
-
-    this.firstDate = dateFields[0].value
+    const firstDate = dateFields[0].value
       ? new Date(calendar.reverseDate(dateFields[0].value))
       : new Date();
-    this.secondDate = dateFields[1].value
+    const secondDate = dateFields[1].value
       ? new Date(calendar.reverseDate(dateFields[1].value))
       : new Date();
+    return [firstDate, secondDate];
+  };
 
+  createCalendar = () => {
+    const [firstDate] = this.getFieldDates();
     const dateArr = [];
     for (let i = 0; i < 12; ++i) {
-      dateArr.push(
-        new Date(this.firstDate.getFullYear(), i, this.firstDate.getDate()),
-      );
+      dateArr.push(new Date(firstDate.getFullYear(), i, '1'));
     }
     dateArr.forEach((date) => {
       this.swiper.appendSlide(new CalendarDOM(date).table);
     });
   };
 
-  initMarks = () => {
+  initMarks = (fieldNumber = 0) => {
     const { cont, marks } = this;
+    const [firstDate, secondDate] = this.getFieldDates();
+
+    const findCell = (date) => {
+      const monthNode = cont.querySelectorAll('.swiper-slide')[date.getMonth()];
+      const cells = monthNode.querySelectorAll('td:not(.calendar__day-other)');
+      const rezult = [...cells].find((td) => td.innerText == date.getDate());
+      return rezult;
+    };
 
     let tdToday = cont.querySelector('.calendar__day-num_current');
     if (tdToday) {
       marks.today.moveAt(tdToday);
     }
 
-    const firstCells = cont
-      .querySelectorAll('.swiper-slide')
-      [this.firstDate.getMonth()].querySelectorAll(
-        'td:not(.calendar__day-other)',
-      );
-
-    const firstTD = [...firstCells].find(
-      (td) => td.innerText == this.firstDate.getDate(),
-    );
-
+    const firstTD = findCell(firstDate);
     marks.first.moveAt(firstTD);
 
-    const secondCells = cont
-      .querySelectorAll('.swiper-slide')
-      [this.secondDate.getMonth()].querySelectorAll(
-        'td:not(.calendar__day-other)',
-      );
-
-    const secondTD = [...secondCells].find(
-      (td) => td.innerText == this.secondDate.getDate(),
-    );
-
+    const secondTD = findCell(secondDate);
     marks.second.moveAt(secondTD);
 
-    this.swiper.activeIndex = this.firstDate.getMonth();
+    if (fieldNumber) {
+      this.swiper.activeIndex = secondDate.getMonth();
+    } else {
+      this.swiper.activeIndex = firstDate.getMonth();
+    }
     this.swiper.update();
   };
 
   createMarks = () => {
     const { cont } = this;
-
     this.marks = {
-      today: new Mark('calendar__today-mark', cont),
+      today: new Mark('calendar__today-mark'),
       first: new Mark('calendar__day-mark', cont, this.applyDate),
       second: new Mark('calendar__day-mark', cont, this.applyDate),
     };
-    const { marks } = this;
+  };
+
+  updateCalendar = ({ activeField = 0 }) => {
+    const { cont, marks } = this;
+    const fieldNumber = activeField;
 
     let table = cont.querySelectorAll('.calendar__box'); // boxes cell
-    this.initMarks();
+    this.initMarks(fieldNumber);
 
     for (let val of table) {
+      if (fieldNumber) {
+        marks.first.i = 0;
+        marks.second.i = 1;
+      } else {
+        marks.first.i = 1;
+        marks.second.i = 0;
+      }
+
       val.onmousedown = function (event) {
         if (event.target.contains(marks.first.mark)) {
           marks.first.i = 1;
@@ -132,31 +140,34 @@ export default class Calendar {
       options: { dateFields },
     } = this;
 
-    const getDate = (day) => {
-      if (!day) {
+    const getDate = (mark) => {
+      if (!mark) {
         return;
       }
 
-      let checkDate = Sibling.getOlderSibling({
+      const title = Sibling.getOlderSibling({
         iter: 4,
-        $elem: $(day),
+        $elem: $(mark),
         find: 'calendar__month',
       });
 
-      if (!checkDate) {
-        return;
-      }
-      const [month, year] = checkDate.get(0).innerHTML.split(' ');
-      if (!month && !year) {
+      if (!title) {
         return;
       }
 
-      const date = new Date(
-        year,
-        calendar.months.indexOf(month),
-        day.innerText,
-      );
-      return date;
+      let [monthText, year] = title.get(0).innerHTML.split(' ');
+      if (!monthText && !year) {
+        return;
+      }
+      let month = calendar.months.indexOf(monthText);
+
+      if (mark.classList.contains('calendar__day-before')) {
+        month = calendar.months.indexOf(monthText) - 1;
+      } else if (mark.classList.contains('calendar__day-after')) {
+        month = calendar.months.indexOf(monthText) + 1;
+      }
+
+      return new Date(year, month, mark.innerText);
     };
 
     const dateFormatting = (date) => {
@@ -174,10 +185,13 @@ export default class Calendar {
       return rezult;
     };
 
-    const [start = '', end = ''] = [
-      dateFormatting(getDate(first.day)),
-      dateFormatting(getDate(second.day)),
-    ].sort();
+    let [start = '', end = ''] =
+      second.day.compareDocumentPosition(first.day) == 2
+        ? [getDate(first.day), getDate(second.day)]
+        : [getDate(second.day), getDate(first.day)];
+
+    start = dateFormatting(start);
+    end = dateFormatting(end);
 
     if (!dateFields.length) {
       return;

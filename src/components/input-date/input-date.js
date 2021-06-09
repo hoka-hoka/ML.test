@@ -6,7 +6,7 @@ const calendarDropdown = (item) => {
   const $calendar = $(item).find('.calendar');
 
   const listOptions = {
-    $elem: $(item).find('.input__field_clicked-js, .button_clicked-js'),
+    $elem: $(item).find('.input-date__field_js'),
     $par: $(item),
     $list: $calendar,
     $focus: $(item),
@@ -28,9 +28,9 @@ const formatDate = (item) => {
   const fields = $(item).find('.input__field');
   fields.each((_, elem) => {
     if (!elem.dataset.dateFormat) {
+      new DateFormat(elem, elem.dataset.dateFormat);
       return;
     }
-    new DateFormat(elem, elem.dataset.dateFormat);
   });
 };
 
