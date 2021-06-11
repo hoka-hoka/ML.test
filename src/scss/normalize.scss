@@ -118,6 +118,12 @@ hr {
   border: none;
 }
 
+svg {
+  &:focus {
+    outline: none;
+  }
+}
+
 .container {
   margin: 0 140px;
 }

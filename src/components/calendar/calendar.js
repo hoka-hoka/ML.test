@@ -31,6 +31,7 @@ if (calendars.length) {
     if (!$triggers.length) {
       return;
     }
+
     $triggers.on('click', (event) => {
       const active = $(event.target).data('trigger');
       newCalendar.updateCalendar({ activeField: active });

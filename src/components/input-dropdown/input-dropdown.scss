@@ -4,6 +4,14 @@
   &__field {
     position: relative;
 
+    &:focus-visible {
+      outline: none;
+
+      & .input__field {
+        border: 1px solid $dark-50;
+      }
+    }
+
     &_active {
       & .input-options {
         display: block;

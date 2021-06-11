@@ -8,6 +8,14 @@
     margin: unset;
   }
 
+  & .input-checkbox {
+    visibility: hidden;
+
+    @media (max-width: 1023px) {
+      visibility: visible;
+    }
+  }
+
   &__container {
     @media (max-width: 1023px) {
       position: absolute;
@@ -25,7 +33,7 @@
 
   &__list {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     color: $dark-50;
 
     @media (max-width: 1023px) {
@@ -49,6 +57,10 @@
     &:hover,
     &:focus {
       color: $dark-75;
+    }
+
+    &:focus-visible {
+      outline: 1px solid $dark-50;
     }
 
     &_active {

@@ -27,10 +27,10 @@ if ($drop.length) {
 const formatDate = (item) => {
   const fields = $(item).find('.input__field');
   fields.each((_, elem) => {
-    if (!elem.dataset.dateFormat) {
-      new DateFormat(elem, elem.dataset.dateFormat);
+    if (elem.dataset.dateFormat) {
       return;
     }
+    new DateFormat(elem, 'ДД.ММ.ГГГГ');
   });
 };
 

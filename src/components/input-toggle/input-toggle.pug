@@ -1,5 +1,5 @@
 mixin input-toggle(toggle)
-  - const {status, text, mod} = toggle;
+  - const {status, text, id, mod} = toggle;
   - let modClasses = '';
   - if (mod) {
   -   let styles = Object.values(mod);
@@ -8,7 +8,6 @@ mixin input-toggle(toggle)
   -   }
   - }
 
-  label.input-toggle(class=modClasses)
-    input.input-toggle__tab(name='' type='checkbox' id='reg-toggle' checked=status?status:false)
-    span.input-toggle__slider
-    span.input-toggle__text=text
+  div.input-toggle(class=modClasses)
+    input.input-toggle__tab.input-toggle__tab_hidden(id=id name='' type='checkbox' checked=status?status:false)
+    label.input-toggle__text(for=id)=text

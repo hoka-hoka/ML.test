@@ -15,9 +15,9 @@ mixin search()
               .search__date
                 -for(var i=0; i<2; ++i)
                   +input-date({
-                    id: date_id[i],
+                    id: 'search' + date_id[i],
                     text: sr_label[i],
-                    format: 'ДД{.}ММ{.}ГГГГ',
+                    format: 'DD.MM.YYYY',
                     placeholder: 'ДД.ММ.ГГГГ',
                     readonly: true,
                   }) 

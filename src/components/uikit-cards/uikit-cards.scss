@@ -20,6 +20,10 @@
 
   &__text-field {
     margin-bottom: 20px;
+
+    & .input__field {
+      border: 1px solid $gray-50;
+    }
   }
 
   &__date-dropdown {
@@ -55,7 +59,7 @@
 
   &__subscription-text {
     width: 266px;
-    margin-top: 42px;
+    margin-top: 40px;
 
     .input-email__field {
       min-width: auto;

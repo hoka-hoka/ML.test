@@ -22,7 +22,7 @@ element {
       display: none;
     }
 
-    &:focus,
+    &:focus-visible,
     &:hover {
       border: 1px solid $dark-50;
       outline: 0;

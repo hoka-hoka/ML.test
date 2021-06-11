@@ -1,6 +1,10 @@
 .input-checkbox {
   appearance: none;
 
+  &:focus-visible ~ label {
+    outline: 1px solid $gray-50;
+  }
+
   &:checked ~ .label_checked::before {
     border-color: $purple;
   }

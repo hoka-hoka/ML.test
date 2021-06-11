@@ -15,6 +15,7 @@ export default class Calendar {
     this.swiper = this.cont.swiper;
 
     this.initCalendar();
+    this.updateCalendar();
   }
 
   initCalendar = () => {
@@ -32,14 +33,67 @@ export default class Calendar {
     }
   };
 
+  dateFormatting = (date, format = 'DD.MM.YYYY') => {
+    if (!date) {
+      return;
+    }
+    moment.locale('ru');
+    const rezult = moment(date).format(format);
+    return rezult;
+  };
+
   getFieldDates = () => {
     const { dateFields = [] } = this.options;
-    const firstDate = dateFields[0].value
-      ? new Date(calendar.reverseDate(dateFields[0].value))
+
+    if (!dateFields[0]) {
+      return [new Date(), new Date()];
+    }
+
+    const defFirstDate = dateFields[0].dataset.dateIso;
+    const defSecondDate = dateFields[1].dataset.dateIso;
+
+    if (!defFirstDate) {
+      dateFields[0].value = '';
+    }
+    if (!defSecondDate) {
+      dateFields[1].value = '';
+    }
+
+    if (dateFields[0].dataset.dateFormat == 'DD MMM' && defFirstDate) {
+      dateFields[0].value = `${this.dateFormatting(
+        defFirstDate,
+        dateFields[0].dataset.dateFormat,
+      )} - ${this.dateFormatting(
+        defSecondDate,
+        dateFields[1].dataset.dateFormat,
+      )}`;
+    } else {
+      if (defFirstDate) {
+        dateFields[0].value = this.dateFormatting(
+          defFirstDate,
+          dateFields[0].dataset.dateFormat,
+        );
+      }
+      if (defSecondDate) {
+        dateFields[1].value = this.dateFormatting(
+          defSecondDate,
+          dateFields[1].dataset.dateFormat,
+        );
+      }
+    }
+
+    const firstDate = defFirstDate
+      ? new Date(defFirstDate)
+      : defSecondDate
+      ? new Date(defSecondDate)
       : new Date();
-    const secondDate = dateFields[1].value
-      ? new Date(calendar.reverseDate(dateFields[1].value))
+
+    const secondDate = defSecondDate
+      ? new Date(defSecondDate)
+      : defFirstDate
+      ? new Date(defFirstDate)
       : new Date();
+
     return [firstDate, secondDate];
   };
 
@@ -93,7 +147,7 @@ export default class Calendar {
     };
   };
 
-  updateCalendar = ({ activeField = 0 }) => {
+  updateCalendar = ({ activeField } = { activeField: 0 }) => {
     const { cont, marks } = this;
     const fieldNumber = activeField;
 
@@ -137,8 +191,8 @@ export default class Calendar {
   applyDate = () => {
     const {
       marks: { first, second },
-      options: { dateFields },
     } = this;
+    const { dateFields = [] } = this.options;
 
     const getDate = (mark) => {
       if (!mark) {
@@ -170,39 +224,24 @@ export default class Calendar {
       return new Date(year, month, mark.innerText);
     };
 
-    const dateFormatting = (date) => {
-      if (!date) {
-        return;
-      }
-      const { dateFields } = this.options;
-      let rezult;
-      moment.locale('ru');
-      if (dateFields.length == 1) {
-        rezult = moment(date).format('DD MMM');
-      } else {
-        rezult = moment(date).format('DD.MM.YYYY');
-      }
-      return rezult;
-    };
-
     let [start = '', end = ''] =
       second.day.compareDocumentPosition(first.day) == 2
         ? [getDate(first.day), getDate(second.day)]
         : [getDate(second.day), getDate(first.day)];
 
-    start = dateFormatting(start);
-    end = dateFormatting(end);
-
-    if (!dateFields.length) {
-      return;
+    if (dateFields[0]) {
+      dateFields[0].dataset.dateIso = `${start.getFullYear()}-${(
+        '0' +
+        (start.getMonth() + 1)
+      ).slice(-2)}-${('0' + start.getDate()).slice(-2)}`;
     }
-    dateFields.forEach((field, index) => {
-      if (dateFields.length == 1) {
-        field.value = `${start} - ${end}`;
-      } else {
-        !index ? (field.value = start) : (field.value = end);
-      }
-    });
+
+    if (dateFields[1]) {
+      dateFields[1].dataset.dateIso = `${end.getFullYear()}-${
+        '0' + (end.getMonth() + 1)
+      }-${('0' + end.getDate()).slice(-2)}`;
+    }
+    this.getFieldDates();
   };
 
   clearDate = () => {
@@ -210,8 +249,9 @@ export default class Calendar {
     if (!dateFields?.length && !trigger) {
       return;
     }
-    dateFields.forEach((field, index) => {
-      field.value = '';
+    dateFields.forEach((field) => {
+      field.dataset.dateIso = '';
+      this.getFieldDates();
       this.initMarks();
     });
   };

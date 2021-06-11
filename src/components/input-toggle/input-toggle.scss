@@ -3,38 +3,22 @@
   position: relative;
   display: inline-block;
 
-  &:focus-within {
-    outline: 1px solid black;
-  }
-
   &__text {
-    padding-left: 43px;
+    padding: 2px 0 2px 50px;
     font-size: rem(14px);
     line-height: rem(22);
-  }
-
-  & input {
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-
-  &__slider {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 20px;
-    margin: auto 0;
-    border: 1px solid $dark-25;
-    border-radius: 34px;
     cursor: pointer;
-    transition: 0.4s;
+    user-select: none;
+
+    @each $name in ('after', 'before') {
+      &:#{$name} {
+        position: absolute;
+        transition: 0.4s;
+        content: '';
+      }
+    }
 
     &:before {
-      position: absolute;
       top: 50%;
       bottom: 4px;
       left: 3px;
@@ -43,14 +27,44 @@
       background: linear-gradient($dark-25, $dark-25);
       border-radius: 50%;
       transform: translate(0px, -50%);
-      transition: 0.4s;
-      content: '';
+    }
+
+    &:after {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 20px;
+      margin: auto 0;
+      border: 1px solid $dark-25;
+      border-radius: 34px;
+      cursor: pointer;
     }
   }
 
   &__tab {
-    &:checked ~ #{$input-toggle}__slider {
-      border-color: $purple;
+    &_hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border: 0;
+      clip: rect(0 0 0 0);
+      clip-path: inset(100%);
+    }
+
+    &:focus-visible ~ label {
+      outline: 1px solid $dark-50;
+    }
+
+    &:checked ~ label {
+      &:after {
+        border-color: $purple;
+      }
 
       &:before {
         background: linear-gradient($purple, $purpure-light);

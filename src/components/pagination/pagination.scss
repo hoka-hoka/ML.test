@@ -21,6 +21,10 @@
     line-height: 40px;
     text-align: center;
 
+    &:focus-visible {
+      outline: 1px solid $dark-50;
+    }
+
     &_next {
       background: linear-gradient(180deg, $green 0%, $green-light 100%);
       border-radius: 50%;

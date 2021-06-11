@@ -50,7 +50,6 @@ mixin reg()
                 id: "reg-birth",
                 text: "Дата рождения",
                 placeholder: "ДД.ММ.ГГГГ",
-                format: 'ДД{.}ММ{.}ГГГГ',
               })
             li.reg__item.reg__item_middle_margin-bottom
               .reg__content
@@ -67,7 +66,8 @@ mixin reg()
                 })
               .reg__content
                 +input-toggle({
-                  text: "Получать спецпредложения"
+                  text: "Получать спецпредложения",
+                  id: "reg-toggle"
                 })
             li.reg__item.reg__item_large_margin-bottom
               .reg__submit

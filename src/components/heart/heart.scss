@@ -78,6 +78,10 @@ $col: $white;
     background: linear-gradient(-180deg, $gray-25, $gray-25);
     border-radius: 10px;
 
+    &:focus-visible {
+      outline: 1px solid $dark-50;
+    }
+
     &_active {
       background: linear-gradient(-180deg, $purple, $purpure-light);
 

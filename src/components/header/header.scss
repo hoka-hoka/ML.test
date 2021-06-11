@@ -17,6 +17,10 @@
     }
   }
 
+  &__link:focus-visible {
+    outline: 1px solid $dark-50;
+  }
+
   &__buttons {
     display: flex;
     @media (max-width: 1023px) {

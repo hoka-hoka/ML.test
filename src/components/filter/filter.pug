@@ -16,11 +16,16 @@ mixin filter()
           li.filter__date
             +input-date({
               id: "pr-date",
-              placeholder: "ДД - ММ",
-              format: 'DD MMM',
+              placeholder: "ДД ММ",
               text: "Даты пребывания в отеле",
+              format: "DD MMM",
               readonly: true,
               mod: {width: "wide"},
+            })
+            +input-date({
+              id: "sc-date",
+              format: "DD MMM",
+              mod: {visible: "hidden"},
             })
             +calendar()
           li.filter__item-bottom

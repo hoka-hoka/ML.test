@@ -3,6 +3,10 @@
   align-items: center;
   margin-right: 22px;
 
+  &:focus-visible {
+    outline: 1px solid $dark-50;
+  }
+
   &:last-child {
     margin: unset;
   }

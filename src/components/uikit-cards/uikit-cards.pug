@@ -31,19 +31,21 @@ mixin uikit-cards()
           id: "ui-masked-text",
           text: "masked text field",
           placeholder: "ДД.ММ.ГГГГ",
-          format: 'ДД{.}ММ{.}ГГГГ',
         })
       .uikit-cards__date-dropdown
         +input-date({
           id: "ui-date-start",
           placeholder: "ДД.ММ.ГГГГ",
+          format: 'DD.MM.YYYY',  
           text: "date dropdown",
           readonly: true,
+          
         })
         +input-date({
           id: "ui-date-end",
-          value: "19.08.2019",
           placeholder: "ДД.ММ.ГГГГ",
+          format: 'DD.MM.YYYY', 
+          iso: '2019.08.19',
           text: "date dropdown",
           readonly: true,
         })
@@ -52,9 +54,16 @@ mixin uikit-cards()
         +input-date({
           id: "ui-date-filter",
           placeholder: "ДД - ММ",
-          value: "12 авг - 13 авг",
           text: "filter date dropdown",
+          format: 'DD MMM',
+          iso: '2021-08-12',
           readonly: true,
+        })
+        +input-date({
+          id: "ui-date-filter",
+          format: 'DD MMM',
+          iso: '2021-08-13',
+          mod: {visible: "hidden"},
         })
         +calendar()
       .uikit-cards__subscription-text

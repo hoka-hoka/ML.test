@@ -39,6 +39,14 @@
     font-family: $mainFont;
     line-height: rem(17px, 14px);
     text-transform: none;
+
+    &:focus-visible {
+      outline: 1px solid $dark-50;
+    }
+
+    &:hover {
+      color: $dark-75;
+    }
   }
 
   &__line {
@@ -58,10 +66,14 @@
   &__email {
     width: 260px;
     height: 45px;
+
+    & .input-email__field {
+      min-width: auto;
+    }
   }
 
   &__description {
-    margin-top: 18px;
+    margin-top: 16px;
 
     @media (max-width: 1023px) {
       width: 50%;
@@ -75,7 +87,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 140px;
-    padding: 23px 0;
+    padding: 24px 0;
 
     @media (max-width: 1240px) {
       margin: 0 5vw;
@@ -102,7 +114,7 @@
 
   &__container {
     margin: 0 140px;
-    padding: 104px 0 96px;
+    padding: 103px 0 97px;
 
     @media (max-width: 1240px) {
       margin: 0 5vw;

@@ -1,5 +1,5 @@
 mixin input-date(date)
-  - const {id, text, value, placeholder, format, readonly, mod} = date;
+  - const {id, text, value, placeholder, format, iso, readonly, mod} = date;
   - let modClasses = '';
   - let inpClicked = readonly ? "clicked-js" : '';
   - if (mod) {
@@ -15,7 +15,7 @@ mixin input-date(date)
       text: text,
       mod: {font: "large"},
     })
-    .input-date__field.input-date__field_js(tabindex="0")
+    .input-date__field.input-date__field_js
       +button({
         tabindex: "-1",
         mod: {arrow: "arrow", clicked: "clicked-js", focused: "focused"}
@@ -26,8 +26,9 @@ mixin input-date(date)
         value: value,
         placeholder: placeholder,
         format: format,
+        iso: iso,
         readonly: readonly,
-        mod: {placeholderClolor: "placeholder", clicked: inpClicked},
+        mod: {placeholderClolor: "placeholder-dark", clicked: inpClicked},
         
       })
       
