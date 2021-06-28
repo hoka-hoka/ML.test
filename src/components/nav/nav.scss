@@ -120,8 +120,10 @@
     position: relative;
     display: none;
     @media (max-width: 1023px) {
-      display: block;
+      display: flex;
+      align-items: center;
       width: 20px;
+      height: 20px;
     }
     & > .nav__hamburger,
     & > .nav__hamburger::before,

@@ -24,6 +24,10 @@ const setCopyPlugin = () => {
       from: path.resolve(__dirname, 'src/assets/fonts'),
       to: path.resolve(__dirname, 'docs/fonts'),
     },
+    {
+      from: path.resolve(__dirname, 'public/favicon.ico'),
+      to: path.resolve(__dirname, 'docs'),
+    },
   ]);
   if (!devMode) {
     rezult.patterns.push({

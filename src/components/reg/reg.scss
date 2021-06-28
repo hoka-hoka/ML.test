@@ -24,6 +24,14 @@
     @media (max-width: 1439px) {
       position: relative;
     }
+
+    @media (max-width: 320px) {
+      border-radius: unset;
+    }
+
+    @media (max-width: 320px) {
+      padding: 40px 13px 30px;
+    }
   }
 
   &__title {
@@ -32,10 +40,6 @@
     font-weight: bold;
     font-size: rem(24);
     line-height: em(30, 24);
-
-    @media (max-width: 320px) {
-      padding-right: 30px;
-    }
   }
 
   &__content {

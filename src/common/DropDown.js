@@ -91,12 +91,12 @@ class DropDown {
           opacity: '0',
           display: 'block',
         })
-        .animate({ opacity: 1 }, 200);
+        .animate({ opacity: 1 }, 0);
     } else {
       $parent.removeClass(extClass);
       $options
         .css('opacity', 1)
-        .animate({ opacity: 0 }, 100, (e) => $options.css('display', 'none'));
+        .animate({ opacity: 0 }, 0, (e) => $options.css('display', 'none'));
     }
   }
 

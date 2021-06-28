@@ -30,16 +30,10 @@ element {
 
     &::placeholder {
       color: $dark-25;
-      font-size: rem(14px);
-      font-family: $mainFont;
-      line-height: rem(14px, 18px);
     }
 
     &_placeholder-dark::placeholder {
       color: $dark-75;
-      font-size: rem(14px);
-      font-family: $mainFont;
-      line-height: rem(14px, 18px);
     }
 
     &_clicked-js {

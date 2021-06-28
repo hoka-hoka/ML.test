@@ -13,8 +13,11 @@ $i: 1;
 $m: 1;
 
 .schedule {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(151px, max-content));
+  display: inline-grid;
+  grid-gap: 0 30px;
+  grid-template-columns: max-content max-content;
+
+  // 151px;
 
   @each $col in lime, purpure, yellow, dark {
     &__item.#{$col}::before {
@@ -62,6 +65,11 @@ $m: 1;
     display: inline-block;
     align-self: end;
     margin-top: 20px;
+
+    @media (max-width: 780px) {
+      grid-row: 3/4;
+      grid-column: 1/-1;
+    }
   }
 
   &__mark-text {
@@ -82,8 +90,8 @@ $m: 1;
 
   &__mark-circle {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
     border-radius: 50%;
 
     @each $col in lime, purpure, yellow, dark {

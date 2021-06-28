@@ -4,9 +4,12 @@
   max-width: 380px;
   margin-top: 70px;
 
+  @media (max-width: 970px) {
+    margin: unset;
+  }
+
   @media (max-width: 767px) {
     height: 374px;
-    margin: auto;
   }
 
   @media (max-width: 425px) {

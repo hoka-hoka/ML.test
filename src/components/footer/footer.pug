@@ -22,9 +22,9 @@ mixin footer()
                         arrow: true,
                       })
               else
-                each v in footerItem[i]
+                each v, index in footerItem[i]
                   li.footer__item
-                    a.footer__links(href="/mock-address/change-me" draggable="false" rel="noopener noreferrer" target="_blank")=v
+                    a.footer__links(href="#link" + index draggable="false")=v
 
     hr.footer__line
     .footer__date

@@ -93,7 +93,11 @@
     }
 
     &_painted {
-      background: $purple-10;
+      background: linear-gradient(
+        180deg,
+        rgba($purple, 0.25) 0%,
+        rgba($purpure-light, 0.25) 100%
+      );
     }
   }
 
@@ -104,7 +108,7 @@
     display: block;
     width: var(--size);
     height: var(--size);
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, $purple 0%, $purpure-light 100%);
     border-radius: 50%;
     cursor: pointer;
 
