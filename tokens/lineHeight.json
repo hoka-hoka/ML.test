@@ -1,0 +1,7 @@
+{
+  "font": {
+    "small": {
+      "value": "12px/{lineHeight.small}"
+    }
+  }
+}

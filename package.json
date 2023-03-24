@@ -5,7 +5,8 @@
   "scripts": {
     "dll": "webpack --config vendor.webpack.config.js",
     "serve": "vue-cli-service serve",
-    "build": "npm run dll && vue-cli-service build"
+    "build": "npm run dll && vue-cli-service build",
+    "generate-styles": "style-dictionary build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -13,6 +14,7 @@
     "jquery": "^3.5.1",
     "jquery.rateit": "^1.1.5",
     "moment": "^2.29.1",
+    "style-dictionary": "^3.7.2",
     "swiper": "^6.6.1",
     "vue": "^2.6.12"
   },
