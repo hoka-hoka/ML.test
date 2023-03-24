@@ -1,9 +1,0 @@
-.logo {
-  &__link {
-    display: flex;
-
-    &:focus-visible {
-      outline: 1px solid $dark-50;
-    }
-  }
-}

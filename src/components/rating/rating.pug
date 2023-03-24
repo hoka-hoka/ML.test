@@ -1,8 +1,0 @@
-mixin rating(rating)
-  - const {index, check} = rating;
-  .rating
-    select(id="backing3b")
-      -for(var i=1; i<=5; i++)
-        - var ch = check==i ? true : false
-        option(value=i)
-    div.rateit(class="rating__stars" data-rateit-backingfld="#backing3b" data-rateit-value=check data-rateit-resetable="false" data-rateit-starwidth="24" data-rateit-starheight="20")

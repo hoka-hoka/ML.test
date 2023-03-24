@@ -1,1 +1,0 @@
-import './swiper-next.scss';

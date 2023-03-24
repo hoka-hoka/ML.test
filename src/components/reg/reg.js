@@ -1,1 +1,0 @@
-import './reg.scss';
