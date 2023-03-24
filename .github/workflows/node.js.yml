@@ -5,27 +5,26 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
   pull_request:
-    branches: [ "master" ]
+    branches: ['master']
 
 jobs:
   build-and-deploy:
     name: Install
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [16.12.0]
-    
+
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    
+      contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -36,9 +35,9 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm run build
-            
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: docs # The folder the action should deploy.
-      
+          folder: build # The folder the action should deploy.
+
