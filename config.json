@@ -2,22 +2,21 @@
   "source": ["tokens/**/*.json"],
   "platforms": {
     "scss": {
+      "transforms": [
+        "attribute/cti",
+        "name/cti/kebab",
+        "color/hex",
+        "myTransitiveTransform"
+      ],
       "transformGroup": "scss",
-      "buildPath": "build/",
+      "buildPath": "src/",
       "files": [
         {
-          "destination": "scss/_variables.scss",
-          "format": "scss/variables"
-        }
-      ]
-    },
-    "android": {
-      "transformGroup": "android",
-      "buildPath": "build/android/",
-      "files": [
-        {
-          "destination": "font_dimens.xml",
-          "format": "android/fontDimens"
+          "destination": "scss/colors.scss",
+          "format": "scss/variables",
+          "options": {
+            "outputReferences": true
+          }
         }
       ]
     }

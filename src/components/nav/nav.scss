@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     padding: 4px 0;
-    color: $dark-50;
+    color: $bg-text;
     font-size: rem(14);
     cursor: pointer;
 
@@ -64,7 +64,7 @@
     }
 
     &_active {
-      color: $gray-75;
+      color: $bg-text;
       font-weight: bold;
       pointer-events: none;
     }
