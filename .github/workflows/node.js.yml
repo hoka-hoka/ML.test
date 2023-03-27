@@ -31,10 +31,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm install
+      - run: generate-styles
 
       - name: Install and Build 🔧
         run: |
-          npm run generate-styles
           npm run build
 
       - name: Deploy
