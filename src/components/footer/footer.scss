@@ -1,8 +1,8 @@
 .footer {
-  background: #fff;
+  background-color: $background;
 
   &__text {
-    color: $dark-75;
+    color: $bg-text;
     font-size: rem(14px);
     font-family: $mainFont;
     line-height: rem(24px, 16px);
@@ -18,7 +18,7 @@
   }
 
   &__title {
-    color: $dark;
+    color: $bg-text;
     font-weight: bold;
     font-size: rem(12);
     text-transform: uppercase;
@@ -34,7 +34,7 @@
   }
 
   &__links {
-    color: $dark-50;
+    color: $bg-text;
     font-size: rem(14px);
     font-family: $mainFont;
     line-height: rem(17px, 14px);
@@ -154,6 +154,7 @@
         flex-shrink: initial;
       }
     }
+
     &.logo {
       margin-bottom: 9px;
     }

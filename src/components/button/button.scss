@@ -38,15 +38,15 @@
       height: 40px;
       margin: 2px;
       padding: 0 17px;
-      color: $purple;
+      color: $button-start;
       background: #fff;
       border-radius: 18px;
 
       &:hover ~ #{$button}__light {
         background: linear-gradient(
           180deg,
-          rgba(#bc9cff, 0.5) 0%,
-          rgba(#8ba4f9, 0.5) 100%
+          rgba($button-start, 0.5) 0%,
+          rgba($button-end, 0.5) 100%
         );
       }
     }
@@ -58,7 +58,7 @@
       height: 44px;
       padding: 0 20px;
       color: $white;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      background: linear-gradient(180deg, $button-start 0%, $button-end 100%);
       border-radius: 22px;
 
       &:hover {
@@ -73,7 +73,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, $button-start 0%, $button-end 100%);
     border-radius: 20px;
   }
 
@@ -94,7 +94,7 @@
   }
 
   &_purple {
-    color: $purple;
+    color: $button-start;
   }
 
   &_locale {
@@ -107,7 +107,7 @@
     z-index: 1;
     transform: rotate(180deg);
     cursor: pointer;
-    fill: $purple;
+    fill: $button-start;
   }
 
   &_next_arrow {
@@ -116,7 +116,7 @@
     right: 0;
     z-index: 1;
     cursor: pointer;
-    fill: $purple;
+    fill: $button-start;
   }
 
   &_arrow {

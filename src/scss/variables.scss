@@ -1,3 +1,55 @@
+@import 'mixins';
+@import './colors';
+
+$b50: null;
+$b75: null;
+$b100: null;
+$b200: null;
+$b400: null;
+$b500: null;
+$theme: null;
+
+@if ($themes-current-theme == 'default') {
+  :root {
+    $b50: $themes-default-b50;
+    $b75: $themes-default-b75;
+    $b100: $themes-default-b100;
+    $b200: $themes-default-b200;
+    $b400: $themes-default-b400;
+    $b500: $themes-default-b500;
+    $theme: $themes-default-header;
+  }
+}
+
+@if ($themes-current-theme == 'blue') {
+  :root {
+    $b50: $themes-blue-b50;
+    $b75: $themes-blue-b75;
+    $b100: $themes-blue-b100;
+    $b200: $themes-blue-b200;
+    $b400: $themes-blue-b400;
+    $b500: $themes-blue-b500;
+    $theme: $themes-blue-header;
+  }
+}
+
+@if ($themes-current-theme == 'violet') {
+  :root {
+    $b50: $themes-violet-b50;
+    $b75: $themes-violet-b75;
+    $b100: $themes-violet-b100;
+    $b200: $themes-violet-b200;
+    $b400: $themes-violet-b400;
+    $b500: $themes-violet-b500;
+    $theme: $themes-violet-header;
+  }
+}
+
+$background: $theme;
+$button-start: $b200;
+$button-end: $b400;
+$bg-text: $b50;
+
 // Font
 $mainFont: 'Montserrat';
 $secondFont: 'Opensans', Arial, sans-serif;
