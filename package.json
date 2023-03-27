@@ -5,7 +5,7 @@
   "scripts": {
     "dll": "webpack --config vendor.webpack.config.js",
     "serve": "vue-cli-service serve",
-    "build": "npm run dll && vue-cli-service build",
+    "build": "npm run generate-styles && npm run dll && vue-cli-service build",
     "generate-styles": "style-dictionary build"
   },
   "dependencies": {

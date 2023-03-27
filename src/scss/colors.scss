@@ -1,8 +1,15 @@
 
 // Do not edit directly
-// Generated on Mon, 27 Mar 2023 14:40:18 GMT
+// Generated on Mon, 27 Mar 2023 16:40:59 GMT
 
-$themes-current-theme: 'blue';
+$themes-default-b75: #ffffff;
+$themes-default-b50: #000000;
+$themes-default-header: #ffffff;
+$themes-default-b500: #ffffff;
+$themes-default-b400: #8ba4f9;
+$themes-default-b200: #bc9cff;
+$themes-default-b100: #ffffff;
+$themes-current-theme: 'default';
 $themes-violet-header: #cb96ff;
 $themes-violet-b500: #4e009c;
 $themes-violet-b400: #5a00b3;
@@ -73,5 +80,3 @@ $global-foundation-blue-b200: #2b7fff;
 $global-foundation-blue-b100: #6ba6ff;
 $global-foundation-blue-b75: #96c0ff;
 $global-foundation-blue-b50: #e6f0ff;
-$line-height-small: 1.5;
-$font-small: 12px/$line-height-small;
